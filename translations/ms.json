@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "home": "Laman Utama",
+    "changes": "Perubahan",
+    "timeline": "Garis Masa",
+    "diary": "Diari",
+    "bodyGuide": "Panduan Badan",
+    "guidance": "Bimbingan"
+  },
+  "home": {
+    "title": "Memahami Akil Baligh",
+    "subtitle": "Ruang yang selamat dan mesra untuk belajar tentang perubahan yang berlaku pada badan dan minda anda 🌟",
+    "startLearning": "Mula Belajar",
+    "myDiary": "Diari Saya",
+    "features": {
+      "changes": {
+        "title": "Perubahan Fizikal & Emosi",
+        "description": "Ketahui tentang perubahan semula jadi yang berlaku pada badan dan minda anda"
+      },
+      "timeline": {
+        "title": "Aktiviti Garis Masa",
+        "description": "Permainan padanan interaktif untuk memahami sebelum dan selepas akil baligh"
+      },
+      "diary": {
+        "title": "Diari Mood",
+        "description": "Jejak perasaan dan emosi anda dalam perjalanan anda"
+      },
+      "bodyGuide": {
+        "title": "Panduan Perubahan Badan",
+        "description": "Animasi dan maklumat sensitif jantina tentang pertumbuhan"
+      },
+      "guidance": {
+        "title": "Bimbingan Berguna",
+        "description": "Belajar cara menangani perubahan dan berasa yakin"
+      }
+    },
+    "notAlone": {
+      "title": "Anda Tidak Bersendirian 💙",
+      "content": "Akil baligh adalah bahagian semula jadi membesar. Semua orang melaluinya pada kadar mereka sendiri. Aplikasi ini di sini untuk membantu anda memahami apa yang berlaku, menjejak perjalanan anda, dan berasa yakin tentang perubahan yang akan datang."
+    }
+  },
+  "changes": {
+    "title": "Memahami Perubahan",
+    "subtitle": "Akil baligh membawa banyak perubahan kepada badan dan minda anda. Mari kita terokai bersama! 🌟",
+    "physical": "Fizikal",
+    "emotional": "Emosi",
+    "physicalChanges": {
+      "growth": {
+        "title": "Lonjakan Pertumbuhan",
+        "description": "Anda akan bertambah tinggi! Ini berlaku pada masa yang berbeza untuk semua orang."
+      },
+      "bodyShape": {
+        "title": "Perubahan Bentuk Badan",
+        "description": "Badan anda akan mengembangkan lengkungan dan perkadaran baru semasa anda matang."
+      },
+      "voice": {
+        "title": "Perubahan Suara",
+        "description": "Suara anda mungkin menjadi lebih dalam atau berubah nada - ini sangat normal!"
+      },
+      "skin": {
+        "title": "Perubahan Kulit",
+        "description": "Anda mungkin mendapat jerawat atau kulit berminyak. Kebersihan yang baik membantu mengurusnya."
+      },
+      "hair": {
+        "title": "Pertumbuhan Rambut",
+        "description": "Rambut baru akan tumbuh di tempat yang berbeza di badan anda."
+      },
+      "odor": {
+        "title": "Bau Badan",
+        "description": "Anda akan mula berpeluh lebih banyak. Menggunakan deodoran menjadi penting!"
+      }
+    },
+    "emotionalChanges": {
+      "mood": {
+        "title": "Perubahan Mood",
+        "description": "Emosi anda mungkin terasa seperti roller coaster - itu normal!"
+      },
+      "interests": {
+        "title": "Minat Baru",
+        "description": "Anda mungkin mengembangkan hobi, minat dan kegemaran baru."
+      },
+      "independence": {
+        "title": "Kemerdekaan",
+        "description": "Anda akan mahukan lebih privasi dan kemerdekaan daripada keluarga."
+      },
+      "relationships": {
+        "title": "Hubungan",
+        "description": "Persahabatan dan hubungan sosial menjadi lebih penting."
+      },
+      "awareness": {
+        "title": "Kesedaran Diri",
+        "description": "Anda akan berfikir lebih banyak tentang siapa anda dan siapa yang anda mahu jadi."
+      },
+      "confidence": {
+        "title": "Keyakinan",
+        "description": "Membina keyakinan mengambil masa - bersabar dengan diri sendiri!"
+      }
+    },
+    "remember": {
+      "title": "Ingat: Semua Orang Berbeza 🌈",
+      "timing": "Masa: Akil baligh boleh bermula dari umur 8-14 tahun. Tiada masa yang \"betul\"!",
+      "pace": "Kadar: Sesetengah perubahan berlaku dengan cepat, yang lain mengambil masa bertahun-tahun. Perjalanan anda adalah unik.",
+      "support": "Sokongan: Bercakap dengan orang dewasa yang dipercayai jika anda ada soalan atau kebimbangan. Mereka di sini untuk membantu!"
+    }
+  },
+  "diary": {
+    "title": "Diari Perasaan Saya",
+    "subtitle": "Jejak mood dan pemikiran anda semasa perjalanan anda 📝",
+    "addEntry": "Tambah Catatan Baru",
+    "cancel": "Batal",
+    "howFeeling": "Bagaimana perasaan anda hari ini?",
+    "moods": {
+      "happy": "Gembira",
+      "neutral": "Neutral",
+      "sad": "Sedih",
+      "excited": "Teruja",
+      "anxious": "Cemas"
+    },
+    "placeholder": "Apa yang anda fikirkan? Kongsi pemikiran, perasaan anda, atau apa yang berlaku hari ini...",
+    "saveEntry": "Simpan Catatan",
+    "noEntries": "Tiada catatan lagi. Mulakan dengan menambah yang pertama! 💭",
+    "tips": {
+      "title": "💡 Petua Diari",
+      "regular": "✨ Tulis secara berkala - walaupun beberapa ayat membantu!",
+      "honest": "🎯 Jujur tentang perasaan anda - ini adalah ruang peribadi anda",
+      "lookback": "🌈 Lihat kembali catatan lama untuk melihat bagaimana anda telah berkembang",
+      "valid": "💪 Ingat: semua perasaan adalah sah dan normal"
+    }
+  },
+  "bodyGuide": {
+    "title": "Panduan Perubahan Badan",
+    "subtitle": "Terokai perubahan fizikal yang berlaku semasa akil baligh 🌱",
+    "everyone": "Semua Orang",
+    "femaleBody": "Badan Perempuan",
+    "maleBody": "Badan Lelaki",
+    "remember": {
+      "title": "Ingat: Semua Orang Unik 🌈",
+      "timing": "⏰ Masa: Perubahan ini boleh bermula dari umur 8-14 tahun dan berterusan hingga akhir remaja atau awal 20-an.",
+      "variation": "📏 Variasi: TIADA \"normal\" - semua orang berkembang secara berbeza!",
+      "questions": "💬 Soalan? Sentiasa berasa selesa bercakap dengan ibu bapa, penjaga, doktor, atau orang dewasa yang dipercayai.",
+      "health": "🏥 Kesihatan: Jika sesuatu menyakitkan atau membimbangkan anda, jangan teragak-agak untuk meminta bantuan!"
+    }
+  },
+  "timeline": {
+    "title": "Permainan Padanan Garis Masa",
+    "subtitle": "Padankan setiap perubahan sebelum atau selepas akil baligh bermula! 🎯",
+    "score": "Skor",
+    "attempts": "Percubaan",
+    "accuracy": "Ketepatan",
+    "congratulations": "Tahniah! 🎉",
+    "completed": "Anda menyelesaikan permainan dengan {score} betul daripada {attempts} percubaan!",
+    "playAgain": "Main Lagi",
+    "selectCard": "👇 Klik pada kad di bawah, kemudian pilih bila ia berlaku!",
+    "chooseStage": "👆 Sekarang klik sama ada \"Sebelum Akil Baligh\" atau \"Selepas Akil Baligh\" di bawah!",
+    "beforePuberty": "👶 Sebelum Akil Baligh",
+    "afterPuberty": "🌟 Selepas Akil Baligh",
+    "resetGame": "Tetapkan Semula Permainan"
+  },
+  "guidance": {
+    "title": "Bimbingan Berguna",
+    "subtitle": "Belajar cara praktikal untuk menangani perubahan akil baligh dengan yakin 💪",
+    "categories": {
+      "physical": "Penjagaan Fizikal",
+      "emotional": "Kesejahteraan Emosi",
+      "social": "Kehidupan Sosial",
+      "hygiene": "Kebersihan Diri"
+    }
+  },
+  "footer": {
+    "title": "Kesedaran Akil Baligh",
+    "subtitle": "Ruang selamat untuk belajar dan berkembang 🌱",
+    "copyright": "© 2025 - Sumber Pendidikan"
+  }
+}
