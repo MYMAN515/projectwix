@@ -6,10 +6,27 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
   scroll-behavior: smooth;
+  /* Prevent zoom on input focus for mobile */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* RTL support for Arabic */
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] * {
+  text-align: right;
+}
+
+html[dir="rtl"] .flex {
+  flex-direction: row-reverse;
 }
 
 body {
@@ -19,6 +36,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Improve touch scrolling on mobile */
+  -webkit-overflow-scrolling: touch;
+  /* Better font rendering on mobile */
+  font-size: 16px;
+}
+
+/* Prevent zoom on inputs for iOS */
+input, textarea, select {
+  font-size: 16px;
+}
+
+/* Better touch targets for mobile */
+button, a, [role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+/* Improve scrolling performance */
+.scroll-container {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 @layer utilities {
@@ -31,6 +70,72 @@ body {
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+    @apply transition-all duration-300;
+  }
+  
+  /* Mobile-optimized hover - only on devices that support hover */
+  @media (hover: hover) and (pointer: fine) {
+    .card-hover:hover {
+      @apply scale-105 shadow-2xl;
+    }
+  }
+  
+  /* Touch feedback for mobile */
+  .card-hover:active {
+    @apply scale-[0.98];
+  }
+  
+  /* Safe area padding for notched devices */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* Mobile-first spacing */
+  .mobile-container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-600;
+}
+
+/* Animations for page transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
   }
 }

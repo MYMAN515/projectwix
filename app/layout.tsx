@@ -1,11 +1,21 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Navigation from '@/components/Navigation'
+import { LanguageProvider } from '@/contexts/LanguageContext'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Puberty Awareness - Understanding Your Changes',
-  description: 'A safe, educational space to learn about puberty, physical and emotional changes, and track your journey.',
-  keywords: ['puberty', 'education', 'health', 'adolescence', 'wellness'],
+  description: 'A safe, educational space to learn about puberty, physical and emotional changes, and track your journey. Available in English, Arabic, and Malay.',
+  keywords: ['puberty', 'education', 'health', 'adolescence', 'wellness', 'multilingual', 'teen health'],
+  manifest: '/manifest.json',
+  themeColor: '#8B5CF6',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Puberty Awareness'
+  }
 }
 
 export default function RootLayout({
@@ -15,18 +25,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/icon-192.png" />
+      </head>
       <body>
-        <Navigation />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <footer className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-8 mt-20">
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-lg font-semibold mb-2">Puberty Awareness</p>
-            <p className="text-sm opacity-90">A safe space to learn and grow 🌱</p>
-            <p className="text-xs mt-4 opacity-75">© 2025 - Educational Resource</p>
-          </div>
-        </footer>
+        <LanguageProvider>
+          <Navigation />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   )
