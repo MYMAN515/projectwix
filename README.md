@@ -1,6 +1,11 @@
-# 🌟 Puberty Awareness App
+# 💙 Parenting Hub - Supporting Families Through Puberty
 
-A modern, multilingual Progressive Web App (PWA) designed to help children and adolescents understand and navigate puberty with confidence. Built with Next.js, React, TypeScript, and Tailwind CSS.
+A comprehensive, multilingual Progressive Web App (PWA) designed to help **parents** understand and support their children through puberty. Features expert guidance, interactive games, AI assistance, and more. Built with Next.js, React, TypeScript, and Tailwind CSS.
+
+## ✨ Key Features
+
+### 🎯 **Parent-Focused Design**
+This app is designed primarily for **parents** to help them understand and support their children during puberty, with interactive educational content for children as well.
 
 ## ✨ Features
 
@@ -21,7 +26,38 @@ Easily switch between languages using the language switcher in the navigation ba
 
 ### 📚 **Educational Content**
 
-#### 1. **Physical & Emotional Changes**
+#### 1. **Welcome Experience with Privacy Information**
+Beautiful 4-slide onboarding:
+- Warm welcome messages for parents
+- Explanation of app purpose
+- Detailed privacy policy
+- Required acceptance before use
+- High UX/UI with animations
+
+#### 2. **Comprehensive Parent Guide**
+Evidence-based advice across 6 categories:
+- Communication strategies
+- Emotional support techniques
+- Understanding physical changes
+- Social development guidance
+- Privacy and safety tips
+- Professional resources
+
+#### 3. **AI Chat Assistant**
+Real-time AI support for parents:
+- Instant answers to parenting questions
+- Pre-loaded suggested questions
+- Context-aware responses
+- Available on all pages via floating chat button
+
+#### 4. **Interactive Games for Kids**
+Four educational games:
+- Emotion Memory Game
+- Puberty Knowledge Quiz
+- Changes Matching Game
+- Understanding Emotions scenarios
+
+#### 5. **Physical & Emotional Changes**
 Learn about the natural changes during puberty:
 - Growth spurts and body development
 - Skin changes and hygiene
@@ -29,27 +65,27 @@ Learn about the natural changes during puberty:
 - Emotional and mood changes
 - Self-awareness and confidence building
 
-#### 2. **Body Changes Guide**
+#### 6. **Body Changes Guide**
 Gender-sensitive information with expandable sections:
 - General changes for everyone
 - Female-specific changes
 - Male-specific changes
 - Detailed tips and advice for each change
 
-#### 3. **Timeline Matching Game**
+#### 7. **Timeline Matching Game**
 Interactive learning activity:
 - Match changes to "before" or "after" puberty
 - Score tracking and accuracy measurement
 - Engaging gamification to reinforce learning
 
-#### 4. **Mood Diary**
+#### 8. **Mood Diary for Children**
 Personal journal to track feelings:
 - Record daily moods with emoji indicators
 - Private space for thoughts and reflections
 - Track emotional patterns over time
 - Local storage - your entries stay private
 
-#### 5. **Helpful Guidance**
+#### 9. **Practical Guidance for Children**
 Practical advice across four categories:
 - **Physical Care**: Exercise, nutrition, sleep, managing discomfort
 - **Emotional Wellbeing**: Understanding feelings, managing stress, building confidence
@@ -174,11 +210,12 @@ The app can be installed on mobile devices:
 
 ## 🔒 Privacy & Safety
 
-- All diary entries are stored locally on the device
-- No data is sent to external servers
-- No user tracking or analytics
-- Designed with child safety in mind
-- Age-appropriate language and content
+✅ **100% Local Storage**: All diary entries and data stay on your device
+✅ **No External Servers**: Nothing is sent outside your device
+✅ **No Tracking**: Zero analytics or user tracking
+✅ **Child Safety First**: Private diary space for children
+✅ **Clear Privacy Policy**: Explained in welcome flow with required acceptance
+✅ **Age-Appropriate**: Content designed for both parents and children
 
 ## 🎨 Customization
 
@@ -216,4 +253,4 @@ This app is designed to be a supportive resource. If you or someone you know nee
 
 ---
 
-**Made with 💜 to help young people navigate puberty with confidence**
+**Made with 💙 to help families navigate puberty together with love and confidence**
