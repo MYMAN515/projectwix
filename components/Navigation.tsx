@@ -3,19 +3,30 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles } from 'lucide-react'
+import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles, Lightbulb, Languages } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { Language } from '@/lib/translations'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [showLangMenu, setShowLangMenu] = useState(false)
   const pathname = usePathname()
+  const { language, setLanguage, t } = useLanguage()
 
   const links = [
-    { href: '/', label: 'Home', icon: <Home className="w-5 h-5" /> },
-    { href: '/changes', label: 'Changes', icon: <Heart className="w-5 h-5" /> },
-    { href: '/timeline', label: 'Timeline', icon: <Activity className="w-5 h-5" /> },
-    { href: '/diary', label: 'Diary', icon: <BookOpen className="w-5 h-5" /> },
-    { href: '/body-guide', label: 'Body Guide', icon: <Sparkles className="w-5 h-5" /> },
+    { href: '/', label: t.nav.home, icon: <Home className="w-5 h-5" /> },
+    { href: '/changes', label: t.nav.changes, icon: <Heart className="w-5 h-5" /> },
+    { href: '/timeline', label: t.nav.timeline, icon: <Activity className="w-5 h-5" /> },
+    { href: '/diary', label: t.nav.diary, icon: <BookOpen className="w-5 h-5" /> },
+    { href: '/body-guide', label: t.nav.bodyGuide, icon: <Sparkles className="w-5 h-5" /> },
+    { href: '/guidance', label: '💡 Tips', icon: <Lightbulb className="w-5 h-5" /> },
+  ]
+
+  const languages = [
+    { code: 'en' as Language, name: 'English', flag: '🇬🇧' },
+    { code: 'ar' as Language, name: 'العربية', flag: '🇸🇦' },
+    { code: 'ms' as Language, name: 'Melayu', flag: '🇲🇾' },
   ]
 
   const isActive = (href: string) => pathname === href
@@ -34,7 +45,7 @@ export default function Navigation() {
               <Sparkles className="w-6 h-6 text-white" />
             </motion.div>
             <span className="font-bold text-xl bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent hidden sm:inline">
-              Puberty Awareness
+              {t.nav.appName}
             </span>
           </Link>
 
@@ -56,6 +67,48 @@ export default function Navigation() {
                 </motion.div>
               </Link>
             ))}
+            
+            {/* Language Selector */}
+            <div className="relative">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setShowLangMenu(!showLangMenu)}
+                className="flex items-center space-x-2 px-4 py-2 rounded-full text-gray-700 hover:bg-gray-100 transition-all"
+              >
+                <Languages className="w-5 h-5" />
+                <span className="font-medium text-2xl">{languages.find(l => l.code === language)?.flag}</span>
+              </motion.button>
+              
+              <AnimatePresence>
+                {showLangMenu && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute top-full right-0 mt-2 glass-effect rounded-2xl shadow-xl p-2 min-w-[180px] z-50"
+                  >
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          setLanguage(lang.code)
+                          setShowLangMenu(false)
+                        }}
+                        className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${
+                          language === lang.code
+                            ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white'
+                            : 'text-gray-700 hover:bg-gray-100'
+                        }`}
+                      >
+                        <span className="text-2xl">{lang.flag}</span>
+                        <span className="font-medium">{lang.name}</span>
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -98,6 +151,35 @@ export default function Navigation() {
                   </Link>
                 </motion.div>
               ))}
+              
+              {/* Mobile Language Selector */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: links.length * 0.1 }}
+                className="mt-4 pt-4 border-t border-gray-200"
+              >
+                <p className="text-xs text-gray-500 px-4 mb-2 font-medium">Language / اللغة / Bahasa</p>
+                <div className="grid grid-cols-3 gap-2">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setLanguage(lang.code)
+                        setIsOpen(false)
+                      }}
+                      className={`flex flex-col items-center justify-center px-3 py-3 rounded-lg transition-all ${
+                        language === lang.code
+                          ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white'
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      }`}
+                    >
+                      <span className="text-2xl mb-1">{lang.flag}</span>
+                      <span className="text-xs font-medium">{lang.name}</span>
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
