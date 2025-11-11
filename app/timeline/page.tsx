@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, X, RotateCcw, Trophy } from 'lucide-react'
+import AnimatedCounter from '@/components/AnimatedCounter'
+import ProgressBar from '@/components/ProgressBar'
 
 type Item = {
   id: string
@@ -92,23 +94,34 @@ export default function TimelinePage() {
         transition={{ delay: 0.2 }}
         className="glass-effect rounded-2xl p-6 mb-8 max-w-2xl mx-auto"
       >
-        <div className="flex justify-around items-center text-center">
-          <div>
-            <p className="text-gray-600 font-medium mb-1">Score</p>
-            <p className="text-3xl font-bold text-primary-600">{score}/{items.length}</p>
+        <div className="space-y-4">
+          <div className="flex justify-around items-center text-center">
+            <div>
+              <p className="text-gray-600 font-medium mb-1">Score</p>
+              <p className="text-3xl font-bold text-primary-600">
+                <AnimatedCounter value={score} />/
+                <AnimatedCounter value={items.length} />
+              </p>
+            </div>
+            <div className="h-12 w-px bg-gray-300"></div>
+            <div>
+              <p className="text-gray-600 font-medium mb-1">Attempts</p>
+              <p className="text-3xl font-bold text-secondary-600">
+                <AnimatedCounter value={attempts} />
+              </p>
+            </div>
+            <div className="h-12 w-px bg-gray-300"></div>
+            <div>
+              <p className="text-gray-600 font-medium mb-1">Accuracy</p>
+              <p className="text-3xl font-bold text-green-600">
+                <AnimatedCounter value={attempts > 0 ? Math.round((score / attempts) * 100) : 0} />%
+              </p>
+            </div>
           </div>
-          <div className="h-12 w-px bg-gray-300"></div>
-          <div>
-            <p className="text-gray-600 font-medium mb-1">Attempts</p>
-            <p className="text-3xl font-bold text-secondary-600">{attempts}</p>
-          </div>
-          <div className="h-12 w-px bg-gray-300"></div>
-          <div>
-            <p className="text-gray-600 font-medium mb-1">Accuracy</p>
-            <p className="text-3xl font-bold text-green-600">
-              {attempts > 0 ? Math.round((score / attempts) * 100) : 0}%
-            </p>
-          </div>
+          <ProgressBar 
+            progress={(score / items.length) * 100} 
+            color="from-primary-400 to-secondary-500"
+          />
         </div>
       </motion.div>
 

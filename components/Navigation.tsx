@@ -3,19 +3,23 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles } from 'lucide-react'
+import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles, Lightbulb } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
+  const { t } = useLanguage()
 
   const links = [
-    { href: '/', label: 'Home', icon: <Home className="w-5 h-5" /> },
-    { href: '/changes', label: 'Changes', icon: <Heart className="w-5 h-5" /> },
-    { href: '/timeline', label: 'Timeline', icon: <Activity className="w-5 h-5" /> },
-    { href: '/diary', label: 'Diary', icon: <BookOpen className="w-5 h-5" /> },
-    { href: '/body-guide', label: 'Body Guide', icon: <Sparkles className="w-5 h-5" /> },
+    { href: '/', label: t('nav.home'), icon: <Home className="w-5 h-5" /> },
+    { href: '/changes', label: t('nav.changes'), icon: <Heart className="w-5 h-5" /> },
+    { href: '/timeline', label: t('nav.timeline'), icon: <Activity className="w-5 h-5" /> },
+    { href: '/diary', label: t('nav.diary'), icon: <BookOpen className="w-5 h-5" /> },
+    { href: '/body-guide', label: t('nav.bodyGuide'), icon: <Sparkles className="w-5 h-5" /> },
+    { href: '/coping-tips', label: t('nav.copingTips'), icon: <Lightbulb className="w-5 h-5" /> },
   ]
 
   const isActive = (href: string) => pathname === href
@@ -37,6 +41,11 @@ export default function Navigation() {
               Puberty Awareness
             </span>
           </Link>
+
+          {/* Language Switcher - Always Visible */}
+          <div className="flex items-center">
+            <LanguageSwitcher />
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">

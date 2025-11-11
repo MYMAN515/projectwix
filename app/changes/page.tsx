@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Heart, Brain, Sparkles, Smile, Cloud, Zap } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function ChangesPage() {
+  const { t } = useLanguage()
   const [activeTab, setActiveTab] = useState<'physical' | 'emotional'>('physical')
 
   const physicalChanges = [
@@ -96,10 +98,10 @@ export default function ChangesPage() {
         className="text-center mb-12"
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-          Understanding Changes
+          {t('changes.title')}
         </h1>
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-          Puberty brings many changes to your body and mind. Let's explore them together! 🌟
+          {t('changes.subtitle')}
         </p>
       </motion.div>
 
@@ -119,7 +121,7 @@ export default function ChangesPage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            💪 Physical
+            💪 {t('changes.physical')}
           </button>
           <button
             onClick={() => setActiveTab('emotional')}
@@ -129,7 +131,7 @@ export default function ChangesPage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            💭 Emotional
+            💭 {t('changes.emotional')}
           </button>
         </div>
       </motion.div>
@@ -168,18 +170,12 @@ export default function ChangesPage() {
         className="glass-effect rounded-3xl p-8 md:p-10 max-w-4xl mx-auto"
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-gray-800">
-          Remember: Everyone is Different 🌈
+          {t('changes.remember')}
         </h2>
         <div className="space-y-4 text-gray-700 text-lg">
-          <p>
-            <strong>Timing:</strong> Puberty can start anywhere from ages 8-14. There's no "right" time!
-          </p>
-          <p>
-            <strong>Pace:</strong> Some changes happen quickly, others take years. Your journey is unique.
-          </p>
-          <p>
-            <strong>Support:</strong> Talk to trusted adults if you have questions or concerns. They're here to help!
-          </p>
+          <p>{t('changes.timing')}</p>
+          <p>{t('changes.pace')}</p>
+          <p>{t('changes.support')}</p>
         </div>
       </motion.div>
     </div>
