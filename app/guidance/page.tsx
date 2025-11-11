@@ -30,54 +30,85 @@ export default function GuidancePage() {
     { id: 'hygiene' as Category, icon: <Droplets className="w-6 h-6" />, color: 'from-green-400 to-teal-500' },
   ]
 
+  // Parenting-focused guidance for supporting children through puberty
   const guidanceData = {
     physical: [
       {
         id: 'exercise',
         icon: <Heart className="w-6 h-6" />,
-        title: 'Stay Active',
-        description: 'Regular exercise helps your body develop healthily and boosts your mood',
+        title: 'Encouraging Physical Activity',
+        description: 'Help your child stay active during puberty to support healthy development',
         tips: [
-          'Aim for at least 60 minutes of activity each day',
-          'Try different sports to find what you enjoy',
-          'Walking, dancing, and playing with friends all count!',
-          'Exercise helps with stress and sleep too'
+          'Model active behavior - exercise together as a family',
+          'Let them choose activities they enjoy, not what you think they should do',
+          'Be understanding if they feel self-conscious about their changing body',
+          'Make activity fun, not a chore - dance parties, hiking, sports',
+          'Praise effort and participation, not just performance or appearance',
+          'Understand that energy levels may fluctuate during growth spurts'
         ]
       },
       {
         id: 'nutrition',
         icon: <Sparkles className="w-6 h-6" />,
-        title: 'Healthy Eating',
-        description: 'Your growing body needs good nutrition to support all the changes',
+        title: 'Supporting Healthy Eating',
+        description: 'Guide your child toward nutritious choices without creating food issues',
         tips: [
-          'Eat plenty of fruits and vegetables every day',
-          'Drink lots of water - aim for 6-8 glasses daily',
-          'Don\'t skip breakfast - it gives you energy for the day',
-          'Limit sugary snacks and drinks'
+          'Keep healthy foods available and accessible at home',
+          'Avoid commenting on your child\'s weight or body shape',
+          'Model healthy eating habits yourself',
+          'Teach nutrition facts positively (what foods do FOR them, not just what to avoid)',
+          'Be aware of signs of disordered eating (hiding food, excessive exercise, body obsession)',
+          'Make family meals a priority - connection time without screens',
+          'Don\'t use food as punishment or reward',
+          'Respect increased appetite during growth spurts'
         ]
       },
       {
         id: 'sleep',
         icon: <Moon className="w-6 h-6" />,
-        title: 'Get Enough Sleep',
-        description: 'Sleep is when your body grows and repairs itself',
+        title: 'Managing Sleep Changes',
+        description: 'Teens naturally shift to later sleep schedules - here\'s how to help',
         tips: [
-          'Teenagers need 8-10 hours of sleep each night',
-          'Try to go to bed at the same time every night',
-          'Avoid screens 30 minutes before bedtime',
-          'Keep your bedroom cool, dark, and quiet'
+          'Understand that biological sleep patterns shift during puberty (they\'re not just being difficult)',
+          'Aim for 8-10 hours, but be realistic about school start times',
+          'Create a calm bedtime routine together',
+          'Set boundaries around screens, but explain WHY (blue light affects melatonin)',
+          'Weekend sleep-in is normal, but keep it within 2 hours of weekday wake time',
+          'Watch for signs of sleep deprivation: irritability, poor grades, falling asleep during day',
+          'Make their bedroom a comfortable sleep environment',
+          'Be flexible - rigid rules often backfire with teens'
         ]
       },
       {
         id: 'pain',
         icon: <AlertCircle className="w-6 h-6" />,
-        title: 'Managing Discomfort',
-        description: 'Some changes might cause temporary discomfort',
+        title: 'When to Seek Medical Advice',
+        description: 'Know when physical changes need professional attention',
         tips: [
-          'For growing pains, try gentle stretching',
-          'A warm bath can help with muscle aches',
-          'Talk to an adult if pain persists or worries you',
-          'Remember: most discomfort is temporary'
+          'Trust your instincts - if something seems wrong, check with a doctor',
+          'Severe or persistent pain is never "just puberty"',
+          'Establish a relationship with a pediatrician your child trusts',
+          'For daughters: very heavy or painful periods should be evaluated',
+          'For sons: testicular pain or lumps need immediate attention',
+          'Extreme fatigue or mood changes could indicate hormonal issues',
+          'Eating disorders require early intervention - don\'t wait',
+          'Make healthcare visits normal and non-scary'
+        ]
+      },
+      {
+        id: 'body-image',
+        icon: <Heart className="w-6 h-6" />,
+        title: 'Supporting Positive Body Image',
+        description: 'Help your child develop confidence during physical changes',
+        tips: [
+          'NEVER comment negatively on their changing body',
+          'Avoid comparing them to siblings, peers, or your own experience',
+          'Focus conversations on what their body CAN DO, not how it looks',
+          'Monitor social media use - it heavily impacts body image',
+          'Teach media literacy: images are edited, comparison is unfair',
+          'Model positive self-talk about your own body',
+          'Validate their feelings when they express body concerns',
+          'Remind them everyone develops at different rates and that\'s normal'
         ]
       }
     ],
@@ -85,49 +116,83 @@ export default function GuidancePage() {
       {
         id: 'feelings',
         icon: <Heart className="w-6 h-6" />,
-        title: 'Understanding Your Feelings',
-        description: 'It\'s normal to have big emotions during puberty',
+        title: 'Validating Emotional Changes',
+        description: 'Help your child navigate intense and confusing emotions',
         tips: [
-          'All feelings are valid - happy, sad, angry, confused',
-          'Mood swings are caused by hormones - they\'re normal',
-          'It\'s okay to cry or feel overwhelmed sometimes',
-          'Your feelings will become more stable with time'
+          'Never dismiss their feelings as "just hormones" or "drama"',
+          'Validate emotions: "I see you\'re upset" before problem-solving',
+          'Don\'t take mood swings personally - it\'s not about you',
+          'Create safe spaces for emotional expression without judgment',
+          'Teach emotion vocabulary: name feelings beyond "fine" or "mad"',
+          'Share your own emotional experiences (age-appropriately)',
+          'Recognize that boys need emotional support too, not just "toughen up"',
+          'Know when big emotions might signal depression or anxiety'
         ]
       },
       {
         id: 'stress',
         icon: <Shield className="w-6 h-6" />,
-        title: 'Managing Stress',
-        description: 'Learn healthy ways to cope with stress and anxiety',
+        title: 'Teaching Stress Management',
+        description: 'Equip your child with healthy coping strategies',
         tips: [
-          'Try deep breathing: breathe in for 4, hold for 4, out for 4',
-          'Talk to someone you trust about your worries',
-          'Exercise is a great stress reliever',
-          'Take breaks when you feel overwhelmed'
+          'Model healthy stress management - they learn by watching you',
+          'Teach specific techniques: deep breathing, journaling, mindfulness',
+          'Help them identify their stress triggers and early warning signs',
+          'Don\'t overload their schedule - downtime is essential',
+          'Normalize stress - it\'s part of life, not a sign of weakness',
+          'Create a "calm down" kit together: music, fidgets, art supplies',
+          'Respect that what helps YOU may not help THEM',
+          'Watch for unhealthy coping (substance use, self-harm, withdrawal)',
+          'Consider therapy before problems escalate, not as last resort'
         ]
       },
       {
         id: 'confidence',
         icon: <Smile className="w-6 h-6" />,
-        title: 'Building Self-Confidence',
-        description: 'Feeling good about yourself takes practice',
+        title: 'Building Your Child\'s Confidence',
+        description: 'Support their self-esteem during a vulnerable time',
         tips: [
-          'Focus on what you like about yourself',
-          'Set small, achievable goals and celebrate wins',
-          'Don\'t compare yourself to others - everyone\'s different',
-          'Practice positive self-talk daily'
+          'Praise effort and character, not just achievements or looks',
+          'Avoid comparisons to siblings, peers, or "when I was your age"',
+          'Let them make age-appropriate decisions and face natural consequences',
+          'Encourage pursuits they\'re passionate about, not just "resume builders"',
+          'Celebrate their unique qualities, especially ones different from yours',
+          'Apologize when you make mistakes - models humility and growth',
+          'Give specific praise: "You worked hard on that" vs. "good job"',
+          'Help them reframe failures as learning opportunities'
         ]
       },
       {
         id: 'help',
         icon: <Phone className="w-6 h-6" />,
-        title: 'When to Ask for Help',
-        description: 'It\'s important to know when to reach out',
+        title: 'Recognizing When Professional Help is Needed',
+        description: 'Don\'t wait too long - early intervention is key',
         tips: [
-          'If sad feelings last more than 2 weeks',
-          'If you have thoughts of hurting yourself',
-          'If anxiety stops you from daily activities',
-          'Talk to parents, school counselor, or trusted adult'
+          'Persistent sadness lasting more than 2 weeks needs evaluation',
+          'Any mention of self-harm or suicide requires immediate action',
+          'Significant changes in sleep, appetite, or social withdrawal',
+          'Declining grades combined with loss of interest in everything',
+          'Excessive anxiety interfering with daily life',
+          'Remove stigma: therapy is health care, not a sign of failure',
+          'Start with pediatrician, school counselor, or therapist',
+          'Your child doesn\'t have to be "bad enough" to deserve help',
+          'Trust your gut - you know your child best'
+        ]
+      },
+      {
+        id: 'communication',
+        icon: <MessageCircle className="w-6 h-6" />,
+        title: 'Keeping Communication Open',
+        description: 'Maintain connection even when they push away',
+        tips: [
+          'Accept that they won\'t tell you everything - that\'s developmentally normal',
+          'Be available without being intrusive - let them come to you',
+          'Create low-pressure talk time: car rides, cooking together',
+          'Listen more than you lecture - bite your tongue sometimes',
+          'Don\'t react with panic or anger when they share something hard',
+          'Ask open-ended questions, not interrogations',
+          'Respect their privacy while maintaining appropriate boundaries',
+          'Say "I love you" even when they roll their eyes'
         ]
       }
     ],
@@ -135,49 +200,83 @@ export default function GuidancePage() {
       {
         id: 'friends',
         icon: <Users className="w-6 h-6" />,
-        title: 'Friendships',
-        description: 'Relationships become more important during puberty',
+        title: 'Supporting Friendship Changes',
+        description: 'Navigate shifting social dynamics with your child',
         tips: [
-          'Real friends accept you for who you are',
-          'It\'s okay if friendships change - you\'re all growing',
-          'Quality is more important than quantity',
-          'Be yourself - don\'t pretend to be someone you\'re not'
+          'Understand that friend groups naturally shift during puberty',
+          'Don\'t force friendships with kids YOU like - let them choose',
+          'Get to know their friends without being intrusive or judgmental',
+          'Validate feelings when friendships end - the pain is real',
+          'Teach them red flags: friends who pressure, exclude, or belittle',
+          'Model healthy friendships in your own life',
+          'Create a welcoming home where friends want to hang out',
+          'Balance supervision with space - hovering pushes them away'
         ]
       },
       {
         id: 'peer-pressure',
         icon: <Shield className="w-6 h-6" />,
-        title: 'Handling Peer Pressure',
-        description: 'Learn to make your own choices confidently',
+        title: 'Helping Them Handle Peer Pressure',
+        description: 'Equip your child to resist negative influences',
         tips: [
-          'It\'s okay to say "no" - real friends will respect that',
-          'You don\'t have to do something just because others do',
-          'If something feels wrong, trust your instincts',
-          'Find friends who share your values'
+          'Have conversations about peer pressure BEFORE situations arise',
+          'Role-play saying "no" in different scenarios',
+          'Give them an "out": blame you if needed ("My parents will kill me")',
+          'Teach them: real friends don\'t pressure or make them uncomfortable',
+          'Keep consequences reasonable so they\'ll still come to you when they mess up',
+          'Share your own peer pressure stories and what you learned',
+          'Help them identify their values and practice standing by them',
+          'Praise them when they make good choices, especially hard ones'
         ]
       },
       {
-        id: 'communication',
+        id: 'social-media',
         icon: <MessageCircle className="w-6 h-6" />,
-        title: 'Communication',
-        description: 'Express yourself clearly and listen to others',
+        title: 'Managing Social Media & Technology',
+        description: 'Navigate the digital landscape safely together',
         tips: [
-          'Use "I feel" statements instead of blaming',
-          'Listen actively when others speak',
-          'It\'s okay to disagree respectfully',
-          'Ask questions if you don\'t understand'
+          'Set clear boundaries around screen time and device use',
+          'Follow them on social media but don\'t comment embarrassingly',
+          'Discuss online safety: privacy settings, not sharing location, stranger danger',
+          'Monitor without spying - trust but verify',
+          'Talk about digital footprint - nothing is ever truly deleted',
+          'Watch for signs of cyberbullying or online harassment',
+          'Model healthy tech habits - put YOUR phone down too',
+          'Create phone-free zones: dinner table, bedrooms after bedtime',
+          'Understand that online friendships can be real and meaningful'
         ]
       },
       {
         id: 'boundaries',
         icon: <Shield className="w-6 h-6" />,
-        title: 'Personal Boundaries',
-        description: 'Understanding and respecting personal space',
+        title: 'Teaching About Boundaries & Consent',
+        description: 'Essential conversations about body autonomy and respect',
         tips: [
-          'Your body is yours - you control who touches it',
-          'Say "stop" if something makes you uncomfortable',
-          'Respect others\' boundaries too',
-          'Tell a trusted adult if someone crosses your boundaries'
+          'Start early: their body belongs to them, not you or anyone else',
+          'Don\'t force hugs/kisses with relatives - teach them they can say no',
+          'Explain consent clearly: enthusiastic yes, can be withdrawn anytime',
+          'Discuss how media often shows unhealthy relationship dynamics',
+          'Talk about boundaries in ALL relationships, not just romantic',
+          'Make it clear they can tell you if someone makes them uncomfortable',
+          'Teach them to respect others\' "no" as well',
+          'Discuss warning signs of unhealthy relationships',
+          'Keep conversations ongoing, not one awkward talk'
+        ]
+      },
+      {
+        id: 'romantic',
+        icon: <Heart className="w-6 h-6" />,
+        title: 'Navigating Romantic Feelings',
+        description: 'Support their first crushes and relationships',
+        tips: [
+          'Take their feelings seriously - don\'t mock or tease',
+          'Romantic feelings are normal at this age, including same-sex attractions',
+          'Set clear, age-appropriate dating rules together',
+          'Get to know anyone they\'re interested in',
+          'Discuss healthy vs. unhealthy relationship behaviors',
+          'Keep lines of communication open without prying',
+          'Be prepared for heartbreak and have tissues ready',
+          'Remember your own first crush feelings - have empathy'
         ]
       }
     ],
@@ -185,49 +284,82 @@ export default function GuidancePage() {
       {
         id: 'shower',
         icon: <Droplets className="w-6 h-6" />,
-        title: 'Daily Hygiene',
-        description: 'Keep your body clean and fresh',
+        title: 'Teaching Good Hygiene Habits',
+        description: 'Help your child develop healthy hygiene routines',
         tips: [
-          'Shower or bathe daily, especially after exercise',
-          'Use soap and shampoo - pay attention to underarms',
-          'Wash your face twice daily to prevent acne',
-          'Change into clean clothes daily'
+          'Explain WHY hygiene matters (body changes, social implications) without shaming',
+          'Provide necessary supplies: deodorant, face wash, razors when appropriate',
+          'Set expectations clearly: daily showers, especially after sports',
+          'Respect their privacy - knock before entering bathroom/bedroom',
+          'Be matter-of-fact, not embarrassed or judgmental',
+          'Boys need hygiene talks too - it\'s not just a "girl thing"',
+          'Address specific concerns: body odor, acne, period care openly',
+          'Model good hygiene yourself'
         ]
       },
       {
         id: 'deodorant',
         icon: <Sparkles className="w-6 h-6" />,
-        title: 'Managing Body Odor',
-        description: 'Everyone sweats more during puberty',
+        title: 'Having "The Smell Talk"',
+        description: 'Address body odor sensitively but directly',
         tips: [
-          'Use deodorant or antiperspirant daily',
-          'Apply after showering and before bed',
-          'Wear breathable fabrics like cotton',
-          'Keep extra deodorant in your backpack'
+          'Have this conversation privately, never in front of siblings/friends',
+          'Normalize it: "Everyone starts needing deodorant during puberty"',
+          'Offer choices - let them pick scents they like',
+          'Demonstrate proper application if needed',
+          'Remind them to reapply after gym class',
+          'Address laundry: dirty clothes can\'t be worn twice',
+          'Don\'t shame or tease - it\'s a sensitive topic',
+          'If excessive sweating is an issue, consult a doctor about options'
         ]
       },
       {
         id: 'skin',
         icon: <Heart className="w-6 h-6" />,
-        title: 'Skin Care',
-        description: 'Take care of your changing skin',
+        title: 'Helping with Acne & Skin Changes',
+        description: 'Support your child through skin challenges',
         tips: [
-          'Wash your face gently - don\'t scrub too hard',
-          'Use oil-free moisturizer if your skin is dry',
-          'Never pop pimples - it can cause scarring',
-          'See a doctor if acne bothers you'
+          'Take acne seriously - it affects self-esteem significantly',
+          'Provide gentle cleansers and oil-free moisturizers',
+          'Don\'t comment on every pimple or make them feel self-conscious',
+          'Teach proper face-washing technique (gentle, not harsh scrubbing)',
+          'See a dermatologist if over-the-counter products aren\'t working',
+          'Remind them: acne is temporary, scars from picking aren\'t',
+          'Address myths: chocolate doesn\'t cause acne, but dairy might contribute',
+          'Be patient - clear skin doesn\'t happen overnight'
         ]
       },
       {
         id: 'period',
         icon: <CheckCircle className="w-6 h-6" />,
-        title: 'Period Care (for those who menstruate)',
-        description: 'Managing your monthly cycle',
+        title: 'Supporting Your Daughter Through Periods',
+        description: 'Make menstruation less scary and more manageable',
         tips: [
-          'Change pads/tampons every 4-6 hours',
-          'Keep supplies in your bag for emergencies',
-          'Track your cycle to know when to expect it',
-          'Gentle exercise can help with cramps'
+          'Talk about periods BEFORE they start (age 8-10 typically)',
+          'Normalize it - it\'s a body function, not shameful or gross',
+          'Stock bathroom with supplies and show her where they are',
+          'Explain all options: pads, tampons, period underwear, cups',
+          'Create an emergency kit for her backpack/locker',
+          'Teach tracking so she knows when to expect it',
+          'Discuss cramp management: heat, pain relievers, rest',
+          'Know when to see a doctor: extremely heavy flow, severe pain, irregular cycles',
+          'IMPORTANT: Sons should learn about periods too - it normalizes it for everyone'
+        ]
+      },
+      {
+        id: 'privacy',
+        icon: <Shield className="w-6 h-6" />,
+        title: 'Respecting Their Need for Privacy',
+        description: 'Balance supervision with giving them space',
+        tips: [
+          'Knock before entering their room or bathroom',
+          'Don\'t go through their belongings without permission (unless safety concerns)',
+          'Let them shower/dress without interruption',
+          'Understand increased modesty is developmentally appropriate',
+          'Don\'t share embarrassing stories about their body changes with others',
+          'Give them language to ask for privacy respectfully',
+          'Privacy is a privilege that grows with responsibility',
+          'Trust them while maintaining appropriate parental oversight'
         ]
       }
     ]
