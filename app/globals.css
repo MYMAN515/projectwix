@@ -34,3 +34,21 @@ body {
     @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
   }
 }
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="rtl"] body {
+  text-align: right;
+}
+
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Smooth transitions for language switching */
+* {
+  transition: direction 0.3s ease;
+}

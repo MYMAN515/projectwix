@@ -3,45 +3,47 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Heart, Brain, Sparkles, Smile, Cloud, Zap } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function ChangesPage() {
+  const { t } = useLanguage()
   const [activeTab, setActiveTab] = useState<'physical' | 'emotional'>('physical')
 
   const physicalChanges = [
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "Growth Spurts",
-      description: "You'll grow taller! This happens at different times for everyone.",
+      title: t('physical.growthSpurts'),
+      description: t('physical.growthSpurtsDesc'),
       color: "from-blue-400 to-cyan-500"
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: "Body Shape Changes",
-      description: "Your body will develop new curves and proportions as you mature.",
+      title: t('physical.bodyShape'),
+      description: t('physical.bodyShapeDesc'),
       color: "from-pink-400 to-rose-500"
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Voice Changes",
-      description: "Your voice may deepen or change in pitch - this is totally normal!",
+      title: t('physical.voice'),
+      description: t('physical.voiceDesc'),
       color: "from-purple-400 to-indigo-500"
     },
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "Skin Changes",
-      description: "You might get acne or oily skin. Good hygiene helps manage this.",
+      title: t('physical.skin'),
+      description: t('physical.skinDesc'),
       color: "from-amber-400 to-orange-500"
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: "Hair Growth",
-      description: "New hair will grow in different places on your body.",
+      title: t('physical.hair'),
+      description: t('physical.hairDesc'),
       color: "from-green-400 to-emerald-500"
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Body Odor",
-      description: "You'll start to sweat more. Using deodorant becomes important!",
+      title: t('physical.odor'),
+      description: t('physical.odorDesc'),
       color: "from-teal-400 to-cyan-500"
     }
   ]
@@ -49,38 +51,38 @@ export default function ChangesPage() {
   const emotionalChanges = [
     {
       icon: <Brain className="w-6 h-6" />,
-      title: "Mood Swings",
-      description: "Your emotions might feel like a rollercoaster - that's normal!",
+      title: t('emotional.moodSwings'),
+      description: t('emotional.moodSwingsDesc'),
       color: "from-purple-400 to-pink-500"
     },
     {
       icon: <Smile className="w-6 h-6" />,
-      title: "New Interests",
-      description: "You might develop new hobbies, interests, and passions.",
+      title: t('emotional.interests'),
+      description: t('emotional.interestsDesc'),
       color: "from-yellow-400 to-amber-500"
     },
     {
       icon: <Cloud className="w-6 h-6" />,
-      title: "Independence",
-      description: "You'll want more privacy and independence from family.",
+      title: t('emotional.independence'),
+      description: t('emotional.independenceDesc'),
       color: "from-blue-400 to-indigo-500"
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: "Relationships",
-      description: "Friendships and social connections become more important.",
+      title: t('emotional.relationships'),
+      description: t('emotional.relationshipsDesc'),
       color: "from-rose-400 to-pink-500"
     },
     {
       icon: <Brain className="w-6 h-6" />,
-      title: "Self-Awareness",
-      description: "You'll think more about who you are and who you want to be.",
+      title: t('emotional.selfAwareness'),
+      description: t('emotional.selfAwarenessDesc'),
       color: "from-cyan-400 to-blue-500"
     },
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "Confidence",
-      description: "Building confidence takes time - be patient with yourself!",
+      title: t('emotional.confidence'),
+      description: t('emotional.confidenceDesc'),
       color: "from-orange-400 to-red-500"
     }
   ]
@@ -96,10 +98,10 @@ export default function ChangesPage() {
         className="text-center mb-12"
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-          Understanding Changes
+          {t('changes.title')}
         </h1>
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-          Puberty brings many changes to your body and mind. Let's explore them together! 🌟
+          {t('changes.subtitle')}
         </p>
       </motion.div>
 
@@ -119,7 +121,7 @@ export default function ChangesPage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            💪 Physical
+            💪 {t('changes.physical')}
           </button>
           <button
             onClick={() => setActiveTab('emotional')}
@@ -129,7 +131,7 @@ export default function ChangesPage() {
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            💭 Emotional
+            💭 {t('changes.emotional')}
           </button>
         </div>
       </motion.div>
@@ -168,18 +170,12 @@ export default function ChangesPage() {
         className="glass-effect rounded-3xl p-8 md:p-10 max-w-4xl mx-auto"
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-gray-800">
-          Remember: Everyone is Different 🌈
+          {t('changes.everyone')}
         </h2>
         <div className="space-y-4 text-gray-700 text-lg">
-          <p>
-            <strong>Timing:</strong> Puberty can start anywhere from ages 8-14. There's no "right" time!
-          </p>
-          <p>
-            <strong>Pace:</strong> Some changes happen quickly, others take years. Your journey is unique.
-          </p>
-          <p>
-            <strong>Support:</strong> Talk to trusted adults if you have questions or concerns. They're here to help!
-          </p>
+          <p>{t('changes.timing')}</p>
+          <p>{t('changes.pace')}</p>
+          <p>{t('changes.support')}</p>
         </div>
       </motion.div>
     </div>

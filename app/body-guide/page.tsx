@@ -3,10 +3,12 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { User, Users, Info, ChevronRight } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 type Gender = 'general' | 'female' | 'male'
 
 export default function BodyGuidePage() {
+  const { t } = useLanguage()
   const [selectedGender, setSelectedGender] = useState<Gender>('general')
   const [expandedSection, setExpandedSection] = useState<string | null>(null)
 
@@ -106,10 +108,10 @@ export default function BodyGuidePage() {
         className="text-center mb-8 md:mb-12"
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-          Body Changes Guide
+          {t('bodyGuide.title')}
         </h1>
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-          Explore the physical changes that happen during puberty 🌱
+          {t('bodyGuide.subtitle')}
         </p>
       </motion.div>
 
@@ -129,10 +131,10 @@ export default function BodyGuidePage() {
               ? 'bg-gradient-to-r from-green-400 to-teal-500 text-white shadow-lg'
               : 'glass-effect text-gray-700 hover:border-2 hover:border-green-300'
           }`}
-        >
-          <Users className="w-6 h-6" />
-          Everyone
-        </motion.button>
+          >
+            <Users className="w-6 h-6" />
+            {t('bodyGuide.everyone')}
+          </motion.button>
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -144,7 +146,7 @@ export default function BodyGuidePage() {
           }`}
         >
           <User className="w-6 h-6" />
-          Female Body
+          {t('bodyGuide.femaleBody')}
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.05 }}
@@ -157,7 +159,7 @@ export default function BodyGuidePage() {
           }`}
         >
           <User className="w-6 h-6" />
-          Male Body
+          {t('bodyGuide.maleBody')}
         </motion.button>
       </motion.div>
 
@@ -223,21 +225,13 @@ export default function BodyGuidePage() {
         className="mt-12 glass-effect rounded-3xl p-8 md:p-10 max-w-4xl mx-auto"
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-gray-800">
-          Remember: Everyone is Unique 🌈
+          {t('bodyGuide.unique')}
         </h2>
         <div className="space-y-4 text-gray-700 text-lg">
-          <p>
-            <strong>⏰ Timing:</strong> These changes can start anywhere from ages 8-14 and continue into late teens or early 20s.
-          </p>
-          <p>
-            <strong>📏 Variation:</strong> There's NO "normal" - everyone develops differently!
-          </p>
-          <p>
-            <strong>💬 Questions?</strong> Always feel comfortable talking to a parent, guardian, doctor, or trusted adult.
-          </p>
-          <p>
-            <strong>🏥 Health:</strong> If something hurts or worries you, don't hesitate to ask for help!
-          </p>
+          <p>{t('bodyGuide.timingNote')}</p>
+          <p>{t('bodyGuide.variationNote')}</p>
+          <p>{t('bodyGuide.questionsNote')}</p>
+          <p>{t('bodyGuide.healthNote')}</p>
         </div>
       </motion.div>
     </div>

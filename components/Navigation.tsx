@@ -5,17 +5,26 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
+import LanguageSelector from './LanguageSelector'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
+  const { t } = useLanguage()
 
   const links = [
-    { href: '/', label: 'Home', icon: <Home className="w-5 h-5" /> },
-    { href: '/changes', label: 'Changes', icon: <Heart className="w-5 h-5" /> },
-    { href: '/timeline', label: 'Timeline', icon: <Activity className="w-5 h-5" /> },
-    { href: '/diary', label: 'Diary', icon: <BookOpen className="w-5 h-5" /> },
-    { href: '/body-guide', label: 'Body Guide', icon: <Sparkles className="w-5 h-5" /> },
+    { href: '/', label: t('nav.home'), icon: <Home className="w-5 h-5" /> },
+    { href: '/changes', label: t('nav.changes'), icon: <Heart className="w-5 h-5" /> },
+    { href: '/timeline', label: t('nav.timeline'), icon: <Activity className="w-5 h-5" /> },
+    { href: '/diary', label: t('nav.diary'), icon: <BookOpen className="w-5 h-5" /> },
+    { href: '/body-guide', label: t('nav.bodyGuide'), icon: <Sparkles className="w-5 h-5" /> },
+  ]
+  
+  // Additional links for mobile menu
+  const moreLinks = [
+    { href: '/tips', label: t('nav.tips') },
+    { href: '/faq', label: t('nav.faq') },
   ]
 
   const isActive = (href: string) => pathname === href
@@ -40,6 +49,7 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
+            <LanguageSelector />
             {links.map((link) => (
               <Link key={link.href} href={link.href}>
                 <motion.div
@@ -58,14 +68,17 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
+          {/* Mobile Language Selector & Menu Button */}
+          <div className="flex items-center gap-2 md:hidden">
+            <LanguageSelector />
+            <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -98,6 +111,30 @@ export default function Navigation() {
                   </Link>
                 </motion.div>
               ))}
+              
+              {/* Additional Links */}
+              <div className="border-t border-gray-200 my-2 pt-2">
+                {moreLinks.map((link, index) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: (links.length + index) * 0.1 }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`flex items-center space-x-3 px-4 py-3 rounded-lg mb-2 transition-all ${
+                        isActive(link.href)
+                          ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white'
+                          : 'text-gray-700 hover:bg-gray-100'
+                      }`}
+                    >
+                      <span className="font-medium">{link.label}</span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
