@@ -2,37 +2,47 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Heart, Activity, BookOpen, Sparkles } from 'lucide-react'
+import { Heart, Activity, BookOpen, Sparkles, Lightbulb } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Home() {
+  const { t } = useLanguage()
+  
   const features = [
     {
       icon: <Heart className="w-8 h-8" />,
-      title: "Physical & Emotional Changes",
-      description: "Learn about the natural changes happening to your body and mind",
+      title: t('home.feature1.title'),
+      description: t('home.feature1.desc'),
       href: "/changes",
       color: "from-pink-400 to-rose-500"
     },
     {
       icon: <Activity className="w-8 h-8" />,
-      title: "Timeline Activity",
-      description: "Interactive matching game to understand before and after puberty",
+      title: t('home.feature2.title'),
+      description: t('home.feature2.desc'),
       href: "/timeline",
       color: "from-blue-400 to-cyan-500"
     },
     {
       icon: <BookOpen className="w-8 h-8" />,
-      title: "Mood Diary",
-      description: "Track your feelings and emotions on your journey",
+      title: t('home.feature3.title'),
+      description: t('home.feature3.desc'),
       href: "/diary",
       color: "from-purple-400 to-pink-500"
     },
     {
       icon: <Sparkles className="w-8 h-8" />,
-      title: "Body Changes Guide",
-      description: "Gender-sensitive animations and information about growth",
+      title: t('home.feature4.title'),
+      description: t('home.feature4.desc'),
       href: "/body-guide",
       color: "from-amber-400 to-orange-500"
+    },
+    {
+      icon: <Lightbulb className="w-8 h-8" />,
+      title: t('home.feature5.title'),
+      description: t('home.feature5.desc'),
+      href: "/coping-tips",
+      color: "from-green-400 to-emerald-500"
     }
   ]
 
@@ -50,10 +60,10 @@ export default function Home() {
           animate={{ scale: [1, 1.02, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          Understanding Puberty
+          {t('home.title')}
         </motion.h1>
         <p className="text-lg md:text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto mb-8 px-4">
-          A safe and friendly space to learn about the changes happening in your body and mind 🌟
+          {t('home.subtitle')}
         </p>
         <motion.div
           initial={{ opacity: 0 }}
@@ -67,7 +77,7 @@ export default function Home() {
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
             >
-              Start Learning
+              {t('home.startLearning')}
             </motion.button>
           </Link>
           <Link href="/diary">
@@ -76,7 +86,7 @@ export default function Home() {
               whileTap={{ scale: 0.95 }}
               className="bg-white text-primary-600 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all border-2 border-primary-200 w-full sm:w-auto"
             >
-              My Diary
+              {t('home.myDiary')}
             </motion.button>
           </Link>
         </motion.div>
@@ -115,12 +125,10 @@ export default function Home() {
         className="glass-effect rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto"
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">
-          You're Not Alone 💙
+          {t('home.notAlone')}
         </h2>
         <p className="text-gray-700 text-lg leading-relaxed">
-          Puberty is a natural part of growing up. Everyone goes through it at their own pace. 
-          This app is here to help you understand what's happening, track your journey, and feel 
-          confident about the changes ahead.
+          {t('home.notAloneText')}
         </p>
       </motion.div>
     </div>
