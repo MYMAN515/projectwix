@@ -3,19 +3,23 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles } from 'lucide-react'
+import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles, Lightbulb } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
+  const { t } = useLanguage()
 
   const links = [
-    { href: '/', label: 'Home', icon: <Home className="w-5 h-5" /> },
-    { href: '/changes', label: 'Changes', icon: <Heart className="w-5 h-5" /> },
-    { href: '/timeline', label: 'Timeline', icon: <Activity className="w-5 h-5" /> },
-    { href: '/diary', label: 'Diary', icon: <BookOpen className="w-5 h-5" /> },
-    { href: '/body-guide', label: 'Body Guide', icon: <Sparkles className="w-5 h-5" /> },
+    { href: '/', label: t('nav.home'), icon: <Home className="w-5 h-5" /> },
+    { href: '/changes', label: t('nav.changes'), icon: <Heart className="w-5 h-5" /> },
+    { href: '/timeline', label: t('nav.timeline'), icon: <Activity className="w-5 h-5" /> },
+    { href: '/diary', label: t('nav.diary'), icon: <BookOpen className="w-5 h-5" /> },
+    { href: '/body-guide', label: t('nav.bodyGuide'), icon: <Sparkles className="w-5 h-5" /> },
+    { href: '/guidance', label: t('nav.guidance'), icon: <Lightbulb className="w-5 h-5" /> },
   ]
 
   const isActive = (href: string) => pathname === href
@@ -39,7 +43,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-1">
             {links.map((link) => (
               <Link key={link.href} href={link.href}>
                 <motion.div
@@ -56,26 +60,35 @@ export default function Navigation() {
                 </motion.div>
               </Link>
             ))}
+            <LanguageSwitcher />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Tablet Navigation - Language Switcher Only */}
+          <div className="hidden md:flex lg:hidden items-center">
+            <LanguageSwitcher />
+          </div>
+
+          {/* Mobile Actions */}
+          <div className="flex md:hidden items-center gap-2">
+            <LanguageSwitcher />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile & Tablet Navigation */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden pb-4"
+              className="lg:hidden pb-4"
             >
               {links.map((link, index) => (
                 <motion.div

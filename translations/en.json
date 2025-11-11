@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "home": "Home",
+    "changes": "Changes",
+    "timeline": "Timeline",
+    "diary": "Diary",
+    "bodyGuide": "Body Guide",
+    "guidance": "Guidance"
+  },
+  "home": {
+    "title": "Understanding Puberty",
+    "subtitle": "A safe and friendly space to learn about the changes happening in your body and mind 🌟",
+    "startLearning": "Start Learning",
+    "myDiary": "My Diary",
+    "features": {
+      "changes": {
+        "title": "Physical & Emotional Changes",
+        "description": "Learn about the natural changes happening to your body and mind"
+      },
+      "timeline": {
+        "title": "Timeline Activity",
+        "description": "Interactive matching game to understand before and after puberty"
+      },
+      "diary": {
+        "title": "Mood Diary",
+        "description": "Track your feelings and emotions on your journey"
+      },
+      "bodyGuide": {
+        "title": "Body Changes Guide",
+        "description": "Gender-sensitive animations and information about growth"
+      },
+      "guidance": {
+        "title": "Helpful Guidance",
+        "description": "Learn how to deal with changes and feel confident"
+      }
+    },
+    "notAlone": {
+      "title": "You're Not Alone 💙",
+      "content": "Puberty is a natural part of growing up. Everyone goes through it at their own pace. This app is here to help you understand what's happening, track your journey, and feel confident about the changes ahead."
+    }
+  },
+  "changes": {
+    "title": "Understanding Changes",
+    "subtitle": "Puberty brings many changes to your body and mind. Let's explore them together! 🌟",
+    "physical": "Physical",
+    "emotional": "Emotional",
+    "physicalChanges": {
+      "growth": {
+        "title": "Growth Spurts",
+        "description": "You'll grow taller! This happens at different times for everyone."
+      },
+      "bodyShape": {
+        "title": "Body Shape Changes",
+        "description": "Your body will develop new curves and proportions as you mature."
+      },
+      "voice": {
+        "title": "Voice Changes",
+        "description": "Your voice may deepen or change in pitch - this is totally normal!"
+      },
+      "skin": {
+        "title": "Skin Changes",
+        "description": "You might get acne or oily skin. Good hygiene helps manage this."
+      },
+      "hair": {
+        "title": "Hair Growth",
+        "description": "New hair will grow in different places on your body."
+      },
+      "odor": {
+        "title": "Body Odor",
+        "description": "You'll start to sweat more. Using deodorant becomes important!"
+      }
+    },
+    "emotionalChanges": {
+      "mood": {
+        "title": "Mood Swings",
+        "description": "Your emotions might feel like a rollercoaster - that's normal!"
+      },
+      "interests": {
+        "title": "New Interests",
+        "description": "You might develop new hobbies, interests, and passions."
+      },
+      "independence": {
+        "title": "Independence",
+        "description": "You'll want more privacy and independence from family."
+      },
+      "relationships": {
+        "title": "Relationships",
+        "description": "Friendships and social connections become more important."
+      },
+      "awareness": {
+        "title": "Self-Awareness",
+        "description": "You'll think more about who you are and who you want to be."
+      },
+      "confidence": {
+        "title": "Confidence",
+        "description": "Building confidence takes time - be patient with yourself!"
+      }
+    },
+    "remember": {
+      "title": "Remember: Everyone is Different 🌈",
+      "timing": "Timing: Puberty can start anywhere from ages 8-14. There's no \"right\" time!",
+      "pace": "Pace: Some changes happen quickly, others take years. Your journey is unique.",
+      "support": "Support: Talk to trusted adults if you have questions or concerns. They're here to help!"
+    }
+  },
+  "diary": {
+    "title": "My Feelings Diary",
+    "subtitle": "Track your moods and thoughts during your journey 📝",
+    "addEntry": "Add New Entry",
+    "cancel": "Cancel",
+    "howFeeling": "How are you feeling today?",
+    "moods": {
+      "happy": "Happy",
+      "neutral": "Neutral",
+      "sad": "Sad",
+      "excited": "Excited",
+      "anxious": "Anxious"
+    },
+    "placeholder": "What's on your mind? Share your thoughts, feelings, or what happened today...",
+    "saveEntry": "Save Entry",
+    "noEntries": "No entries yet. Start by adding your first one! 💭",
+    "tips": {
+      "title": "💡 Diary Tips",
+      "regular": "✨ Write regularly - even just a few sentences helps!",
+      "honest": "🎯 Be honest about your feelings - this is your private space",
+      "lookback": "🌈 Look back at old entries to see how you've grown",
+      "valid": "💪 Remember: all feelings are valid and normal"
+    }
+  },
+  "bodyGuide": {
+    "title": "Body Changes Guide",
+    "subtitle": "Explore the physical changes that happen during puberty 🌱",
+    "everyone": "Everyone",
+    "femaleBody": "Female Body",
+    "maleBody": "Male Body",
+    "remember": {
+      "title": "Remember: Everyone is Unique 🌈",
+      "timing": "⏰ Timing: These changes can start anywhere from ages 8-14 and continue into late teens or early 20s.",
+      "variation": "📏 Variation: There's NO \"normal\" - everyone develops differently!",
+      "questions": "💬 Questions? Always feel comfortable talking to a parent, guardian, doctor, or trusted adult.",
+      "health": "🏥 Health: If something hurts or worries you, don't hesitate to ask for help!"
+    }
+  },
+  "timeline": {
+    "title": "Timeline Matching Game",
+    "subtitle": "Match each change to before or after puberty begins! 🎯",
+    "score": "Score",
+    "attempts": "Attempts",
+    "accuracy": "Accuracy",
+    "congratulations": "Congratulations! 🎉",
+    "completed": "You completed the game with {score} correct out of {attempts} attempts!",
+    "playAgain": "Play Again",
+    "selectCard": "👇 Click on a card below, then choose when it happens!",
+    "chooseStage": "👆 Now click either \"Before Puberty\" or \"After Puberty\" below!",
+    "beforePuberty": "👶 Before Puberty",
+    "afterPuberty": "🌟 After Puberty",
+    "resetGame": "Reset Game"
+  },
+  "guidance": {
+    "title": "Helpful Guidance",
+    "subtitle": "Learn practical ways to handle puberty changes with confidence 💪",
+    "categories": {
+      "physical": "Physical Care",
+      "emotional": "Emotional Wellbeing",
+      "social": "Social Life",
+      "hygiene": "Personal Hygiene"
+    }
+  },
+  "footer": {
+    "title": "Puberty Awareness",
+    "subtitle": "A safe space to learn and grow 🌱",
+    "copyright": "© 2025 - Educational Resource"
+  }
+}
