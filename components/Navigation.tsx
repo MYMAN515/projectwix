@@ -15,10 +15,10 @@ export default function Navigation() {
 
   const links = [
     { href: '/', label: t('nav.home'), icon: <Home className="w-5 h-5" /> },
+    { href: '/parent-guide', label: t('nav.parentGuide'), icon: <BookOpen className="w-5 h-5" /> },
+    { href: '/games', label: t('nav.games'), icon: <Activity className="w-5 h-5" /> },
     { href: '/changes', label: t('nav.changes'), icon: <Heart className="w-5 h-5" /> },
-    { href: '/timeline', label: t('nav.timeline'), icon: <Activity className="w-5 h-5" /> },
-    { href: '/diary', label: t('nav.diary'), icon: <BookOpen className="w-5 h-5" /> },
-    { href: '/body-guide', label: t('nav.bodyGuide'), icon: <Sparkles className="w-5 h-5" /> },
+    { href: '/diary', label: t('nav.diary'), icon: <Sparkles className="w-5 h-5" /> },
     { href: '/guidance', label: t('nav.guidance'), icon: <Lightbulb className="w-5 h-5" /> },
   ]
 
@@ -38,7 +38,7 @@ export default function Navigation() {
               <Sparkles className="w-6 h-6 text-white" />
             </motion.div>
             <span className="font-bold text-xl bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent hidden sm:inline">
-              Puberty Awareness
+              Parenting Hub
             </span>
           </Link>
 

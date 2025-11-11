@@ -1,111 +1,448 @@
 {
   "nav": {
     "home": "Laman Utama",
-    "changes": "Perubahan",
-    "timeline": "Garis Masa",
-    "diary": "Diari",
+    "changes": "Perubahan Anak",
+    "timeline": "Permainan Garis Masa",
+    "diary": "Diari Anak",
     "bodyGuide": "Panduan Badan",
-    "guidance": "Bimbingan"
+    "guidance": "Panduan Ibu Bapa",
+    "games": "Permainan & Aktiviti",
+    "parentGuide": "Petua Keibubapaan"
   },
   "home": {
-    "title": "Memahami Akil Baligh",
-    "subtitle": "Ruang yang selamat dan mesra untuk belajar tentang perubahan yang berlaku pada badan dan minda anda 🌟",
-    "startLearning": "Mula Belajar",
-    "myDiary": "Diari Saya",
+    "title": "Menyokong Anak Anda Melalui Akil Baligh",
+    "subtitle": "Panduan komprehensif untuk ibu bapa memahami dan menyokong anak-anak mereka dalam fasa penting ini 💙",
+    "forParents": "Untuk Ibu Bapa",
+    "forChildren": "Untuk Anak Anda",
+    "startLearning": "Terokai Panduan Ibu Bapa",
+    "myDiary": "Lihat Aktiviti",
     "features": {
+      "parentGuide": {
+        "title": "Panduan Ibu Bapa Komprehensif",
+        "description": "Nasihat pakar tentang komunikasi, sokongan emosi, dan menavigasi akil baligh bersama"
+      },
+      "games": {
+        "title": "Permainan Interaktif untuk Kanak-kanak",
+        "description": "Permainan pendidikan untuk membantu anak anda belajar tentang akil baligh dengan cara yang menyeronokkan"
+      },
       "changes": {
-        "title": "Perubahan Fizikal & Emosi",
-        "description": "Ketahui tentang perubahan semula jadi yang berlaku pada badan dan minda anda"
+        "title": "Memahami Perubahan Fizikal & Emosi",
+        "description": "Ketahui apa yang dialami anak anda dan bagaimana menyokong mereka"
       },
       "timeline": {
         "title": "Aktiviti Garis Masa",
-        "description": "Permainan padanan interaktif untuk memahami sebelum dan selepas akil baligh"
+        "description": "Permainan interaktif untuk anak anda belajar tentang peringkat akil baligh"
       },
       "diary": {
-        "title": "Diari Mood",
-        "description": "Jejak perasaan dan emosi anda dalam perjalanan anda"
+        "title": "Diari Mood untuk Anak Anda",
+        "description": "Ruang selamat untuk anak anda menjejak dan menyatakan perasaan mereka"
       },
       "bodyGuide": {
         "title": "Panduan Perubahan Badan",
-        "description": "Animasi dan maklumat sensitif jantina tentang pertumbuhan"
+        "description": "Maklumat sesuai umur tentang perkembangan fizikal"
       },
-      "guidance": {
-        "title": "Bimbingan Berguna",
-        "description": "Belajar cara menangani perubahan dan berasa yakin"
+      "aiChat": {
+        "title": "Pembantu AI untuk Ibu Bapa",
+        "description": "Dapatkan jawapan segera untuk soalan keibubapaan anda tentang akil baligh"
       }
     },
     "notAlone": {
-      "title": "Anda Tidak Bersendirian 💙",
-      "content": "Akil baligh adalah bahagian semula jadi membesar. Semua orang melaluinya pada kadar mereka sendiri. Aplikasi ini di sini untuk membantu anda memahami apa yang berlaku, menjejak perjalanan anda, dan berasa yakin tentang perubahan yang akan datang."
+      "title": "Anda Tidak Bersendirian dalam Perjalanan Ini 💙",
+      "content": "Menavigasi akil baligh dengan anak anda boleh terasa mencabar, tetapi anda melakukan yang terbaik! Aplikasi ini menyediakan panduan berasaskan bukti, petua praktikal, dan aktiviti interaktif untuk membantu anda menyokong anak anda dengan yakin dan belas kasihan. Ingat: komunikasi terbuka dan kasih sayang tanpa syarat adalah alat terhebat anda."
+    }
+  },
+  "welcome": {
+    "slide1": {
+      "title": "Selamat Datang, Ibu Bapa yang Dihormati! 💝",
+      "subtitle": "Kami Sangat Gembira Anda Di Sini",
+      "description": "Keibubapaan melalui akil baligh boleh terasa luar biasa, tetapi anda tidak perlu menavigasinya bersendirian. Aplikasi ini direka dengan kasih sayang untuk menyokong ANDA dalam menyokong anak anda melalui salah satu peralihan paling penting dalam hidup. Bersama-sama, kami akan menjadikan perjalanan ini lebih lancar untuk seluruh keluarga anda."
+    },
+    "slide2": {
+      "title": "Memahami Peranan Anda",
+      "subtitle": "Anda adalah Panduan Paling Penting Anak Anda",
+      "description": "Anak anda memerlukan kebijaksanaan, kesabaran, dan sokongan tanpa syarat anda lebih daripada sebelumnya. Aplikasi ini membantu anda memahami apa yang mereka alami secara fizikal dan emosi, supaya anda boleh memberikan bimbingan yang mereka perlukan sambil menghormati kemerdekaan dan privasi mereka yang semakin meningkat."
+    },
+    "slide3": {
+      "title": "Apa Yang Ditawarkan Aplikasi Ini",
+      "subtitle": "Segala-galanya Yang Anda Perlukan di Satu Tempat",
+      "feature1": "Panduan keibubapaan pakar tentang komunikasi dan sokongan emosi",
+      "feature2": "Permainan pendidikan dan aktiviti untuk anak anda",
+      "feature3": "Maklumat sesuai umur tentang perubahan fizikal dan emosi",
+      "feature4": "Pembantu dikuasakan AI untuk menjawab soalan keibubapaan anda",
+      "feature5": "Ruang diari peribadi untuk anak anda memproses perasaan mereka"
+    },
+    "slide4": {
+      "title": "Privasi & Keselamatan Anda Penting",
+      "subtitle": "Kami Mengambil Kepercayaan Anda Dengan Serius",
+      "point1": "Semua data kekal pada peranti anda - tiada apa yang dihantar ke pelayan luar",
+      "point2": "Tiada penjejakan, tiada analitik, tiada akses pihak ketiga kepada maklumat anda",
+      "point3": "Ciri diari adalah benar-benar peribadi - hanya anak anda boleh mengakses catatan mereka",
+      "point4": "Ini adalah ruang selamat, bebas penghakiman yang direka dengan keselamatan kanak-kanak dan privasi keluarga sebagai keutamaan utama",
+      "acceptPrivacy": "Saya faham dan terima dasar privasi"
+    },
+    "next": "Seterusnya",
+    "previous": "Sebelumnya",
+    "skip": "Langkau ke Privasi",
+    "getStarted": "Mari Mulakan Perjalanan Ini"
+  },
+  "aiChat": {
+    "title": "Pembantu Ibu Bapa",
+    "subtitle": "Tanya saya apa sahaja tentang akil baligh",
+    "greeting": "Hello! Saya di sini untuk membantu anda menavigasi keibubapaan melalui akil baligh. Tanya saya apa sahaja - dari mengendalikan perbualan sukar hingga memahami perubahan fizikal. Bagaimana saya boleh menyokong anda hari ini?",
+    "placeholder": "Taip soalan anda di sini...",
+    "suggestedTitle": "Soalan yang dicadangkan:",
+    "suggestions": {
+      "q1": "Bagaimana saya memulakan perbualan akil baligh?",
+      "q2": "Bagaimana saya boleh menyokong emosi anak saya?",
+      "q3": "Aktiviti apa yang boleh membantu anak saya?",
+      "q4": "Bagaimana saya menangani perubahan mood?"
+    },
+    "response": {
+      "puberty": "Soalan bagus! Memulakan perbualan tentang akil baligh awal dan mengekalkannya berterusan adalah kunci. Gunakan peluang semula jadi seperti melihat kandungan berkaitan di TV atau buku. Pastikan nada santai dan normalkan topik. Biarkan anak anda tahu mereka sentiasa boleh datang kepada anda dengan soalan, dan yakinkan mereka bahawa semua perubahan yang mereka alami adalah benar-benar normal.",
+      "emotions": "Sokongan emosi semasa akil baligh adalah penting. Sahkan perasaan anak anda - perubahan mood adalah normal kerana perubahan hormon. Dengar tanpa penghakiman, beri mereka ruang apabila diperlukan, tetapi juga beritahu mereka anda sentiasa ada. Bantu mereka mengenal pasti dan menamakan emosi mereka, dan ajar strategi menangani yang sihat.",
+      "communication": "Komunikasi berkesan membina kepercayaan. Amalkan mendengar aktif - singkirkan gangguan dan beri perhatian penuh. Tanya soalan terbuka daripada soalan ya/tidak. Kongsi pengalaman anda sendiri (sesuai umur) untuk menunjukkan pemahaman. Yang paling penting, cipta zon bebas penghakiman di mana mereka berasa selamat berkongsi apa sahaja.",
+      "social": "Dinamik sosial berubah semasa akil baligh. Bantu anak anda menavigasi persahabatan dengan membincangkan seperti apa hubungan yang sihat. Bincangkan tekanan rakan sebaya dan beri mereka bahasa untuk menetapkan sempadan. Galakkan persahabatan yang pelbagai dan sahkan perasaan mereka apabila persahabatan berubah atau berakhir.",
+      "privacy": "Aplikasi ini mengutamakan privasi sepenuhnya. Semua catatan diari dan data kekal pada peranti anda. Diari adalah ruang peribadi untuk anak anda. Kami tidak menjejak pengguna atau mengumpul maklumat peribadi. Privasi keluarga anda dan keselamatan anak anda adalah keutamaan utama kami.",
+      "activities": "Bahagian Permainan menawarkan aktiviti interaktif yang direka untuk mengajar tentang akil baligh dengan cara yang menyeronokkan dan menarik. Ini termasuk permainan ingatan, latihan pengiktirafan emosi, dan aktiviti padanan. Permainan ini membantu menormalkan perbualan tentang akil baligh dan menjadikan pembelajaran menyeronokkan daripada janggal.",
+      "default": "Saya di sini untuk membantu anda dengan sebarang soalan keibubapaan tentang akil baligh! Anda boleh tanya saya tentang: strategi komunikasi, memahami perubahan fizikal/emosi, mengendalikan situasi sukar, menyokong kesihatan mental anak anda, menavigasi cabaran sosial, dan banyak lagi. Apa yang anda ingin tahu?"
+    }
+  },
+  "games": {
+    "title": "Permainan & Aktiviti Interaktif",
+    "subtitle": "Permainan pendidikan yang menyeronokkan untuk anak anda belajar tentang akil baligh 🎮",
+    "easy": "Mudah",
+    "medium": "Sederhana",
+    "moreActivities": "Lebih Banyak Aktiviti Tersedia",
+    "startGame": "Mula Permainan",
+    "score": "Skor",
+    "question": "Soalan",
+    "scenario": "Senario",
+    "congratulations": "Tahniah!",
+    "wellDone": "Bagus!",
+    "quizComplete": "Kuiz Selesai!",
+    "yourScore": "Skor Anda",
+    "perfectScore": "Sempurna! Anda padankan semuanya!",
+    "playAgain": "Main Lagi",
+    "close": "Tutup",
+    "memory": {
+      "title": "Permainan Ingatan Emosi",
+      "description": "Padankan pasangan emosi sambil belajar tentang perasaan semasa akil baligh",
+      "instructions": "Cari pasangan emosi yang sepadan. Ingat di mana setiap emosi dan padankan semuanya untuk menang!"
+    },
+    "quiz": {
+      "title": "Kuiz Pengetahuan Akil Baligh",
+      "description": "Uji pemahaman anda tentang perubahan akil baligh dengan soalan kuiz yang menyeronokkan",
+      "instructions": "Jawab soalan tentang akil baligh. Pilih jawapan terbaik untuk setiap soalan!",
+      "q1": {
+        "question": "Yang manakah adalah bahagian normal akil baligh?",
+        "a1": "Tidak pernah berasa emosi",
+        "a2": "Menghentikan semua pertumbuhan fizikal",
+        "a3": "Kekal sama",
+        "a4": "Mengalami perubahan mood"
+      },
+      "q2": {
+        "question": "Apa yang penting semasa akil baligh?",
+        "a1": "Kebersihan yang baik dan penjagaan diri",
+        "a2": "Mengelakkan semua senaman",
+        "a3": "Melangkau makanan",
+        "a4": "Berjaga sepanjang malam"
+      },
+      "q3": {
+        "question": "Apabila anda mempunyai soalan tentang akil baligh, apa yang perlu anda lakukan?",
+        "a1": "Simpan untuk diri sendiri",
+        "a2": "Berasa malu",
+        "a3": "Bercakap dengan orang dewasa yang dipercayai",
+        "a4": "Risau tentangnya bersendirian"
+      }
+    },
+    "matching": {
+      "title": "Permainan Padanan Perubahan",
+      "description": "Padankan perubahan akil baligh dengan cara membantu untuk menanganinya",
+      "instructions": "Sambungkan setiap perubahan di sebelah kiri dengan cara terbaik untuk menanganinya di sebelah kanan!",
+      "instruction": "Klik kad di sebelah kiri, kemudian cari padanannya di sebelah kanan!",
+      "pair1": {
+        "left": "Berasa Moody",
+        "right": "Bercakap dengan seseorang & bersenam"
+      },
+      "pair2": {
+        "left": "Bau Badan",
+        "right": "Gunakan deodoran setiap hari"
+      },
+      "pair3": {
+        "left": "Bertambah Tinggi",
+        "right": "Makan sihat & tidur cukup"
+      },
+      "pair4": {
+        "left": "Minat Baru",
+        "right": "Terokai & cuba perkara baru"
+      }
+    },
+    "emotions": {
+      "title": "Memahami Emosi",
+      "description": "Belajar mengenal pasti dan memahami emosi yang berbeza semasa akil baligh",
+      "instructions": "Baca setiap senario dan pilih bagaimana ia akan membuat anda berasa!",
+      "howWouldYouFeel": "Bagaimana perasaan anda?",
+      "happy": "Gembira",
+      "angry": "Marah",
+      "sad": "Sedih",
+      "anxious": "Cemas",
+      "proud": "Bangga",
+      "scenario1": {
+        "situation": "Rakan anda meminjam barang kegemaran anda tanpa bertanya."
+      },
+      "scenario2": {
+        "situation": "Anda bekerja keras dan mendapat gred yang hebat dalam ujian anda!"
+      },
+      "scenario3": {
+        "situation": "Anda perlu membuat pembentangan di hadapan seluruh kelas esok."
+      }
+    }
+  },
+  "parentGuide": {
+    "title": "Panduan Ibu Bapa Komprehensif",
+    "subtitle": "Nasihat berasaskan bukti untuk membantu anda menyokong anak anda melalui akil baligh 💙",
+    "categories": {
+      "communication": "Komunikasi",
+      "emotional": "Sokongan Emosi",
+      "physical": "Perubahan Fizikal",
+      "social": "Perkembangan Sosial",
+      "privacy": "Privasi & Keselamatan",
+      "resources": "Sumber"
+    },
+    "communication": {
+      "startEarly": {
+        "title": "Mulakan Perbualan Awal",
+        "description": "Jangan tunggu 'perbualan' - jadikan akil baligh perbualan berterusan",
+        "tip1": "Mulakan perbincangan sesuai umur sekitar umur 8-9, sebelum perubahan bermula",
+        "tip2": "Gunakan momen harian sebagai peluang pengajaran",
+        "tip3": "Pastikan perbualan santai dan normalkan topik",
+        "tip4": "Biarkan anak anda memimpin dengan soalan"
+      },
+      "listening": {
+        "title": "Amalkan Mendengar Aktif",
+        "description": "Benar-benar mendengar anak anda membina kepercayaan",
+        "tip1": "Singkirkan telefon dan beri perhatian penuh",
+        "tip2": "Jangan mengganggu atau tergesa-gesa membetulkan masalah",
+        "tip3": "Cerminkan apa yang anda dengar",
+        "tip4": "Elakkan penghakiman atau menolak kebimbangan mereka"
+      },
+      "openness": {
+        "title": "Cipta Zon Bebas Penghakiman",
+        "description": "Jadikannya selamat untuk anak anda berkongsi apa sahaja",
+        "tip1": "Kekal tenang apabila mereka berkongsi perkara sukar",
+        "tip2": "Kongsi cerita sesuai umur dari akil baligh anda",
+        "tip3": "Gunakan istilah anatomi yang betul",
+        "tip4": "Yakinkan mereka tiada soalan yang terlalu memalukan"
+      }
+    },
+    "emotional": {
+      "moodSwings": {
+        "title": "Memahami Perubahan Mood",
+        "description": "Perubahan hormon menyebabkan pergolakan emosi yang nyata",
+        "tip1": "Kenali bahawa perubahan mood disebabkan oleh biologi",
+        "tip2": "Jangan ambil ledakan emosi secara peribadi",
+        "tip3": "Bantu mereka mengenal pasti emosi",
+        "tip4": "Ajar strategi menangani"
+      },
+      "confidence": {
+        "title": "Membina Keyakinan Diri",
+        "description": "Akil baligh boleh menggoncang harga diri - sokongan anda penting",
+        "tip1": "Fokus pada usaha dan sifat watak",
+        "tip2": "Tunjukkan kekuatan mereka secara berkala",
+        "tip3": "Modelkan perbualan diri yang positif",
+        "tip4": "Bantu mereka menetapkan matlamat realistik"
+      },
+      "mentalHealth": {
+        "title": "Perhatikan Kebimbangan Kesihatan Mental",
+        "description": "Tahu bila perubahan mood biasa melintasi sesuatu yang lebih serius",
+        "tip1": "Kesedihan berterusan lebih 2 minggu mungkin menunjukkan kemurungan",
+        "tip2": "Perhatikan perubahan dalam tidur, selera, gred",
+        "tip3": "Ambil serius sebarang sebutan kecederaan diri",
+        "tip4": "Tiada malu dalam bantuan profesional"
+      }
+    },
+    "physical": {
+      "bodyChanges": {
+        "title": "Menerangkan Perubahan Fizikal",
+        "description": "Bantu anak anda memahami apa yang berlaku pada badan mereka",
+        "tip1": "Jelaskan bahawa semua orang berkembang pada kadar berbeza",
+        "tip2": "Bincangkan perubahan sebelum ia berlaku apabila boleh",
+        "tip3": "Bersikap jelas tentang topik seperti haid",
+        "tip4": "Yakinkan mereka perasaan janggal adalah sementara"
+      },
+      "hygiene": {
+        "title": "Mengajar Kebersihan Yang Betul",
+        "description": "Keperluan kebersihan baru timbul semasa akil baligh",
+        "tip1": "Sediakan produk yang diperlukan tanpa kekecohan",
+        "tip2": "Ajar mandi harian",
+        "tip3": "Bincangkan penjagaan jerawat dengan lembut",
+        "tip4": "Jadikan bekalan kebersihan mudah diakses"
+      },
+      "health": {
+        "title": "Menggalakkan Tabiat Sihat",
+        "description": "Akil baligh adalah masa yang sempurna untuk mewujudkan tingkah laku sihat seumur hidup",
+        "tip1": "Pastikan 8-10 jam tidur setiap malam",
+        "tip2": "Stok snek sihat",
+        "tip3": "Galakkan aktiviti fizikal yang kerap",
+        "tip4": "Model tabiat sihat sendiri"
+      }
+    },
+    "social": {
+      "friendships": {
+        "title": "Menavigasi Persahabatan Yang Berubah",
+        "description": "Hubungan sosial menjadi lebih kompleks semasa akil baligh",
+        "tip1": "Sahkan bahawa perubahan dan kerugian persahabatan adalah menyakitkan dan normal",
+        "tip2": "Bantu mereka membezakan antara persahabatan yang sihat dan tidak sihat",
+        "tip3": "Tahan keinginan untuk membetulkan masalah rakan",
+        "tip4": "Pastikan saluran komunikasi terbuka"
+      },
+      "peerPressure": {
+        "title": "Menangani Tekanan Rakan Sebaya",
+        "description": "Lengkapkan anak anda dengan alat untuk menentang pengaruh negatif",
+        "tip1": "Main lakon senario supaya mereka berlatih berkata 'tidak'",
+        "tip2": "Beri mereka 'jalan keluar': Biarkan mereka menyalahkan anda",
+        "tip3": "Bincangkan perbezaan antara sesuai dan mengubah siapa mereka",
+        "tip4": "Bina keyakinan dalam nilai dan keupayaan membuat keputusan mereka"
+      },
+      "boundaries": {
+        "title": "Mengajar Sempadan Peribadi",
+        "description": "Bantu anak anda memahami dan berkomunikasi sempadan",
+        "tip1": "Ajar mereka bahawa badan mereka adalah milik mereka",
+        "tip2": "Hormati keperluan privasi mereka",
+        "tip3": "Model menetapkan sempadan anda sendiri",
+        "tip4": "Jelaskan mereka sentiasa boleh memberitahu anda jika seseorang membuat mereka tidak selesa"
+      }
+    },
+    "privacy": {
+      "onlineSafety": {
+        "title": "Keselamatan Digital Semasa Akil Baligh",
+        "description": "Risiko dalam talian meningkat apabila kanak-kanak menjadi lebih berdikari",
+        "tip1": "Adakan perbualan terbuka tentang apa yang mereka lakukan dalam talian",
+        "tip2": "Bincangkan keabadian siaran dalam talian",
+        "tip3": "Bincangkan perbezaan antara persona dalam talian dan realiti",
+        "tip4": "Tetapkan peraturan jelas tentang perkongsian maklumat peribadi"
+      },
+      "personalSpace": {
+        "title": "Menghormati Keperluan Privasi",
+        "description": "Seimbangkan keperluan mereka untuk privasi dengan keperluan anda untuk menjaga mereka selamat",
+        "tip1": "Ketuk sebelum masuk bilik mereka",
+        "tip2": "Jangan baca diari atau teks",
+        "tip3": "Cipta privasi untuk bilik mandi dan berpakaian",
+        "tip4": "Jelaskan privasi adalah keistimewaan"
+      }
+    },
+    "resources": {
+      "books": {
+        "title": "Buku & Bahan Yang Disyorkan",
+        "description": "Sumber berkualiti untuk melengkapkan perbualan anda",
+        "tip1": "Buku sesuai umur tentang akil baligh",
+        "tip2": "Pertimbangkan buku khusus untuk identiti jantina anak anda",
+        "tip3": "Sumber dalam talian dari sumber yang bereputasi",
+        "tip4": "Permainan dan aktiviti interaktif aplikasi ini"
+      },
+      "professional": {
+        "title": "Bila Mencari Bantuan Profesional",
+        "description": "Kadangkala panduan pakar diperlukan - dan itu tidak mengapa",
+        "tip1": "Lawatan pakar pediatrik sekitar umur 9-11",
+        "tip2": "Ahli terapi jika perjuangan emosi berterusan",
+        "tip3": "Kaunselor sekolah untuk kebimbangan sosial",
+        "tip4": "Kumpulan sokongan untuk ibu bapa"
+      }
+    },
+    "keyPrinciples": {
+      "title": "Prinsip Teras untuk Keibubapaan Melalui Akil Baligh",
+      "patience": {
+        "title": "Kesabaran Adalah Segalanya",
+        "description": "Fasa ini adalah sementara. Anak anda akan membuat kesilapan, mengatakan perkara yang menyakitkan, dan menguji sempadan. Kekal stabil - konsistensi tenang anda adalah sauh mereka."
+      },
+      "communication": {
+        "title": "Terus Bercakap",
+        "description": "Walaupun mereka kelihatan tidak berminat atau menolak anda, terus muncul. Pemeriksaan ringkas, nota, teks - cari cara untuk kekal berhubung."
+      },
+      "safety": {
+        "title": "Keselamatan Dahulu, Sentiasa",
+        "description": "Kepercayaan penting, tetapi keselamatan juga. Tidak mengapa untuk memantau, bertanya soalan, dan menetapkan sempadan."
+      },
+      "support": {
+        "title": "Kasih Sayang Tanpa Syarat",
+        "description": "Tidak kira betapa mencabarnya fasa ini, ingatkan anak anda secara berkala bahawa kasih sayang anda tidak goyah."
+      }
+    },
+    "emergency": {
+      "title": "Bila Mencari Bantuan Segera",
+      "description": "Jika anak anda menunjukkan mana-mana tanda ini, jangan teragak-agak - dapatkan bantuan profesional segera:",
+      "point1": "Sebarang sebutan kecederaan diri, bunuh diri, atau mencederakan orang lain",
+      "point2": "Perubahan personaliti yang mendadak dan dramatik",
+      "point3": "Tanda-tanda penderaan"
     }
   },
   "changes": {
-    "title": "Memahami Perubahan",
-    "subtitle": "Akil baligh membawa banyak perubahan kepada badan dan minda anda. Mari kita terokai bersama! 🌟",
+    "title": "Memahami Perubahan Anak Anda",
+    "subtitle": "Ketahui apa yang dialami anak anda secara fizikal dan emosi 🌟",
     "physical": "Fizikal",
     "emotional": "Emosi",
     "physicalChanges": {
       "growth": {
         "title": "Lonjakan Pertumbuhan",
-        "description": "Anda akan bertambah tinggi! Ini berlaku pada masa yang berbeza untuk semua orang."
+        "description": "Kanak-kanak berkembang pada kadar berbeza"
       },
       "bodyShape": {
         "title": "Perubahan Bentuk Badan",
-        "description": "Badan anda akan mengembangkan lengkungan dan perkadaran baru semasa anda matang."
+        "description": "Badan berkembang dengan perkadaran dan lengkungan baru"
       },
       "voice": {
         "title": "Perubahan Suara",
-        "description": "Suara anda mungkin menjadi lebih dalam atau berubah nada - ini sangat normal!"
+        "description": "Suara mungkin menjadi lebih dalam - terutamanya pada lelaki"
       },
       "skin": {
         "title": "Perubahan Kulit",
-        "description": "Anda mungkin mendapat jerawat atau kulit berminyak. Kebersihan yang baik membantu mengurusnya."
+        "description": "Jerawat dan kulit berminyak adalah biasa"
       },
       "hair": {
         "title": "Pertumbuhan Rambut",
-        "description": "Rambut baru akan tumbuh di tempat yang berbeza di badan anda."
+        "description": "Rambut baru tumbuh di ketiak dan kawasan kemaluan"
       },
       "odor": {
         "title": "Bau Badan",
-        "description": "Anda akan mula berpeluh lebih banyak. Menggunakan deodoran menjadi penting!"
+        "description": "Peningkatan peluh memerlukan penggunaan deodoran harian"
       }
     },
     "emotionalChanges": {
       "mood": {
         "title": "Perubahan Mood",
-        "description": "Emosi anda mungkin terasa seperti roller coaster - itu normal!"
+        "description": "Perubahan hormon menyebabkan ketidakstabilan emosi yang nyata"
       },
       "interests": {
         "title": "Minat Baru",
-        "description": "Anda mungkin mengembangkan hobi, minat dan kegemaran baru."
+        "description": "Kanak-kanak membangunkan hobi dan minat baru"
       },
       "independence": {
         "title": "Kemerdekaan",
-        "description": "Anda akan mahukan lebih privasi dan kemerdekaan daripada keluarga."
+        "description": "Mereka akan mahukan lebih privasi dan kemerdekaan"
       },
       "relationships": {
         "title": "Hubungan",
-        "description": "Persahabatan dan hubungan sosial menjadi lebih penting."
+        "description": "Persahabatan dan minat romantik menjadi lebih penting"
       },
       "awareness": {
         "title": "Kesedaran Diri",
-        "description": "Anda akan berfikir lebih banyak tentang siapa anda dan siapa yang anda mahu jadi."
+        "description": "Mereka berfikir lebih tentang identiti"
       },
       "confidence": {
-        "title": "Keyakinan",
-        "description": "Membina keyakinan mengambil masa - bersabar dengan diri sendiri!"
+        "title": "Cabaran Keyakinan",
+        "description": "Harga diri sering menurun semasa akil baligh"
       }
     },
     "remember": {
-      "title": "Ingat: Semua Orang Berbeza 🌈",
-      "timing": "Masa: Akil baligh boleh bermula dari umur 8-14 tahun. Tiada masa yang \"betul\"!",
-      "pace": "Kadar: Sesetengah perubahan berlaku dengan cepat, yang lain mengambil masa bertahun-tahun. Perjalanan anda adalah unik.",
-      "support": "Sokongan: Bercakap dengan orang dewasa yang dipercayai jika anda ada soalan atau kebimbangan. Mereka di sini untuk membantu!"
+      "title": "Peringatan Penting untuk Ibu Bapa 🌈",
+      "timing": "Masa: Akil baligh boleh bermula umur 8-14. Setiap anak unik!",
+      "pace": "Kadar: Sesetengah perubahan berlaku dengan cepat, yang lain mengambil masa.",
+      "support": "Sokongan: Pastikan komunikasi terbuka."
     }
   },
   "diary": {
-    "title": "Diari Perasaan Saya",
-    "subtitle": "Jejak mood dan pemikiran anda semasa perjalanan anda 📝",
+    "title": "Diari Perasaan Anak Anda",
+    "subtitle": "Ruang peribadi untuk anak anda menjejak dan menyatakan emosi mereka 📝",
     "addEntry": "Tambah Catatan Baru",
     "cancel": "Batal",
     "howFeeling": "Bagaimana perasaan anda hari ini?",
@@ -116,29 +453,29 @@
       "excited": "Teruja",
       "anxious": "Cemas"
     },
-    "placeholder": "Apa yang anda fikirkan? Kongsi pemikiran, perasaan anda, atau apa yang berlaku hari ini...",
+    "placeholder": "Apa yang anda fikirkan?",
     "saveEntry": "Simpan Catatan",
-    "noEntries": "Tiada catatan lagi. Mulakan dengan menambah yang pertama! 💭",
+    "noEntries": "Tiada catatan lagi",
     "tips": {
-      "title": "💡 Petua Diari",
-      "regular": "✨ Tulis secara berkala - walaupun beberapa ayat membantu!",
-      "honest": "🎯 Jujur tentang perasaan anda - ini adalah ruang peribadi anda",
-      "lookback": "🌈 Lihat kembali catatan lama untuk melihat bagaimana anda telah berkembang",
-      "valid": "💪 Ingat: semua perasaan adalah sah dan normal"
+      "title": "💡 Petua Diari untuk Anak Anda",
+      "regular": "✨ Tulis secara berkala",
+      "honest": "🎯 Jujur tentang perasaan",
+      "lookback": "🌈 Lihat kembali catatan lama",
+      "valid": "💪 Semua perasaan adalah sah"
     }
   },
   "bodyGuide": {
     "title": "Panduan Perubahan Badan",
-    "subtitle": "Terokai perubahan fizikal yang berlaku semasa akil baligh 🌱",
+    "subtitle": "Maklumat sesuai umur tentang perkembangan fizikal 🌱",
     "everyone": "Semua Orang",
     "femaleBody": "Badan Perempuan",
     "maleBody": "Badan Lelaki",
     "remember": {
-      "title": "Ingat: Semua Orang Unik 🌈",
-      "timing": "⏰ Masa: Perubahan ini boleh bermula dari umur 8-14 tahun dan berterusan hingga akhir remaja atau awal 20-an.",
-      "variation": "📏 Variasi: TIADA \"normal\" - semua orang berkembang secara berbeza!",
-      "questions": "💬 Soalan? Sentiasa berasa selesa bercakap dengan ibu bapa, penjaga, doktor, atau orang dewasa yang dipercayai.",
-      "health": "🏥 Kesihatan: Jika sesuatu menyakitkan atau membimbangkan anda, jangan teragak-agak untuk meminta bantuan!"
+      "title": "Ingat: Setiap Anak Unik 🌈",
+      "timing": "⏰ Masa: Perubahan boleh bermula umur 8-14",
+      "variation": "📏 Variasi: Tiada 'normal' tunggal",
+      "questions": "💬 Galakkan anak anda bercakap dengan anda",
+      "health": "🏥 Jika sesuatu menyebabkan kesakitan, rujuk penyedia penjagaan kesihatan"
     }
   },
   "timeline": {
@@ -148,17 +485,17 @@
     "attempts": "Percubaan",
     "accuracy": "Ketepatan",
     "congratulations": "Tahniah! 🎉",
-    "completed": "Anda menyelesaikan permainan dengan {score} betul daripada {attempts} percubaan!",
+    "completed": "Anda menyelesaikan permainan!",
     "playAgain": "Main Lagi",
-    "selectCard": "👇 Klik pada kad di bawah, kemudian pilih bila ia berlaku!",
-    "chooseStage": "👆 Sekarang klik sama ada \"Sebelum Akil Baligh\" atau \"Selepas Akil Baligh\" di bawah!",
+    "selectCard": "👇 Klik pada kad di bawah",
+    "chooseStage": "👆 Pilih sebelum atau selepas akil baligh",
     "beforePuberty": "👶 Sebelum Akil Baligh",
     "afterPuberty": "🌟 Selepas Akil Baligh",
     "resetGame": "Tetapkan Semula Permainan"
   },
   "guidance": {
-    "title": "Bimbingan Berguna",
-    "subtitle": "Belajar cara praktikal untuk menangani perubahan akil baligh dengan yakin 💪",
+    "title": "Panduan Praktikal untuk Anak Anda",
+    "subtitle": "Bantu anak anda belajar menangani perubahan akil baligh dengan yakin 💪",
     "categories": {
       "physical": "Penjagaan Fizikal",
       "emotional": "Kesejahteraan Emosi",
@@ -167,8 +504,8 @@
     }
   },
   "footer": {
-    "title": "Kesedaran Akil Baligh",
-    "subtitle": "Ruang selamat untuk belajar dan berkembang 🌱",
-    "copyright": "© 2025 - Sumber Pendidikan"
+    "title": "Menyokong Keluarga Melalui Akil Baligh",
+    "subtitle": "Sumber selamat dan penuh kasih untuk ibu bapa dan kanak-kanak 🌱",
+    "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga"
   }
 }

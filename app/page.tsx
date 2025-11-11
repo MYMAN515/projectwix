@@ -11,6 +11,20 @@ export default function Home() {
   
   const features = [
     {
+      icon: <BookOpen className="w-8 h-8" />,
+      title: t('home.features.parentGuide.title'),
+      description: t('home.features.parentGuide.description'),
+      href: "/parent-guide",
+      color: "from-blue-400 to-cyan-500"
+    },
+    {
+      icon: <Activity className="w-8 h-8" />,
+      title: t('home.features.games.title'),
+      description: t('home.features.games.description'),
+      href: "/games",
+      color: "from-purple-400 to-pink-500"
+    },
+    {
       icon: <Heart className="w-8 h-8" />,
       title: t('home.features.changes.title'),
       description: t('home.features.changes.description'),
@@ -18,32 +32,18 @@ export default function Home() {
       color: "from-pink-400 to-rose-500"
     },
     {
-      icon: <Activity className="w-8 h-8" />,
-      title: t('home.features.timeline.title'),
-      description: t('home.features.timeline.description'),
-      href: "/timeline",
-      color: "from-blue-400 to-cyan-500"
-    },
-    {
-      icon: <BookOpen className="w-8 h-8" />,
+      icon: <Sparkles className="w-8 h-8" />,
       title: t('home.features.diary.title'),
       description: t('home.features.diary.description'),
       href: "/diary",
-      color: "from-purple-400 to-pink-500"
-    },
-    {
-      icon: <Sparkles className="w-8 h-8" />,
-      title: t('home.features.bodyGuide.title'),
-      description: t('home.features.bodyGuide.description'),
-      href: "/body-guide",
       color: "from-amber-400 to-orange-500"
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
-      title: t('home.features.guidance.title'),
-      description: t('home.features.guidance.description'),
-      href: "/guidance",
-      color: "from-yellow-400 to-orange-500"
+      title: t('home.features.bodyGuide.title'),
+      description: t('home.features.bodyGuide.description'),
+      href: "/body-guide",
+      color: "from-green-400 to-emerald-500"
     }
   ]
 
@@ -74,7 +74,7 @@ export default function Home() {
             transition={{ delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
           >
-            <Link href="/changes">
+            <Link href="/parent-guide">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -83,7 +83,7 @@ export default function Home() {
                 {t('home.startLearning')}
               </motion.button>
             </Link>
-            <Link href="/diary">
+            <Link href="/games">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
