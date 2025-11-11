@@ -1,47 +1,191 @@
 {
   "nav": {
     "home": "Home",
-    "changes": "Changes",
-    "timeline": "Timeline",
-    "diary": "Diary",
+    "welcome": "Welcome",
+    "changes": "Child Development",
+    "timeline": "Activities",
+    "diary": "Child's Diary",
     "bodyGuide": "Body Guide",
-    "guidance": "Guidance"
+    "guidance": "Parenting Tips",
+    "games": "Games for Kids",
+    "chat": "AI Support"
   },
   "home": {
-    "title": "Understanding Puberty",
-    "subtitle": "A safe and friendly space to learn about the changes happening in your body and mind 🌟",
-    "startLearning": "Start Learning",
-    "myDiary": "My Diary",
+    "title": "Understanding Your Child's Journey",
+    "subtitle": "A comprehensive guide to help parents support their children through puberty with confidence and love 💝",
+    "startLearning": "Explore Resources",
+    "myDiary": "View Diary",
     "features": {
       "changes": {
-        "title": "Physical & Emotional Changes",
-        "description": "Learn about the natural changes happening to your body and mind"
+        "title": "Understanding Development",
+        "description": "Learn what your child is experiencing physically and emotionally"
       },
       "timeline": {
-        "title": "Timeline Activity",
-        "description": "Interactive matching game to understand before and after puberty"
+        "title": "Interactive Activities",
+        "description": "Fun educational games to help your child learn about puberty"
       },
       "diary": {
-        "title": "Mood Diary",
-        "description": "Track your feelings and emotions on your journey"
+        "title": "Child's Mood Diary",
+        "description": "Help your child track their feelings and emotions"
       },
       "bodyGuide": {
         "title": "Body Changes Guide",
-        "description": "Gender-sensitive animations and information about growth"
+        "description": "Age-appropriate information to share with your child"
       },
       "guidance": {
-        "title": "Helpful Guidance",
-        "description": "Learn how to deal with changes and feel confident"
+        "title": "Parenting Support",
+        "description": "Expert tips on supporting your child through puberty"
       }
     },
     "notAlone": {
-      "title": "You're Not Alone 💙",
-      "content": "Puberty is a natural part of growing up. Everyone goes through it at their own pace. This app is here to help you understand what's happening, track your journey, and feel confident about the changes ahead."
+      "title": "You're Not Alone in This Journey 💙",
+      "content": "Parenting through puberty can feel challenging, but you're doing great! This app provides expert guidance, resources, and tools to help you support your child with confidence and understanding. Together, we can make this transition smooth and positive."
+    }
+  },
+  "welcome": {
+    "title": "Welcome, Dear Parents! 💝",
+    "subtitle": "We understand how challenging and beautiful it can be to guide your child through puberty. You're here because you care deeply, and that's what matters most.",
+    "heartfeltMessage": "Every parent wants the best for their child. Puberty is one of life's most significant transitions, and your support can make all the difference. This app was created with love to help you understand, communicate, and connect with your child during these crucial years. You're not just a parent - you're their guide, their safe space, and their hero. We're here to support YOU as you support them.",
+    "purpose": {
+      "title": "What This App Offers You",
+      "description": "This comprehensive platform provides everything you need to understand and support your child through puberty:"
+    },
+    "features": {
+      "understanding": "Deep insights into physical and emotional changes your child is experiencing",
+      "privacy": "Complete privacy - all data stays on your device, never shared",
+      "games": "Interactive games and activities for your child to learn in a fun way",
+      "guides": "Expert parenting guides with practical tips for every situation"
+    },
+    "privacy": {
+      "title": "Your Privacy & Safety Matters",
+      "intro": "We take your family's privacy seriously. Here's our promise to you:",
+      "local": "All data stored locally on your device only",
+      "noTracking": "No tracking, no analytics, no surveillance",
+      "noSharing": "We never share or sell your information",
+      "secure": "Secure, safe, and designed with families in mind",
+      "promise": "Our Privacy Promise",
+      "promiseText": "This app works entirely offline after initial load. No account needed. No data collection. No external servers. Your family's journey stays private, as it should be."
+    },
+    "howItHelps": {
+      "title": "How This App Helps You",
+      "point1": {
+        "title": "Understand Your Child Better",
+        "text": "Learn exactly what changes your child is going through - physically, emotionally, and socially. Knowledge empowers you to provide the right support at the right time."
+      },
+      "point2": {
+        "title": "Communicate with Confidence",
+        "text": "Access conversation starters, expert advice, and age-appropriate explanations. Never feel at a loss for words when your child asks difficult questions."
+      },
+      "point3": {
+        "title": "Engage Through Activities",
+        "text": "Use our interactive games and activities with your child. Learning together makes conversations easier and builds stronger bonds."
+      },
+      "point4": {
+        "title": "Get AI-Powered Support",
+        "text": "Chat with our AI assistant anytime you need advice, have questions, or just need someone to talk to. Available 24/7, completely private."
+      }
+    },
+    "ready": "Ready to Begin This Journey Together?",
+    "getStarted": "Start Exploring",
+    "talkToAI": "Chat with AI Assistant",
+    "footer": "Made with love for parents who care"
+  },
+  "chat": {
+    "title": "AI Parenting Assistant",
+    "subtitle": "Ask me anything about supporting your child through puberty",
+    "welcome": "Hello! I'm your AI parenting assistant. I'm here to help you understand your child's development and provide guidance on navigating puberty together. How can I support you today?",
+    "placeholder": "Ask me anything about puberty, parenting, or supporting your child...",
+    "note": "This is an AI assistant providing general guidance. For medical concerns, always consult a healthcare professional.",
+    "suggestedQuestions": "Try asking:",
+    "suggestions": {
+      "q1": "How can I talk to my child about puberty?",
+      "q2": "What are normal emotional changes during puberty?",
+      "q3": "How do I handle my child's mood swings?",
+      "q4": "When should I be concerned about my child's development?"
+    },
+    "responses": {
+      "greeting": "Hello! I'm so glad you're here. As a parent, you're taking an important step by seeking information and support. How can I help you today?",
+      "puberty": "Puberty is a natural transition that typically begins between ages 8-14. It involves physical changes (growth spurts, body development), emotional changes (mood swings, new feelings), and social changes (shifting friendships, increased independence). Every child's journey is unique. The best thing you can do is maintain open communication, be patient, and provide a safe space for questions. What specific aspect would you like to know more about?",
+      "emotions": "Emotional changes during puberty are completely normal and caused by hormonal shifts. Your child might experience mood swings, increased sensitivity, or new feelings they don't understand. Here's how to help: 1) Validate their feelings, 2) Create safe spaces for conversation, 3) Be patient with outbursts, 4) Teach healthy coping strategies, 5) Watch for signs of serious depression or anxiety. Remember, this phase passes, and your steady support makes all the difference.",
+      "communication": "Talking to your child about puberty works best when you: 1) Start conversations early and keep them ongoing, 2) Use age-appropriate language, 3) Be honest and factual, 4) Share your own experiences if comfortable, 5) Listen more than you talk, 6) Create judgment-free zones, 7) Use resources like books or apps together. The key is making it normal, not a one-time awkward talk. Would you like specific conversation starters?",
+      "friends": "Social dynamics shift dramatically during puberty. Your child may: change friend groups, feel peer pressure, become more private, or struggle with fitting in. Support them by: keeping communication open, meeting their friends, teaching them about healthy friendships, respecting their growing independence while maintaining boundaries, and being available when they need you. Remember, some friend drama is normal and helps them learn important social skills.",
+      "body": "Physical changes during puberty include: growth spurts, body shape changes, voice deepening (especially in boys), breast development (in girls), body hair growth, skin changes (acne), increased sweating, and reproductive development. These changes happen at different rates for everyone. Help your child by: explaining what to expect, providing necessary hygiene products, respecting their privacy, and normalizing the changes. If you notice anything concerning, consult a pediatrician.",
+      "school": "School can become more challenging during puberty due to physical discomfort, emotional distractions, and social pressures. Support your child by: maintaining routines, helping with organization, staying in touch with teachers, creating study-friendly environments, balancing academics with rest, and watching for signs of serious stress or bullying. Remember, some grade fluctuation is normal during this transition.",
+      "privacy": "This app is completely private and secure. All information stays on your device. We don't collect, track, or share any data. No accounts needed. No external servers. Your family's journey is yours alone. You can use this app with complete confidence that your privacy is protected.",
+      "help": "I'm here to provide general guidance and support. I can help with: understanding puberty stages, communication strategies, emotional support tips, activity suggestions, and general parenting questions. However, for medical concerns, mental health issues, or serious behavioral problems, please consult with healthcare professionals, therapists, or counselors. Your pediatrician is always your best resource for health-related questions.",
+      "games": "Our interactive games help your child learn about puberty in a fun, pressure-free way! The Memory Game builds familiarity with puberty concepts, the Quiz Game tests knowledge in an engaging format, and the Timeline Game helps understand development stages. Playing together can open doors for natural conversations. Check out the 'Games for Kids' section!",
+      "diary": "The diary feature allows your child to track their moods and feelings privately. This helps them: understand emotional patterns, express themselves safely, develop self-awareness, and have a record to look back on. You can encourage use without invading privacy. If they want to share entries with you, that's their choice. The diary is stored locally on the device.",
+      "thanks": "You're very welcome! Remember, you're doing an amazing job just by being here and caring enough to learn. Your child is lucky to have a parent like you. Feel free to ask anything else!",
+      "default": "That's a great question! While I may not have a specific answer programmed for that, I can offer general guidance: 1) Trust your instincts as a parent, 2) Keep communication open with your child, 3) Consult healthcare professionals for medical concerns, 4) Remember that every child develops differently, 5) Be patient with yourself and your child. Is there something specific I can help clarify?"
+    }
+  },
+  "games": {
+    "title": "Fun Learning Games",
+    "subtitle": "Interactive activities to help your child learn about puberty in a fun way!",
+    "playNow": "Play Now",
+    "moreGames": "Looking for more activities?",
+    "timelineGame": "Try the Timeline Matching Game",
+    "back": "Back to Games",
+    "newGame": "New Game",
+    "moves": "Moves",
+    "matches": "Matches",
+    "score": "Score",
+    "question": "Question",
+    "congratulations": "Congratulations!",
+    "completedIn": "Completed in",
+    "playAgain": "Play Again",
+    "quizComplete": "Quiz Complete!",
+    "yourScore": "Your Score",
+    "tryAgain": "Try Again",
+    "nextQuestion": "Next Question →",
+    "seeResults": "See Results",
+    "memory": {
+      "title": "Emoji Memory Match",
+      "description": "Match pairs of emojis to improve memory and have fun!"
+    },
+    "quiz": {
+      "title": "Puberty Knowledge Quiz",
+      "description": "Test your knowledge with fun questions about growing up!",
+      "q1": {
+        "question": "What causes the changes during puberty?",
+        "a1": "Eating too much food",
+        "a2": "Hormones in your body",
+        "a3": "Watching TV",
+        "a4": "Playing sports"
+      },
+      "q2": {
+        "question": "Mood swings during puberty are...",
+        "a1": "Completely normal",
+        "a2": "A sign of illness",
+        "a3": "Only for girls",
+        "a4": "Not real"
+      },
+      "q3": {
+        "question": "When does puberty usually begin?",
+        "a1": "Ages 2-5",
+        "a2": "Ages 5-7",
+        "a3": "Ages 8-14",
+        "a4": "Ages 18-21"
+      },
+      "q4": {
+        "question": "What's the best way to handle body odor?",
+        "a1": "Ignore it",
+        "a2": "Cover it with perfume",
+        "a3": "Don't exercise",
+        "a4": "Shower daily and use deodorant"
+      },
+      "q5": {
+        "question": "If you have questions about puberty, you should...",
+        "a1": "Keep them secret",
+        "a2": "Talk to a trusted adult",
+        "a3": "Only ask friends",
+        "a4": "Worry alone"
+      }
     }
   },
   "changes": {
-    "title": "Understanding Changes",
-    "subtitle": "Puberty brings many changes to your body and mind. Let's explore them together! 🌟",
+    "title": "Understanding Your Child's Changes",
+    "subtitle": "Learn about the physical and emotional changes your child is experiencing during puberty 🌟",
     "physical": "Physical",
     "emotional": "Emotional",
     "physicalChanges": {
@@ -104,8 +248,8 @@
     }
   },
   "diary": {
-    "title": "My Feelings Diary",
-    "subtitle": "Track your moods and thoughts during your journey 📝",
+    "title": "Your Child's Feelings Diary",
+    "subtitle": "Help your child track their moods and thoughts during their journey 📝",
     "addEntry": "Add New Entry",
     "cancel": "Cancel",
     "howFeeling": "How are you feeling today?",
@@ -128,8 +272,8 @@
     }
   },
   "bodyGuide": {
-    "title": "Body Changes Guide",
-    "subtitle": "Explore the physical changes that happen during puberty 🌱",
+    "title": "Body Changes Guide for Children",
+    "subtitle": "Age-appropriate information to share with your child about physical changes 🌱",
     "everyone": "Everyone",
     "femaleBody": "Female Body",
     "maleBody": "Male Body",
@@ -157,8 +301,8 @@
     "resetGame": "Reset Game"
   },
   "guidance": {
-    "title": "Helpful Guidance",
-    "subtitle": "Learn practical ways to handle puberty changes with confidence 💪",
+    "title": "Parenting Guidance & Support",
+    "subtitle": "Expert tips and strategies to support your child through puberty with confidence 💪",
     "categories": {
       "physical": "Physical Care",
       "emotional": "Emotional Wellbeing",

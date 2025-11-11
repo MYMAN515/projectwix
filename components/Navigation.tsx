@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles, Lightbulb } from 'lucide-react'
+import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles, Lightbulb, Gamepad2, MessageCircle, Info } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -14,12 +14,13 @@ export default function Navigation() {
   const { t } = useLanguage()
 
   const links = [
-    { href: '/', label: t('nav.home'), icon: <Home className="w-5 h-5" /> },
+    { href: '/home', label: t('nav.home'), icon: <Home className="w-5 h-5" /> },
+    { href: '/welcome', label: t('nav.welcome'), icon: <Info className="w-5 h-5" /> },
     { href: '/changes', label: t('nav.changes'), icon: <Heart className="w-5 h-5" /> },
-    { href: '/timeline', label: t('nav.timeline'), icon: <Activity className="w-5 h-5" /> },
+    { href: '/games', label: t('nav.games'), icon: <Gamepad2 className="w-5 h-5" /> },
     { href: '/diary', label: t('nav.diary'), icon: <BookOpen className="w-5 h-5" /> },
-    { href: '/body-guide', label: t('nav.bodyGuide'), icon: <Sparkles className="w-5 h-5" /> },
     { href: '/guidance', label: t('nav.guidance'), icon: <Lightbulb className="w-5 h-5" /> },
+    { href: '/chat', label: t('nav.chat'), icon: <MessageCircle className="w-5 h-5" /> },
   ]
 
   const isActive = (href: string) => pathname === href
@@ -29,7 +30,7 @@ export default function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/welcome" className="flex items-center space-x-2">
             <motion.div
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
@@ -38,7 +39,7 @@ export default function Navigation() {
               <Sparkles className="w-6 h-6 text-white" />
             </motion.div>
             <span className="font-bold text-xl bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent hidden sm:inline">
-              Puberty Awareness
+              Parent's Guide
             </span>
           </Link>
 
