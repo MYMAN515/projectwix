@@ -7,7 +7,8 @@
     "bodyGuide": "Body Guide",
     "guidance": "Parent Guide",
     "games": "Games & Activities",
-    "parentGuide": "Parenting Tips"
+    "parentGuide": "Parenting Tips",
+    "team": "Our Team"
   },
   "home": {
     "title": "Supporting Your Child Through Puberty",
@@ -52,6 +53,7 @@
     }
   },
   "welcome": {
+    "branding": "In partnership with the inspiring spirit of the University of Malaya",
     "slide1": {
       "title": "Welcome, Dear Parent! 💝",
       "subtitle": "We're So Glad You're Here",
@@ -87,24 +89,82 @@
   },
   "aiChat": {
     "title": "Parent Assistant",
-    "subtitle": "Ask me anything about puberty",
-    "greeting": "Hello! I'm here to help you navigate parenting through puberty. Ask me anything - from handling difficult conversations to understanding physical changes. How can I support you today?",
+    "subtitle": "Ask me anything about puberty in English, العربية, or Bahasa Melayu",
+    "greeting": "Hello! I'm your multilingual puberty support guide. I can chat in English, Arabic, or Bahasa Melayu—whatever helps you feel most comfortable. Ask me about tough conversations, emotional ups and downs, or practical routines. What would you like to explore today?",
     "placeholder": "Type your question here...",
-    "suggestedTitle": "Suggested questions:",
+    "suggestedTitle": "Try asking about:",
     "suggestions": {
-      "q1": "How do I start the puberty conversation?",
-      "q2": "How can I support my child's emotions?",
-      "q3": "What activities can help my child?",
-      "q4": "How do I handle mood swings?"
+      "q1": "How can I explain puberty stages gently?",
+      "q2": "What helps when my child feels overwhelmed?",
+      "q3": "How do we build a daily self-care routine?",
+      "q4": "How can I encourage healthy sleep habits?",
+      "q5": "What should I say about periods and body changes?",
+      "q6": "How do I set respectful rules around devices?"
     },
     "response": {
-      "puberty": "Great question! Starting conversations about puberty early and keeping them ongoing is key. Use natural opportunities like seeing related content on TV or books. Keep the tone casual and normalize the topic. Let your child know they can always come to you with questions, and reassure them that all the changes they're experiencing are completely normal.",
-      "emotions": "Emotional support during puberty is crucial. Validate your child's feelings - mood swings are normal due to hormonal changes. Listen without judgment, give them space when needed, but also let them know you're always available. Help them identify and name their emotions, and teach healthy coping strategies like exercise, journaling, or talking with trusted friends.",
-      "communication": "Effective communication builds trust. Practice active listening - put away distractions and give your full attention. Ask open-ended questions rather than yes/no questions. Share your own experiences (age-appropriately) to show you understand. Most importantly, create a judgment-free zone where they feel safe sharing anything.",
-      "social": "Social dynamics change during puberty. Help your child navigate friendships by discussing what healthy relationships look like. Talk about peer pressure and give them language to set boundaries. Encourage diverse friendships and validate their feelings when friendships shift or end - it's a normal part of growing up.",
-      "privacy": "This app prioritizes privacy completely. All diary entries and data stay on your device - nothing is sent to servers. The diary is a private space for your child. We don't track users or collect personal information. Your family's privacy and your child's safety are our top priorities.",
-      "activities": "The Games section offers interactive activities designed to teach about puberty in a fun, engaging way. These include memory games, emotion recognition exercises, and matching activities. These games help normalize conversations about puberty and make learning enjoyable rather than awkward.",
-      "default": "I'm here to help you with any parenting questions about puberty! You can ask me about: communication strategies, understanding physical/emotional changes, handling difficult situations, supporting your child's mental health, navigating social challenges, and much more. What would you like to know?"
+      "puberty": "Great question! Start by normalising the topic. 1) Choose relaxed everyday moments—car rides, walks, shared chores—to mention the changes you notice. 2) Share small facts often instead of one big \"talk.\" 3) Invite questions by saying, \"You can ask me anything, even if it feels awkward.\" 4) Keep trusted books or articles handy so your child can explore privately and come back to you. Reassure them that every body develops in its own time and you're walking beside them the whole way.",
+      "emotions": "Emotional waves are part of puberty. Validate feelings first (\"I see this is really tough\") before jumping to solutions. Create a calming toolkit together—breathing exercises, stretching, drawing, or music. Encourage them to name emotions and rate their intensity. End each day with a quick \"feelings check\" so they know big emotions are welcome in your home.",
+      "communication": "Strong communication grows through routine. Schedule small weekly check-ins and let your child choose the activity—hot chocolate, a short walk, a shared game. Use openers like, \"What was a win and a wobble today?\" Reflect back what you hear and thank them for sharing. When conversations get tense, pause, breathe, and revisit the topic later to show that respect matters more than being right.",
+      "social": "Friendships can feel stormy right now. Discuss what healthy friendship behaviours look like—kind words, listening, respecting boundaries. Role-play responses to peer pressure so they feel prepared. Encourage involvement in clubs or teams that match their interests to widen their circle. Remind them that changing friendships are normal and don't define their worth.",
+      "privacy": "We built this app with family privacy at heart. Diary entries stay on the device, we collect zero personal data, and there are no hidden trackers. Encourage your child to use the diary as a safe, private space to process feelings. You can also set shared agreements about when you'll check in together so trust stays strong.",
+      "activities": "Learning sticks when it's playful. Explore the Games section together—memory matches build knowledge about body changes, quizzes boost confidence, and emotion activities open honest conversations. Ask your child which activity felt most helpful and why, then use that as a bridge to keep the discussion going offline.",
+      "hygiene": "Help your child build a simple hygiene rhythm: showering daily (or after sports), using deodorant, changing into clean clothes, and caring for skin or hair types. Turn it into teamwork by creating a checklist and posting it in the bathroom. Praise effort rather than perfection so they feel proud of their growing independence.",
+      "nutrition": "Bodies need steady fuel right now. Aim for balanced meals—colourful fruits and veggies, proteins for muscle growth, whole grains for energy, and plenty of water. Invite your child to plan or cook one meal a week so they learn what nourishes them. Keep quick, healthy snacks available for sudden hunger surges.",
+      "sleep": "Hormonal shifts can delay sleepiness. Set a calming routine: dim lights an hour before bed, limit screens, and offer quiet bonding time (stretching, gentle chat, reading). Keep wake-up times steady, even on weekends. If worries keep them awake, encourage jotting them in a notebook to revisit together the next day.",
+      "boundaries": "Talk openly about personal boundaries—body privacy, emotional space, and respecting other people's limits. Model asking for consent (\"Can I give you a hug?\"). Help them practise scripts for saying no kindly. Celebrate when they advocate for themselves so they learn that clear boundaries build healthier relationships.",
+      "digital": "Create a family media plan together. Agree on screen-free zones (meals, bedrooms at night) and discuss how to handle friend requests, DMs, or unexpected content. Teach them to pause before posting and to talk to you if something online feels wrong. Remind them they are never in trouble for telling you about unsafe digital moments.",
+      "menstruation": "Approach periods with calm confidence. Explain the basics—cycle length varies, cramps are common, and supplies exist for every body. Show them how to track cycles on paper or in a trusted app. Pack a small period kit for school with pads, liners, and spare underwear. Remind them periods are a normal sign of a healthy body, not something to hide or feel ashamed about.",
+      "default": "I'm here to help with anything related to puberty, wellbeing, and family communication. You can ask about hygiene routines, period support, emotional health, friendships, school stress, faith and cultural considerations, or how to keep the conversation going in multiple languages. Let's tackle it together—what's on your mind?"
+    }
+  },
+  "team": {
+    "title": "Meet the Hearts Behind Parenting Hub",
+    "subtitle": "We blend creativity, research, and technology to lift up every family with compassion and joy.",
+    "umTagline": "Powered by the inspiring community spirit of the University of Malaya.",
+    "celebration": "Together we craft research-backed, heart-led support so parents and children feel seen, safe, and celebrated.",
+    "badges": {
+      "dev": "Developer",
+      "special": "Special Inspiration"
+    },
+    "special": {
+      "title": "With heartfelt gratitude",
+      "name": "Dr. Nazean Jomhari",
+      "description": "Dr. Nazean Jomhari guides us with her University of Malaya vision—championing empathy, safety, and meaningful digital wellbeing for every family we serve.",
+      "highlight": "Her mentorship keeps our mission grounded in real community needs and academic excellence."
+    },
+    "members": {
+      "qais": {
+        "name": "Qais Al-Hrahsheh",
+        "description": "Our lead developer who transforms caring ideas into secure, delightful experiences for families everywhere."
+      },
+      "tan": {
+        "name": "Tan Kang Zheng",
+        "description": "Shapes intuitive journeys so parents and children can explore resources with ease."
+      },
+      "chengyang": {
+        "name": "Chengyang Sun",
+        "description": "Turns research into actionable insights that keep our guidance clear and trustworthy."
+      },
+      "raja": {
+        "name": "Raja Nur Aqylah Natasha binti Raja Zazman Shah",
+        "description": "Celebrates Malaysian stories and ensures every word feels warm, respectful, and inclusive."
+      },
+      "hanif": {
+        "name": "Hanif Ruben Davni Setiadji",
+        "description": "Designs playful learning moments that make tricky topics feel friendly and fun."
+      },
+      "rafia": {
+        "name": "Rafia Raida Binta Jashim",
+        "description": "Champions inclusive content so every family feels represented and supported."
+      },
+      "wong": {
+        "name": "Wong Yan Wen",
+        "description": "Brings bright visuals and thoughtful storytelling to every screen."
+      },
+      "zhou": {
+        "name": "Zhou Junan",
+        "description": "Builds reliable systems that keep the app fast, safe, and ready whenever families need it."
+      }
     }
   },
   "games": {
