@@ -1,0 +1,25 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">University of Malaya Inspired Emblem</title>
+  <desc id="desc">A modern illustration inspired by the University of Malaya colors showing a shield with the letters UM.</desc>
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003A70" />
+      <stop offset="100%" stop-color="#FFD200" />
+    </linearGradient>
+    <linearGradient id="ribbonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E31837" />
+      <stop offset="100%" stop-color="#F68B1E" />
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="32" fill="#F4F6FB" />
+  <g transform="translate(32 22)">
+    <path d="M48 0l48 16v40c0 35.2-20.8 64-48 72C20.8 120 0 91.2 0 56V16L48 0z" fill="url(#shieldGradient)" />
+    <path d="M48 16L16 26v30c0 26.4 12.8 48 32 56 19.2-8 32-29.6 32-56V26L48 16z" fill="#0A63A8" opacity="0.25" />
+    <text x="48" y="66" text-anchor="middle" font-family="'Poppins', 'Segoe UI', sans-serif" font-size="36" font-weight="700" fill="#FFFFFF">UM</text>
+    <text x="48" y="96" text-anchor="middle" font-family="'Poppins', 'Segoe UI', sans-serif" font-size="10" font-weight="500" fill="#FFE389" letter-spacing="1.5">INSPIRE</text>
+  </g>
+  <g transform="translate(36 118)">
+    <rect width="88" height="20" rx="10" fill="url(#ribbonGradient)" />
+    <text x="44" y="14" text-anchor="middle" font-family="'Poppins', 'Segoe UI', sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">UNIVERSITY MALAYA</text>
+  </g>
+</svg>

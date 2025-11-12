@@ -1,11 +1,27 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { 
-  Gamepad2, Star, Trophy, Target, Puzzle, Brain, 
-  Heart, Smile, Zap, Gift, Award, CheckCircle2
+import {
+  Gamepad2,
+  Star,
+  Trophy,
+  Target,
+  Puzzle,
+  Brain,
+  Heart,
+  Smile,
+  Zap,
+  Gift,
+  Award,
+  CheckCircle2,
+  Clock,
+  Sparkles,
+  ArrowRight,
+  Compass,
+  BookOpenCheck,
+  Lightbulb
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -15,6 +31,24 @@ export default function GamesPage() {
   const { t } = useLanguage()
   const [selectedGame, setSelectedGame] = useState<GameType | null>(null)
 
+  const heroHighlights = [
+    {
+      icon: <Award className="w-6 h-6 text-amber-500" />,
+      title: t('games.highlights.guided'),
+      description: t('games.highlights.guidedDescription')
+    },
+    {
+      icon: <Compass className="w-6 h-6 text-indigo-500" />,
+      title: t('games.highlights.explorers'),
+      description: t('games.highlights.explorersDescription')
+    },
+    {
+      icon: <Sparkles className="w-6 h-6 text-rose-500" />,
+      title: t('games.highlights.confidence'),
+      description: t('games.highlights.confidenceDescription')
+    }
+  ]
+
   const games = [
     {
       id: 'memory' as GameType,
@@ -22,7 +56,10 @@ export default function GamesPage() {
       title: t('games.memory.title'),
       description: t('games.memory.description'),
       color: 'from-purple-400 to-indigo-500',
-      difficulty: 'easy'
+      difficulty: 'easy',
+      duration: t('games.memory.duration'),
+      skills: t('games.memory.skills').split('|'),
+      benefit: t('games.memory.benefit')
     },
     {
       id: 'quiz' as GameType,
@@ -30,7 +67,10 @@ export default function GamesPage() {
       title: t('games.quiz.title'),
       description: t('games.quiz.description'),
       color: 'from-blue-400 to-cyan-500',
-      difficulty: 'medium'
+      difficulty: 'medium',
+      duration: t('games.quiz.duration'),
+      skills: t('games.quiz.skills').split('|'),
+      benefit: t('games.quiz.benefit')
     },
     {
       id: 'matching' as GameType,
@@ -38,7 +78,10 @@ export default function GamesPage() {
       title: t('games.matching.title'),
       description: t('games.matching.description'),
       color: 'from-pink-400 to-rose-500',
-      difficulty: 'easy'
+      difficulty: 'easy',
+      duration: t('games.matching.duration'),
+      skills: t('games.matching.skills').split('|'),
+      benefit: t('games.matching.benefit')
     },
     {
       id: 'emotions' as GameType,
@@ -46,7 +89,57 @@ export default function GamesPage() {
       title: t('games.emotions.title'),
       description: t('games.emotions.description'),
       color: 'from-amber-400 to-orange-500',
-      difficulty: 'medium'
+      difficulty: 'medium',
+      duration: t('games.emotions.duration'),
+      skills: t('games.emotions.skills').split('|'),
+      benefit: t('games.emotions.benefit')
+    }
+  ]
+
+  const gameMeta = {
+    memory: {
+      duration: t('games.memory.duration'),
+      benefit: t('games.memory.benefit'),
+      skills: t('games.memory.skills').split('|')
+    },
+    quiz: {
+      duration: t('games.quiz.duration'),
+      benefit: t('games.quiz.benefit'),
+      skills: t('games.quiz.skills').split('|')
+    },
+    matching: {
+      duration: t('games.matching.duration'),
+      benefit: t('games.matching.benefit'),
+      skills: t('games.matching.skills').split('|')
+    },
+    emotions: {
+      duration: t('games.emotions.duration'),
+      benefit: t('games.emotions.benefit'),
+      skills: t('games.emotions.skills').split('|')
+    }
+  }
+
+  const helperCards = [
+    {
+      icon: <Lightbulb className="w-6 h-6" />,
+      title: t('games.support.tips.title'),
+      description: t('games.support.tips.description'),
+      href: '/guidance',
+      gradient: 'from-amber-500 to-orange-500'
+    },
+    {
+      icon: <BookOpenCheck className="w-6 h-6" />,
+      title: t('games.support.parent.title'),
+      description: t('games.support.parent.description'),
+      href: '/parent-guide',
+      gradient: 'from-primary-500 to-secondary-500'
+    },
+    {
+      icon: <Heart className="w-6 h-6" />,
+      title: t('games.support.chat.title'),
+      description: t('games.support.chat.description'),
+      href: '#ai-chat',
+      gradient: 'from-emerald-500 to-teal-500'
     }
   ]
 
@@ -73,8 +166,26 @@ export default function GamesPage() {
         </p>
       </motion.div>
 
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-12">
+        {heroHighlights.map((highlight, index) => (
+          <motion.div
+            key={highlight.title}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className="rounded-2xl bg-white/70 p-5 shadow-sm ring-1 ring-white/60 backdrop-blur-sm"
+          >
+            <div className="mb-3 inline-flex items-center justify-center rounded-xl bg-slate-100 p-3">
+              {highlight.icon}
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900">{highlight.title}</h3>
+            <p className="text-sm text-gray-600 leading-relaxed mt-2">{highlight.description}</p>
+          </motion.div>
+        ))}
+      </div>
+
       {/* Games Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12 max-w-5xl mx-auto">
         {games.map((game, index) => (
           <motion.div
             key={game.id}
@@ -82,22 +193,48 @@ export default function GamesPage() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1 }}
             whileHover={{ y: -5 }}
-            onClick={() => setSelectedGame(game.id)}
-            className="glass-effect rounded-3xl p-8 cursor-pointer card-hover"
+            className="glass-effect rounded-3xl p-8 card-hover flex flex-col gap-6"
           >
             <div className={`bg-gradient-to-r ${game.color} w-20 h-20 rounded-2xl flex items-center justify-center text-white mb-6`}>
               {game.icon}
             </div>
-            <h3 className="text-2xl font-bold mb-3 text-gray-800">{game.title}</h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">{game.description}</p>
-            <div className="flex items-center justify-between">
-              <span className={`text-sm font-semibold px-3 py-1 rounded-full ${
-                game.difficulty === 'easy' 
-                  ? 'bg-green-100 text-green-700' 
-                  : 'bg-yellow-100 text-yellow-700'
-              }`}>
-                {game.difficulty === 'easy' ? t('games.easy') : t('games.medium')}
-              </span>
+            <div className="flex flex-col gap-3 flex-1">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-800">{game.title}</h3>
+                  <p className="text-sm font-semibold text-primary-600 mt-1">{game.benefit}</p>
+                </div>
+                <span className={`text-xs font-semibold px-3 py-1 rounded-full ${
+                  game.difficulty === 'easy'
+                    ? 'bg-green-100 text-green-700'
+                    : 'bg-yellow-100 text-yellow-700'
+                }`}>
+                  {game.difficulty === 'easy' ? t('games.easy') : t('games.medium')}
+                </span>
+              </div>
+              <p className="text-gray-600 leading-relaxed">{game.description}</p>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+                  <Clock className="w-4 h-4" /> {game.duration}
+                </span>
+                {game.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="inline-flex items-center gap-1 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-gray-600 shadow-sm"
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5 text-primary-500" /> {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-2">
+              <button
+                onClick={() => setSelectedGame(game.id)}
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:shadow-xl"
+              >
+                {t('games.playNow')}
+                <ArrowRight className="w-4 h-4" />
+              </button>
               <Star className="w-6 h-6 text-yellow-500" />
             </div>
           </motion.div>
@@ -151,6 +288,32 @@ export default function GamesPage() {
         </div>
       </motion.div>
 
+      <div className="mt-16 max-w-5xl mx-auto">
+        <div className="rounded-3xl bg-gradient-to-r from-primary-100 via-white to-secondary-100 p-8 shadow-inner">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('games.support.title')}</h2>
+              <p className="text-gray-600 max-w-2xl">{t('games.support.description')}</p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {helperCards.map((card) => (
+                <Link
+                  key={card.title}
+                  href={card.href}
+                  className="group rounded-2xl bg-white/80 px-4 py-3 shadow-sm ring-1 ring-white/60 backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <div className={`mb-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r ${card.gradient} p-2 text-white`}>
+                    {card.icon}
+                  </div>
+                  <p className="text-sm font-semibold text-gray-800">{card.title}</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">{card.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Game Modal */}
       <AnimatePresence>
         {selectedGame && (
@@ -168,7 +331,11 @@ export default function GamesPage() {
               onClick={(e) => e.stopPropagation()}
               className="glass-effect rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
             >
-              <GameContent gameType={selectedGame} onClose={() => setSelectedGame(null)} />
+              <GameContent
+                gameType={selectedGame}
+                onClose={() => setSelectedGame(null)}
+                meta={gameMeta[selectedGame]}
+              />
             </motion.div>
           </motion.div>
         )}
@@ -177,21 +344,82 @@ export default function GamesPage() {
   )
 }
 
-function GameContent({ gameType, onClose }: { gameType: GameType; onClose: () => void }) {
+function GameContent({
+  gameType,
+  onClose,
+  meta
+}: {
+  gameType: GameType
+  onClose: () => void
+  meta: { duration: string; benefit: string; skills: string[] }
+}) {
   const { t } = useLanguage()
   const [gameState, setGameState] = useState<'intro' | 'playing' | 'finished'>('intro')
   const [score, setScore] = useState(0)
 
+  const detailBadges = (
+    <div className="flex flex-wrap gap-2">
+      <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+        <Clock className="w-4 h-4" /> {meta?.duration}
+      </span>
+      {meta?.skills?.map((skill) => (
+        <span
+          key={skill}
+          className="inline-flex items-center gap-1 rounded-full bg-white/70 px-3 py-1 text-xs font-medium text-gray-600 shadow-sm"
+        >
+          <CheckCircle2 className="w-3.5 h-3.5 text-primary-500" /> {skill}
+        </span>
+      ))}
+    </div>
+  )
+
+  let content: ReactNode = null
+
   if (gameType === 'memory') {
-    return <MemoryGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
+    content = (
+      <MemoryGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
+    )
   } else if (gameType === 'quiz') {
-    return <QuizGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
+    content = (
+      <QuizGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
+    )
   } else if (gameType === 'matching') {
-    return <MatchingGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
+    content = (
+      <MatchingGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
+    )
   } else if (gameType === 'emotions') {
-    return <EmotionsGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
+    content = (
+      <EmotionsGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
+    )
   }
-  return null
+
+  if (!content) return null
+
+  return (
+    <div className="space-y-6">
+      <div className="rounded-2xl bg-white/70 p-5 shadow-sm ring-1 ring-white/60">
+        <div className="flex flex-col gap-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900">{t(`games.${gameType}.title`)}</h2>
+              <p className="text-sm text-gray-600">{meta?.benefit}</p>
+            </div>
+            <button
+              onClick={onClose}
+              className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-2 text-xs font-semibold text-gray-600 transition hover:bg-gray-200"
+            >
+              {t('games.close')}
+              <ArrowRight className="w-4 h-4 rotate-180" />
+            </button>
+          </div>
+          {detailBadges}
+        </div>
+      </div>
+      <div className="rounded-3xl bg-white/90 p-5 shadow-md">
+        {content}
+      </div>
+    </div>
+  )
 }
 
 function MemoryGame({ gameState, setGameState, score, setScore, onClose }: any) {
