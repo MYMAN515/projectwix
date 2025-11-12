@@ -12,6 +12,19 @@ interface Message {
   timestamp: Date
 }
 
+interface KnowledgeResource {
+  label: string
+  description: string
+}
+
+interface KnowledgeEntry {
+  id: string
+  keywords: string[]
+  responseKey: string
+  tipsKey: string
+  resources: KnowledgeResource[]
+}
+
 export default function AIChat() {
   const { t } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
@@ -40,59 +53,141 @@ export default function AIChat() {
     }
   }, [isOpen, t, messages.length])
 
-  const handleSend = async () => {
-    if (!input.trim()) return
+  const handleSend = async (messageOverride?: string) => {
+    const userText = (messageOverride ?? input).trim()
+    if (!userText) return
 
     const userMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
-      content: input,
+      content: userText,
       timestamp: new Date()
     }
 
-    setMessages(prev => [...prev, userMessage])
+    setMessages((prev) => [...prev, userMessage])
     setInput('')
     setIsLoading(true)
 
-    // Simulate AI response (replace with actual API call)
     setTimeout(() => {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: getAIResponse(input),
+        content: getAIResponse(userText),
         timestamp: new Date()
       }
-      setMessages(prev => [...prev, aiResponse])
+      setMessages((prev) => [...prev, aiResponse])
       setIsLoading(false)
-    }, 1500)
+    }, 900)
   }
 
   const getAIResponse = (userInput: string): string => {
-    // Simple keyword-based responses (replace with actual AI integration)
-    const input = userInput.toLowerCase()
-    
-    if (input.includes('puberty') || input.includes('changes')) {
-      return t('aiChat.response.puberty')
-    } else if (input.includes('emotion') || input.includes('mood') || input.includes('feel')) {
-      return t('aiChat.response.emotions')
-    } else if (input.includes('talk') || input.includes('communicate') || input.includes('conversation')) {
-      return t('aiChat.response.communication')
-    } else if (input.includes('friend') || input.includes('social')) {
-      return t('aiChat.response.social')
-    } else if (input.includes('privacy') || input.includes('safe')) {
-      return t('aiChat.response.privacy')
-    } else if (input.includes('game') || input.includes('activity')) {
-      return t('aiChat.response.activities')
-    } else {
-      return t('aiChat.response.default')
+    const normalized = userInput.toLowerCase()
+
+    const resourcesMap = {
+      parentGuide: { label: t('nav.parentGuide'), description: t('aiChat.response.resourceParentGuide') },
+      changes: { label: t('nav.changes'), description: t('aiChat.response.resourceChanges') },
+      games: { label: t('nav.games'), description: t('aiChat.response.resourceGames') },
+      diary: { label: t('nav.diary'), description: t('aiChat.response.resourceDiary') },
+      timeline: { label: t('nav.timeline'), description: t('aiChat.response.resourceTimeline') },
+      bodyGuide: { label: t('nav.bodyGuide'), description: t('aiChat.response.resourceBodyGuide') }
     }
+
+    const knowledgeBase: KnowledgeEntry[] = [
+      {
+        id: 'puberty',
+        keywords: ['puberty', 'akil', 'baligh', 'period', 'menstru', 'growth', 'breast', 'voice', 'hair'],
+        responseKey: 'puberty',
+        tipsKey: 'pubertyTips',
+        resources: [resourcesMap.parentGuide, resourcesMap.changes, resourcesMap.bodyGuide]
+      },
+      {
+        id: 'emotions',
+        keywords: ['emotion', 'mood', 'feel', 'stress', 'worry', 'anxious', 'sad', 'angry'],
+        responseKey: 'emotions',
+        tipsKey: 'emotionsTips',
+        resources: [resourcesMap.diary, resourcesMap.games]
+      },
+      {
+        id: 'communication',
+        keywords: ['talk', 'communicat', 'conversation', 'speak', 'share', 'discuss'],
+        responseKey: 'communication',
+        tipsKey: 'communicationTips',
+        resources: [resourcesMap.parentGuide, resourcesMap.timeline]
+      },
+      {
+        id: 'social',
+        keywords: ['friend', 'social', 'peer', 'relationship', 'bully'],
+        responseKey: 'social',
+        tipsKey: 'socialTips',
+        resources: [resourcesMap.games, resourcesMap.timeline]
+      },
+      {
+        id: 'privacy',
+        keywords: ['privacy', 'safe', 'safety', 'secure', 'data'],
+        responseKey: 'privacy',
+        tipsKey: 'privacyTips',
+        resources: [resourcesMap.diary, resourcesMap.bodyGuide]
+      },
+      {
+        id: 'activities',
+        keywords: ['game', 'activity', 'play', 'interactive', 'fun'],
+        responseKey: 'activities',
+        tipsKey: 'activitiesTips',
+        resources: [resourcesMap.games, resourcesMap.timeline]
+      },
+      {
+        id: 'default',
+        keywords: [],
+        responseKey: 'default',
+        tipsKey: 'defaultTips',
+        resources: [resourcesMap.parentGuide, resourcesMap.games, resourcesMap.diary]
+      }
+    ]
+
+    const entry = knowledgeBase.find((item) =>
+      item.keywords.some((keyword) => normalized.includes(keyword))
+    ) || knowledgeBase.find((item) => item.id === 'default')!
+
+    const actionPlanTitle = t('aiChat.response.actionPlanTitle')
+    const resourcesTitle = t('aiChat.response.resourcesTitle')
+
+    const tipsRaw = t(`aiChat.response.${entry.tipsKey}`)
+    const tipsList = tipsRaw && !tipsRaw.startsWith('aiChat.response.')
+      ? tipsRaw.split('|').map((tip) => tip.trim()).filter(Boolean)
+      : []
+
+    const sections = [t(`aiChat.response.${entry.responseKey}`)]
+
+    if (tipsList.length) {
+      sections.push(
+        `${actionPlanTitle}\n${tipsList.map((tip, index) => `${index + 1}. ${tip}`).join('\n')}`
+      )
+    }
+
+    if (entry.resources.length) {
+      sections.push(
+        `${resourcesTitle}\n${entry.resources
+          .map((resource) => `• ${resource.label} – ${resource.description}`)
+          .join('\n')}`
+      )
+    }
+
+    if (entry.id === 'default') {
+      const languageSupport = t('aiChat.response.languageSupport')
+      if (languageSupport && !languageSupport.startsWith('aiChat.response.')) {
+        sections.push(languageSupport)
+      }
+    }
+
+    return sections.filter(Boolean).join('\n\n')
   }
 
   const suggestedQuestions = [
     t('aiChat.suggestions.q1'),
     t('aiChat.suggestions.q2'),
     t('aiChat.suggestions.q3'),
-    t('aiChat.suggestions.q4')
+    t('aiChat.suggestions.q4'),
+    t('aiChat.suggestions.q5')
   ]
 
   return (
@@ -225,7 +320,7 @@ export default function AIChat() {
                   {suggestedQuestions.map((question, index) => (
                     <button
                       key={index}
-                      onClick={() => setInput(question)}
+                      onClick={() => handleSend(question)}
                       className="text-xs bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-full border border-gray-300 transition-colors"
                     >
                       {question}

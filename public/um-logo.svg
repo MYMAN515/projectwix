@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">University of Malaya stylised crest</title>
+  <desc id="desc">A stylised blue and gold shield inspired by the University of Malaya crest.</desc>
+  <defs>
+    <linearGradient id="shieldGradient" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0d47a1" />
+      <stop offset="100%" stop-color="#123b8b" />
+    </linearGradient>
+    <linearGradient id="bannerGradient" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#f9c440" />
+      <stop offset="100%" stop-color="#ffd54f" />
+    </linearGradient>
+  </defs>
+  <path fill="url(#shieldGradient)" stroke="#102d6a" stroke-width="14" d="M256 30c-78.5 0-170 20.8-170 20.8v205.4c0 101.1 70.2 195.5 170 225.8 99.8-30.3 170-124.7 170-225.8V50.8S334.5 30 256 30z" />
+  <path fill="url(#bannerGradient)" stroke="#d49c00" stroke-width="10" d="M94 78l162-30 162 30v66H94z" />
+  <text x="256" y="118" text-anchor="middle" font-family="'Montserrat', 'Segoe UI', sans-serif" font-size="40" font-weight="700" fill="#1a237e">ILMU PUNCA KEMAJUAN</text>
+  <g fill="#f9c440" stroke="#d49c00" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M164 180l-44 12 32 20-26 18 40 10 10 40 24-32 36 26-12-44 32-24-44-4-10-42z" />
+    <path d="M348 180l10 42-44 4 32 24-12 44 36-26 24 32 10-40 40-10-26-18 32-20-44-12-18-38z" />
+    <path d="M256 208c-24 0-46 16-46 36 0 28 36 48 46 90 10-42 46-62 46-90 0-20-22-36-46-36z" />
+  </g>
+  <g fill="#f44336" stroke="#b71c1c" stroke-width="6">
+    <circle cx="256" cy="274" r="32" />
+    <path d="M256 242c-20 24-20 56 0 80 20-24 20-56 0-80z" />
+  </g>
+  <g fill="#f9c440" stroke="#d49c00" stroke-width="5" stroke-linejoin="round">
+    <path d="M132 312c22 36 60 60 124 86 64-26 102-50 124-86-70 14-178 14-248 0z" />
+  </g>
+  <text x="256" y="392" text-anchor="middle" font-family="'Montserrat', 'Segoe UI', sans-serif" font-size="80" font-weight="700" fill="#ffd54f">UM</text>
+</svg>

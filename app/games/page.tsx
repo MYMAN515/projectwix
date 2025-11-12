@@ -3,9 +3,10 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { 
-  Gamepad2, Star, Trophy, Target, Puzzle, Brain, 
-  Heart, Smile, Zap, Gift, Award, CheckCircle2
+import {
+  Gamepad2, Star, Trophy, Target, Puzzle, Brain,
+  Heart, Smile, Zap, Gift, Award, CheckCircle2,
+  Sparkles, Compass, Lightbulb
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -50,106 +51,221 @@ export default function GamesPage() {
     }
   ]
 
+  const highlights = [
+    {
+      icon: <Sparkles className="w-8 h-8" />,
+      title: t('games.highlights.discovery'),
+      description: t('games.highlights.discoveryDescription')
+    },
+    {
+      icon: <Compass className="w-8 h-8" />,
+      title: t('games.highlights.guided'),
+      description: t('games.highlights.guidedDescription')
+    },
+    {
+      icon: <Award className="w-8 h-8" />,
+      title: t('games.highlights.progress'),
+      description: t('games.highlights.progressDescription')
+    }
+  ]
+
+  const supportCards = [
+    {
+      icon: <Lightbulb className="w-6 h-6" />,
+      title: t('games.support.educatorsTitle'),
+      description: t('games.support.educatorsDescription')
+    },
+    {
+      icon: <CheckCircle2 className="w-6 h-6" />,
+      title: t('games.support.readyTitle'),
+      description: t('games.support.readyDescription')
+    },
+    {
+      icon: <Heart className="w-6 h-6" />,
+      title: t('games.support.familyTitle'),
+      description: t('games.support.familyDescription')
+    }
+  ]
+
   return (
-    <div className="container mx-auto px-4 py-8 md:py-12">
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center mb-12"
-      >
+    <div className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-purple-50 to-pink-50">
+      <div className="absolute -top-20 -right-24 h-60 w-60 rounded-full bg-primary-200/40 blur-3xl" />
+      <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-secondary-200/40 blur-3xl" />
+
+      <div className="container mx-auto px-4 py-12 md:py-16 relative z-10">
+        {/* Header */}
         <motion.div
-          animate={{ rotate: [0, 10, -10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="inline-block mb-4"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
         >
-          <Gamepad2 className="w-16 h-16 text-primary-500" />
-        </motion.div>
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-600 via-purple-600 to-secondary-600 bg-clip-text text-transparent">
-          {t('games.title')}
-        </h1>
-        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-          {t('games.subtitle')}
-        </p>
-      </motion.div>
-
-      {/* Games Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-5xl mx-auto">
-        {games.map((game, index) => (
           <motion.div
-            key={game.id}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.1 }}
-            whileHover={{ y: -5 }}
-            onClick={() => setSelectedGame(game.id)}
-            className="glass-effect rounded-3xl p-8 cursor-pointer card-hover"
+            animate={{ rotate: [0, 10, -10, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity }}
+            className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-r from-primary-500 to-secondary-500 shadow-xl"
           >
-            <div className={`bg-gradient-to-r ${game.color} w-20 h-20 rounded-2xl flex items-center justify-center text-white mb-6`}>
-              {game.icon}
-            </div>
-            <h3 className="text-2xl font-bold mb-3 text-gray-800">{game.title}</h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">{game.description}</p>
-            <div className="flex items-center justify-between">
-              <span className={`text-sm font-semibold px-3 py-1 rounded-full ${
-                game.difficulty === 'easy' 
-                  ? 'bg-green-100 text-green-700' 
-                  : 'bg-yellow-100 text-yellow-700'
-              }`}>
-                {game.difficulty === 'easy' ? t('games.easy') : t('games.medium')}
-              </span>
-              <Star className="w-6 h-6 text-yellow-500" />
-            </div>
+            <Gamepad2 className="w-10 h-10 text-white" />
           </motion.div>
-        ))}
-      </div>
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary-500">
+            {t('games.heroTag')}
+          </span>
+          <h1 className="mt-4 text-4xl md:text-6xl font-bold leading-tight bg-gradient-to-r from-primary-600 via-purple-600 to-secondary-600 bg-clip-text text-transparent">
+            {t('games.title')}
+          </h1>
+          <p className="mt-4 text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+            {t('games.subtitle')}
+          </p>
+        </motion.div>
 
-      {/* Also Available Section */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        className="max-w-5xl mx-auto"
-      >
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
-          {t('games.moreActivities')}
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <Link href="/timeline">
+        {/* Highlights */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid gap-5 md:grid-cols-3 mb-14"
+        >
+          {highlights.map((highlight, index) => (
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="glass-effect rounded-2xl p-6 text-center card-hover"
+              key={highlight.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true, amount: 0.4 }}
+              className="glass-effect rounded-3xl p-6 shadow-xl border border-white/60"
             >
-              <div className="bg-gradient-to-r from-blue-400 to-cyan-500 w-12 h-12 rounded-xl flex items-center justify-center text-white mx-auto mb-3">
-                <Zap className="w-6 h-6" />
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-secondary-500 text-white shadow-lg">
+                {highlight.icon}
               </div>
-              <h4 className="font-bold text-gray-800">{t('nav.timeline')}</h4>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{highlight.title}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{highlight.description}</p>
             </motion.div>
-          </Link>
-          <Link href="/diary">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="glass-effect rounded-2xl p-6 text-center card-hover"
-            >
-              <div className="bg-gradient-to-r from-purple-400 to-pink-500 w-12 h-12 rounded-xl flex items-center justify-center text-white mx-auto mb-3">
-                <Heart className="w-6 h-6" />
+          ))}
+        </motion.div>
+
+        {/* Games Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="mb-16"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {games.map((game, index) => (
+              <motion.div
+                key={game.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -8 }}
+                onClick={() => setSelectedGame(game.id)}
+                className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/80 p-8 cursor-pointer shadow-lg transition-transform hover:shadow-2xl"
+              >
+                <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-secondary-200/40 blur-3xl" />
+                <div className={`relative z-10 bg-gradient-to-r ${game.color} w-20 h-20 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg`}>
+                  {game.icon}
+                </div>
+                <h3 className="relative z-10 text-2xl font-bold mb-3 text-gray-800">{game.title}</h3>
+                <p className="relative z-10 text-gray-600 mb-6 leading-relaxed">{game.description}</p>
+                <div className="relative z-10 flex items-center justify-between">
+                  <span className={`text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1 rounded-full ${
+                    game.difficulty === 'easy'
+                      ? 'bg-green-100 text-green-700'
+                      : 'bg-yellow-100 text-yellow-700'
+                  }`}>
+                    {game.difficulty === 'easy' ? t('games.easy') : t('games.medium')}
+                  </span>
+                  <Star className="w-6 h-6 text-yellow-500" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <p className="mt-6 text-center text-sm text-gray-500">
+            {t('games.tapToExplore')}
+          </p>
+        </motion.div>
+
+        {/* Also Available Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="max-w-5xl mx-auto mb-16"
+        >
+          <h2 className="text-2xl font-bold mb-8 text-center text-gray-900">
+            {t('games.moreActivities')}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+            <Link href="/timeline">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="glass-effect rounded-2xl p-6 text-center card-hover border border-white/70"
+              >
+                <div className="bg-gradient-to-r from-blue-400 to-cyan-500 w-12 h-12 rounded-xl flex items-center justify-center text-white mx-auto mb-3 shadow-lg">
+                  <Zap className="w-6 h-6" />
+                </div>
+                <h4 className="font-bold text-gray-800">{t('nav.timeline')}</h4>
+                <p className="mt-2 text-sm text-gray-600">{t('games.links.timeline')}</p>
+              </motion.div>
+            </Link>
+            <Link href="/diary">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="glass-effect rounded-2xl p-6 text-center card-hover border border-white/70"
+              >
+                <div className="bg-gradient-to-r from-purple-400 to-pink-500 w-12 h-12 rounded-xl flex items-center justify-center text-white mx-auto mb-3 shadow-lg">
+                  <Heart className="w-6 h-6" />
+                </div>
+                <h4 className="font-bold text-gray-800">{t('nav.diary')}</h4>
+                <p className="mt-2 text-sm text-gray-600">{t('games.links.diary')}</p>
+              </motion.div>
+            </Link>
+            <Link href="/body-guide">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="glass-effect rounded-2xl p-6 text-center card-hover border border-white/70"
+              >
+                <div className="bg-gradient-to-r from-amber-400 to-orange-500 w-12 h-12 rounded-xl flex items-center justify-center text-white mx-auto mb-3 shadow-lg">
+                  <Gift className="w-6 h-6" />
+                </div>
+                <h4 className="font-bold text-gray-800">{t('nav.bodyGuide')}</h4>
+                <p className="mt-2 text-sm text-gray-600">{t('games.links.bodyGuide')}</p>
+              </motion.div>
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* Support Cards */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="glass-effect rounded-3xl border border-white/70 bg-white/80 p-8 md:p-10 shadow-2xl"
+        >
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between mb-8">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                {t('games.support.title')}
+              </h2>
+              <p className="text-gray-600 max-w-2xl">{t('games.support.subtitle')}</p>
+            </div>
+            <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white shadow-lg">
+              {t('games.support.cta')}
+            </span>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {supportCards.map((card) => (
+              <div key={card.title} className="rounded-2xl border border-primary-100 bg-white/90 p-6 shadow-lg">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100 text-primary-600">
+                  {card.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{card.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{card.description}</p>
               </div>
-              <h4 className="font-bold text-gray-800">{t('nav.diary')}</h4>
-            </motion.div>
-          </Link>
-          <Link href="/body-guide">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="glass-effect rounded-2xl p-6 text-center card-hover"
-            >
-              <div className="bg-gradient-to-r from-amber-400 to-orange-500 w-12 h-12 rounded-xl flex items-center justify-center text-white mx-auto mb-3">
-                <Gift className="w-6 h-6" />
-              </div>
-              <h4 className="font-bold text-gray-800">{t('nav.bodyGuide')}</h4>
-            </motion.div>
-          </Link>
-        </div>
-      </motion.div>
+            ))}
+          </div>
+        </motion.section>
+      </div>
 
       {/* Game Modal */}
       <AnimatePresence>

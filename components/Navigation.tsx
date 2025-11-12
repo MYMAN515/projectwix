@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles, Lightbulb } from 'lucide-react'
+import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles, Lightbulb, Users } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -20,6 +20,7 @@ export default function Navigation() {
     { href: '/changes', label: t('nav.changes'), icon: <Heart className="w-5 h-5" /> },
     { href: '/diary', label: t('nav.diary'), icon: <Sparkles className="w-5 h-5" /> },
     { href: '/guidance', label: t('nav.guidance'), icon: <Lightbulb className="w-5 h-5" /> },
+    { href: '/team', label: t('nav.team'), icon: <Users className="w-5 h-5" /> },
   ]
 
   const isActive = (href: string) => pathname === href

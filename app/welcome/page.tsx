@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { Heart, Shield, Users, Sparkles, BookOpen, Lock, Eye, Target, ArrowRight, Check } from 'lucide-react'
@@ -82,6 +83,34 @@ export default function WelcomePage() {
         animate={{ opacity: 1, scale: 1 }}
         className="max-w-4xl w-full glass-effect rounded-3xl p-8 md:p-12 shadow-2xl"
       >
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-center gap-4 mb-10"
+        >
+          <motion.div
+            whileHover={{ scale: 1.05, rotate: -2 }}
+            className="bg-white/80 backdrop-blur rounded-2xl shadow-lg p-4"
+          >
+            <Image
+              src="/um-logo.svg"
+              alt={t('welcome.umSupportAlt')}
+              width={120}
+              height={120}
+              priority
+            />
+          </motion.div>
+          <div className="text-center">
+            <p className="uppercase tracking-[0.35em] text-xs md:text-sm text-primary-500 font-semibold mb-2">
+              {t('welcome.universityTag')}
+            </p>
+            <p className="text-base md:text-lg text-gray-600 font-medium">
+              {t('welcome.universitySupport')}
+            </p>
+          </div>
+        </motion.div>
+
         {/* Progress Indicator */}
         <div className="flex justify-center gap-2 mb-8">
           {slides.map((_, index) => (
