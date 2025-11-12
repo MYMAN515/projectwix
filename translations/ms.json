@@ -7,7 +7,8 @@
     "bodyGuide": "Panduan Badan",
     "guidance": "Panduan Ibu Bapa",
     "games": "Permainan & Aktiviti",
-    "parentGuide": "Petua Keibubapaan"
+    "parentGuide": "Petua Keibubapaan",
+    "team": "Pasukan Kami"
   },
   "home": {
     "title": "Menyokong Anak Anda Melalui Akil Baligh",
@@ -83,7 +84,8 @@
     "next": "Seterusnya",
     "previous": "Sebelumnya",
     "skip": "Langkau ke Privasi",
-    "getStarted": "Mari Mulakan Perjalanan Ini"
+    "getStarted": "Mari Mulakan Perjalanan Ini",
+    "umAffiliation": "Inisiatif Universiti Malaya untuk menyokong setiap keluarga."
   },
   "aiChat": {
     "title": "Pembantu Ibu Bapa",
@@ -104,7 +106,14 @@
       "social": "Dinamik sosial berubah semasa akil baligh. Bantu anak anda menavigasi persahabatan dengan membincangkan seperti apa hubungan yang sihat. Bincangkan tekanan rakan sebaya dan beri mereka bahasa untuk menetapkan sempadan. Galakkan persahabatan yang pelbagai dan sahkan perasaan mereka apabila persahabatan berubah atau berakhir.",
       "privacy": "Aplikasi ini mengutamakan privasi sepenuhnya. Semua catatan diari dan data kekal pada peranti anda. Diari adalah ruang peribadi untuk anak anda. Kami tidak menjejak pengguna atau mengumpul maklumat peribadi. Privasi keluarga anda dan keselamatan anak anda adalah keutamaan utama kami.",
       "activities": "Bahagian Permainan menawarkan aktiviti interaktif yang direka untuk mengajar tentang akil baligh dengan cara yang menyeronokkan dan menarik. Ini termasuk permainan ingatan, latihan pengiktirafan emosi, dan aktiviti padanan. Permainan ini membantu menormalkan perbualan tentang akil baligh dan menjadikan pembelajaran menyeronokkan daripada janggal.",
-      "default": "Saya di sini untuk membantu anda dengan sebarang soalan keibubapaan tentang akil baligh! Anda boleh tanya saya tentang: strategi komunikasi, memahami perubahan fizikal/emosi, mengendalikan situasi sukar, menyokong kesihatan mental anak anda, menavigasi cabaran sosial, dan banyak lagi. Apa yang anda ingin tahu?"
+      "default": "Saya boleh membantu anda berbincang tentang akil baligh, emosi, keselamatan, tabiat sihat dan banyak lagi. Beritahu saya keperluan paling mendesak dan saya akan kongsi langkah praktikal yang boleh dicuba hari ini."
+    },
+    "resources": {
+      "intro": "Sokongan dalam aplikasi yang boleh anda terokai juga:",
+      "parentGuide": "Panduan Ibu Bapa • Permulaan perbualan dan nasihat pakar.",
+      "games": "Permainan & Aktiviti • Pembelajaran menyeronokkan untuk dilakukan bersama anak.",
+      "timeline": "Permainan Garis Masa • Fahami peringkat akil baligh mengikut tempo anda.",
+      "diary": "Diari Perasaan • Galakkan refleksi dan semakan emosi bersama anak."
     }
   },
   "games": {
@@ -127,7 +136,8 @@
     "memory": {
       "title": "Permainan Ingatan Emosi",
       "description": "Padankan pasangan emosi sambil belajar tentang perasaan semasa akil baligh",
-      "instructions": "Cari pasangan emosi yang sepadan. Ingat di mana setiap emosi dan padankan semuanya untuk menang!"
+      "instructions": "Cari pasangan emosi yang sepadan. Ingat di mana setiap emosi dan padankan semuanya untuk menang!",
+      "focus": "Ingatan & empati"
     },
     "quiz": {
       "title": "Kuiz Pengetahuan Akil Baligh",
@@ -153,7 +163,8 @@
         "a2": "Berasa malu",
         "a3": "Bercakap dengan orang dewasa yang dipercayai",
         "a4": "Risau tentangnya bersendirian"
-      }
+      },
+      "focus": "Keyakinan ilmu"
     },
     "matching": {
       "title": "Permainan Padanan Perubahan",
@@ -175,7 +186,8 @@
       "pair4": {
         "left": "Minat Baru",
         "right": "Terokai & cuba perkara baru"
-      }
+      },
+      "focus": "Amalan tabiat sihat"
     },
     "emotions": {
       "title": "Memahami Emosi",
@@ -195,7 +207,30 @@
       },
       "scenario3": {
         "situation": "Anda perlu membuat pembentangan di hadapan seluruh kelas esok."
-      }
+      },
+      "focus": "Perbendaharaan kata emosi"
+    },
+    "estimate": {
+      "short": "Sesi 5 minit",
+      "medium": "Cabaran 10 minit"
+    },
+    "featured": {
+      "badge": "Cabaran kegemaran keluarga",
+      "title": "Detik bermain bersama yang membuka perbualan bermakna",
+      "description": "Gunakan permainan berpandukan ini untuk memulakan perbualan lembut tentang perubahan yang dialami anak anda. Setiap aktiviti menggabungkan kandungan berasaskan bukti dengan penerokaan yang menyeronokkan.",
+      "point1": "Tinjau perkara penting sebelum anak bermain supaya anda sedia menjawab soalan mereka.",
+      "point2": "Raikan kemajuan dengan maklum balas terbina yang meningkatkan keyakinan diri.",
+      "point3": "Padankan permainan dengan diari untuk rutin pembelajaran dan refleksi yang seimbang."
+    },
+    "tips": {
+      "title": "Tip untuk aliran pembelajaran ceria",
+      "subtitle": "Tiga amalan ringkas menjadikan setiap sesi permainan bermakna.",
+      "checkIn": "Mulakan dengan bertanya khabar",
+      "checkInDetail": "Tanya perasaan mereka sebelum mula. Sapaan yang tenang buat mereka rasa selamat.",
+      "balance": "Seimbangkan bimbingan & kebebasan",
+      "balanceDetail": "Biarkan mereka meneroka permainan sementara anda menyokong dan memperjelas jika perlu.",
+      "reflect": "Refleksi selepas bermain",
+      "reflectDetail": "Berbual tentang apa yang dipelajari dan apa yang mencabar. Kaitkan dengan kehidupan seharian."
     }
   },
   "parentGuide": {
@@ -507,5 +542,67 @@
     "title": "Menyokong Keluarga Melalui Akil Baligh",
     "subtitle": "Sumber selamat dan penuh kasih untuk ibu bapa dan kanak-kanak 🌱",
     "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga"
+  },
+  "team": {
+    "affiliation": "Universiti Malaya • Fakulti Sains Komputer dan Teknologi Maklumat",
+    "title": "Kenali pasukan di sebalik Parenting Hub",
+    "subtitle": "Pasukan pelbagai disiplin yang menggabungkan teknologi, penyelidikan dan penilaian penuh empati untuk menguatkan keluarga Malaysia.",
+    "sections": {
+      "leadership": "Kepimpinan & Visi",
+      "leadershipDetail": "Mengarahkan pengalaman produk dan memastikan sokongan berasaskan bukti untuk ibu bapa dan anak.",
+      "supporters": "Inovator & Pereka Pengalaman Pelajar",
+      "supportersDetail": "Mencipta interaksi mesra dan inklusif melalui penyelidikan, ujian dan penceritaan kreatif."
+    },
+    "stats": {
+      "languages": "Bahasa yang disokong",
+      "languagesDetail": "Dilokalkan dalam Bahasa Inggeris, Bahasa Melayu dan Arab supaya setiap keluarga rasa disambut.",
+      "modules": "Modul interaktif",
+      "modulesDetail": "Panduan, permainan dan diari yang direka untuk mencetuskan perbualan akil baligh yang yakin.",
+      "childCentered": "Fokus berpusatkan anak",
+      "childCenteredDetail": "Setiap keluaran disemak untuk privasi, perlindungan dan kesejahteraan emosi."
+    },
+    "badges": {
+      "programmer": "Pengaturcara",
+      "lead": "Peneraju Pengalaman",
+      "specialAssessor": "Penilai Khas"
+    },
+    "members": {
+      "qais": {
+        "role": "Ketua Pembangun & Perancang Pengalaman",
+        "bio": "Membina platform, membimbing aliran kejuruteraan dan memastikan setiap ciri mesra keluarga."
+      },
+      "nazean": {
+        "role": "Penilai Khas & Mentor Akademik",
+        "bio": "Memberi penyeliaan akademik, menyelaraskan kandungan dengan standard perlindungan dan nilai Malaysia."
+      },
+      "tan": {
+        "role": "Inovator Antara Muka",
+        "bio": "Mereka bentuk susun atur kemas dan animasi mikro yang memikat pelajar muda."
+      },
+      "chengyang": {
+        "role": "Pereka Permainan & Interaksi",
+        "bio": "Membentuk mekanik menyeronokkan yang menerjemah topik akil baligh kepada penemuan mudah."
+      },
+      "raja": {
+        "role": "Penyelidik Kandungan",
+        "bio": "Mengumpul penjelasan sensitif budaya dan skrip yang dekat dengan keluarga Malaysia."
+      },
+      "hanif": {
+        "role": "Jurutera Sokongan Full-Stack",
+        "bio": "Menghubungkan aliran data dan mengoptimumkan prestasi supaya pembelajaran lancar pada setiap peranti."
+      },
+      "rafia": {
+        "role": "Ketua Penyelidikan & Ujian UX",
+        "bio": "Mendengar maklum balas ibu bapa dan anak, menukarkannya kepada penambahbaikan antara muka."
+      },
+      "wong": {
+        "role": "Penulis Penceritaan & Mikrocopy",
+        "bio": "Menggubah mesej menenangkan dan seruan pelbagai bahasa yang membina kepercayaan."
+      },
+      "zhou": {
+        "role": "Juara Kebolehaksesan",
+        "bio": "Menyemak warna, bahasa dan pola interaksi agar setiap anak boleh turut serta."
+      }
+    }
   }
 }

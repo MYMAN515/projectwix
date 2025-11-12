@@ -68,24 +68,49 @@ export default function AIChat() {
   }
 
   const getAIResponse = (userInput: string): string => {
-    // Simple keyword-based responses (replace with actual AI integration)
-    const input = userInput.toLowerCase()
-    
-    if (input.includes('puberty') || input.includes('changes')) {
-      return t('aiChat.response.puberty')
-    } else if (input.includes('emotion') || input.includes('mood') || input.includes('feel')) {
-      return t('aiChat.response.emotions')
-    } else if (input.includes('talk') || input.includes('communicate') || input.includes('conversation')) {
-      return t('aiChat.response.communication')
-    } else if (input.includes('friend') || input.includes('social')) {
-      return t('aiChat.response.social')
-    } else if (input.includes('privacy') || input.includes('safe')) {
-      return t('aiChat.response.privacy')
-    } else if (input.includes('game') || input.includes('activity')) {
-      return t('aiChat.response.activities')
-    } else {
-      return t('aiChat.response.default')
-    }
+    const normalized = userInput.toLowerCase()
+
+    const knowledgeBase = [
+      {
+        key: 'puberty',
+        keywords: ['puberty', 'akil baligh', 'baligh', 'balig', 'بلوغ', 'perubahan', 'perubahan badan', 'remaja'],
+      },
+      {
+        key: 'emotions',
+        keywords: ['emotion', 'emosi', 'feeling', 'feelings', 'perasaan', 'mood', 'مزاج', 'مشاعر'],
+      },
+      {
+        key: 'communication',
+        keywords: ['talk', 'communicate', 'conversation', 'bercakap', 'berbual', 'komunikasi', 'تحدث', 'تواصل'],
+      },
+      {
+        key: 'social',
+        keywords: ['friend', 'friendship', 'social', 'kawan', 'rakan', 'sosial', 'أصدقاء', 'مجتمع'],
+      },
+      {
+        key: 'privacy',
+        keywords: ['privacy', 'safe', 'safety', 'privasi', 'selamat', 'keselamatan', 'خصوصية', 'أمان'],
+      },
+      {
+        key: 'activities',
+        keywords: ['game', 'activity', 'permainan', 'aktiviti', 'نشاط', 'لعبة'],
+      },
+    ]
+
+    const matched = knowledgeBase.find(({ keywords }) =>
+      keywords.some((keyword) => normalized.includes(keyword.toLowerCase()))
+    )
+
+    const baseResponse = matched ? t(`aiChat.response.${matched.key}`) : t('aiChat.response.default')
+
+    const resourceLines = [
+      t('aiChat.resources.parentGuide'),
+      t('aiChat.resources.games'),
+      t('aiChat.resources.timeline'),
+      t('aiChat.resources.diary'),
+    ]
+
+    return `${baseResponse}\n\n${t('aiChat.resources.intro')}\n• ${resourceLines.join('\n• ')}`
   }
 
   const suggestedQuestions = [
@@ -176,7 +201,11 @@ export default function AIChat() {
                         : 'bg-white text-gray-800'
                     } shadow-md`}
                   >
-                    <p className="text-sm leading-relaxed">{message.content}</p>
+                    <div className="space-y-2 text-sm leading-relaxed">
+                      {message.content.split('\n').map((line, index) => (
+                        <p key={index}>{line}</p>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               ))}

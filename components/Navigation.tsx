@@ -3,10 +3,11 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles, Lightbulb } from 'lucide-react'
+import { Menu, X, Home, Heart, Activity, BookOpen, Sparkles, Lightbulb, Users } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageSwitcher from './LanguageSwitcher'
+import Image from 'next/image'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,6 +21,7 @@ export default function Navigation() {
     { href: '/changes', label: t('nav.changes'), icon: <Heart className="w-5 h-5" /> },
     { href: '/diary', label: t('nav.diary'), icon: <Sparkles className="w-5 h-5" /> },
     { href: '/guidance', label: t('nav.guidance'), icon: <Lightbulb className="w-5 h-5" /> },
+    { href: '/team', label: t('nav.team'), icon: <Users className="w-5 h-5" /> },
   ]
 
   const isActive = (href: string) => pathname === href
@@ -29,17 +31,29 @@ export default function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-3">
             <motion.div
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6 }}
-              className="bg-gradient-to-r from-primary-500 to-secondary-500 w-10 h-10 rounded-full flex items-center justify-center"
+              whileHover={{ rotate: 5, scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+              className="relative w-12 h-12 rounded-2xl bg-white shadow-lg ring-2 ring-primary-200 overflow-hidden flex items-center justify-center"
             >
-              <Sparkles className="w-6 h-6 text-white" />
+              <Image
+                src="/images/um-logo.svg"
+                alt="University of Malaya crest"
+                width={48}
+                height={48}
+                className="w-11 h-11"
+                priority
+              />
             </motion.div>
-            <span className="font-bold text-xl bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent hidden sm:inline">
-              Parenting Hub
-            </span>
+            <div className="hidden sm:flex flex-col leading-tight">
+              <span className="font-bold text-lg bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                Parenting Hub
+              </span>
+              <span className="text-xs text-gray-500 font-medium tracking-wide">
+                University of Malaya
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

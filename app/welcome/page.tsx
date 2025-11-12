@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { Heart, Shield, Users, Sparkles, BookOpen, Lock, Eye, Target, ArrowRight, Check } from 'lucide-react'
+import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function WelcomePage() {
@@ -82,6 +83,31 @@ export default function WelcomePage() {
         animate={{ opacity: 1, scale: 1 }}
         className="max-w-4xl w-full glass-effect rounded-3xl p-8 md:p-12 shadow-2xl"
       >
+        {/* UM Branding */}
+        <div className="flex flex-col items-center justify-center text-center mb-8 gap-3">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="w-24 h-24 rounded-3xl bg-white/80 shadow-xl ring-2 ring-primary-200 flex items-center justify-center"
+          >
+            <Image
+              src="/images/um-logo.svg"
+              alt="University of Malaya logo"
+              width={96}
+              height={96}
+              className="w-20 h-20"
+              priority
+            />
+          </motion.div>
+          <div>
+            <p className="text-sm uppercase tracking-[0.2em] text-primary-500 font-semibold">University of Malaya</p>
+            <p className="text-lg md:text-xl font-semibold text-gray-700">
+              {t('welcome.umAffiliation')}
+            </p>
+          </div>
+        </div>
+
         {/* Progress Indicator */}
         <div className="flex justify-center gap-2 mb-8">
           {slides.map((_, index) => (

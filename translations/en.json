@@ -7,7 +7,8 @@
     "bodyGuide": "Body Guide",
     "guidance": "Parent Guide",
     "games": "Games & Activities",
-    "parentGuide": "Parenting Tips"
+    "parentGuide": "Parenting Tips",
+    "team": "Our Team"
   },
   "home": {
     "title": "Supporting Your Child Through Puberty",
@@ -83,7 +84,8 @@
     "next": "Next",
     "previous": "Previous",
     "skip": "Skip to Privacy",
-    "getStarted": "Let's Begin This Journey"
+    "getStarted": "Let's Begin This Journey",
+    "umAffiliation": "An initiative by the University of Malaya to support every family."
   },
   "aiChat": {
     "title": "Parent Assistant",
@@ -104,7 +106,14 @@
       "social": "Social dynamics change during puberty. Help your child navigate friendships by discussing what healthy relationships look like. Talk about peer pressure and give them language to set boundaries. Encourage diverse friendships and validate their feelings when friendships shift or end - it's a normal part of growing up.",
       "privacy": "This app prioritizes privacy completely. All diary entries and data stay on your device - nothing is sent to servers. The diary is a private space for your child. We don't track users or collect personal information. Your family's privacy and your child's safety are our top priorities.",
       "activities": "The Games section offers interactive activities designed to teach about puberty in a fun, engaging way. These include memory games, emotion recognition exercises, and matching activities. These games help normalize conversations about puberty and make learning enjoyable rather than awkward.",
-      "default": "I'm here to help you with any parenting questions about puberty! You can ask me about: communication strategies, understanding physical/emotional changes, handling difficult situations, supporting your child's mental health, navigating social challenges, and much more. What would you like to know?"
+      "default": "I can guide you through talking about puberty, emotions, safety, healthy habits, and more. Let me know what feels most urgent and I will share step-by-step ideas you can try today."
+    },
+    "resources": {
+      "intro": "You can also explore these in-app supports:",
+      "parentGuide": "Parent Guide • Conversation starters and expert-backed advice.",
+      "games": "Games & Activities • Playful learning moments to share with your child.",
+      "timeline": "Timeline Game • Discover puberty milestones together at your own pace.",
+      "diary": "Feelings Diary • Encourage reflection and emotional check-ins with your child."
     }
   },
   "games": {
@@ -127,7 +136,8 @@
     "memory": {
       "title": "Emotion Memory Game",
       "description": "Match pairs of emotions while learning about feelings during puberty",
-      "instructions": "Find matching pairs of emotions. Remember where each emotion is and match them all to win!"
+      "instructions": "Find matching pairs of emotions. Remember where each emotion is and match them all to win!",
+      "focus": "Memory & empathy building"
     },
     "quiz": {
       "title": "Puberty Knowledge Quiz",
@@ -153,7 +163,8 @@
         "a2": "Feel embarrassed",
         "a3": "Talk to a trusted adult",
         "a4": "Worry about it alone"
-      }
+      },
+      "focus": "Knowledge confidence"
     },
     "matching": {
       "title": "Changes Matching Game",
@@ -175,7 +186,8 @@
       "pair4": {
         "left": "New Interests",
         "right": "Explore & try new things"
-      }
+      },
+      "focus": "Healthy habits practice"
     },
     "emotions": {
       "title": "Understanding Emotions",
@@ -195,7 +207,30 @@
       },
       "scenario3": {
         "situation": "You have to give a presentation in front of the whole class tomorrow."
-      }
+      },
+      "focus": "Emotional vocabulary"
+    },
+    "estimate": {
+      "short": "5 minute boost",
+      "medium": "10 minute challenge"
+    },
+    "featured": {
+      "badge": "Family favourite challenge",
+      "title": "Co-play moments that spark meaningful conversations",
+      "description": "Use these guided games to open gentle discussions about the changes your child is experiencing. Each activity blends evidence-based content with playful discovery.",
+      "point1": "Preview key talking points before your child plays to stay ready for their questions.",
+      "point2": "Celebrate progress with built-in feedback that boosts their self-esteem.",
+      "point3": "Pair games with the diary feature for a balanced learning + reflection routine."
+    },
+    "tips": {
+      "title": "Tips for a joyful learning flow",
+      "subtitle": "Three quick practices that make every game session meaningful for your child.",
+      "checkIn": "Check in first",
+      "checkInDetail": "Ask how they are feeling before you start. A calm hello helps them feel safe.",
+      "balance": "Balance guidance & freedom",
+      "balanceDetail": "Let them explore the game while you stay nearby to encourage and clarify.",
+      "reflect": "Reflect after playing",
+      "reflectDetail": "Chat about what they learned and what felt tricky. Link it back to daily life."
     }
   },
   "parentGuide": {
@@ -507,5 +542,67 @@
     "title": "Supporting Families Through Puberty",
     "subtitle": "A safe, loving resource for parents and children 🌱",
     "copyright": "© 2025 - Created with love for families"
+  },
+  "team": {
+    "affiliation": "University of Malaya • Faculty of Computer Science and Information Technology",
+    "title": "Meet the people behind Parenting Hub",
+    "subtitle": "An interdisciplinary team combining technology, research, and compassionate assessment to uplift Malaysian families.",
+    "sections": {
+      "leadership": "Leadership & Vision",
+      "leadershipDetail": "Guiding the product experience and ensuring evidence-based support for parents and children.",
+      "supporters": "Student Innovators & Experience Designers",
+      "supportersDetail": "Crafting warm, inclusive interactions through research, testing, and creative storytelling."
+    },
+    "stats": {
+      "languages": "Languages supported",
+      "languagesDetail": "Localised in English, Bahasa Melayu, and Arabic so every family feels welcome.",
+      "modules": "Interactive modules",
+      "modulesDetail": "Guides, games, and diaries designed to spark confident puberty conversations.",
+      "childCentered": "Child-centred focus",
+      "childCenteredDetail": "Every release is reviewed for privacy, safeguarding, and emotional wellbeing."
+    },
+    "badges": {
+      "programmer": "Programmer",
+      "lead": "Experience Lead",
+      "specialAssessor": "Special Assessor"
+    },
+    "members": {
+      "qais": {
+        "role": "Lead Developer & Experience Strategist",
+        "bio": "Architects the platform, mentors the engineering workflow, and ensures every feature feels effortless for families."
+      },
+      "nazean": {
+        "role": "Special Assessor & Academic Mentor",
+        "bio": "Provides scholarly oversight, aligning content with safeguarding standards and inclusive Malaysian values."
+      },
+      "tan": {
+        "role": "Interface Innovator",
+        "bio": "Designs polished layouts and delightful micro-animations that keep young learners engaged."
+      },
+      "chengyang": {
+        "role": "Gameplay & Interaction Designer",
+        "bio": "Shapes playful mechanics that translate complex puberty topics into bite-sized discoveries."
+      },
+      "raja": {
+        "role": "Content Researcher",
+        "bio": "Curates culturally sensitive explanations and scripts that speak gently to Malaysian families."
+      },
+      "hanif": {
+        "role": "Full-stack Support Engineer",
+        "bio": "Connects data flows and optimises performance so learning moments run smoothly on any device."
+      },
+      "rafia": {
+        "role": "UX Research & Testing Lead",
+        "bio": "Listens to parent and child feedback, translating insights into actionable interface improvements."
+      },
+      "wong": {
+        "role": "Storytelling & Microcopy Writer",
+        "bio": "Crafts reassuring messages and multilingual prompts that build trust and clarity."
+      },
+      "zhou": {
+        "role": "Accessibility Champion",
+        "bio": "Reviews colour, language, and interaction patterns to make sure every child can participate."
+      }
+    }
   }
 }

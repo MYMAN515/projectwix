@@ -3,9 +3,9 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { 
-  Gamepad2, Star, Trophy, Target, Puzzle, Brain, 
-  Heart, Smile, Zap, Gift, Award, CheckCircle2
+import {
+  Gamepad2, Star, Trophy, Target, Puzzle, Brain,
+  Heart, Smile, Zap, Gift, Award, CheckCircle2, Sparkles, Timer
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -22,7 +22,9 @@ export default function GamesPage() {
       title: t('games.memory.title'),
       description: t('games.memory.description'),
       color: 'from-purple-400 to-indigo-500',
-      difficulty: 'easy'
+      difficulty: 'easy',
+      focus: t('games.memory.focus'),
+      duration: t('games.estimate.short')
     },
     {
       id: 'quiz' as GameType,
@@ -30,7 +32,9 @@ export default function GamesPage() {
       title: t('games.quiz.title'),
       description: t('games.quiz.description'),
       color: 'from-blue-400 to-cyan-500',
-      difficulty: 'medium'
+      difficulty: 'medium',
+      focus: t('games.quiz.focus'),
+      duration: t('games.estimate.medium')
     },
     {
       id: 'matching' as GameType,
@@ -38,7 +42,9 @@ export default function GamesPage() {
       title: t('games.matching.title'),
       description: t('games.matching.description'),
       color: 'from-pink-400 to-rose-500',
-      difficulty: 'easy'
+      difficulty: 'easy',
+      focus: t('games.matching.focus'),
+      duration: t('games.estimate.short')
     },
     {
       id: 'emotions' as GameType,
@@ -46,18 +52,55 @@ export default function GamesPage() {
       title: t('games.emotions.title'),
       description: t('games.emotions.description'),
       color: 'from-amber-400 to-orange-500',
-      difficulty: 'medium'
+      difficulty: 'medium',
+      focus: t('games.emotions.focus'),
+      duration: t('games.estimate.medium')
     }
   ]
 
+  const highlight = {
+    badge: t('games.featured.badge'),
+    title: t('games.featured.title'),
+    description: t('games.featured.description'),
+    points: [
+      t('games.featured.point1'),
+      t('games.featured.point2'),
+      t('games.featured.point3'),
+    ],
+  }
+
+  const tips = [
+    {
+      title: t('games.tips.checkIn'),
+      description: t('games.tips.checkInDetail'),
+    },
+    {
+      title: t('games.tips.balance'),
+      description: t('games.tips.balanceDetail'),
+    },
+    {
+      title: t('games.tips.reflect'),
+      description: t('games.tips.reflectDetail'),
+    },
+  ]
+
   return (
-    <div className="container mx-auto px-4 py-8 md:py-12">
+    <div className="relative">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50" />
+      <div className="absolute top-0 inset-x-0 h-64 bg-gradient-to-br from-primary-100/60 via-transparent to-secondary-100/60 blur-3xl" />
+
+      <div className="container mx-auto px-4 py-8 md:py-12">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-center mb-12"
+        className="relative text-center mb-12"
       >
+        <motion.span
+          animate={{ scale: [1, 1.04, 1], rotate: [0, 2, -2, 0] }}
+          transition={{ duration: 6, repeat: Infinity }}
+          className="absolute inset-x-0 mx-auto -top-10 w-48 h-48 bg-white/50 rounded-full blur-2xl"
+        />
         <motion.div
           animate={{ rotate: [0, 10, -10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
@@ -71,6 +114,35 @@ export default function GamesPage() {
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
           {t('games.subtitle')}
         </p>
+      </motion.div>
+
+      {/* Featured Experience */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="glass-effect rounded-3xl p-6 md:p-10 mb-12 border border-white/60 shadow-xl"
+      >
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="flex-1 text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-100 to-secondary-100 text-primary-700 text-sm font-semibold mb-4">
+              <Sparkles className="w-4 h-4" />
+              {highlight.badge}
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">{highlight.title}</h2>
+            <p className="text-gray-700 leading-relaxed mb-4 max-w-2xl">
+              {highlight.description}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {highlight.points.map((point, index) => (
+                <div key={index} className="flex items-start gap-3 bg-white/70 rounded-2xl px-4 py-3 shadow-sm">
+                  <Trophy className="w-5 h-5 text-primary-500 mt-0.5" />
+                  <span className="text-sm text-gray-700 leading-snug">{point}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </motion.div>
 
       {/* Games Grid */}
@@ -90,15 +162,24 @@ export default function GamesPage() {
             </div>
             <h3 className="text-2xl font-bold mb-3 text-gray-800">{game.title}</h3>
             <p className="text-gray-600 mb-4 leading-relaxed">{game.description}</p>
-            <div className="flex items-center justify-between">
-              <span className={`text-sm font-semibold px-3 py-1 rounded-full ${
-                game.difficulty === 'easy' 
-                  ? 'bg-green-100 text-green-700' 
-                  : 'bg-yellow-100 text-yellow-700'
-              }`}>
-                {game.difficulty === 'easy' ? t('games.easy') : t('games.medium')}
+            <div className="flex flex-wrap items-center gap-3 justify-between">
+              <div className="flex items-center gap-2">
+                <span className={`text-xs font-semibold px-3 py-1 rounded-full ${
+                  game.difficulty === 'easy'
+                    ? 'bg-green-100 text-green-700'
+                    : 'bg-yellow-100 text-yellow-700'
+                }`}>
+                  {game.difficulty === 'easy' ? t('games.easy') : t('games.medium')}
+                </span>
+                <span className="inline-flex items-center gap-1 text-xs font-medium text-primary-600 bg-primary-100/70 px-3 py-1 rounded-full">
+                  <Timer className="w-4 h-4" />
+                  {game.duration}
+                </span>
+              </div>
+              <span className="inline-flex items-center gap-1 text-sm font-semibold text-secondary-600">
+                <Star className="w-5 h-5 text-yellow-500" />
+                {game.focus}
               </span>
-              <Star className="w-6 h-6 text-yellow-500" />
             </div>
           </motion.div>
         ))}
@@ -148,6 +229,40 @@ export default function GamesPage() {
               <h4 className="font-bold text-gray-800">{t('nav.bodyGuide')}</h4>
             </motion.div>
           </Link>
+        </div>
+      </motion.div>
+
+      {/* Parent Tips */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+        className="max-w-5xl mx-auto mt-12 mb-4"
+      >
+        <div className="glass-effect rounded-3xl p-6 md:p-10 border border-white/60">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white flex items-center justify-center">
+              <CheckCircle2 className="w-6 h-6" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900">{t('games.tips.title')}</h2>
+              <p className="text-gray-600">{t('games.tips.subtitle')}</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {tips.map((tip, index) => (
+              <motion.div
+                key={tip.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * index }}
+                className="bg-white/70 rounded-2xl p-4 shadow-sm"
+              >
+                <h3 className="text-base font-semibold text-gray-900 mb-2">{tip.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{tip.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.div>
 
