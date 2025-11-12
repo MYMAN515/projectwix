@@ -7,7 +7,8 @@
     "bodyGuide": "Body Guide",
     "guidance": "Parent Guide",
     "games": "Games & Activities",
-    "parentGuide": "Parenting Tips"
+    "parentGuide": "Parenting Tips",
+    "team": "Our Team"
   },
   "home": {
     "title": "Supporting Your Child Through Puberty",
@@ -83,7 +84,37 @@
     "next": "Next",
     "previous": "Previous",
     "skip": "Skip to Privacy",
-    "getStarted": "Let's Begin This Journey"
+    "getStarted": "Let's Begin This Journey",
+    "team": {
+      "logoAlt": "University of Malaya emblem",
+      "university": "University of Malaya",
+      "title": "Meet the MG Project Team",
+      "subtitle": "A passionate student group from UM guiding families with empathy and technology.",
+      "badge": "Lead Programmer",
+      "cta": "See the full MG team",
+      "qais": "Lead programmer and experience architect",
+      "tan": "Programmer & presenter",
+      "chengyang": "Secretary & coordinator",
+      "raja": "Interface designer",
+      "hanif": "Video creator & photographer",
+      "rafia": "Secretary",
+      "wong": "Visual concept & presenter"
+    },
+    "support": {
+      "parentGuide": {
+        "title": "Need structured guidance?",
+        "description": "Explore step-by-step conversations and tips in the Parent Guide."
+      },
+      "extraHelp": {
+        "title": "Want another helping hand?",
+        "description": "Browse curated articles and calming exercises in the Guidance hub."
+      },
+      "chat": {
+        "title": "Chat with our assistant",
+        "description": "Ask questions in English, Malay, or Arabic and get practical answers."
+      },
+      "learnMore": "Discover support"
+    }
   },
   "aiChat": {
     "title": "Parent Assistant",
@@ -95,7 +126,9 @@
       "q1": "How do I start the puberty conversation?",
       "q2": "How can I support my child's emotions?",
       "q3": "What activities can help my child?",
-      "q4": "How do I handle mood swings?"
+      "q4": "How do I handle mood swings?",
+      "q5": "How do I teach good hygiene habits?",
+      "q6": "What if my child can't sleep well?"
     },
     "response": {
       "puberty": "Great question! Starting conversations about puberty early and keeping them ongoing is key. Use natural opportunities like seeing related content on TV or books. Keep the tone casual and normalize the topic. Let your child know they can always come to you with questions, and reassure them that all the changes they're experiencing are completely normal.",
@@ -104,7 +137,18 @@
       "social": "Social dynamics change during puberty. Help your child navigate friendships by discussing what healthy relationships look like. Talk about peer pressure and give them language to set boundaries. Encourage diverse friendships and validate their feelings when friendships shift or end - it's a normal part of growing up.",
       "privacy": "This app prioritizes privacy completely. All diary entries and data stay on your device - nothing is sent to servers. The diary is a private space for your child. We don't track users or collect personal information. Your family's privacy and your child's safety are our top priorities.",
       "activities": "The Games section offers interactive activities designed to teach about puberty in a fun, engaging way. These include memory games, emotion recognition exercises, and matching activities. These games help normalize conversations about puberty and make learning enjoyable rather than awkward.",
-      "default": "I'm here to help you with any parenting questions about puberty! You can ask me about: communication strategies, understanding physical/emotional changes, handling difficult situations, supporting your child's mental health, navigating social challenges, and much more. What would you like to know?"
+      "default": "I'm here to help you with any parenting questions about puberty! You can ask me about: communication strategies, understanding physical/emotional changes, handling difficult situations, supporting your child's mental health, navigating social challenges, and much more. What would you like to know?",
+      "hygiene": "Puberty can cause new body odours and skin changes. Create a simple routine: daily showers, clean clothes, and deodorant if they are comfortable. Show them how to care for their skin gently and keep supplies accessible so it feels normal, not embarrassing.",
+      "sleep": "Sleep can get tricky during puberty. Keep a consistent bedtime, reduce screens at least an hour before, and invite them to try calming routines such as journaling or deep breathing. Remind them that tiredness can magnify emotions, so rest is part of self-care.",
+      "support": "I'm cheering you on! You're already doing a lot by looking for guidance. Reach out to your child regularly with small check-ins, and lean on the Parent Guide, Guidance hub, and our MG team whenever you need reassurance.",
+      "resources": "You can tap the shortcuts below for guided lessons, supportive activities, or direct help from our MG team."
+    },
+    "quickTipsTitle": "Quick tips for calmer chats:",
+    "quickTips": "Keep conversations short and frequent.|Listen without interrupting first.|Celebrate every small question they ask.",
+    "shortcuts": {
+      "parentGuide": "Parent Guide",
+      "games": "Activities Hub",
+      "team": "Meet the Team"
     }
   },
   "games": {
@@ -127,7 +171,10 @@
     "memory": {
       "title": "Emotion Memory Game",
       "description": "Match pairs of emotions while learning about feelings during puberty",
-      "instructions": "Find matching pairs of emotions. Remember where each emotion is and match them all to win!"
+      "instructions": "Find matching pairs of emotions. Remember where each emotion is and match them all to win!",
+      "duration": "5 minutes",
+      "skills": "Build memory skills|Recognise feelings|Boost focus",
+      "benefit": "Strengthens recall while connecting feelings with words."
     },
     "quiz": {
       "title": "Puberty Knowledge Quiz",
@@ -153,7 +200,10 @@
         "a2": "Feel embarrassed",
         "a3": "Talk to a trusted adult",
         "a4": "Worry about it alone"
-      }
+      },
+      "duration": "7 minutes",
+      "skills": "Learn puberty facts|Practice decision making|Grow confidence",
+      "benefit": "Encourages open conversations through short, celebratory quizzes."
     },
     "matching": {
       "title": "Changes Matching Game",
@@ -175,7 +225,10 @@
       "pair4": {
         "left": "New Interests",
         "right": "Explore & try new things"
-      }
+      },
+      "duration": "6 minutes",
+      "skills": "Solve problems|Link habits to changes|Encourage healthy routines",
+      "benefit": "Helps kids link body changes with supportive routines."
     },
     "emotions": {
       "title": "Understanding Emotions",
@@ -195,6 +248,34 @@
       },
       "scenario3": {
         "situation": "You have to give a presentation in front of the whole class tomorrow."
+      },
+      "duration": "5 minutes",
+      "skills": "Name emotions|Build empathy|Plan coping strategies",
+      "benefit": "Transforms real-life scenarios into safe practice moments."
+    },
+    "playNow": "Play now",
+    "highlights": {
+      "guided": "Guided for parents & kids",
+      "guidedDescription": "Each activity includes prompts to help you check-in and celebrate progress together.",
+      "explorers": "Built for curious explorers",
+      "explorersDescription": "Short, focused sessions make it easy for children to try something new without feeling overwhelmed.",
+      "confidence": "Confidence-building fun",
+      "confidenceDescription": "Games reinforce healthy habits and emotional literacy through positive, playful feedback."
+    },
+    "support": {
+      "title": "Need an extra boost?",
+      "description": "Use these quick resources to support each activity with guidance, reflection, and conversation starters.",
+      "tips": {
+        "title": "Coaching tips",
+        "description": "Read practical suggestions to discuss each game and connect it to daily life."
+      },
+      "parent": {
+        "title": "Parent lesson plans",
+        "description": "The Parent Guide offers deeper explanations, conversation starters, and printable activities."
+      },
+      "chat": {
+        "title": "Ask the AI assistant",
+        "description": "Get personalised answers when your child has more questions after playing."
       }
     }
   },
@@ -507,5 +588,69 @@
     "title": "Supporting Families Through Puberty",
     "subtitle": "A safe, loving resource for parents and children 🌱",
     "copyright": "© 2025 - Created with love for families"
+  },
+  "teamPage": {
+    "logoAlt": "University of Malaya emblem",
+    "university": "University of Malaya",
+    "title": "The MG Project Team",
+    "subtitle": "We combine programming, design, storytelling, and empathy to guide families through puberty with confidence.",
+    "badge": "Lead Programmer",
+    "members": {
+      "qais": {
+        "name": "Qais Al Hrahsheh",
+        "role": "Lead programmer & experience architect",
+        "focus": "Guides the technical vision, ensures tri-language support, and elevates every UX detail."
+      },
+      "tan": {
+        "name": "Tan Kang Zheng",
+        "role": "Programmer & presenter",
+        "focus": "Builds core features and turns team ideas into polished demos."
+      },
+      "chengyang": {
+        "name": "Chengyang Sun",
+        "role": "Secretary & coordinator",
+        "focus": "Keeps milestones aligned and documents progress so the team stays in sync."
+      },
+      "raja": {
+        "name": "Raja Nur Aqylah Natasha binti Raja Zazman Shah",
+        "role": "Interface designer",
+        "focus": "Shapes the UI look and feel with inclusive visuals and friendly layouts."
+      },
+      "hanif": {
+        "name": "Hanif Ruben Davni Setiadji",
+        "role": "Video creator & photographer",
+        "focus": "Captures stories and visuals that make puberty education approachable."
+      },
+      "rafia": {
+        "name": "Rafia Raida Binta Jashim",
+        "role": "Secretary",
+        "focus": "Organises resources, notes, and communications to keep everyone supported."
+      },
+      "wong": {
+        "name": "Wong Yan Wen",
+        "role": "Visual concept & presenter",
+        "focus": "Translates complex ideas into engaging presentations and visual narratives."
+      }
+    },
+    "values": {
+      "collaboration": {
+        "title": "Collaboration first",
+        "description": "Every feature is co-created across roles so parents and children feel supported at every step."
+      },
+      "empathy": {
+        "title": "Empathy in every decision",
+        "description": "We listen to families and design inclusive, multilingual guidance that feels safe."
+      },
+      "creativity": {
+        "title": "Creativity & clarity",
+        "description": "Interactive storytelling, visual polish, and accessible language keep learning joyful."
+      }
+    },
+    "cta": {
+      "title": "Walk through the app with us",
+      "description": "Revisit the welcome journey or jump into the activities to see our collaborative work in action.",
+      "primary": "Return to the welcome tour",
+      "secondary": "Explore the games"
+    }
   }
 }

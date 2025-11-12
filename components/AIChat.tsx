@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MessageCircle, X, Send, Bot, User, Sparkles } from 'lucide-react'
+import { MessageCircle, X, Send, Bot, User, Sparkles, BookOpen, HeartHandshake } from 'lucide-react'
+import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 interface Message {
@@ -67,38 +68,91 @@ export default function AIChat() {
     }, 1500)
   }
 
-  const getAIResponse = (userInput: string): string => {
-    // Simple keyword-based responses (replace with actual AI integration)
-    const input = userInput.toLowerCase()
-    
-    if (input.includes('puberty') || input.includes('changes')) {
-      return t('aiChat.response.puberty')
-    } else if (input.includes('emotion') || input.includes('mood') || input.includes('feel')) {
-      return t('aiChat.response.emotions')
-    } else if (input.includes('talk') || input.includes('communicate') || input.includes('conversation')) {
-      return t('aiChat.response.communication')
-    } else if (input.includes('friend') || input.includes('social')) {
-      return t('aiChat.response.social')
-    } else if (input.includes('privacy') || input.includes('safe')) {
-      return t('aiChat.response.privacy')
-    } else if (input.includes('game') || input.includes('activity')) {
-      return t('aiChat.response.activities')
-    } else {
-      return t('aiChat.response.default')
+  const knowledgeBase = [
+    {
+      keywords: ['puberty', 'changes', 'baligh', 'akil', 'بلوغ', 'تغير'],
+      response: t('aiChat.response.puberty')
+    },
+    {
+      keywords: ['emotion', 'mood', 'feel', 'emosi', 'perasaan', 'شعور', 'مزاج'],
+      response: t('aiChat.response.emotions')
+    },
+    {
+      keywords: ['talk', 'communicate', 'conversation', 'bercakap', 'berkomunikasi', 'تحدث', 'حوار'],
+      response: t('aiChat.response.communication')
+    },
+    {
+      keywords: ['friend', 'social', 'kawan', 'sahabat', 'sosial', 'صديق', 'اجتماعي'],
+      response: t('aiChat.response.social')
+    },
+    {
+      keywords: ['privacy', 'safe', 'selamat', 'privasi', 'خصوصية', 'أمان'],
+      response: t('aiChat.response.privacy')
+    },
+    {
+      keywords: ['game', 'activity', 'permainan', 'aktiviti', 'لعبة', 'نشاط'],
+      response: t('aiChat.response.activities')
+    },
+    {
+      keywords: ['hygiene', 'clean', 'bersih', 'kebersihan', 'نظافة'],
+      response: t('aiChat.response.hygiene')
+    },
+    {
+      keywords: ['sleep', 'rest', 'tidur', 'rehat', 'نوم', 'راحة'],
+      response: t('aiChat.response.sleep')
+    },
+    {
+      keywords: ['help', 'support', 'bantu', 'tolong', 'sokongan', 'مساعدة', 'دعم'],
+      response: t('aiChat.response.support')
     }
+  ]
+
+  const getAIResponse = (userInput: string): string => {
+    const input = userInput.toLowerCase()
+
+    for (const entry of knowledgeBase) {
+      if (entry.keywords.some((keyword) => input.includes(keyword))) {
+        return `${entry.response}\n\n${t('aiChat.response.resources')}`
+      }
+    }
+
+    return `${t('aiChat.response.default')}\n\n${t('aiChat.response.resources')}`
   }
 
   const suggestedQuestions = [
     t('aiChat.suggestions.q1'),
     t('aiChat.suggestions.q2'),
     t('aiChat.suggestions.q3'),
-    t('aiChat.suggestions.q4')
+    t('aiChat.suggestions.q4'),
+    t('aiChat.suggestions.q5'),
+    t('aiChat.suggestions.q6')
+  ]
+
+  const quickTips = t('aiChat.quickTips').split('|').filter(Boolean)
+
+  const supportShortcuts = [
+    {
+      icon: <BookOpen className="w-4 h-4" />,
+      label: t('aiChat.shortcuts.parentGuide'),
+      href: '/parent-guide'
+    },
+    {
+      icon: <Sparkles className="w-4 h-4" />,
+      label: t('aiChat.shortcuts.games'),
+      href: '/games'
+    },
+    {
+      icon: <HeartHandshake className="w-4 h-4" />,
+      label: t('aiChat.shortcuts.team'),
+      href: '/team'
+    }
   ]
 
   return (
     <>
       {/* Chat Button */}
       <motion.button
+        id="ai-chat"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         whileHover={{ scale: 1.1 }}
@@ -217,26 +271,51 @@ export default function AIChat() {
 
             {/* Suggested Questions */}
             {messages.length === 1 && (
-              <div className="px-4 py-2 bg-white/50 border-t border-gray-200">
-                <p className="text-xs text-gray-600 mb-2 font-semibold">
-                  {t('aiChat.suggestedTitle')}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {suggestedQuestions.map((question, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setInput(question)}
-                      className="text-xs bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-full border border-gray-300 transition-colors"
-                    >
-                      {question}
-                    </button>
-                  ))}
+              <div className="px-4 py-3 bg-white/50 border-t border-gray-200 space-y-3">
+                <div>
+                  <p className="text-xs text-gray-600 mb-2 font-semibold">{t('aiChat.suggestedTitle')}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {suggestedQuestions.map((question, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setInput(question)}
+                        className="text-xs bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-full border border-gray-300 transition-colors"
+                      >
+                        {question}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs text-gray-600 mb-2 font-semibold">{t('aiChat.quickTipsTitle')}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {quickTips.map((tip, index) => (
+                      <span
+                        key={index}
+                        className="text-xs bg-gradient-to-r from-primary-100 to-secondary-100 text-primary-700 px-3 py-2 rounded-full border border-primary-200"
+                      >
+                        {tip}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
 
             {/* Input */}
             <div className="p-4 bg-white/50 border-t border-gray-200">
+              <div className="flex flex-wrap gap-2 mb-3">
+                {supportShortcuts.map((shortcut) => (
+                  <Link
+                    key={shortcut.label}
+                    href={shortcut.href}
+                    className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-gray-700 shadow-sm ring-1 ring-gray-200 transition hover:bg-gray-50"
+                  >
+                    {shortcut.icon}
+                    {shortcut.label}
+                  </Link>
+                ))}
+              </div>
               <div className="flex gap-2">
                 <input
                   type="text"

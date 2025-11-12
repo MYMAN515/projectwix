@@ -7,7 +7,8 @@
     "bodyGuide": "Panduan Badan",
     "guidance": "Panduan Ibu Bapa",
     "games": "Permainan & Aktiviti",
-    "parentGuide": "Petua Keibubapaan"
+    "parentGuide": "Petua Keibubapaan",
+    "team": "Pasukan Kami"
   },
   "home": {
     "title": "Menyokong Anak Anda Melalui Akil Baligh",
@@ -83,7 +84,37 @@
     "next": "Seterusnya",
     "previous": "Sebelumnya",
     "skip": "Langkau ke Privasi",
-    "getStarted": "Mari Mulakan Perjalanan Ini"
+    "getStarted": "Mari Mulakan Perjalanan Ini",
+    "team": {
+      "logoAlt": "Lambang Universiti Malaya",
+      "university": "Universiti Malaya",
+      "title": "Kenali Pasukan Projek MG",
+      "subtitle": "Sekumpulan pelajar UM yang berdedikasi menyokong keluarga dengan empati dan teknologi.",
+      "badge": "Ketua Pengatur Cara",
+      "cta": "Lihat pasukan MG sepenuhnya",
+      "qais": "Ketua pengatur cara dan arkitek pengalaman",
+      "tan": "Pengatur cara & penyampai",
+      "chengyang": "Setiausaha & penyelaras",
+      "raja": "Pereka antara muka",
+      "hanif": "Pencipta video & jurugambar",
+      "rafia": "Setiausaha",
+      "wong": "Konsep visual & penyampai"
+    },
+    "support": {
+      "parentGuide": {
+        "title": "Perlukan panduan teratur?",
+        "description": "Terokai perbualan dan tip langkah demi langkah dalam Panduan Ibu Bapa."
+      },
+      "extraHelp": {
+        "title": "Mahukan bantuan tambahan?",
+        "description": "Layari artikel terpilih dan aktiviti menenangkan dalam hab Bimbingan."
+      },
+      "chat": {
+        "title": "Berbual dengan pembantu kami",
+        "description": "Tanya dalam Bahasa Inggeris, Melayu atau Arab dan terima jawapan praktikal."
+      },
+      "learnMore": "Ketahui sokongan"
+    }
   },
   "aiChat": {
     "title": "Pembantu Ibu Bapa",
@@ -95,7 +126,9 @@
       "q1": "Bagaimana saya memulakan perbualan akil baligh?",
       "q2": "Bagaimana saya boleh menyokong emosi anak saya?",
       "q3": "Aktiviti apa yang boleh membantu anak saya?",
-      "q4": "Bagaimana saya menangani perubahan mood?"
+      "q4": "Bagaimana saya menangani perubahan mood?",
+      "q5": "Bagaimana saya mengajar kebersihan diri?",
+      "q6": "Apa jika anak sukar tidur?"
     },
     "response": {
       "puberty": "Soalan bagus! Memulakan perbualan tentang akil baligh awal dan mengekalkannya berterusan adalah kunci. Gunakan peluang semula jadi seperti melihat kandungan berkaitan di TV atau buku. Pastikan nada santai dan normalkan topik. Biarkan anak anda tahu mereka sentiasa boleh datang kepada anda dengan soalan, dan yakinkan mereka bahawa semua perubahan yang mereka alami adalah benar-benar normal.",
@@ -104,7 +137,18 @@
       "social": "Dinamik sosial berubah semasa akil baligh. Bantu anak anda menavigasi persahabatan dengan membincangkan seperti apa hubungan yang sihat. Bincangkan tekanan rakan sebaya dan beri mereka bahasa untuk menetapkan sempadan. Galakkan persahabatan yang pelbagai dan sahkan perasaan mereka apabila persahabatan berubah atau berakhir.",
       "privacy": "Aplikasi ini mengutamakan privasi sepenuhnya. Semua catatan diari dan data kekal pada peranti anda. Diari adalah ruang peribadi untuk anak anda. Kami tidak menjejak pengguna atau mengumpul maklumat peribadi. Privasi keluarga anda dan keselamatan anak anda adalah keutamaan utama kami.",
       "activities": "Bahagian Permainan menawarkan aktiviti interaktif yang direka untuk mengajar tentang akil baligh dengan cara yang menyeronokkan dan menarik. Ini termasuk permainan ingatan, latihan pengiktirafan emosi, dan aktiviti padanan. Permainan ini membantu menormalkan perbualan tentang akil baligh dan menjadikan pembelajaran menyeronokkan daripada janggal.",
-      "default": "Saya di sini untuk membantu anda dengan sebarang soalan keibubapaan tentang akil baligh! Anda boleh tanya saya tentang: strategi komunikasi, memahami perubahan fizikal/emosi, mengendalikan situasi sukar, menyokong kesihatan mental anak anda, menavigasi cabaran sosial, dan banyak lagi. Apa yang anda ingin tahu?"
+      "default": "Saya di sini untuk membantu anda dengan sebarang soalan keibubapaan tentang akil baligh! Anda boleh tanya saya tentang: strategi komunikasi, memahami perubahan fizikal/emosi, mengendalikan situasi sukar, menyokong kesihatan mental anak anda, menavigasi cabaran sosial, dan banyak lagi. Apa yang anda ingin tahu?",
+      "hygiene": "Akil baligh boleh menyebabkan bau badan dan perubahan kulit. Tetapkan rutin mudah: mandi setiap hari, pakaian bersih dan deodoran jika mereka selesa. Tunjukkan cara menjaga kulit dengan lembut dan sediakan keperluan supaya ia rasa biasa, bukan memalukan.",
+      "sleep": "Tidur boleh menjadi cabaran semasa akil baligh. Kekalkan waktu tidur konsisten, kurangkan skrin sekurang-kurangnya sejam sebelum tidur, dan ajak mereka mencuba rutin menenangkan seperti menulis jurnal atau bernafas dalam. Ingatkan bahawa keletihan boleh menguatkan emosi, jadi rehat ialah sebahagian penjagaan diri.",
+      "support": "Kami menyokong anda! Anda sudah hebat kerana mencari panduan. Hubungi anak anda dengan semakan kecil yang kerap dan gunakan Panduan Ibu Bapa, hab Bimbingan serta pasukan MG apabila perlukan keyakinan.",
+      "resources": "Gunakan pintasan di bawah untuk ke pelajaran berpandu, aktiviti sokongan atau bantuan terus daripada pasukan MG."
+    },
+    "quickTipsTitle": "Tip pantas untuk perbualan tenang:",
+    "quickTips": "Buat perbualan ringkas tetapi kerap.|Dengar tanpa menyampuk dahulu.|Raikan setiap soalan kecil yang mereka tanya.",
+    "shortcuts": {
+      "parentGuide": "Panduan Ibu Bapa",
+      "games": "Pusat Aktiviti",
+      "team": "Kenali Pasukan"
     }
   },
   "games": {
@@ -127,7 +171,10 @@
     "memory": {
       "title": "Permainan Ingatan Emosi",
       "description": "Padankan pasangan emosi sambil belajar tentang perasaan semasa akil baligh",
-      "instructions": "Cari pasangan emosi yang sepadan. Ingat di mana setiap emosi dan padankan semuanya untuk menang!"
+      "instructions": "Cari pasangan emosi yang sepadan. Ingat di mana setiap emosi dan padankan semuanya untuk menang!",
+      "duration": "5 minit",
+      "skills": "Mengukuhkan ingatan|Mengenal pasti emosi|Menambah fokus",
+      "benefit": "Menguatkan daya ingatan sambil menghubungkan perasaan dengan kata-kata."
     },
     "quiz": {
       "title": "Kuiz Pengetahuan Akil Baligh",
@@ -153,7 +200,10 @@
         "a2": "Berasa malu",
         "a3": "Bercakap dengan orang dewasa yang dipercayai",
         "a4": "Risau tentangnya bersendirian"
-      }
+      },
+      "duration": "7 minit",
+      "skills": "Mempelajari fakta akil baligh|Berlatih membuat keputusan|Membina keyakinan",
+      "benefit": "Menggalakkan perbualan terbuka melalui kuiz ringkas yang menyeronokkan."
     },
     "matching": {
       "title": "Permainan Padanan Perubahan",
@@ -175,7 +225,10 @@
       "pair4": {
         "left": "Minat Baru",
         "right": "Terokai & cuba perkara baru"
-      }
+      },
+      "duration": "6 minit",
+      "skills": "Menyelesaikan masalah|Mengaitkan tabiat dengan perubahan|Menggalakkan rutin sihat",
+      "benefit": "Membantu anak mengaitkan perubahan badan dengan rutin sokongan."
     },
     "emotions": {
       "title": "Memahami Emosi",
@@ -195,6 +248,34 @@
       },
       "scenario3": {
         "situation": "Anda perlu membuat pembentangan di hadapan seluruh kelas esok."
+      },
+      "duration": "5 minit",
+      "skills": "Menamakan emosi|Membangun empati|Merancang strategi menenangkan",
+      "benefit": "Menukar situasi harian kepada peluang latihan yang selamat."
+    },
+    "playNow": "Main sekarang",
+    "highlights": {
+      "guided": "Dipandu untuk ibu bapa & anak",
+      "guidedDescription": "Setiap aktiviti mempunyai soalan untuk membantu anda menyemak dan meraikan kemajuan bersama.",
+      "explorers": "Dibina untuk peneroka ingin tahu",
+      "explorersDescription": "Sesi pendek dan fokus memudahkan anak mencuba perkara baharu tanpa rasa terbeban.",
+      "confidence": "Keseronokan membina keyakinan",
+      "confidenceDescription": "Permainan mengukuhkan tabiat sihat dan literasi emosi melalui maklum balas positif."
+    },
+    "support": {
+      "title": "Perlukan dorongan tambahan?",
+      "description": "Gunakan sumber pantas ini untuk menyokong setiap aktiviti dengan panduan dan idea perbualan.",
+      "tips": {
+        "title": "Tip bimbingan",
+        "description": "Baca cadangan praktikal untuk berbincang tentang setiap permainan dan mengaitkannya dengan kehidupan harian."
+      },
+      "parent": {
+        "title": "Pelan pembelajaran ibu bapa",
+        "description": "Panduan Ibu Bapa menawarkan penerangan lanjut, soalan perbualan dan aktiviti bercetak."
+      },
+      "chat": {
+        "title": "Tanya pembantu AI",
+        "description": "Dapatkan jawapan peribadi apabila anak mempunyai lebih banyak soalan selepas bermain."
       }
     }
   },
@@ -507,5 +588,69 @@
     "title": "Menyokong Keluarga Melalui Akil Baligh",
     "subtitle": "Sumber selamat dan penuh kasih untuk ibu bapa dan kanak-kanak 🌱",
     "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga"
+  },
+  "teamPage": {
+    "logoAlt": "Lambang Universiti Malaya",
+    "university": "Universiti Malaya",
+    "title": "Pasukan Projek MG",
+    "subtitle": "Kami menggabungkan pengaturcaraan, reka bentuk, penceritaan dan empati untuk membantu keluarga menghadapi akil baligh dengan yakin.",
+    "badge": "Ketua Pengatur Cara",
+    "members": {
+      "qais": {
+        "name": "Qais Al Hrahsheh",
+        "role": "Ketua pengatur cara & arkitek pengalaman",
+        "focus": "Mengarahkan visi teknikal, memastikan sokongan tiga bahasa dan memperhalus setiap butiran UX."
+      },
+      "tan": {
+        "name": "Tan Kang Zheng",
+        "role": "Pengatur cara & penyampai",
+        "focus": "Membina ciri teras dan menukar idea pasukan kepada demonstrasi yang kemas."
+      },
+      "chengyang": {
+        "name": "Chengyang Sun",
+        "role": "Setiausaha & penyelaras",
+        "focus": "Menyelaras garis masa dan mendokumentasi kemajuan supaya pasukan kekal sehaluan."
+      },
+      "raja": {
+        "name": "Raja Nur Aqylah Natasha binti Raja Zazman Shah",
+        "role": "Pereka antara muka",
+        "focus": "Membentuk rupa dan rasa UI dengan visual inklusif dan susun atur mesra."
+      },
+      "hanif": {
+        "name": "Hanif Ruben Davni Setiadji",
+        "role": "Pencipta video & jurugambar",
+        "focus": "Merakam cerita serta visual yang menjadikan pendidikan akil baligh lebih mesra."
+      },
+      "rafia": {
+        "name": "Rafia Raida Binta Jashim",
+        "role": "Setiausaha",
+        "focus": "Mengurus sumber, nota dan komunikasi untuk menyokong semua orang."
+      },
+      "wong": {
+        "name": "Wong Yan Wen",
+        "role": "Konsep visual & penyampai",
+        "focus": "Menterjemah idea kompleks kepada persembahan dan naratif visual yang menarik."
+      }
+    },
+    "values": {
+      "collaboration": {
+        "title": "Kerjasama diutamakan",
+        "description": "Setiap ciri dicipta bersama supaya ibu bapa dan anak disokong di setiap langkah."
+      },
+      "empathy": {
+        "title": "Empati dalam setiap keputusan",
+        "description": "Kami mendengar keluarga dan mereka bentuk panduan pelbagai bahasa yang selamat."
+      },
+      "creativity": {
+        "title": "Kreativiti & kejelasan",
+        "description": "Penceritaan interaktif, visual menarik dan bahasa mudah difahami menjadikan pembelajaran menyeronokkan."
+      }
+    },
+    "cta": {
+      "title": "Terokai aplikasi bersama kami",
+      "description": "Kembali ke perjalanan alu-aluan atau terus ke aktiviti untuk melihat hasil kerjasama kami.",
+      "primary": "Kembali ke lawatan alu-aluan",
+      "secondary": "Terokai permainan"
+    }
   }
 }
