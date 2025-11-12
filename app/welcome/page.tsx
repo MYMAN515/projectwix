@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/navigation'
@@ -82,6 +83,20 @@ export default function WelcomePage() {
         animate={{ opacity: 1, scale: 1 }}
         className="max-w-4xl w-full glass-effect rounded-3xl p-8 md:p-12 shadow-2xl"
       >
+        <div className="flex flex-col items-center gap-4 mb-10 text-center">
+          <div className="relative w-32 h-32">
+            <Image
+              src="https://www.um.edu.my/images/img-logo-UM.png"
+              alt="University of Malaya logo"
+              fill
+              priority
+              className="object-contain drop-shadow-lg"
+            />
+          </div>
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl">
+            {t('welcome.universityMessage')}
+          </p>
+        </div>
         {/* Progress Indicator */}
         <div className="flex justify-center gap-2 mb-8">
           {slides.map((_, index) => (

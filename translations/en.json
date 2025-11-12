@@ -7,7 +7,8 @@
     "bodyGuide": "Body Guide",
     "guidance": "Parent Guide",
     "games": "Games & Activities",
-    "parentGuide": "Parenting Tips"
+    "parentGuide": "Parenting Tips",
+    "team": "Dream Team"
   },
   "home": {
     "title": "Supporting Your Child Through Puberty",
@@ -41,6 +42,10 @@
         "title": "Body Changes Guide",
         "description": "Age-appropriate information about physical development"
       },
+      "team": {
+        "title": "Meet the Dream Team",
+        "description": "Celebrate the passionate minds behind Parenting Hub"
+      },
       "aiChat": {
         "title": "AI Parent Assistant",
         "description": "Get instant answers to your parenting questions about puberty"
@@ -52,6 +57,7 @@
     }
   },
   "welcome": {
+    "universityMessage": "Powered with heart by the University of Malaya community—uniting research, creativity, and compassion for families.",
     "slide1": {
       "title": "Welcome, Dear Parent! 💝",
       "subtitle": "We're So Glad You're Here",
@@ -87,24 +93,69 @@
   },
   "aiChat": {
     "title": "Parent Assistant",
-    "subtitle": "Ask me anything about puberty",
-    "greeting": "Hello! I'm here to help you navigate parenting through puberty. Ask me anything - from handling difficult conversations to understanding physical changes. How can I support you today?",
+    "subtitle": "Ask me anything about puberty (English, العربية, Bahasa Melayu)",
+    "greeting": "Hi there! I'm your Parenting Hub guide. Share any parenting worry and I'll connect you with steps, activities, and reassurance.",
+    "greetingTips": "Ask about starting the puberty talk.|Get ideas for supporting big emotions.|Discover activities your child will actually enjoy.",
     "placeholder": "Type your question here...",
     "suggestedTitle": "Suggested questions:",
     "suggestions": {
       "q1": "How do I start the puberty conversation?",
       "q2": "How can I support my child's emotions?",
       "q3": "What activities can help my child?",
-      "q4": "How do I handle mood swings?"
+      "q4": "How do I handle mood swings?",
+      "q5": "How do I talk about new hygiene needs?",
+      "q6": "My child feels anxious—what can I do?"
+    },
+    "tipHeader": "Helpful next steps",
+    "footerMessage": "Parenting Hub answers are handcrafted guidance in English, العربية, and Bahasa Melayu.",
+    "links": {
+      "parentGuide": "Open Parent Guide",
+      "games": "Play & Learn",
+      "diary": "Visit Mood Diary",
+      "bodyGuide": "Explore Body Guide",
+      "team": "Meet the Team",
+      "welcome": "Welcome Tour",
+      "guidance": "Expert Guidance"
+    },
+    "tips": {
+      "normalize": "Start by normalizing puberty as something everyone experiences.|Speak in short, everyday chats instead of one big talk.",
+      "useMoments": "Use TV scenes, books, or shared routines as natural conversation openers.|Let your child know they can revisit the topic anytime.",
+      "activeListening": "Put away distractions and make eye contact.|Reflect back what you hear so your child feels truly understood.",
+      "doorOpen": "Remind your child you are available for quick questions anytime.|Invite them to text or leave notes if talking face-to-face feels hard.",
+      "emotionToolkit": "Offer calming tools like breathing exercises or short walks.|Help them label feelings—naming emotions reduces their intensity.",
+      "validate": "Let them know mood swings are normal during puberty.|Thank them for trusting you with their feelings.",
+      "friendship": "Discuss what supportive friendships look like.|Encourage them to notice how they feel after spending time with friends.",
+      "rolePlay": "Practice boundary-setting phrases together.|Brainstorm responses to tricky peer situations.",
+      "privacyExplain": "Explain how the app protects their diary entries locally.|Assure them you respect their growing need for personal space.",
+      "space": "Balance guidance with privacy—knock before entering rooms.|Agree on check-in moments that feel comfortable for both of you.",
+      "coLearning": "Play one of our games together and talk about the answers.|Share your own thoughts so learning feels like teamwork.",
+      "celebrate": "Celebrate curiosity—small high-fives go a long way.|Ask what they enjoyed most after each activity.",
+      "routine": "Create a simple hygiene checklist for mornings and evenings.|Stock essentials like deodorant and gentle skincare products together.",
+      "products": "Let your child choose products that match their style.|Teach how to wash clothes and care for their body with confidence.",
+      "balancedPlate": "Build plates with veggies, protein, and whole grains.|Keep healthy snacks ready for fast-growing bodies.",
+      "familyMeals": "Plan family meals where everyone helps with prep.|Talk about how food fuels energy, mood, and focus.",
+      "sleepHygiene": "Keep a consistent bedtime and calming wind-down routine.|Dim lights and limit heavy meals close to bedtime.",
+      "screenTime": "Power down screens 30 minutes before sleep.|Charge devices outside the bedroom when possible.",
+      "calming": "Teach calming breaths, stretching, or journaling for anxious moments.|Notice triggers together and create a soothing plan.",
+      "seekSupport": "If worry feels heavy, connect with school counselors or healthcare providers.|Remind your child they never have to carry big feelings alone.",
+      "listenFirst": "Listen fully before responding so they feel safe opening up.|Thank them for trusting you with their experience.",
+      "schoolSupport": "Document incidents and loop in teachers or counselors early.|Practice confident responses and plan safe exit strategies.",
+      "teamSpirit": "Explore different sections of Parenting Hub together.|Share what is working so we can keep improving for your family.",
+      "stayCurious": "No question is too small—keep asking and we’ll keep supporting.|Switch languages anytime for the wording that feels right."
     },
     "response": {
-      "puberty": "Great question! Starting conversations about puberty early and keeping them ongoing is key. Use natural opportunities like seeing related content on TV or books. Keep the tone casual and normalize the topic. Let your child know they can always come to you with questions, and reassure them that all the changes they're experiencing are completely normal.",
-      "emotions": "Emotional support during puberty is crucial. Validate your child's feelings - mood swings are normal due to hormonal changes. Listen without judgment, give them space when needed, but also let them know you're always available. Help them identify and name their emotions, and teach healthy coping strategies like exercise, journaling, or talking with trusted friends.",
-      "communication": "Effective communication builds trust. Practice active listening - put away distractions and give your full attention. Ask open-ended questions rather than yes/no questions. Share your own experiences (age-appropriately) to show you understand. Most importantly, create a judgment-free zone where they feel safe sharing anything.",
-      "social": "Social dynamics change during puberty. Help your child navigate friendships by discussing what healthy relationships look like. Talk about peer pressure and give them language to set boundaries. Encourage diverse friendships and validate their feelings when friendships shift or end - it's a normal part of growing up.",
-      "privacy": "This app prioritizes privacy completely. All diary entries and data stay on your device - nothing is sent to servers. The diary is a private space for your child. We don't track users or collect personal information. Your family's privacy and your child's safety are our top priorities.",
-      "activities": "The Games section offers interactive activities designed to teach about puberty in a fun, engaging way. These include memory games, emotion recognition exercises, and matching activities. These games help normalize conversations about puberty and make learning enjoyable rather than awkward.",
-      "default": "I'm here to help you with any parenting questions about puberty! You can ask me about: communication strategies, understanding physical/emotional changes, handling difficult situations, supporting your child's mental health, navigating social challenges, and much more. What would you like to know?"
+      "puberty": "You’re doing amazing by opening this door. Puberty chats land best when they’re short, warm, and ongoing. Remind your child that every body grows at its own pace and you’re beside them for every question.",
+      "communication": "Trust is built in the quiet moments. Listen with full attention, invite their perspective, and thank them for sharing—even when it’s messy. Your calm presence is the anchor they need.",
+      "emotions": "Big feelings are part of growing up. Help your child spot patterns, name emotions, and experiment with healthy outlets like movement, art, or journaling. Celebrate their honesty every time they reach out.",
+      "social": "Friendships can shift quickly during puberty. Talk about what respect, joy, and safety look like in relationships. Role-play tricky moments so they feel prepared to stand up for themselves and others.",
+      "privacy": "Great question! Parenting Hub stores information safely on your device only. Encourage your child to enjoy the private diary while knowing you’re nearby for support whenever they ask.",
+      "activities": "Playful learning sticks! Visit our Games section for quizzes, matching games, and emotion adventures you can explore together. Follow up with a quick chat about what surprised them.",
+      "hygiene": "Body changes can feel awkward—keep it practical and light. Build a fresh routine together, stock supplies they like, and cheer each small win so hygiene becomes a confidence booster.",
+      "nutrition": "Growing bodies crave steady fuel. Offer colorful plates, involve your child in meal prep, and connect foods to energy, mood, and focus. Small shifts beat perfect diets.",
+      "sleep": "Rest is the quiet superpower. Create soothing bedtime cues, reduce screens before sleep, and protect their rest like it’s an important appointment.",
+      "anxiety": "Worry shows up when life feels uncertain. Sit beside your child, breathe together, and co-create a calming plan. If the weight feels heavy, loop in school or health professionals for extra care.",
+      "bullying": "No child should face bullying alone. Listen without rushing, document what happened, and partner with school staff. Rehearse assertive responses and remind your child they have a team behind them.",
+      "default": "I’m here whenever you need a confident nudge. Ask about body changes, mental health, cultural traditions, or how to use our tools—and I’ll keep bringing you practical next steps."
     }
   },
   "games": {
@@ -507,5 +558,28 @@
     "title": "Supporting Families Through Puberty",
     "subtitle": "A safe, loving resource for parents and children 🌱",
     "copyright": "© 2025 - Created with love for families"
+  },
+  "team": {
+    "title": "Meet the Parenting Hub Dream Team",
+    "subtitle": "A passionate group of creatives, researchers, and dreamers crafting empowering tools for families everywhere.",
+    "values": "We combine evidence-based research, inclusive design, and heartfelt storytelling to make puberty guidance feel warm and accessible.",
+    "commitment": "Every screen, game, and resource is crafted with respect for families' diverse backgrounds and experiences.",
+    "badges": {
+      "dev": "Dev",
+      "special": "Special"
+    },
+    "members": {
+      "qais": "Qais leads our digital experiences with a maker's mindset—coding, tuning, and ensuring every interaction feels magical for families.",
+      "drNazean": "Our guiding light. Dr. Nazean Jomhari infuses academic rigor, empathy, and community wisdom into every idea we launch.",
+      "tanKangZheng": "Kang Zheng brings clarity to complex stories, shaping playful flows that help families learn together.",
+      "chengyangSun": "Chengyang crafts visual harmony, turning research insights into interfaces that feel safe and bright.",
+      "rajaNur": "Raja Nur champions cultural sensitivity, ensuring every resource honors Malaysian families' voices.",
+      "hanifRuben": "Hanif weaves interactivity and narrative so our activities stay joyful, inclusive, and meaningful.",
+      "rafiaRaida": "Rafia curates warm language and microcopy that encourage parents and kids to keep talking.",
+      "wongYanWen": "Yan Wen keeps accessibility front and center, making sure every family feels welcome.",
+      "zhouJunan": "Junan experiments fearlessly, prototyping new ways for AI to support compassionate parenting."
+    },
+    "appreciationTitle": "Thank You For Being Part of Our Story",
+    "appreciationMessage": "Parenting Hub is a living project that grows with families like yours. Your feedback, courage, and curiosity inspire every update we build. We’re cheering you on—always."
   }
 }
