@@ -7,7 +7,8 @@
     "bodyGuide": "Panduan Badan",
     "guidance": "Panduan Ibu Bapa",
     "games": "Permainan & Aktiviti",
-    "parentGuide": "Petua Keibubapaan"
+    "parentGuide": "Petua Keibubapaan",
+    "team": "Pasukan Kami"
   },
   "home": {
     "title": "Menyokong Anak Anda Melalui Akil Baligh",
@@ -52,50 +53,112 @@
     }
   },
   "welcome": {
+    "teamBanner": {
+      "headline": "Pasukan MG Universiti Malaya",
+      "description": "Pengalaman ini disiapkan dengan penuh kasih oleh pasukan MG di Universiti Malaya untuk memperkasakan setiap penjaga yang membimbing remaja melalui akil baligh.",
+      "lead": {
+        "name": "Qais Al Hrahsheh",
+        "role": "Ketua Pengatur Cara & Arkitek Pengalaman",
+        "badge": "Pengatur Cara"
+      },
+      "membersTitle": "Rakan kreatif kami",
+      "members": [
+        {
+          "name": "Tan Kang Zheng",
+          "role": "Pengatur Cara & Pencerita"
+        },
+        {
+          "name": "Chengyang Sun",
+          "role": "Setiausaha"
+        },
+        {
+          "name": "Raja Nur Aqylah Natasha binti Raja Zazman Shah",
+          "role": "Pereka Antara Muka"
+        },
+        {
+          "name": "Hanif Ruben Davni Setiadji",
+          "role": "Pencipta Video & Jurugambar"
+        },
+        {
+          "name": "Rafia Raida Binta Jashim",
+          "role": "Setiausaha"
+        },
+        {
+          "name": "Wong Yan Wen",
+          "role": "Konsep Visual & Pencerita"
+        }
+      ]
+    },
     "slide1": {
-      "title": "Selamat Datang, Ibu Bapa yang Dihormati! 💝",
-      "subtitle": "Kami Sangat Gembira Anda Di Sini",
-      "description": "Keibubapaan melalui akil baligh boleh terasa luar biasa, tetapi anda tidak perlu menavigasinya bersendirian. Aplikasi ini direka dengan kasih sayang untuk menyokong ANDA dalam menyokong anak anda melalui salah satu peralihan paling penting dalam hidup. Bersama-sama, kami akan menjadikan perjalanan ini lebih lancar untuk seluruh keluarga anda."
+      "title": "Selamat datang daripada Pasukan Universiti Malaya 💝",
+      "subtitle": "Anda berada di tangan yang prihatin",
+      "description": "Pasukan pelbagai disiplin kami di Kuala Lumpur membangunkan teman ini supaya anda dan anak berasa disokong pada setiap langkah. Dengan suara pengatur cara, pereka, pencerita dan penjaga, setiap skrin dibina penuh kehangatan dan kejelasan."
     },
     "slide2": {
       "title": "Memahami Peranan Anda",
-      "subtitle": "Anda adalah Panduan Paling Penting Anak Anda",
-      "description": "Anak anda memerlukan kebijaksanaan, kesabaran, dan sokongan tanpa syarat anda lebih daripada sebelumnya. Aplikasi ini membantu anda memahami apa yang mereka alami secara fizikal dan emosi, supaya anda boleh memberikan bimbingan yang mereka perlukan sambil menghormati kemerdekaan dan privasi mereka yang semakin meningkat."
+      "subtitle": "Andalah pembimbing terpenting anak",
+      "description": "Anak memerlukan kebijaksanaan, kesabaran dan sokongan tanpa syarat anda lebih daripada sebelumnya. Aplikasi ini membantu anda memahami perubahan fizikal dan emosi yang mereka alami supaya anda dapat memimpin sambil menghormati kebebasan mereka yang semakin berkembang."
     },
     "slide3": {
-      "title": "Apa Yang Ditawarkan Aplikasi Ini",
-      "subtitle": "Segala-galanya Yang Anda Perlukan di Satu Tempat",
+      "title": "Apa yang Ditawarkan Aplikasi Ini",
+      "subtitle": "Semua keperluan dalam satu tempat",
       "feature1": "Panduan keibubapaan pakar tentang komunikasi dan sokongan emosi",
-      "feature2": "Permainan pendidikan dan aktiviti untuk anak anda",
-      "feature3": "Maklumat sesuai umur tentang perubahan fizikal dan emosi",
-      "feature4": "Pembantu dikuasakan AI untuk menjawab soalan keibubapaan anda",
-      "feature5": "Ruang diari peribadi untuk anak anda memproses perasaan mereka"
+      "feature2": "Permainan dan aktiviti pendidikan untuk anak anda",
+      "feature3": "Maklumat seiring usia tentang perubahan fizikal dan emosi",
+      "feature4": "Pembantu AI untuk menjawab soalan keibubapaan",
+      "feature5": "Ruang diari peribadi untuk anak memproses perasaan"
     },
     "slide4": {
       "title": "Privasi & Keselamatan Anda Penting",
-      "subtitle": "Kami Mengambil Kepercayaan Anda Dengan Serius",
-      "point1": "Semua data kekal pada peranti anda - tiada apa yang dihantar ke pelayan luar",
-      "point2": "Tiada penjejakan, tiada analitik, tiada akses pihak ketiga kepada maklumat anda",
-      "point3": "Ciri diari adalah benar-benar peribadi - hanya anak anda boleh mengakses catatan mereka",
-      "point4": "Ini adalah ruang selamat, bebas penghakiman yang direka dengan keselamatan kanak-kanak dan privasi keluarga sebagai keutamaan utama",
-      "acceptPrivacy": "Saya faham dan terima dasar privasi"
+      "subtitle": "Kami menjaga kepercayaan anda",
+      "point1": "Semua data kekal dalam peranti anda - tiada yang dihantar ke pelayan luar",
+      "point2": "Tiada penjejakan, analitik atau akses pihak ketiga",
+      "point3": "Diari adalah ruang persendirian - hanya anak anda boleh membukanya",
+      "point4": "Ini ruang selamat tanpa penghakiman yang mengutamakan keselamatan keluarga",
+      "acceptPrivacy": "Saya faham dan menerima dasar privasi"
+    },
+    "extraHelp": {
+      "title": "Perlukan bantuan tambahan?",
+      "description": "Kami sentiasa di sisi anda. Pilih sokongan pantas di bawah.",
+      "cards": [
+        {
+          "title": "Kit Sokongan Ibu Bapa",
+          "description": "Skrip, senarai semak dan pemula perbualan untuk topik yang sukar.",
+          "cta": "Terokai Panduan",
+          "href": "/guidance"
+        },
+        {
+          "title": "Bermain & Belajar Bersama",
+          "description": "Permainan pilihan yang mengajar emosi, empati dan penjagaan diri dalam beberapa minit.",
+          "cta": "Buka Permainan",
+          "href": "/games"
+        },
+        {
+          "title": "Kenali Pasukan Kami",
+          "description": "Baca tentang setiap penyumbang dan hubungi kami untuk kerjasama.",
+          "cta": "Temui Pasukan",
+          "href": "/team"
+        }
+      ]
     },
     "next": "Seterusnya",
     "previous": "Sebelumnya",
     "skip": "Langkau ke Privasi",
-    "getStarted": "Mari Mulakan Perjalanan Ini"
+    "getStarted": "Mari Mulakan"
   },
   "aiChat": {
     "title": "Pembantu Ibu Bapa",
-    "subtitle": "Tanya saya apa sahaja tentang akil baligh",
-    "greeting": "Hello! Saya di sini untuk membantu anda menavigasi keibubapaan melalui akil baligh. Tanya saya apa sahaja - dari mengendalikan perbualan sukar hingga memahami perubahan fizikal. Bagaimana saya boleh menyokong anda hari ini?",
+    "subtitle": "Tanya apa sahaja tentang akil baligh, komunikasi atau emosi",
+    "greeting": "Hai! Saya teman keibubapaan tiga bahasa anda. Tanyalah apa sahaja tentang akil baligh, kesejahteraan emosi atau cara menyokong anak — saya akan balas dengan panduan yang jelas dan sensitif budaya. Bagaimana saya boleh membantu hari ini?",
     "placeholder": "Taip soalan anda di sini...",
-    "suggestedTitle": "Soalan yang dicadangkan:",
+    "suggestedTitle": "Soalan pantas untuk bermula:",
     "suggestions": {
       "q1": "Bagaimana saya memulakan perbualan akil baligh?",
       "q2": "Bagaimana saya boleh menyokong emosi anak saya?",
       "q3": "Aktiviti apa yang boleh membantu anak saya?",
-      "q4": "Bagaimana saya menangani perubahan mood?"
+      "q4": "Bagaimana saya menangani perubahan mood?",
+      "q5": "Amalan penjagaan diri apa yang boleh diajar?",
+      "q6": "Bagaimana menghormati privasi anak?"
     },
     "response": {
       "puberty": "Soalan bagus! Memulakan perbualan tentang akil baligh awal dan mengekalkannya berterusan adalah kunci. Gunakan peluang semula jadi seperti melihat kandungan berkaitan di TV atau buku. Pastikan nada santai dan normalkan topik. Biarkan anak anda tahu mereka sentiasa boleh datang kepada anda dengan soalan, dan yakinkan mereka bahawa semua perubahan yang mereka alami adalah benar-benar normal.",
@@ -104,8 +167,38 @@
       "social": "Dinamik sosial berubah semasa akil baligh. Bantu anak anda menavigasi persahabatan dengan membincangkan seperti apa hubungan yang sihat. Bincangkan tekanan rakan sebaya dan beri mereka bahasa untuk menetapkan sempadan. Galakkan persahabatan yang pelbagai dan sahkan perasaan mereka apabila persahabatan berubah atau berakhir.",
       "privacy": "Aplikasi ini mengutamakan privasi sepenuhnya. Semua catatan diari dan data kekal pada peranti anda. Diari adalah ruang peribadi untuk anak anda. Kami tidak menjejak pengguna atau mengumpul maklumat peribadi. Privasi keluarga anda dan keselamatan anak anda adalah keutamaan utama kami.",
       "activities": "Bahagian Permainan menawarkan aktiviti interaktif yang direka untuk mengajar tentang akil baligh dengan cara yang menyeronokkan dan menarik. Ini termasuk permainan ingatan, latihan pengiktirafan emosi, dan aktiviti padanan. Permainan ini membantu menormalkan perbualan tentang akil baligh dan menjadikan pembelajaran menyeronokkan daripada janggal.",
-      "default": "Saya di sini untuk membantu anda dengan sebarang soalan keibubapaan tentang akil baligh! Anda boleh tanya saya tentang: strategi komunikasi, memahami perubahan fizikal/emosi, mengendalikan situasi sukar, menyokong kesihatan mental anak anda, menavigasi cabaran sosial, dan banyak lagi. Apa yang anda ingin tahu?"
-    }
+      "default": "Saya sedia membantu apa sahaja berkaitan akil baligh, emosi atau komunikasi. Tanya tentang pemula perbualan, perubahan badan, turun naik emosi, privasi atau cara kekal rapat — saya akan berkongsi panduan yang praktikal dan penuh empati.",
+      "selfCare": "Membina kit penjagaan diri peribadi membantu anak melalui akil baligh dengan tenang. Galakkan asas penting: tidur cukup, pemakanan seimbang, senaman ringan dan rutin kebersihan. Tambah penjagaan emosi juga — menulis jurnal, latihan pernafasan dan aktiviti kreatif membantu mereka memproses perasaan.",
+      "privacyRespect": "Mengimbangi bimbingan dan privasi boleh mencabar. Sepakati sempadan bersama: berbincang tentang ruang peribadi, keselamatan digital dan bila anda akan memeriksa. Maklumkan bahawa keselamatan tetap keutamaan, tetapi anda juga menghormati kebebasan dan fikiran peribadi mereka."
+    },
+    "followUpTitle": "Idea susulan yang boleh diketuk:",
+    "followUps": [
+      "Kongsi rutin pernafasan tenang",
+      "Cadangkan aktiviti mengeratkan",
+      "Terangkan perubahan fizikal dengan lembut",
+      "Beri kata-kata semangat"
+    ],
+    "resourcesTitle": "Sumber berguna dalam aplikasi",
+    "resources": [
+      {
+        "title": "Panduan Perbualan",
+        "description": "Skrip langkah demi langkah untuk topik sukar bersama remaja.",
+        "cta": "Buka Panduan Ibu Bapa",
+        "href": "/parent-guide"
+      },
+      {
+        "title": "Latihan Emosi",
+        "description": "Aktiviti yang membantu anak menamakan dan mengawal perasaan.",
+        "cta": "Cuba Permainan",
+        "href": "/games"
+      },
+      {
+        "title": "Semakan Kesejahteraan",
+        "description": "Gunakan diari untuk memeriksa mood dan tahap tekanan bersama.",
+        "cta": "Pergi ke Diari",
+        "href": "/diary"
+      }
+    ]
   },
   "games": {
     "title": "Permainan & Aktiviti Interaktif",
@@ -127,7 +220,12 @@
     "memory": {
       "title": "Permainan Ingatan Emosi",
       "description": "Padankan pasangan emosi sambil belajar tentang perasaan semasa akil baligh",
-      "instructions": "Cari pasangan emosi yang sepadan. Ingat di mana setiap emosi dan padankan semuanya untuk menang!"
+      "instructions": "Cari pasangan emosi yang sepadan. Ingat di mana setiap emosi dan padankan semuanya untuk menang!",
+      "steps": [
+        "Balik dua kad untuk mencari emosi yang sepadan.",
+        "Kongsi pengalaman apabila anda berdua merasai emosi itu.",
+        "Padankan semua pasangan untuk melihat animasi meraikan yang menenangkan."
+      ]
     },
     "quiz": {
       "title": "Kuiz Pengetahuan Akil Baligh",
@@ -153,7 +251,12 @@
         "a2": "Berasa malu",
         "a3": "Bercakap dengan orang dewasa yang dipercayai",
         "a4": "Risau tentangnya bersendirian"
-      }
+      },
+      "steps": [
+        "Baca setiap soalan bersama dan biarkan anak menjawab dahulu.",
+        "Raikan jawapan betul dan bincang kesilapan tanpa menghukum.",
+        "Buka tip perbualan pantas selepas setiap pusingan untuk terus belajar."
+      ]
     },
     "matching": {
       "title": "Permainan Padanan Perubahan",
@@ -175,7 +278,12 @@
       "pair4": {
         "left": "Minat Baru",
         "right": "Terokai & cuba perkara baru"
-      }
+      },
+      "steps": [
+        "Tekan kad perubahan, kemudian pilih tindakan sokongan terbaik.",
+        "Terangkan mengapa padanan sesuai - aplikasi memberi petunjuk jika perlu.",
+        "Lengkapkan papan untuk menerima ringkasan yang boleh dicetak."
+      ]
     },
     "emotions": {
       "title": "Memahami Emosi",
@@ -195,7 +303,33 @@
       },
       "scenario3": {
         "situation": "Anda perlu membuat pembentangan di hadapan seluruh kelas esok."
+      },
+      "steps": [
+        "Teliti senario bersama dan berhenti seketika untuk renungan.",
+        "Pilih perasaan yang paling sesuai dan bincangkan sebabnya.",
+        "Dapatkan tip penjagaan diri yang disesuaikan dengan emosi tersebut."
+      ]
+    },
+    "highlightsTitle": "Mengapa keluarga menyukai permainan ini",
+    "highlights": [
+      {
+        "title": "Sesi ringkas dan menyeronokkan",
+        "description": "Setiap aktiviti hanya 5-10 minit, sesuai untuk masa berkualiti bersama."
+      },
+      {
+        "title": "Bijak emosi",
+        "description": "Permainan mengajar empati, kesedaran tubuh dan sayang diri melalui permainan."
+      },
+      {
+        "title": "Kemajuan yang boleh dirasa",
+        "description": "Anak meraikan kejayaan, ibu bapa mendapat tip untuk sambung berbual di luar talian."
       }
+    ],
+    "ctaHelp": {
+      "title": "Perlukan aktiviti lain?",
+      "description": "Muat turun kad perbualan boleh cetak atau pergi ke kit sokongan ibu bapa untuk panduan lanjut.",
+      "cta": "Buka Kit Ibu Bapa",
+      "href": "/guidance"
     }
   },
   "parentGuide": {
@@ -507,5 +641,66 @@
     "title": "Menyokong Keluarga Melalui Akil Baligh",
     "subtitle": "Sumber selamat dan penuh kasih untuk ibu bapa dan kanak-kanak 🌱",
     "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga"
+  },
+  "teamPage": {
+    "title": "Kenali Pasukan MG",
+    "subtitle": "Pelajar dan kreatif Universiti Malaya yang membina alat sokongan untuk keluarga.",
+    "lead": {
+      "title": "Ketua Projek",
+      "description": "Qais memastikan aplikasi berjalan lancar, menggabungkan kualiti kod dengan penceritaan berhati.",
+      "strengths": [
+        "Pembangunan full-stack",
+        "Reka bentuk pengalaman",
+        "Membimbing pasukan"
+      ]
+    },
+    "sections": {
+      "creatives": "Kreatif & Pengalaman",
+      "support": "Sokongan & Penyelaras"
+    },
+    "members": [
+      {
+        "name": "Qais Al Hrahsheh",
+        "role": "Ketua Pengatur Cara & Arkitek Pengalaman",
+        "badge": "Pengatur Cara",
+        "group": "creatives"
+      },
+      {
+        "name": "Tan Kang Zheng",
+        "role": "Pengatur Cara & Pencerita",
+        "group": "creatives"
+      },
+      {
+        "name": "Raja Nur Aqylah Natasha binti Raja Zazman Shah",
+        "role": "Pereka Antara Muka",
+        "group": "creatives"
+      },
+      {
+        "name": "Wong Yan Wen",
+        "role": "Konsep Visual & Pencerita",
+        "group": "creatives"
+      },
+      {
+        "name": "Hanif Ruben Davni Setiadji",
+        "role": "Pencipta Video & Jurugambar",
+        "group": "creatives"
+      },
+      {
+        "name": "Chengyang Sun",
+        "role": "Setiausaha",
+        "group": "support"
+      },
+      {
+        "name": "Rafia Raida Binta Jashim",
+        "role": "Setiausaha",
+        "group": "support"
+      }
+    ],
+    "cta": {
+      "title": "Mahukan kerjasama atau maklumat lanjut?",
+      "description": "Kami sukakan kerjasama dengan pendidik, ibu bapa dan pembangun yang menyokong pendidikan akil baligh yang selamat.",
+      "button": "Hubungi Pasukan MG",
+      "link": "mailto:mg-team@example.com"
+    }
   }
 }

@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MessageCircle, X, Send, Bot, User, Sparkles } from 'lucide-react'
+import { MessageCircle, X, Send, Bot, User, Sparkles, ArrowRight } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 interface Message {
@@ -10,6 +11,13 @@ interface Message {
   role: 'user' | 'assistant'
   content: string
   timestamp: Date
+}
+
+type ResourceLink = {
+  title: string
+  description: string
+  cta: string
+  href: string
 }
 
 export default function AIChat() {
@@ -40,13 +48,14 @@ export default function AIChat() {
     }
   }, [isOpen, t, messages.length])
 
-  const handleSend = async () => {
-    if (!input.trim()) return
+  const handleSend = async (presetMessage?: string) => {
+    const text = (presetMessage ?? input).trim()
+    if (!text) return
 
     const userMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
-      content: input,
+      content: text,
       timestamp: new Date()
     }
 
@@ -59,7 +68,7 @@ export default function AIChat() {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: getAIResponse(input),
+        content: getAIResponse(text),
         timestamp: new Date()
       }
       setMessages(prev => [...prev, aiResponse])
@@ -68,32 +77,48 @@ export default function AIChat() {
   }
 
   const getAIResponse = (userInput: string): string => {
-    // Simple keyword-based responses (replace with actual AI integration)
     const input = userInput.toLowerCase()
-    
-    if (input.includes('puberty') || input.includes('changes')) {
-      return t('aiChat.response.puberty')
-    } else if (input.includes('emotion') || input.includes('mood') || input.includes('feel')) {
-      return t('aiChat.response.emotions')
-    } else if (input.includes('talk') || input.includes('communicate') || input.includes('conversation')) {
-      return t('aiChat.response.communication')
-    } else if (input.includes('friend') || input.includes('social')) {
-      return t('aiChat.response.social')
-    } else if (input.includes('privacy') || input.includes('safe')) {
-      return t('aiChat.response.privacy')
-    } else if (input.includes('game') || input.includes('activity')) {
-      return t('aiChat.response.activities')
-    } else {
-      return t('aiChat.response.default')
+
+    const selfCareKeywords = ['self care', 'self-care', 'selfcare', 'hygiene', 'penjagaan diri', 'kebersihan', 'العناية الذاتية', 'الرعاية الذاتية']
+    if (selfCareKeywords.some((keyword) => input.includes(keyword))) {
+      return t('aiChat.response.selfCare')
     }
+
+    const privacyWords = ['privacy', 'privasi', 'خصوص', 'خصوصية']
+    const respectWords = ['respect', 'boundaries', 'حدود', 'احترام', 'hormat', 'batas', 'batasan']
+    if (privacyWords.some((keyword) => input.includes(keyword)) && respectWords.some((keyword) => input.includes(keyword))) {
+      return t('aiChat.response.privacyRespect')
+    }
+
+    const keywordResponses: { response: string; keywords: string[] }[] = [
+      { response: 'puberty', keywords: ['puberty', 'changes', 'akil', 'baligh', 'البلوغ', 'perubahan'] },
+      { response: 'emotions', keywords: ['emotion', 'mood', 'feel', 'emosi', 'perasaan', 'مشاعر', 'مزاج'] },
+      { response: 'communication', keywords: ['talk', 'communicate', 'conversation', 'berbual', 'bercakap', 'komunikasi', 'تحدث', 'حوار'] },
+      { response: 'social', keywords: ['friend', 'friends', 'social', 'kawan', 'sahabat', 'sosial', 'أصدقاء', 'اجتماعي'] },
+      { response: 'privacy', keywords: ['privacy', 'safe', 'privasi', 'selamat', 'خصوصية', 'أمان'] },
+      { response: 'activities', keywords: ['game', 'games', 'activity', 'activities', 'permainan', 'aktiviti', 'نشاط', 'لعبة'] }
+    ]
+
+    for (const entry of keywordResponses) {
+      if (entry.keywords.some((keyword) => input.includes(keyword))) {
+        return t(`aiChat.response.${entry.response}`)
+      }
+    }
+
+    return t('aiChat.response.default')
   }
 
-  const suggestedQuestions = [
-    t('aiChat.suggestions.q1'),
-    t('aiChat.suggestions.q2'),
-    t('aiChat.suggestions.q3'),
-    t('aiChat.suggestions.q4')
-  ]
+  const suggestionsData = t('aiChat.suggestions')
+  const suggestedQuestions =
+    suggestionsData && typeof suggestionsData === 'object'
+      ? Object.values(suggestionsData as Record<string, string>).filter((question) => Boolean(question))
+      : []
+  const followUpsRaw = t('aiChat.followUps')
+  const followUps = Array.isArray(followUpsRaw) ? (followUpsRaw as string[]) : []
+  const followUpTitle = t('aiChat.followUpTitle') as string
+  const resourcesRaw = t('aiChat.resources')
+  const resources = Array.isArray(resourcesRaw) ? (resourcesRaw as ResourceLink[]) : []
+  const resourcesTitle = t('aiChat.resourcesTitle') as string
 
   return (
     <>
@@ -216,7 +241,7 @@ export default function AIChat() {
             </div>
 
             {/* Suggested Questions */}
-            {messages.length === 1 && (
+            {messages.length === 1 && suggestedQuestions.length > 0 && (
               <div className="px-4 py-2 bg-white/50 border-t border-gray-200">
                 <p className="text-xs text-gray-600 mb-2 font-semibold">
                   {t('aiChat.suggestedTitle')}
@@ -225,11 +250,52 @@ export default function AIChat() {
                   {suggestedQuestions.map((question, index) => (
                     <button
                       key={index}
-                      onClick={() => setInput(question)}
+                      onClick={() => handleSend(question)}
                       className="text-xs bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-full border border-gray-300 transition-colors"
                     >
                       {question}
                     </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {messages.length > 1 && followUps.length > 0 && (
+              <div className="px-4 py-3 bg-white/60 border-t border-gray-200">
+                <p className="text-xs text-gray-600 mb-2 font-semibold">{followUpTitle}</p>
+                <div className="flex flex-wrap gap-2">
+                  {followUps.map((followUp, index) => (
+                    <button
+                      key={`${followUp}-${index}`}
+                      onClick={() => handleSend(followUp)}
+                      className="text-xs bg-gradient-to-r from-primary-500/10 to-secondary-500/10 text-primary-700 px-3 py-2 rounded-full border border-primary-100 hover:border-primary-300 transition-colors"
+                    >
+                      {followUp}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {resources.length > 0 && (
+              <div className="px-4 py-4 bg-white/70 border-t border-gray-200 space-y-3">
+                <p className="text-xs text-gray-600 font-semibold">{resourcesTitle}</p>
+                  <div className="grid gap-2">
+                    {resources.map((resource, index) => (
+                    <Link
+                      key={`${resource.title}-${index}`}
+                      href={resource.href || '#'}
+                      className="group flex items-center justify-between rounded-xl border border-white/60 bg-white px-4 py-3 shadow-sm hover:shadow-lg transition-all"
+                    >
+                      <div>
+                        <p className="text-sm font-semibold text-gray-800">{resource.title}</p>
+                        <p className="text-xs text-gray-500">{resource.description}</p>
+                      </div>
+                      <span className="inline-flex items-center gap-1 text-primary-600 text-xs font-semibold">
+                        {resource.cta}
+                        <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </Link>
                   ))}
                 </div>
               </div>
