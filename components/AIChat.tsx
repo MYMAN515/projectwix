@@ -1,8 +1,21 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useMemo } from 'react'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MessageCircle, X, Send, Bot, User, Sparkles } from 'lucide-react'
+import {
+  MessageCircle,
+  X,
+  Send,
+  Bot,
+  User,
+  Sparkles,
+  RefreshCw,
+  BookOpen,
+  Puzzle,
+  NotebookPen,
+  ArrowUpRight,
+} from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 interface Message {
@@ -13,12 +26,13 @@ interface Message {
 }
 
 export default function AIChat() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const storageKey = useMemo(() => `ai-chat-history-${language}`, [language])
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -27,6 +41,28 @@ export default function AIChat() {
   useEffect(() => {
     scrollToBottom()
   }, [messages])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const stored = localStorage.getItem(storageKey)
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored) as (Omit<Message, 'timestamp'> & { timestamp: string })[]
+        setMessages(
+          parsed.map((message) => ({
+            ...message,
+            timestamp: new Date(message.timestamp),
+          }))
+        )
+        return
+      } catch (error) {
+        console.warn('Unable to read saved chat history', error)
+      }
+    }
+
+    setMessages([])
+  }, [storageKey])
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
@@ -40,13 +76,30 @@ export default function AIChat() {
     }
   }, [isOpen, t, messages.length])
 
-  const handleSend = async () => {
-    if (!input.trim()) return
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    if (messages.length === 0) {
+      localStorage.removeItem(storageKey)
+      return
+    }
+
+    const serializable = messages.map((message) => ({
+      ...message,
+      timestamp: message.timestamp.toISOString(),
+    }))
+
+    localStorage.setItem(storageKey, JSON.stringify(serializable))
+  }, [messages, storageKey])
+
+  const handleSend = async (messageText?: string) => {
+    const text = (messageText ?? input).trim()
+    if (!text) return
 
     const userMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
-      content: input,
+      content: text,
       timestamp: new Date()
     }
 
@@ -59,7 +112,7 @@ export default function AIChat() {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: getAIResponse(input),
+        content: getAIResponse(text),
         timestamp: new Date()
       }
       setMessages(prev => [...prev, aiResponse])
@@ -105,6 +158,32 @@ export default function AIChat() {
     t('aiChat.suggestions.q6'),
   ]
 
+  const quickTopicKeys = ['communication', 'emotions', 'routines', 'culture', 'selfCare'] as const
+
+  const resourceItems = [
+    {
+      key: 'parentGuide' as const,
+      href: '/parent-guide',
+      icon: <BookOpen className="w-5 h-5" />,
+    },
+    {
+      key: 'games' as const,
+      href: '/games',
+      icon: <Puzzle className="w-5 h-5" />,
+    },
+    {
+      key: 'diary' as const,
+      href: '/diary',
+      icon: <NotebookPen className="w-5 h-5" />,
+    },
+  ]
+
+  const handleClearHistory = () => {
+    setMessages([])
+    setInput('')
+    setIsLoading(false)
+  }
+
   return (
     <>
       {/* Chat Button */}
@@ -147,12 +226,22 @@ export default function AIChat() {
                   <p className="text-xs opacity-90">{t('aiChat.subtitle')}</p>
                 </div>
               </div>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="hover:bg-white/20 rounded-full p-2 transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={handleClearHistory}
+                  className="hover:bg-white/20 rounded-full p-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  aria-label={t('aiChat.clearHistory')}
+                  disabled={messages.length <= 1 && !isLoading}
+                >
+                  <RefreshCw className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="hover:bg-white/20 rounded-full p-2 transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
             </div>
 
             {/* Messages */}
@@ -186,7 +275,7 @@ export default function AIChat() {
                         : 'bg-white text-gray-800'
                     } shadow-md`}
                   >
-                    <p className="text-sm leading-relaxed">{message.content}</p>
+                    <p className="text-sm leading-relaxed whitespace-pre-line">{message.content}</p>
                   </div>
                 </motion.div>
               ))}
@@ -235,7 +324,7 @@ export default function AIChat() {
                   {suggestedQuestions.map((question, index) => (
                     <button
                       key={index}
-                      onClick={() => setInput(question)}
+                      onClick={() => handleSend(question)}
                       className="text-xs bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-full border border-gray-300 transition-colors"
                     >
                       {question}
@@ -245,6 +334,51 @@ export default function AIChat() {
               </div>
             )}
 
+            <div className="px-4 py-3 bg-white/60 border-t border-gray-200 space-y-2">
+              <p className="text-xs text-gray-600 font-semibold">
+                {t('aiChat.quickTopics.title')}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {quickTopicKeys.map((key) => (
+                  <button
+                    key={key}
+                    onClick={() => handleSend(t(`aiChat.quickTopics.items.${key}.prompt`))}
+                    className="text-xs bg-white text-gray-700 px-3 py-2 rounded-full border border-gray-300 hover:border-primary-300 hover:text-primary-600 transition-colors"
+                  >
+                    {t(`aiChat.quickTopics.items.${key}.label`)}
+                  </button>
+                ))}
+              </div>
+              <p className="text-[11px] text-gray-500">{t('aiChat.historyNotice')}</p>
+            </div>
+
+            <div className="px-4 pb-3 bg-white/60 border-t border-gray-200">
+              <p className="text-xs text-gray-600 font-semibold mb-2 flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary-500" />
+                {t('aiChat.resources.title')}
+              </p>
+              <div className="space-y-2">
+                {resourceItems.map((item) => (
+                  <Link key={item.key} href={item.href} className="block">
+                    <div className="bg-white rounded-2xl border border-gray-200 hover:border-primary-200 hover:shadow-md transition-all p-3 flex items-start gap-3">
+                      <div className="text-primary-600 bg-primary-50 rounded-xl p-2">
+                        {item.icon}
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-semibold text-gray-800">
+                          {t(`aiChat.resources.items.${item.key}.title`)}
+                        </p>
+                        <p className="text-xs text-gray-600 leading-relaxed">
+                          {t(`aiChat.resources.items.${item.key}.description`)}
+                        </p>
+                      </div>
+                      <ArrowUpRight className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             {/* Input */}
             <div className="p-4 bg-white/50 border-t border-gray-200">
               <div className="flex gap-2">
@@ -252,7 +386,12 @@ export default function AIChat() {
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                      e.preventDefault()
+                      handleSend()
+                    }
+                  }}
                   placeholder={t('aiChat.placeholder')}
                   className="flex-1 bg-white rounded-full px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-300"
                 />
@@ -262,6 +401,7 @@ export default function AIChat() {
                   onClick={handleSend}
                   disabled={!input.trim() || isLoading}
                   className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full p-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                  aria-label={t('aiChat.sendLabel')}
                 >
                   <Send className="w-5 h-5" />
                 </motion.button>
