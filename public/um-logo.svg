@@ -1,0 +1,27 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">University of Malaya Inspired Crest</title>
+  <desc id="desc">A stylised crest with blue and yellow colours to represent the University of Malaya.</desc>
+  <defs>
+    <linearGradient id="shieldGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B3B8C" />
+      <stop offset="100%" stop-color="#1452C8" />
+    </linearGradient>
+    <linearGradient id="ribbonGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F5B400" />
+      <stop offset="100%" stop-color="#FAD860" />
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path d="M80 12c-28 0-52 10-52 10v50c0 30 22 58 52 76 30-18 52-46 52-76V22s-24-10-52-10z" fill="url(#shieldGradient)" stroke="#0B1F4B" stroke-width="4" />
+    <path d="M80 32c-16 0-30 6-30 6v26c0 16 12 32 30 44 18-12 30-28 30-44V38s-14-6-30-6z" fill="#123A85" opacity="0.6" />
+    <g transform="translate(35 44)">
+      <circle cx="15" cy="18" r="10" fill="#FAD860" />
+      <path d="M15 6l4 8h-8z" fill="#0B3B8C" />
+      <path d="M70 8c6 0 10 4 10 10s-4 10-10 10-10-4-10-10 4-10 10-10z" fill="#F5B400" />
+      <path d="M70 8l8 18h-16z" fill="#0B3B8C" />
+      <path d="M30 0l10 20 10-20" stroke="#FAD860" stroke-width="4" stroke-linecap="round" />
+      <path d="M30 34c4 6 10 10 20 10s16-4 20-10" stroke="#F5B400" stroke-width="4" stroke-linecap="round" />
+    </g>
+    <path d="M30 120c18 10 34 16 50 16s32-6 50-16l-16 26c-12 6-22 10-34 10s-22-4-34-10L30 120z" fill="url(#ribbonGradient)" stroke="#D59B00" stroke-width="3" />
+  </g>
+</svg>

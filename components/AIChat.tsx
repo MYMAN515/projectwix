@@ -40,6 +40,12 @@ export default function AIChat() {
     }
   }, [isOpen, t, messages.length])
 
+  useEffect(() => {
+    const handleOpen = () => setIsOpen(true)
+    window.addEventListener('open-ai-chat', handleOpen)
+    return () => window.removeEventListener('open-ai-chat', handleOpen)
+  }, [])
+
   const handleSend = async () => {
     if (!input.trim()) return
 
@@ -67,32 +73,103 @@ export default function AIChat() {
     }, 1500)
   }
 
+  type ResponseKey =
+    | 'puberty'
+    | 'emotions'
+    | 'communication'
+    | 'social'
+    | 'privacy'
+    | 'activities'
+    | 'selfCare'
+
+  const keywordMap: Record<ResponseKey, string[]> = {
+    puberty: [
+      'puberty',
+      'changes',
+      'akil baligh',
+      'baligh',
+      'البلوغ',
+      'مرحلة البلوغ',
+    ],
+    emotions: [
+      'emotion',
+      'mood',
+      'feel',
+      'emosi',
+      'perasaan',
+      'perasaan anak',
+      'مشاعر',
+      'عاطف',
+    ],
+    communication: [
+      'talk',
+      'communicate',
+      'conversation',
+      'bercakap',
+      'komunikasi',
+      'berbual',
+      'تواصل',
+      'حديث',
+      'محادثة',
+    ],
+    social: [
+      'friend',
+      'social',
+      'kawan',
+      'rakan',
+      'persahabatan',
+      'اجتماعي',
+      'أصدقاء',
+    ],
+    privacy: [
+      'privacy',
+      'safe',
+      'keselamatan',
+      'privasi',
+      'selamat',
+      'خصوصية',
+      'أمان',
+    ],
+    activities: [
+      'game',
+      'activity',
+      'permainan',
+      'aktiviti',
+      'لعبة',
+      'أنشطة',
+    ],
+    selfCare: [
+      'self care',
+      'self-care',
+      'hygiene',
+      'kebersihan',
+      'penjagaan diri',
+      'الرعاية الذاتية',
+      'نظافة',
+    ],
+  }
+
   const getAIResponse = (userInput: string): string => {
-    // Simple keyword-based responses (replace with actual AI integration)
     const input = userInput.toLowerCase()
-    
-    if (input.includes('puberty') || input.includes('changes')) {
-      return t('aiChat.response.puberty')
-    } else if (input.includes('emotion') || input.includes('mood') || input.includes('feel')) {
-      return t('aiChat.response.emotions')
-    } else if (input.includes('talk') || input.includes('communicate') || input.includes('conversation')) {
-      return t('aiChat.response.communication')
-    } else if (input.includes('friend') || input.includes('social')) {
-      return t('aiChat.response.social')
-    } else if (input.includes('privacy') || input.includes('safe')) {
-      return t('aiChat.response.privacy')
-    } else if (input.includes('game') || input.includes('activity')) {
-      return t('aiChat.response.activities')
-    } else {
-      return t('aiChat.response.default')
+
+    const matchedKey = (Object.entries(keywordMap) as [ResponseKey, string[]][]).find(([, words]) =>
+      words.some((word) => input.includes(word))
+    )?.[0]
+
+    if (matchedKey) {
+      return t(`aiChat.response.${matchedKey}`)
     }
+
+    return t('aiChat.response.default')
   }
 
   const suggestedQuestions = [
     t('aiChat.suggestions.q1'),
     t('aiChat.suggestions.q2'),
     t('aiChat.suggestions.q3'),
-    t('aiChat.suggestions.q4')
+    t('aiChat.suggestions.q4'),
+    t('aiChat.suggestions.q5'),
+    t('aiChat.suggestions.q6'),
   ]
 
   return (
@@ -135,6 +212,7 @@ export default function AIChat() {
                 <div>
                   <h3 className="font-bold text-lg">{t('aiChat.title')}</h3>
                   <p className="text-xs opacity-90">{t('aiChat.subtitle')}</p>
+                  <p className="text-[11px] text-gray-200 mt-1">{t('aiChat.multiLanguageNotice')}</p>
                 </div>
               </div>
               <button
