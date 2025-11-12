@@ -1,16 +1,55 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/navigation'
-import { Heart, Shield, Users, Sparkles, BookOpen, Lock, Eye, Target, ArrowRight, Check } from 'lucide-react'
+import {
+  Heart,
+  Shield,
+  Users,
+  Sparkles,
+  BookOpen,
+  Lock,
+  Eye,
+  Target,
+  ArrowRight,
+  Check,
+  BadgeCheck,
+  Gamepad2
+} from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
+type TeamBanner = {
+  headline: string
+  description: string
+  lead?: {
+    name: string
+    role: string
+    badge?: string
+  }
+  membersTitle?: string
+  members?: { name: string; role: string }[]
+}
+
+type HelpSection = {
+  title: string
+  description: string
+  cards?: { title: string; description: string; cta: string; href: string }[]
+}
+
 export default function WelcomePage() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const router = useRouter()
   const [currentSlide, setCurrentSlide] = useState(0)
   const [hasAcceptedPrivacy, setHasAcceptedPrivacy] = useState(false)
+
+  const teamBanner = (t('welcome.teamBanner') as TeamBanner) || {}
+  const helpSection = (t('welcome.extraHelp') as HelpSection) || {}
+  const helpCards = Array.isArray(helpSection.cards) ? helpSection.cards : []
+  const bannerMembers = Array.isArray(teamBanner.members) ? teamBanner.members : []
+  const helpIcons = [BookOpen, Gamepad2, Users]
 
   const slides = [
     {
@@ -80,8 +119,86 @@ export default function WelcomePage() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="max-w-4xl w-full glass-effect rounded-3xl p-8 md:p-12 shadow-2xl"
+        className="max-w-5xl w-full glass-effect rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl"
       >
+        {/* Team Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="relative overflow-hidden rounded-3xl bg-white/70 border border-white/50 p-6 md:p-8 mb-10"
+        >
+          <div className="absolute -top-12 -right-10 w-40 h-40 bg-gradient-to-br from-primary-100 via-transparent to-transparent rounded-full" />
+          <div className="absolute -bottom-16 -left-12 w-48 h-48 bg-gradient-to-tr from-secondary-100 via-transparent to-transparent rounded-full" />
+          <div className="relative grid gap-6 md:grid-cols-[auto,1fr] items-center">
+            <div className="mx-auto md:mx-0">
+              <div className="relative flex items-center justify-center">
+                <motion.div
+                  className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary-200 to-secondary-200 blur-xl"
+                  animate={{ opacity: [0.6, 0.9, 0.6] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                />
+                <div className="relative z-10 rounded-full bg-white/90 p-4 shadow-lg">
+                  <Image src="/um-logo.svg" alt="University of Malaya" width={96} height={96} priority />
+                </div>
+              </div>
+            </div>
+            <div className="space-y-5 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 px-4 py-2 text-sm font-semibold text-white shadow-lg">
+                <Sparkles className="w-4 h-4" />
+                <span>{teamBanner.headline}</span>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+                {teamBanner.description}
+              </h2>
+
+              {teamBanner.lead && (
+                <div className="grid md:grid-cols-[auto,1fr] gap-4 items-center bg-gradient-to-r from-primary-50/80 to-secondary-50/80 rounded-2xl p-4 border border-white/60 shadow-inner">
+                  <div className="flex items-center gap-3">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md">
+                      <BadgeCheck className="w-7 h-7" />
+                    </div>
+                    <div className="text-left">
+                      <p className="text-lg font-semibold text-gray-900">{teamBanner.lead.name}</p>
+                      <p className="text-sm text-gray-600">{teamBanner.lead.role}</p>
+                    </div>
+                  </div>
+                  {teamBanner.lead.badge && (
+                    <div className="justify-self-end">
+                      <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 px-4 py-2 text-xs font-semibold text-white shadow">
+                        <Sparkles className="w-4 h-4" />
+                        {teamBanner.lead.badge}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {teamBanner.membersTitle && (
+                <div className="space-y-3">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+                    {teamBanner.membersTitle}
+                  </p>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {bannerMembers.map((member, index) => (
+                      <motion.div
+                        key={`${member.name}-${index}`}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.05 }}
+                        className="flex flex-col rounded-2xl bg-white/70 px-4 py-3 shadow-sm border border-white/60 text-left"
+                      >
+                        <span className="font-semibold text-gray-800">{member.name}</span>
+                        <span className="text-sm text-gray-500">{member.role}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </motion.div>
+
         {/* Progress Indicator */}
         <div className="flex justify-center gap-2 mb-8">
           {slides.map((_, index) => (
@@ -194,44 +311,96 @@ export default function WelcomePage() {
         </AnimatePresence>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-between items-center mt-12">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={handlePrevious}
-            disabled={currentSlide === 0}
-            className={`px-6 py-3 rounded-full font-semibold transition-all ${
-              currentSlide === 0
-                ? 'opacity-0 pointer-events-none'
-                : 'glass-effect text-gray-700 hover:shadow-lg'
-            }`}
-          >
-            ← {t('welcome.previous')}
-          </motion.button>
-
-          {currentSlide < slides.length - 1 ? (
+        <div className="flex flex-col gap-8 mt-12">
+          <div className="flex justify-between items-center">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={handleNext}
-              className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
-            >
-              {t('welcome.next')} <ArrowRight className="w-5 h-5" />
-            </motion.button>
-          ) : (
-            <motion.button
-              whileHover={{ scale: hasAcceptedPrivacy ? 1.05 : 1 }}
-              whileTap={{ scale: hasAcceptedPrivacy ? 0.95 : 1 }}
-              onClick={handleGetStarted}
-              disabled={!hasAcceptedPrivacy}
-              className={`px-8 py-3 rounded-full font-semibold shadow-lg transition-all flex items-center gap-2 ${
-                hasAcceptedPrivacy
-                  ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:shadow-xl'
-                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              onClick={handlePrevious}
+              disabled={currentSlide === 0}
+              className={`px-6 py-3 rounded-full font-semibold transition-all ${
+                currentSlide === 0
+                  ? 'opacity-0 pointer-events-none'
+                  : 'glass-effect text-gray-700 hover:shadow-lg'
               }`}
             >
-              {t('welcome.getStarted')} <Heart className="w-5 h-5" />
+              {language === 'ar' ? (
+                <>
+                  {t('welcome.previous')} →
+                </>
+              ) : (
+                <>
+                  ← {t('welcome.previous')}
+                </>
+              )}
             </motion.button>
+
+            {currentSlide < slides.length - 1 ? (
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleNext}
+                className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
+              >
+                {t('welcome.next')} <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            ) : (
+              <motion.button
+                whileHover={{ scale: hasAcceptedPrivacy ? 1.05 : 1 }}
+                whileTap={{ scale: hasAcceptedPrivacy ? 0.95 : 1 }}
+                onClick={handleGetStarted}
+                disabled={!hasAcceptedPrivacy}
+                className={`px-8 py-3 rounded-full font-semibold shadow-lg transition-all flex items-center gap-2 ${
+                  hasAcceptedPrivacy
+                    ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:shadow-xl'
+                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}
+              >
+                {t('welcome.getStarted')} <Heart className="w-5 h-5" />
+              </motion.button>
+            )}
+          </div>
+
+          {/* Extra Help Section */}
+          {helpCards.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="rounded-3xl bg-white/70 border border-white/60 p-6 md:p-8 shadow-inner"
+            >
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-1">{helpSection.title}</h3>
+                  <p className="text-gray-600 text-sm md:text-base">{helpSection.description}</p>
+                </div>
+              </div>
+              <div className="grid gap-4 md:grid-cols-3">
+                {helpCards.map((card, index) => {
+                  const Icon = helpIcons[index % helpIcons.length]
+                  return (
+                    <Link key={card.title} href={card.href} className="group">
+                      <motion.div
+                        whileHover={{ y: -6 }}
+                        className="h-full rounded-2xl border border-white/60 bg-gradient-to-br from-white via-white to-purple-50/50 p-5 shadow transition-shadow group-hover:shadow-xl"
+                      >
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="rounded-2xl bg-gradient-to-r from-primary-500 to-secondary-500/90 p-3 text-white shadow">
+                            <Icon className="w-6 h-6" />
+                          </div>
+                          <ArrowRight className="w-5 h-5 text-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </div>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-2">{card.title}</h4>
+                        <p className="text-sm text-gray-600 mb-4 leading-relaxed">{card.description}</p>
+                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600">
+                          {card.cta}
+                          <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </motion.div>
+                    </Link>
+                  )
+                })}
+              </div>
+            </motion.div>
           )}
         </div>
 

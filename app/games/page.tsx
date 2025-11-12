@@ -14,6 +14,15 @@ type GameType = 'memory' | 'quiz' | 'matching' | 'emotions'
 export default function GamesPage() {
   const { t } = useLanguage()
   const [selectedGame, setSelectedGame] = useState<GameType | null>(null)
+  const highlights = (t('games.highlights') as { title: string; description: string }[]) || []
+  const highlightsTitle = t('games.highlightsTitle') as string
+  const supportCta = (t('games.ctaHelp') as { title: string; description: string; cta: string; href: string }) || {
+    title: '',
+    description: '',
+    cta: '',
+    href: '/guidance'
+  }
+  const highlightIcons = [Award, Heart, Star]
 
   const games = [
     {
@@ -73,6 +82,35 @@ export default function GamesPage() {
         </p>
       </motion.div>
 
+      {highlights.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="max-w-5xl mx-auto mb-12"
+        >
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{highlightsTitle}</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {highlights.map((item, index) => {
+              const Icon = highlightIcons[index % highlightIcons.length]
+              return (
+                <motion.div
+                  key={item.title}
+                  whileHover={{ y: -6 }}
+                  className="rounded-3xl border border-white/60 bg-white/80 backdrop-blur-sm p-6 shadow-sm"
+                >
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white mb-4">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
+                </motion.div>
+              )
+            })}
+          </div>
+        </motion.div>
+      )}
+
       {/* Games Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-5xl mx-auto">
         {games.map((game, index) => (
@@ -83,9 +121,12 @@ export default function GamesPage() {
             transition={{ delay: index * 0.1 }}
             whileHover={{ y: -5 }}
             onClick={() => setSelectedGame(game.id)}
-            className="glass-effect rounded-3xl p-8 cursor-pointer card-hover"
+            className="group rounded-3xl p-8 cursor-pointer border border-white/60 bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-xl transition-all relative overflow-hidden"
           >
-            <div className={`bg-gradient-to-r ${game.color} w-20 h-20 rounded-2xl flex items-center justify-center text-white mb-6`}>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              <div className={`absolute -top-10 -right-10 w-36 h-36 rounded-full blur-3xl bg-gradient-to-br ${game.color}`} />
+            </div>
+            <div className={`relative bg-gradient-to-r ${game.color} w-20 h-20 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg`}>
               {game.icon}
             </div>
             <h3 className="text-2xl font-bold mb-3 text-gray-800">{game.title}</h3>
@@ -173,6 +214,31 @@ export default function GamesPage() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {supportCta.title && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="max-w-4xl mx-auto mt-12"
+        >
+          <div className="rounded-3xl border border-white/60 bg-gradient-to-r from-primary-50/90 to-secondary-50/90 p-8 shadow-inner">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{supportCta.title}</h3>
+                <p className="text-gray-700 text-sm md:text-base max-w-2xl">{supportCta.description}</p>
+              </div>
+              <Link
+                href={supportCta.href}
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 px-6 py-3 text-white font-semibold shadow-lg hover:shadow-xl transition-all"
+              >
+                {supportCta.cta}
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </motion.div>
+      )}
     </div>
   )
 }
@@ -196,6 +262,7 @@ function GameContent({ gameType, onClose }: { gameType: GameType; onClose: () =>
 
 function MemoryGame({ gameState, setGameState, score, setScore, onClose }: any) {
   const { t } = useLanguage()
+  const steps = (t('games.memory.steps') as string[]) || []
   const [flippedCards, setFlippedCards] = useState<number[]>([])
   const [matchedCards, setMatchedCards] = useState<number[]>([])
   const [cards, setCards] = useState<string[]>([])
@@ -239,6 +306,16 @@ function MemoryGame({ gameState, setGameState, score, setScore, onClose }: any) 
           <Brain className="w-16 h-16 mx-auto mb-4 text-purple-500" />
           <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('games.memory.title')}</h2>
           <p className="text-gray-600 mb-6">{t('games.memory.instructions')}</p>
+          {steps.length > 0 && (
+            <div className="bg-white/70 border border-white/60 rounded-2xl p-5 text-left max-w-xl mx-auto mb-6 space-y-3">
+              {steps.map((step: string, index: number) => (
+                <div key={index} className="flex items-start gap-3 text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-primary-500 mt-1" />
+                  <span className="text-sm md:text-base leading-relaxed">{step}</span>
+                </div>
+              ))}
+            </div>
+          )}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -307,6 +384,7 @@ function MemoryGame({ gameState, setGameState, score, setScore, onClose }: any) 
 
 function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
   const { t } = useLanguage()
+  const steps = (t('games.quiz.steps') as string[]) || []
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
 
@@ -366,6 +444,16 @@ function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
           <Target className="w-16 h-16 mx-auto mb-4 text-blue-500" />
           <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('games.quiz.title')}</h2>
           <p className="text-gray-600 mb-6">{t('games.quiz.instructions')}</p>
+          {steps.length > 0 && (
+            <div className="bg-white/70 border border-white/60 rounded-2xl p-5 text-left max-w-xl mx-auto mb-6 space-y-3">
+              {steps.map((step: string, index: number) => (
+                <div key={index} className="flex items-start gap-3 text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-blue-500 mt-1" />
+                  <span className="text-sm md:text-base leading-relaxed">{step}</span>
+                </div>
+              ))}
+            </div>
+          )}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -451,6 +539,7 @@ function QuizGame({ gameState, setGameState, score, setScore, onClose }: any) {
 
 function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any) {
   const { t } = useLanguage()
+  const steps = (t('games.matching.steps') as string[]) || []
   const [pairs] = useState([
     { left: t('games.matching.pair1.left'), right: t('games.matching.pair1.right'), id: 1 },
     { left: t('games.matching.pair2.left'), right: t('games.matching.pair2.right'), id: 2 },
@@ -481,6 +570,16 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
           <Puzzle className="w-16 h-16 mx-auto mb-4 text-pink-500" />
           <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('games.matching.title')}</h2>
           <p className="text-gray-600 mb-6">{t('games.matching.instructions')}</p>
+          {steps.length > 0 && (
+            <div className="bg-white/70 border border-white/60 rounded-2xl p-5 text-left max-w-xl mx-auto mb-6 space-y-3">
+              {steps.map((step: string, index: number) => (
+                <div key={index} className="flex items-start gap-3 text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-pink-500 mt-1" />
+                  <span className="text-sm md:text-base leading-relaxed">{step}</span>
+                </div>
+              ))}
+            </div>
+          )}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -578,6 +677,7 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
 
 function EmotionsGame({ gameState, setGameState, score, setScore, onClose }: any) {
   const { t } = useLanguage()
+  const steps = (t('games.emotions.steps') as string[]) || []
   const [currentScenario, setCurrentScenario] = useState(0)
   
   const scenarios = [
@@ -631,6 +731,16 @@ function EmotionsGame({ gameState, setGameState, score, setScore, onClose }: any
           <Heart className="w-16 h-16 mx-auto mb-4 text-orange-500" />
           <h2 className="text-3xl font-bold mb-4 text-gray-800">{t('games.emotions.title')}</h2>
           <p className="text-gray-600 mb-6">{t('games.emotions.instructions')}</p>
+          {steps.length > 0 && (
+            <div className="bg-white/70 border border-white/60 rounded-2xl p-5 text-left max-w-xl mx-auto mb-6 space-y-3">
+              {steps.map((step: string, index: number) => (
+                <div key={index} className="flex items-start gap-3 text-gray-700">
+                  <CheckCircle2 className="w-5 h-5 text-orange-500 mt-1" />
+                  <span className="text-sm md:text-base leading-relaxed">{step}</span>
+                </div>
+              ))}
+            </div>
+          )}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
