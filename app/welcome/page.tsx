@@ -3,7 +3,23 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/navigation'
-import { Heart, Shield, Users, Sparkles, BookOpen, Lock, Eye, Target, ArrowRight, Check } from 'lucide-react'
+import {
+  Heart,
+  Shield,
+  Users,
+  Sparkles,
+  BookOpen,
+  Lock,
+  Eye,
+  Target,
+  ArrowRight,
+  Check,
+  BadgeCheck,
+  LifeBuoy,
+  Handshake
+} from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function WelcomePage() {
@@ -11,6 +27,36 @@ export default function WelcomePage() {
   const router = useRouter()
   const [currentSlide, setCurrentSlide] = useState(0)
   const [hasAcceptedPrivacy, setHasAcceptedPrivacy] = useState(false)
+
+  const leadMember = {
+    name: 'Qais Al Hrahsheh',
+    role: t('team.roles.leadProgrammer'),
+    focus: t('team.contributions.qais')
+  }
+
+  const supportingMembers = [
+    { name: 'Tan Kang Zheng', role: t('team.roles.programmerPresenter') },
+    { name: 'Chengyang Sun', role: t('team.roles.secretary') },
+    { name: 'Raja Nur Aqylah Natasha binti Raja Zazman Shah', role: t('team.roles.interfaceDesigner') },
+    { name: 'Hanif Ruben Davni Setiadji', role: t('team.roles.videoCreator') },
+    { name: 'Rafia Raida Binta Jashim', role: t('team.roles.secretary') },
+    { name: 'Wong Yan Wen', role: t('team.roles.visualPresenter') }
+  ]
+
+  const supportActions = [
+    {
+      icon: <LifeBuoy className="w-5 h-5" />,
+      title: t('welcome.support.chatTitle'),
+      description: t('welcome.support.chatDescription'),
+      href: '/#ai-chat'
+    },
+    {
+      icon: <Handshake className="w-5 h-5" />,
+      title: t('welcome.support.parentGuideTitle'),
+      description: t('welcome.support.parentGuideDescription'),
+      href: '/guidance'
+    }
+  ]
 
   const slides = [
     {
@@ -80,8 +126,95 @@ export default function WelcomePage() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="max-w-4xl w-full glass-effect rounded-3xl p-8 md:p-12 shadow-2xl"
+        className="max-w-5xl w-full glass-effect rounded-3xl p-6 md:p-12 shadow-2xl"
       >
+        <div className="flex flex-col gap-8 md:gap-10">
+          <div className="flex flex-col items-center text-center gap-4">
+            <div className="relative w-28 h-28 md:w-32 md:h-32">
+              <Image src="/um-logo.svg" alt="University of Malaya" fill sizes="128px" className="object-contain" priority />
+            </div>
+            <div>
+              <p className="uppercase tracking-[0.3em] text-xs md:text-sm text-primary-500 font-semibold">{t('welcome.team.tagline')}</p>
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mt-2">{t('welcome.team.heading')}</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto mt-3 text-sm md:text-base leading-relaxed">
+                {t('welcome.team.subtitle')}
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-[1.1fr,1fr] gap-6 md:gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-gradient-to-r from-primary-100 to-secondary-100 rounded-3xl p-6 md:p-8 border border-primary-200/50"
+            >
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="bg-white rounded-2xl p-4 shadow-inner">
+                    <BadgeCheck className="w-10 h-10 text-primary-500" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-sm font-semibold uppercase tracking-wider text-primary-500">
+                      {t('welcome.team.leadLabel')}
+                    </p>
+                    <h3 className="text-2xl font-bold text-gray-800 flex items-center gap-3">
+                      {leadMember.name}
+                      <span className="inline-flex items-center gap-1 px-3 py-1 text-xs font-semibold text-primary-600 bg-white rounded-full border border-primary-200 shadow-sm">
+                        <Sparkles className="w-4 h-4" />
+                        {t('welcome.team.programmerBadge')}
+                      </span>
+                    </h3>
+                    <p className="text-sm md:text-base text-gray-600 mt-1">{leadMember.role}</p>
+                  </div>
+                </div>
+                <p className="text-sm md:text-base text-gray-700 leading-relaxed bg-white/70 md:bg-transparent rounded-2xl md:rounded-none p-4 md:p-0 shadow-sm md:shadow-none">
+                  {leadMember.focus}
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="glass-effect rounded-3xl p-6 md:p-8 border border-white/40"
+            >
+              <p className="text-sm font-semibold text-primary-500 uppercase tracking-wider mb-4">
+                {t('welcome.team.sectionTitle')}
+              </p>
+              <div className="space-y-3">
+                {supportingMembers.map((member) => (
+                  <div key={member.name} className="flex flex-col">
+                    <span className="font-semibold text-gray-800">{member.name}</span>
+                    <span className="text-sm text-gray-600">{member.role}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {supportActions.map((action, index) => (
+              <Link key={action.title} href={action.href} className="group">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * index }}
+                  className="glass-effect rounded-2xl p-5 flex items-start gap-4 border border-white/40 group-hover:border-primary-200"
+                >
+                  <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-xl p-3 shadow-md">
+                    {action.icon}
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800">{action.title}</h4>
+                    <p className="text-sm text-gray-600 mt-1">{action.description}</p>
+                  </div>
+                </motion.div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* Progress Indicator */}
         <div className="flex justify-center gap-2 mb-8">
           {slides.map((_, index) => (

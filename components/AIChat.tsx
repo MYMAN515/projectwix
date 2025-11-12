@@ -20,6 +20,41 @@ export default function AIChat() {
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
+  const topicHandlers = [
+    {
+      keywords: ['puberty', 'changes', 'period', 'growth'],
+      key: 'aiChat.response.puberty'
+    },
+    {
+      keywords: ['emotion', 'mood', 'feel', 'stress', 'anxious', 'sad'],
+      key: 'aiChat.response.emotions'
+    },
+    {
+      keywords: ['talk', 'communicate', 'conversation', 'listen', 'speak'],
+      key: 'aiChat.response.communication'
+    },
+    {
+      keywords: ['friend', 'social', 'peer', 'school', 'bully'],
+      key: 'aiChat.response.social'
+    },
+    {
+      keywords: ['privacy', 'safe', 'security', 'data'],
+      key: 'aiChat.response.privacy'
+    },
+    {
+      keywords: ['game', 'activity', 'play', 'interactive'],
+      key: 'aiChat.response.activities'
+    },
+    {
+      keywords: ['hygiene', 'care', 'clean', 'health'],
+      key: 'aiChat.response.hygiene'
+    },
+    {
+      keywords: ['culture', 'religion', 'family', 'values'],
+      key: 'aiChat.response.culture'
+    }
+  ]
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -40,13 +75,14 @@ export default function AIChat() {
     }
   }, [isOpen, t, messages.length])
 
-  const handleSend = async () => {
-    if (!input.trim()) return
+  const handleSend = async (preset?: string) => {
+    const contentToSend = (preset ?? input).trim()
+    if (!contentToSend) return
 
     const userMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
-      content: input,
+      content: contentToSend,
       timestamp: new Date()
     }
 
@@ -59,7 +95,7 @@ export default function AIChat() {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: getAIResponse(input),
+        content: getAIResponse(contentToSend),
         timestamp: new Date()
       }
       setMessages(prev => [...prev, aiResponse])
@@ -70,33 +106,35 @@ export default function AIChat() {
   const getAIResponse = (userInput: string): string => {
     // Simple keyword-based responses (replace with actual AI integration)
     const input = userInput.toLowerCase()
-    
-    if (input.includes('puberty') || input.includes('changes')) {
-      return t('aiChat.response.puberty')
-    } else if (input.includes('emotion') || input.includes('mood') || input.includes('feel')) {
-      return t('aiChat.response.emotions')
-    } else if (input.includes('talk') || input.includes('communicate') || input.includes('conversation')) {
-      return t('aiChat.response.communication')
-    } else if (input.includes('friend') || input.includes('social')) {
-      return t('aiChat.response.social')
-    } else if (input.includes('privacy') || input.includes('safe')) {
-      return t('aiChat.response.privacy')
-    } else if (input.includes('game') || input.includes('activity')) {
-      return t('aiChat.response.activities')
-    } else {
-      return t('aiChat.response.default')
+
+    const matchedTopic = topicHandlers.find((topic) =>
+      topic.keywords.some((keyword) => input.includes(keyword))
+    )
+
+    if (matchedTopic) {
+      return t(matchedTopic.key)
     }
+
+    return t('aiChat.response.default')
   }
 
   const suggestedQuestions = [
     t('aiChat.suggestions.q1'),
     t('aiChat.suggestions.q2'),
     t('aiChat.suggestions.q3'),
-    t('aiChat.suggestions.q4')
+    t('aiChat.suggestions.q4'),
+    t('aiChat.suggestions.q5'),
+    t('aiChat.suggestions.q6')
+  ]
+
+  const helperReminders = [
+    t('aiChat.additionalHelp.tip1'),
+    t('aiChat.additionalHelp.tip2'),
+    t('aiChat.additionalHelp.tip3')
   ]
 
   return (
-    <>
+    <div id="ai-chat">
       {/* Chat Button */}
       <motion.button
         initial={{ scale: 0 }}
@@ -123,7 +161,7 @@ export default function AIChat() {
             initial={{ opacity: 0, y: 100, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.9 }}
-            className="fixed bottom-6 right-6 z-50 w-full max-w-md h-[600px] glass-effect rounded-3xl shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-6 right-6 z-50 w-full max-w-md h-[620px] glass-effect rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-white/40"
             style={{ maxHeight: 'calc(100vh - 48px)' }}
           >
             {/* Header */}
@@ -225,8 +263,8 @@ export default function AIChat() {
                   {suggestedQuestions.map((question, index) => (
                     <button
                       key={index}
-                      onClick={() => setInput(question)}
-                      className="text-xs bg-white hover:bg-gray-50 text-gray-700 px-3 py-2 rounded-full border border-gray-300 transition-colors"
+                      onClick={() => handleSend(question)}
+                      className="text-xs bg-white hover:bg-primary-50 text-gray-700 px-3 py-2 rounded-full border border-gray-300 transition-colors"
                     >
                       {question}
                     </button>
@@ -235,6 +273,19 @@ export default function AIChat() {
               </div>
             )}
 
+            {/* Helper Reminders */}
+            <div className="px-4 py-3 bg-white/40 border-t border-gray-200 space-y-2">
+              <p className="text-xs font-semibold text-gray-600 flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary-500" />
+                {t('aiChat.additionalHelp.title')}
+              </p>
+              <ul className="space-y-1 list-disc list-inside text-xs text-gray-600">
+                {helperReminders.map((tip, index) => (
+                  <li key={index}>{tip}</li>
+                ))}
+              </ul>
+            </div>
+
             {/* Input */}
             <div className="p-4 bg-white/50 border-t border-gray-200">
               <div className="flex gap-2">
@@ -242,14 +293,14 @@ export default function AIChat() {
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                   placeholder={t('aiChat.placeholder')}
                   className="flex-1 bg-white rounded-full px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-300"
                 />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={handleSend}
+                  onClick={() => handleSend()}
                   disabled={!input.trim() || isLoading}
                   className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full p-3 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
@@ -260,6 +311,6 @@ export default function AIChat() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   )
 }

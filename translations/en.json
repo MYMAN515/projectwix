@@ -7,7 +7,9 @@
     "bodyGuide": "Body Guide",
     "guidance": "Parent Guide",
     "games": "Games & Activities",
-    "parentGuide": "Parenting Tips"
+    "parentGuide": "Parenting Tips",
+    "team": "Our Team",
+    "affiliation": "University of Malaya MG Project"
   },
   "home": {
     "title": "Supporting Your Child Through Puberty",
@@ -51,8 +53,22 @@
       "content": "Navigating puberty with your child can feel challenging, but you're doing great! This app provides evidence-based guidance, practical tips, and interactive activities to help you support your child with confidence and compassion. Remember: open communication and unconditional love are your greatest tools."
     }
   },
-  "welcome": {
-    "slide1": {
+"welcome": {
+  "team": {
+    "tagline": "MG TEAM",
+    "heading": "Welcome from the University of Malaya innovators",
+    "subtitle": "Meet the passionate students who crafted Parenting Hub as part of the MG initiative. Their creativity, empathy, and technical skills are dedicated to supporting every family on this journey.",
+    "leadLabel": "Lead innovator",
+    "programmerBadge": "Programmer",
+    "sectionTitle": "Contributors"
+  },
+  "support": {
+    "chatTitle": "Need quick answers?",
+    "chatDescription": "Open our helpful AI assistant for guidance in English, Malay, or Arabic.",
+    "parentGuideTitle": "In-depth support",
+    "parentGuideDescription": "Visit the Parent Guide for conversation scripts, cultural tips, and expert-backed advice."
+  },
+  "slide1": {
       "title": "Welcome, Dear Parent! 💝",
       "subtitle": "We're So Glad You're Here",
       "description": "Parenting through puberty can feel overwhelming, but you don't have to navigate it alone. This app is designed with love to support YOU in supporting your child through one of life's most significant transitions. Together, we'll make this journey smoother for your whole family."
@@ -83,8 +99,46 @@
     "next": "Next",
     "previous": "Previous",
     "skip": "Skip to Privacy",
-    "getStarted": "Let's Begin This Journey"
+  "getStarted": "Let's Begin This Journey"
+},
+"team": {
+  "tagline": "MEET THE MAKERS",
+  "title": "The dreamers behind Parenting Hub",
+  "subtitle": "Our University of Malaya MG team combines engineering, design, storytelling, and empathy to create a safe space that speaks to parents and children alike.",
+  "roles": {
+    "leadProgrammer": "Lead programmer & experience architect",
+    "programmerPresenter": "Programmer & presenter",
+    "secretary": "Secretary & organiser",
+    "interfaceDesigner": "Interface designer",
+    "videoCreator": "Video creator & photographer",
+    "visualPresenter": "Visual concept & presenter"
   },
+  "contributions": {
+    "qais": "Qais leads the technical vision, crafting seamless user journeys, multilingual features, and playful interactions that make difficult topics approachable.",
+    "tan": "Tan codes interactive elements and brings energy to presentations so families instantly grasp how to use the tools.",
+    "chengyang": "Chengyang keeps every detail organised—from research notes to schedules—ensuring the team delivers on time.",
+    "raja": "Raja shapes the interface with inclusive colours, layouts, and illustrations that make everyone feel welcome.",
+    "hanif": "Hanif captures stories through video and photography, helping parents and children see themselves reflected in the app.",
+    "rafia": "Rafia documents meetings, refines wording, and safeguards clarity across three languages.",
+    "wong": "Wong curates the visual storytelling and co-presents the MG journey with warmth."
+  },
+  "highlights": {
+    "title": "How we collaborated",
+    "description": "We blended technical innovation with cultural sensitivity to support Malaysian families.",
+    "empowerment": {
+      "title": "Youth empowerment",
+      "description": "Built entirely by students who believe empathy and technology can uplift every household."
+    },
+    "experience": {
+      "title": "Lived experience",
+      "description": "Grounded in real conversations with parents, guardians, and young people navigating puberty."
+    },
+    "support": {
+      "title": "Ongoing support",
+      "description": "Resources, chat assistance, and activities continue to grow with feedback from our community."
+    }
+  }
+},
   "aiChat": {
     "title": "Parent Assistant",
     "subtitle": "Ask me anything about puberty",
@@ -95,7 +149,9 @@
       "q1": "How do I start the puberty conversation?",
       "q2": "How can I support my child's emotions?",
       "q3": "What activities can help my child?",
-      "q4": "How do I handle mood swings?"
+      "q4": "How do I handle mood swings?",
+      "q5": "What hygiene habits should we focus on?",
+      "q6": "How do I respect cultural values while teaching?"
     },
     "response": {
       "puberty": "Great question! Starting conversations about puberty early and keeping them ongoing is key. Use natural opportunities like seeing related content on TV or books. Keep the tone casual and normalize the topic. Let your child know they can always come to you with questions, and reassure them that all the changes they're experiencing are completely normal.",
@@ -104,15 +160,48 @@
       "social": "Social dynamics change during puberty. Help your child navigate friendships by discussing what healthy relationships look like. Talk about peer pressure and give them language to set boundaries. Encourage diverse friendships and validate their feelings when friendships shift or end - it's a normal part of growing up.",
       "privacy": "This app prioritizes privacy completely. All diary entries and data stay on your device - nothing is sent to servers. The diary is a private space for your child. We don't track users or collect personal information. Your family's privacy and your child's safety are our top priorities.",
       "activities": "The Games section offers interactive activities designed to teach about puberty in a fun, engaging way. These include memory games, emotion recognition exercises, and matching activities. These games help normalize conversations about puberty and make learning enjoyable rather than awkward.",
+      "hygiene": "Daily hygiene routines give your child a sense of control. Build a checklist together: showering after active days, using deodorant, changing pads or liners regularly, and caring for skin. Celebrate when they remember steps on their own and gently remind them when needed.",
+      "culture": "Honour your family's cultural and religious values while teaching. Share stories about how elders guided you, explain why certain practices matter, and invite questions. Emphasise respect and privacy so your child knows traditions and personal comfort can co-exist.",
       "default": "I'm here to help you with any parenting questions about puberty! You can ask me about: communication strategies, understanding physical/emotional changes, handling difficult situations, supporting your child's mental health, navigating social challenges, and much more. What would you like to know?"
     }
   },
+  "aiChat.additionalHelp": {
+    "title": "Helpful reminders",
+    "tip1": "Encourage short daily check-ins after playing a game.",
+    "tip2": "Switch languages anytime so everyone understands clearly.",
+    "tip3": "Celebrate progress—even brave questions deserve applause!"
+  },
   "games": {
     "title": "Interactive Games & Activities",
-    "subtitle": "Fun, educational games for your child to learn about puberty 🎮",
-    "easy": "Easy",
-    "medium": "Medium",
-    "moreActivities": "More Activities Available",
+  "subtitle": "Fun, educational games for your child to learn about puberty 🎮",
+  "journey": {
+    "step1": {
+      "title": "Explore together",
+      "description": "Pick a game that matches what your child is curious about today—feelings, body changes, or communication."
+    },
+    "step2": {
+      "title": "Play with purpose",
+      "description": "Use the prompts and feedback to start positive conversations while you play side-by-side."
+    },
+    "step3": {
+      "title": "Reflect & support",
+      "description": "After each game, ask what felt easy or tricky and celebrate every small win together."
+    }
+  },
+  "easy": "Easy",
+  "medium": "Medium",
+  "moreActivities": "More Activities Available",
+  "support": {
+    "title": "Continue the learning journey",
+    "subtitle": "Pair these playful activities with reflective tools and trusted guidance.",
+    "cta": "Open parent guidance",
+    "diary": "Child's diary",
+    "diaryDescription": "Let your child capture feelings and questions privately in every language.",
+    "chat": "AI helper",
+    "chatDescription": "Reach the tri-lingual chatbot when you need instant suggestions or calming words.",
+    "parentGuide": "Parent guide",
+    "parentGuideDescription": "Dive into deeper advice, cultural notes, and conversation starters."
+  },
     "startGame": "Start Game",
     "score": "Score",
     "question": "Question",
