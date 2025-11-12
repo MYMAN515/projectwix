@@ -7,7 +7,8 @@
     "bodyGuide": "Body Guide",
     "guidance": "Parent Guide",
     "games": "Games & Activities",
-    "parentGuide": "Parenting Tips"
+    "parentGuide": "Parenting Tips",
+    "team": "Meet the Team"
   },
   "home": {
     "title": "Supporting Your Child Through Puberty",
@@ -80,22 +81,97 @@
       "point4": "This is a safe, judgment-free space designed with child safety and family privacy as top priorities",
       "acceptPrivacy": "I understand and accept the privacy policy"
     },
+    "teamIntro": {
+      "logoAlt": "University of Malaya crest",
+      "title": "Welcome from the University of Malaya project team",
+      "subtitle": "We built Parenting Hub as a heartfelt resource for families navigating puberty together. Our multidisciplinary team brings programming, design, storytelling, and research together so you always feel supported.",
+      "leadTitle": "Project Lead",
+      "membersTitle": "Supporting team members",
+      "ctaTeam": "Meet our full team",
+      "ctaSupport": "Explore parent guidance",
+      "supportTitle": "Need a helping hand right now?",
+      "supportDescription": "Jump straight into personalised support, helpful reading, or our friendly assistant."
+    },
+    "helpCards": {
+      "guide": {
+        "title": "Parent guidance library",
+        "description": "Browse conversation starters, health tips, and confidence-building ideas created for busy caregivers.",
+        "action": "Read expert advice"
+      },
+      "chat": {
+        "title": "Talk to our assistant",
+        "description": "Open the multilingual chat bot for personalised answers in English, Bahasa Melayu, or Arabic.",
+        "action": "Start a chat"
+      },
+      "support": {
+        "title": "Help & encouragement",
+        "description": "Find extra guidance, calming strategies, and printable resources to use with your child.",
+        "action": "Visit the support hub"
+      }
+    },
     "next": "Next",
     "previous": "Previous",
     "skip": "Skip to Privacy",
     "getStarted": "Let's Begin This Journey"
   },
+  "team": {
+    "sectionTitle": "University of Malaya Team",
+    "sectionSubtitle": "University of Malaya project team",
+    "badges": {
+      "programmer": "Programmer"
+    },
+    "roles": {
+      "teamLead": "Project Lead",
+      "programmer": "Programmer",
+      "presenter": "Presenter",
+      "secretary": "Secretary",
+      "designer": "Interface Designer",
+      "videographer": "Video Creator",
+      "photographer": "Photographer",
+      "visualConcept": "Visual Concept Designer"
+    },
+    "page": {
+      "universityTag": "University of Malaya",
+      "title": "Meet the minds behind Parenting Hub",
+      "subtitle": "We are a multidisciplinary student team committed to building a safe, culturally sensitive space for families to navigate puberty with confidence.",
+      "leadHeading": "Project lead & programmer",
+      "membersHeading": "Dedicated team members",
+      "leadDescription": "Qais Al Hrahsheh coordinates development, ensures accessibility, and keeps the experience smooth on every device.",
+      "leadBadgeCaption": "Guiding architecture and quality",
+      "missionTitle": "Our mission",
+      "missionDescription": "Create a trustworthy hub where parents and children can learn, play, and grow together while feeling supported every step of the way.",
+      "valuesTitle": "What guides our work",
+      "values": {
+        "value1": {
+          "title": "Human-centred design",
+          "description": "Every screen is shaped by real family feedback so guidance feels kind, practical, and culturally inclusive."
+        },
+        "value2": {
+          "title": "Playful learning",
+          "description": "Interactive games and stories transform sensitive topics into approachable conversations that children enjoy."
+        },
+        "value3": {
+          "title": "Trusted support",
+          "description": "Privacy, safety, and accuracy are at the heart of every feature we build for your family."
+        }
+      },
+      "backToWelcome": "Back to the welcome tour"
+    }
+  },
   "aiChat": {
     "title": "Parent Assistant",
     "subtitle": "Ask me anything about puberty",
-    "greeting": "Hello! I'm here to help you navigate parenting through puberty. Ask me anything - from handling difficult conversations to understanding physical changes. How can I support you today?",
+    "greeting": "Hello! I'm here to help you navigate parenting through puberty. Ask me anything—from handling difficult conversations to understanding physical changes. How can I support you today?",
+    "multiLanguageNotice": "Answers available in English, Bahasa Melayu, and Arabic.",
     "placeholder": "Type your question here...",
     "suggestedTitle": "Suggested questions:",
     "suggestions": {
       "q1": "How do I start the puberty conversation?",
       "q2": "How can I support my child's emotions?",
       "q3": "What activities can help my child?",
-      "q4": "How do I handle mood swings?"
+      "q4": "How do I handle mood swings?",
+      "q5": "How do I encourage healthy hygiene and self-care?",
+      "q6": "What if my child feels anxious or overwhelmed?"
     },
     "response": {
       "puberty": "Great question! Starting conversations about puberty early and keeping them ongoing is key. Use natural opportunities like seeing related content on TV or books. Keep the tone casual and normalize the topic. Let your child know they can always come to you with questions, and reassure them that all the changes they're experiencing are completely normal.",
@@ -104,14 +180,28 @@
       "social": "Social dynamics change during puberty. Help your child navigate friendships by discussing what healthy relationships look like. Talk about peer pressure and give them language to set boundaries. Encourage diverse friendships and validate their feelings when friendships shift or end - it's a normal part of growing up.",
       "privacy": "This app prioritizes privacy completely. All diary entries and data stay on your device - nothing is sent to servers. The diary is a private space for your child. We don't track users or collect personal information. Your family's privacy and your child's safety are our top priorities.",
       "activities": "The Games section offers interactive activities designed to teach about puberty in a fun, engaging way. These include memory games, emotion recognition exercises, and matching activities. These games help normalize conversations about puberty and make learning enjoyable rather than awkward.",
+      "selfCare": "Daily routines make a huge difference. Show your child how to care for their body with gentle reminders about bathing, changing clothes, and using deodorant. Turn hygiene into teamwork—keep supplies visible, create a checklist, and celebrate small wins. Connecting self-care to feeling fresh, confident, and healthy helps it feel positive instead of critical.",
       "default": "I'm here to help you with any parenting questions about puberty! You can ask me about: communication strategies, understanding physical/emotional changes, handling difficult situations, supporting your child's mental health, navigating social challenges, and much more. What would you like to know?"
     }
   },
   "games": {
     "title": "Interactive Games & Activities",
     "subtitle": "Fun, educational games for your child to learn about puberty 🎮",
+    "tapToExplore": "Tap to explore",
+    "highlights": {
+      "accessibleTitle": "Quick, accessible sessions",
+      "accessibleDescription": "Each activity takes 5 minutes or less and can be repeated as often as your child likes.",
+      "engagingTitle": "Emotionally supportive play",
+      "engagingDescription": "Help your child process feelings with colourful stories, matching games, and reflective questions.",
+      "progressTitle": "Track learning progress",
+      "progressDescription": "Scores and gentle feedback motivate children while giving you insight into topics they understand."
+    },
     "easy": "Easy",
     "medium": "Medium",
+    "moreActivitiesDescription": "Keep the learning journey going with these guided experiences.",
+    "moreActivitiesTimeline": "A step-by-step story about the stages of puberty for kids.",
+    "moreActivitiesDiary": "Encourage private reflection and emotional check-ins.",
+    "moreActivitiesBodyGuide": "Illustrated explanations of body changes for quick reference.",
     "moreActivities": "More Activities Available",
     "startGame": "Start Game",
     "score": "Score",
@@ -124,6 +214,25 @@
     "perfectScore": "Perfect! You matched everything!",
     "playAgain": "Play Again",
     "close": "Close",
+    "supportTitle": "More ways we can help",
+    "supportDescription": "Pair your child's playtime with expert tips or real-time guidance whenever you need it.",
+    "supportCards": {
+      "guide": {
+        "title": "Parent guidance",
+        "description": "Read quick tips to keep conversations positive after gameplay.",
+        "action": "Open guide"
+      },
+      "chat": {
+        "title": "Ask the assistant",
+        "description": "Get personalised answers about supporting your child's learning.",
+        "action": "Chat now"
+      },
+      "support": {
+        "title": "More support",
+        "description": "Discover coaching ideas and calming techniques for sensitive days.",
+        "action": "See resources"
+      }
+    },
     "memory": {
       "title": "Emotion Memory Game",
       "description": "Match pairs of emotions while learning about feelings during puberty",
