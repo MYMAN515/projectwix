@@ -7,7 +7,7 @@ export type Language = 'en' | 'ar' | 'ms'
 type LanguageContextType = {
   language: Language
   setLanguage: (lang: Language) => void
-  t: (key: string) => string
+  t: <T = string>(key: string) => T
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
@@ -39,16 +39,22 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = lang
   }
 
-  const t = (key: string): string => {
+  const t = <T = string>(key: string): T => {
     const keys = key.split('.')
     let value = translations
-    
+
     for (const k of keys) {
       value = value?.[k]
-      if (value === undefined) return key
+      if (value === undefined) {
+        return key as unknown as T
+      }
     }
-    
-    return value || key
+
+    if (value === undefined || value === null) {
+      return key as unknown as T
+    }
+
+    return value as T
   }
 
   return (

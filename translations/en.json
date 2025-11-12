@@ -7,7 +7,8 @@
     "bodyGuide": "Body Guide",
     "guidance": "Parent Guide",
     "games": "Games & Activities",
-    "parentGuide": "Parenting Tips"
+    "parentGuide": "Parenting Tips",
+    "team": "Our Team"
   },
   "home": {
     "title": "Supporting Your Child Through Puberty",
@@ -51,6 +52,115 @@
       "content": "Navigating puberty with your child can feel challenging, but you're doing great! This app provides evidence-based guidance, practical tips, and interactive activities to help you support your child with confidence and compassion. Remember: open communication and unconditional love are your greatest tools."
     }
   },
+  "team": {
+    "title": "University of Malaya Innovation Team",
+    "subtitle": "A multidisciplinary crew crafting compassionate digital support for families navigating puberty.",
+    "tagline": "Meet the people who build with heart, science, and cultural understanding.",
+    "coreTeam": "Core Team",
+    "supportTeam": "Supporting Stars",
+    "specialAssessor": "Special Assessor",
+    "valuesTitle": "What guides our work",
+    "values": [
+      "Every feature honours the voices of young people and their caregivers.",
+      "Evidence-based content blended with joyful, culturally sensitive design.",
+      "Continuous collaboration with educators, psychologists, and families."
+    ],
+    "badges": {
+      "programmer": "Programmer",
+      "assessor": "Special Assessor"
+    },
+    "roles": {
+      "leadProgrammer": "Lead Programmer",
+      "experienceDesigner": "Experience Designer",
+      "researchLead": "Research Lead",
+      "contentStrategist": "Content Strategist",
+      "learningFacilitator": "Learning Facilitator",
+      "wellbeingAdvocate": "Wellbeing Advocate",
+      "uiAnimator": "UI & Motion Designer",
+      "techSupport": "Technology Support",
+      "assessor": "Special Assessor"
+    },
+    "members": {
+      "qais": {
+        "role": "Lead Programmer",
+        "bio": "Architects the overall experience, ensuring seamless performance, accessibility, and delightful micro-interactions across the platform.",
+        "focus": [
+          "Translating family needs into reliable, secure features.",
+          "Championing inclusive design patterns across devices.",
+          "Mentoring the team on clean, future-ready code."
+        ]
+      },
+      "tan": {
+        "role": "Experience Designer",
+        "bio": "Shapes intuitive layouts and calming visual flows that help children feel safe while exploring sensitive topics.",
+        "focus": [
+          "Designing immersive learning journeys with gentle animations.",
+          "Testing usability with families to refine every interaction.",
+          "Crafting colour systems inspired by UM heritage."
+        ]
+      },
+      "sun": {
+        "role": "Research Lead",
+        "bio": "Leads the evidence review process, blending academic insight with real-world family feedback.",
+        "focus": [
+          "Synthesising research on puberty education and wellbeing.",
+          "Co-creating evaluation frameworks with educators.",
+          "Ensuring multilingual accuracy across the platform."
+        ]
+      },
+      "raja": {
+        "role": "Content Strategist",
+        "bio": "Crafts empathetic stories, scripts, and in-app copy that speak to diverse Malaysian families.",
+        "focus": [
+          "Localising guidance in English, Bahasa Melayu, and Arabic.",
+          "Maintaining a warm, reassuring tone throughout the app.",
+          "Collaborating with the AI team on culturally aware responses."
+        ]
+      },
+      "hanif": {
+        "role": "Learning Facilitator",
+        "bio": "Connects pedagogy with play, making sure every activity nurtures confidence and curiosity.",
+        "focus": [
+          "Mapping curriculum outcomes to interactive mini-games.",
+          "Designing reflection prompts parents can use at home.",
+          "Championing joyful, strengths-based learning moments."
+        ]
+      },
+      "rafia": {
+        "role": "Wellbeing Advocate",
+        "bio": "Advocates for emotional safety, ensuring sensitive topics are handled with compassion and care.",
+        "focus": [
+          "Embedding mental health check-ins across experiences.",
+          "Partnering with counsellors to validate supportive language.",
+          "Designing calming rituals and breathing cues for young users."
+        ]
+      },
+      "wong": {
+        "role": "UI & Motion Designer",
+        "bio": "Brings the interface to life with animations that guide, reassure, and celebrate progress.",
+        "focus": [
+          "Creating micro-animations that reward curiosity.",
+          "Ensuring transitions feel smooth for multilingual readers.",
+          "Animating badges and celebrations that boost self-esteem."
+        ]
+      },
+      "zhou": {
+        "role": "Technology Support",
+        "bio": "Keeps the build pipeline healthy and the experience stable across devices.",
+        "focus": [
+          "Optimising performance for varied connectivity environments.",
+          "Automating quality checks for accessibility and speed.",
+          "Supporting deployment to schools and community partners."
+        ]
+      }
+    },
+    "assessor": {
+      "name": "Dr. Nazean Jomhari",
+      "role": "Special Assessor",
+      "bio": "Provides strategic oversight and academic rigour, ensuring the project aligns with University of Malaya standards and family wellbeing priorities."
+    },
+    "closing": "Built with ❤️ at the University of Malaya to support every family."
+  },
   "welcome": {
     "slide1": {
       "title": "Welcome, Dear Parent! 💝",
@@ -83,36 +193,261 @@
     "next": "Next",
     "previous": "Previous",
     "skip": "Skip to Privacy",
-    "getStarted": "Let's Begin This Journey"
+    "getStarted": "Let's Begin This Journey",
+    "partner": "In collaboration with University of Malaya"
   },
   "aiChat": {
     "title": "Parent Assistant",
     "subtitle": "Ask me anything about puberty",
-    "greeting": "Hello! I'm here to help you navigate parenting through puberty. Ask me anything - from handling difficult conversations to understanding physical changes. How can I support you today?",
+    "greeting": "Hello! I'm here to help you navigate parenting through puberty. Ask me anything—in English, Bahasa Melayu, or Arabic—and I'll share practical tips you can use right away. How can I support you today?",
     "placeholder": "Type your question here...",
-    "suggestedTitle": "Suggested questions:",
     "suggestions": {
-      "q1": "How do I start the puberty conversation?",
-      "q2": "How can I support my child's emotions?",
-      "q3": "What activities can help my child?",
-      "q4": "How do I handle mood swings?"
+      "title": "Try asking:",
+      "items": [
+        "How do I start the puberty conversation?",
+        "How can I support my child's emotions?",
+        "What activities can help my child feel confident?",
+        "How do I handle mood swings with empathy?"
+      ]
+    },
+    "topics": {
+      "title": "Quick topics",
+      "items": [
+        {
+          "id": "puberty",
+          "label": "Puberty basics",
+          "question": "What is the best way to explain body changes to my child?"
+        },
+        {
+          "id": "emotions",
+          "label": "Big emotions",
+          "question": "How can I guide my child through strong feelings during puberty?"
+        },
+        {
+          "id": "communication",
+          "label": "Open conversations",
+          "question": "How do I keep honest conversations going with my tween?"
+        },
+        {
+          "id": "social",
+          "label": "Friendships & peers",
+          "question": "How can I help my child with changing friendships?"
+        },
+        {
+          "id": "privacy",
+          "label": "Privacy & safety",
+          "question": "How do I teach healthy boundaries and online safety?"
+        },
+        {
+          "id": "activities",
+          "label": "Family activities",
+          "question": "What bonding activities support puberty learning?"
+        }
+      ]
+    },
+    "shared": {
+      "tipsTitle": "Practical next steps",
+      "startersTitle": "Conversation starters to try",
+      "remindersTitle": "Gentle reminders",
+      "resourcesTitle": "Keep exploring"
     },
     "response": {
-      "puberty": "Great question! Starting conversations about puberty early and keeping them ongoing is key. Use natural opportunities like seeing related content on TV or books. Keep the tone casual and normalize the topic. Let your child know they can always come to you with questions, and reassure them that all the changes they're experiencing are completely normal.",
-      "emotions": "Emotional support during puberty is crucial. Validate your child's feelings - mood swings are normal due to hormonal changes. Listen without judgment, give them space when needed, but also let them know you're always available. Help them identify and name their emotions, and teach healthy coping strategies like exercise, journaling, or talking with trusted friends.",
-      "communication": "Effective communication builds trust. Practice active listening - put away distractions and give your full attention. Ask open-ended questions rather than yes/no questions. Share your own experiences (age-appropriately) to show you understand. Most importantly, create a judgment-free zone where they feel safe sharing anything.",
-      "social": "Social dynamics change during puberty. Help your child navigate friendships by discussing what healthy relationships look like. Talk about peer pressure and give them language to set boundaries. Encourage diverse friendships and validate their feelings when friendships shift or end - it's a normal part of growing up.",
-      "privacy": "This app prioritizes privacy completely. All diary entries and data stay on your device - nothing is sent to servers. The diary is a private space for your child. We don't track users or collect personal information. Your family's privacy and your child's safety are our top priorities.",
-      "activities": "The Games section offers interactive activities designed to teach about puberty in a fun, engaging way. These include memory games, emotion recognition exercises, and matching activities. These games help normalize conversations about puberty and make learning enjoyable rather than awkward.",
-      "default": "I'm here to help you with any parenting questions about puberty! You can ask me about: communication strategies, understanding physical/emotional changes, handling difficult situations, supporting your child's mental health, navigating social challenges, and much more. What would you like to know?"
+      "puberty": {
+        "title": "Explain puberty with calm confidence",
+        "intro": "Children feel safer when adults speak openly and without embarrassment about growing up.",
+        "tips": [
+          "Use clear, body-positive language so your child knows every change is normal.",
+          "Share the changes in the order they may notice them—growth spurts, emotions, hygiene needs.",
+          "Set aside small, regular moments (school runs, bedtime chats) to keep the conversation easy."
+        ],
+        "starters": [
+          "\"Have you noticed any new changes lately? I'm here to talk about all of them.\"",
+          "\"When I was your age, I also wondered about... Want to hear how I handled it?\""
+        ],
+        "reminders": [
+          "Your calm tone shows there is nothing to hide or fear.",
+          "Offer trusted books or videos in the language your child prefers."
+        ],
+        "resources": [
+          "Explore the Body Guide section together for illustrations and simple explanations.",
+          "Play one game from the Activities page to spark questions naturally."
+        ],
+        "closing": "Keep reminding your child they can ask any question at any time. Openness today builds trust for tomorrow."
+      },
+      "emotions": {
+        "title": "Coach your child through big feelings",
+        "intro": "Hormonal shifts can feel like an emotional roller coaster for young people.",
+        "tips": [
+          "Name the emotion you notice (\"It looks like you're feeling frustrated\") to show empathy.",
+          "Create a calm-down toolkit together—breathing exercises, music, or a quick walk.",
+          "Help them track their moods in the Diary so they can spot patterns."
+        ],
+        "starters": [
+          "\"What usually helps you feel better when days feel heavy? Let's list a few together.\"",
+          "\"Do you want to vent, get advice, or just a hug right now?\""
+        ],
+        "reminders": [
+          "Avoid minimising their feelings—validation comes before problem solving.",
+          "Share how you manage your own emotions to model healthy coping."
+        ],
+        "resources": [
+          "Try the Emotion Memory game to practise identifying feelings with humor.",
+          "Encourage short journal notes after challenging moments."
+        ],
+        "closing": "Consistent empathy teaches your child that all feelings are acceptable and manageable."
+      },
+      "communication": {
+        "title": "Build brave two-way conversations",
+        "intro": "Tweens open up more when they feel heard, not judged.",
+        "tips": [
+          "Switch off distractions and keep eye contact when they talk.",
+          "Use curious, open questions like \"How did that make you feel?\" instead of yes/no questions.",
+          "Share small stories from your own adolescence to build connection."
+        ],
+        "starters": [
+          "\"If a friend had this question, what advice would you give them?\"",
+          "\"What part of growing up feels exciting? What feels confusing?\""
+        ],
+        "reminders": [
+          "Silence can be productive—give them space to think before answering.",
+          "Let them know it's okay to pause a talk and return later."
+        ],
+        "resources": [
+          "Read a short section from the Parent Guide together and discuss one takeaway.",
+          "Use the Timeline activity as a neutral way to start deeper chats."
+        ],
+        "closing": "When communication is frequent and gentle, your child knows you are their safest ally."
+      },
+      "social": {
+        "title": "Support changing friendships",
+        "intro": "Peer relationships can shift quickly during puberty, and that can feel unsettling.",
+        "tips": [
+          "Help your child define what respectful friendship looks and feels like.",
+          "Role-play responses to peer pressure or teasing so they feel ready.",
+          "Encourage involvement in mixed groups—sports, clubs, or creative teams."
+        ],
+        "starters": [
+          "\"Who made you smile today? Anyone make things tricky?\"",
+          "\"Want to practice what you might say if someone crosses your boundary?\""
+        ],
+        "reminders": [
+          "Validate grief when friendships fade; change is a natural part of growing.",
+          "Celebrate acts of kindness they give or receive to reinforce healthy bonds."
+        ],
+        "resources": [
+          "Check the Guidance section for scripts about healthy relationships.",
+          "Plan a joint activity with a trusted friend to nurture positive connections."
+        ],
+        "closing": "Reassure your child that friendships evolve and that you will help them navigate every stage."
+      },
+      "privacy": {
+        "title": "Teach privacy and safety with respect",
+        "intro": "Young people need clear guidance on body boundaries and digital safety.",
+        "tips": [
+          "Agree on shared privacy rules at home—knocking before entering rooms, private storage for diaries.",
+          "Discuss online safety together: strong passwords, not sharing personal images, and seeking help if something feels wrong.",
+          "Model respect for their privacy so they learn to respect others'."
+        ],
+        "starters": [
+          "\"Let's create a privacy agreement that works for both of us.\"",
+          "\"If something online makes you uncomfortable, what would you like me to do to support you?\""
+        ],
+        "reminders": [
+          "Keep the tone collaborative, not punitive, to build trust.",
+          "Revisit the agreement regularly as your child grows and needs change."
+        ],
+        "resources": [
+          "Review the app's privacy commitment together to build reassurance.",
+          "Use the Diary feature to show how personal reflections stay secure."
+        ],
+        "closing": "Clear, respectful boundaries give your child the confidence to protect themselves in any space."
+      },
+      "activities": {
+        "title": "Create joyful learning moments",
+        "intro": "Short, playful activities make puberty topics less intimidating.",
+        "tips": [
+          "Schedule mini game sessions—10 to 15 minutes is enough to learn and bond.",
+          "Celebrate effort, not just scores, to build confidence.",
+          "Alternate between information-heavy games and lighter creative tasks."
+        ],
+        "starters": [
+          "\"Which game looks fun to try together this week?\"",
+          "\"After we play, let's share one cool fact we discovered.\""
+        ],
+        "reminders": [
+          "Take breaks if the activity feels overwhelming; joy fuels learning.",
+          "Invite siblings or trusted friends for cooperative play when appropriate."
+        ],
+        "resources": [
+          "Explore the Games hub to mix memory, quiz, and emotion challenges.",
+          "Check the Body Guide after gameplay to deepen the new knowledge."
+        ],
+        "closing": "Consistent, positive play builds knowledge, resilience, and a stronger bond with you."
+      },
+      "default": {
+        "title": "I'm ready to help",
+        "intro": "I couldn't find an exact match, but here are ways we can keep moving forward.",
+        "tips": [
+          "Share a little more detail about the situation, including your child's age or feelings.",
+          "Let me know if you prefer the answer in English, Bahasa Melayu, or Arabic.",
+          "Choose a topic card below to jump into a focused conversation."
+        ],
+        "starters": [
+          "\"What would feel like a good outcome for you and your child?\"",
+          "\"Is there a recent moment you'd like to unpack together?\""
+        ],
+        "reminders": [
+          "You're doing your best—seeking support already shows great care.",
+          "Every family is unique; we'll tailor the guidance to your values."
+        ],
+        "resources": [
+          "Browse the Parent Guide for deeper dives into communication and wellbeing.",
+          "Try a short game to open up discussion, then come back with new questions."
+        ],
+        "closing": "Ask me anything, anytime. Together we'll find an approach that suits your family."
+      }
     }
   },
   "games": {
     "title": "Interactive Games & Activities",
     "subtitle": "Fun, educational games for your child to learn about puberty 🎮",
+    "heroBadge": "Family-friendly learning",
+    "heroDescription": "Short, guided games to spark meaningful conversations and confidence.",
     "easy": "Easy",
     "medium": "Medium",
     "moreActivities": "More Activities Available",
+    "spotlightTitle": "Choose a play style",
+    "spotlightDescription": "Tap a card to explore a game mode that fits today's mood.",
+    "benefitsTitle": "Why families love these games",
+    "benefits": [
+      {
+        "title": "Confidence building",
+        "description": "Games make sensitive topics playful, so your child learns without feeling shy."
+      },
+      {
+        "title": "Deeper bonding",
+        "description": "Co-play moments help you listen, laugh, and answer questions together."
+      },
+      {
+        "title": "Ready-made talking points",
+        "description": "Each challenge unlocks natural prompts for meaningful conversations."
+      }
+    ],
+    "playTipsTitle": "Playtime guidance for parents",
+    "playTips": [
+      "Sit together for the first round and model how to think through each choice.",
+      "Pause after a tricky question and ask, 'What made you choose that answer?'",
+      "Celebrate effort, curiosity, and kindness more than perfect scores."
+    ],
+    "wellbeing": {
+      "title": "Keep the conversation going",
+      "description": "After each game, try one of these prompts to keep your child reflecting:",
+      "prompts": [
+        "What surprised you about today's game?",
+        "Which scenario felt most like real life?",
+        "Is there something you'd like us to learn more about together?"
+      ]
+    },
     "startGame": "Start Game",
     "score": "Score",
     "question": "Question",
