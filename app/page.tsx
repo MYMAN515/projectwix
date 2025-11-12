@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Heart, Activity, BookOpen, Sparkles, Lightbulb } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -68,6 +69,31 @@ export default function Home() {
           <p className="text-lg md:text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto mb-8 px-4">
             {t('home.subtitle')}
           </p>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 bg-white/70 rounded-3xl px-6 py-4 shadow-lg border border-primary-100 w-fit mx-auto mb-10"
+          >
+            <div className="relative w-20 h-20 sm:w-16 sm:h-16">
+              <Image
+                src="https://www.um.edu.my/images/img-logo-UM.png"
+                alt="Universiti Malaya logo"
+                fill
+                sizes="80px"
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div className="text-center sm:text-left">
+              <p className="text-xs uppercase tracking-widest text-primary-500 font-semibold mb-1">
+                {t('home.partnership')}
+              </p>
+              <p className="text-lg sm:text-xl font-semibold text-gray-800">
+                {t('home.motto')}
+              </p>
+            </div>
+          </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
