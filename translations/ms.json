@@ -7,7 +7,8 @@
     "bodyGuide": "Panduan Badan",
     "guidance": "Panduan Ibu Bapa",
     "games": "Permainan & Aktiviti",
-    "parentGuide": "Petua Keibubapaan"
+    "parentGuide": "Petua Keibubapaan",
+    "team": "Pasukan Kami"
   },
   "home": {
     "title": "Menyokong Anak Anda Melalui Akil Baligh",
@@ -52,6 +53,7 @@
     }
   },
   "welcome": {
+    "endorsedBy": "Panduan dipercayai yang diinspirasikan oleh komuniti Universiti Malaya",
     "slide1": {
       "title": "Selamat Datang, Ibu Bapa yang Dihormati! 💝",
       "subtitle": "Kami Sangat Gembira Anda Di Sini",
@@ -91,25 +93,109 @@
     "greeting": "Hello! Saya di sini untuk membantu anda menavigasi keibubapaan melalui akil baligh. Tanya saya apa sahaja - dari mengendalikan perbualan sukar hingga memahami perubahan fizikal. Bagaimana saya boleh menyokong anda hari ini?",
     "placeholder": "Taip soalan anda di sini...",
     "suggestedTitle": "Soalan yang dicadangkan:",
+    "tipTitle": "Tip pantas yang boleh dicuba:",
+    "followUpTitle": "Idea susulan:",
     "suggestions": {
       "q1": "Bagaimana saya memulakan perbualan akil baligh?",
       "q2": "Bagaimana saya boleh menyokong emosi anak saya?",
       "q3": "Aktiviti apa yang boleh membantu anak saya?",
-      "q4": "Bagaimana saya menangani perubahan mood?"
+      "q4": "Bagaimana saya menangani perubahan mood?",
+      "q5": "Bagaimana saya boleh membina keyakinan badan?",
+      "q6": "Apa perlu saya buat jika anak saya mendiamkan diri?"
     },
     "response": {
-      "puberty": "Soalan bagus! Memulakan perbualan tentang akil baligh awal dan mengekalkannya berterusan adalah kunci. Gunakan peluang semula jadi seperti melihat kandungan berkaitan di TV atau buku. Pastikan nada santai dan normalkan topik. Biarkan anak anda tahu mereka sentiasa boleh datang kepada anda dengan soalan, dan yakinkan mereka bahawa semua perubahan yang mereka alami adalah benar-benar normal.",
-      "emotions": "Sokongan emosi semasa akil baligh adalah penting. Sahkan perasaan anak anda - perubahan mood adalah normal kerana perubahan hormon. Dengar tanpa penghakiman, beri mereka ruang apabila diperlukan, tetapi juga beritahu mereka anda sentiasa ada. Bantu mereka mengenal pasti dan menamakan emosi mereka, dan ajar strategi menangani yang sihat.",
-      "communication": "Komunikasi berkesan membina kepercayaan. Amalkan mendengar aktif - singkirkan gangguan dan beri perhatian penuh. Tanya soalan terbuka daripada soalan ya/tidak. Kongsi pengalaman anda sendiri (sesuai umur) untuk menunjukkan pemahaman. Yang paling penting, cipta zon bebas penghakiman di mana mereka berasa selamat berkongsi apa sahaja.",
-      "social": "Dinamik sosial berubah semasa akil baligh. Bantu anak anda menavigasi persahabatan dengan membincangkan seperti apa hubungan yang sihat. Bincangkan tekanan rakan sebaya dan beri mereka bahasa untuk menetapkan sempadan. Galakkan persahabatan yang pelbagai dan sahkan perasaan mereka apabila persahabatan berubah atau berakhir.",
-      "privacy": "Aplikasi ini mengutamakan privasi sepenuhnya. Semua catatan diari dan data kekal pada peranti anda. Diari adalah ruang peribadi untuk anak anda. Kami tidak menjejak pengguna atau mengumpul maklumat peribadi. Privasi keluarga anda dan keselamatan anak anda adalah keutamaan utama kami.",
-      "activities": "Bahagian Permainan menawarkan aktiviti interaktif yang direka untuk mengajar tentang akil baligh dengan cara yang menyeronokkan dan menarik. Ini termasuk permainan ingatan, latihan pengiktirafan emosi, dan aktiviti padanan. Permainan ini membantu menormalkan perbualan tentang akil baligh dan menjadikan pembelajaran menyeronokkan daripada janggal.",
-      "default": "Saya di sini untuk membantu anda dengan sebarang soalan keibubapaan tentang akil baligh! Anda boleh tanya saya tentang: strategi komunikasi, memahami perubahan fizikal/emosi, mengendalikan situasi sukar, menyokong kesihatan mental anak anda, menavigasi cabaran sosial, dan banyak lagi. Apa yang anda ingin tahu?"
+      "puberty": "Soalan yang bagus! Memulakan dan mengekalkan perbualan terbuka tentang akil baligh membantu anak rasa selamat. Gunakan detik harian untuk memperkenalkan topik, yakinkan bahawa setiap tubuh unik, dan jemput soalan bila-bila masa mereka sedia.",
+      "emotions": "Turun naik emosi memang sebahagian daripada fasa ini. Bila anak berkongsi perasaan, sahkan dahulu sebelum memberi cadangan. Tunjukkan teknik menenangkan seperti bernafas dalam, regangan atau menulis jurnal supaya mereka ada alat mengurus emosi.",
+      "communication": "Hubungan rapat dibina melalui perbualan tenang tanpa hukuman. Luangkan masa untuk semakan ringkas, dengar lebih banyak daripada bercakap, dan balas dengan empati. Kongsi kenangan sendiri untuk menormalkan rasa ingin tahu dan kekok.",
+      "social": "Persahabatan boleh berubah dengan cepat. Bantu anak mengenal pasti ciri persahabatan yang sihat, latih ayat menetapkan sempadan, dan ingatkan mereka bahawa menjauh dari situasi tidak selesa adalah wajar.",
+      "privacy": "Kami sangat menjaga privasi keluarga. Semua catatan kekal pada peranti, tiada penjejak tersembunyi, dan anda boleh galakkan anak menggunakan diari sebagai ruang peribadi. Kukuhkan juga peraturan keluarga tentang peranti dan ruang bersama.",
+      "activities": "Pembelajaran menyeronokkan menambah keyakinan. Gabungkan permainan ringkas dengan perbualan reflektif—raikan pencapaian, tanya apa yang mereka pelajari, dan ulang aktiviti kegemaran untuk menguatkan pengetahuan baru.",
+      "default": "Saya bersedia membantu apa sahaja berkaitan sokongan akil baligh. Tanyalah tentang perubahan fizikal, emosi, perbualan sukar, keselamatan, situasi di sekolah atau cara menenangkan anak apabila mereka keliru."
+    },
+    "tips": {
+      "puberty": "Gunakan istilah yang betul dan biarkan anak menentukan tempo.|Sediakan buku rujukan yang boleh mereka lihat bila-bila masa.|Tetapkan sesi perbualan berkala untuk menjawab soalan baharu.",
+      "emotions": "Sebut emosi yang anda nampak untuk tunjukkan anda mendengar.|Cipta ruang tenang dengan muzik, mewarna atau bergerak.|Puji usaha apabila mereka mencuba strategi menenangkan.",
+      "communication": "Pilih masa santai seperti perjalanan kereta atau berjalan.|Tanya soalan terbuka seperti ‘Apa yang terasa lain kebelakangan ini?’|Ulang semula apa yang anda dengar supaya mereka rasa difahami.",
+      "social": "Lakon peranan cara menolak tekanan rakan sebaya.|Galakkan persahabatan berasaskan minat bersama.|Kongsi kisah kebaikan yang anda lihat dalam hidup mereka.",
+      "privacy": "Semak tetapan privasi aplikasi bersama-sama.|Setuju cara mengingatkan sebelum masuk ke bilik mereka.|Tunjukkan bagaimana keluarga menghormati batas peribadi.",
+      "activities": "Main bersama anak untuk tunjuk rasa ingin tahu.|Hubungkan topik permainan dengan pengalaman sebenar.|Minta mereka ajar adik-beradik atau rakan tentang apa yang dipelajari.",
+      "general": "Catat soalan untuk dibincang apabila masa sesuai.|Raikan kejayaan kecil dalam komunikasi.|Ajak anak memilih topik perbualan seterusnya."
+    },
+    "followUps": {
+      "puberty": "Buku atau video apa yang sesuai umur?|Bagaimana menerangkan bulu badan dan kebersihan?|Bila perlu berbincang tentang haid?",
+      "emotions": "Apa yang perlu dibuat jika anak menyendiri?|Bagaimana membantu kegelisahan sebelum sekolah?|Bagaimana saya bertindak apabila mereka marah tiba-tiba?",
+      "communication": "Bagaimana kekal tenang bila saya risau?|Pembuka bicara apa yang berkesan?|Bagaimana memulihkan kepercayaan selepas bergaduh?",
+      "social": "Bagaimana membantu drama persahabatan?|Apa jika anak rasa tersisih?|Bagaimana ajar adab dalam talian?",
+      "privacy": "Bagaimana lindungi privasi digital kami?|Perlukah tetapkan sempadan bilik tidur?|Bagaimana menerangkan consent dan rasa hormat?",
+      "activities": "Permainan mana sesuai untuk anak pemalu?|Berapa kerap patut kami bermain bersama?|Bolehkah permainan diubah untuk adik-beradik?",
+      "general": "Bagaimana menangani soalan yang saya tak tahu jawapan?|Sokongan profesional apa yang tersedia?|Bagaimana libatkan ibu bapa atau penjaga lain?"
     }
+  },
+  "team": {
+    "tagline": "Bakat UM bersatu untuk keluarga",
+    "title": "Kenali Pasukan Impian Universiti Malaya",
+    "subtitle": "Sekumpulan pendidik, pereka, penyelidik dan pakar teknologi yang berdedikasi membina perjalanan sokongan akil baligh yang penuh empati untuk setiap keluarga.",
+    "pills": {
+      "multidisciplinary": "Kepakaran pelbagai bidang",
+      "parentFirst": "Pendekatan utamakan ibu bapa",
+      "umPride": "Kebanggaan Universiti Malaya"
+    },
+    "sections": {
+      "creative": "Teraju Kreatif",
+      "collaborators": "Kolaborator Projek"
+    },
+    "labels": {
+      "coreContributor": "Penyumbang teras"
+    },
+    "roles": {
+      "leadProgrammer": "Ketua Pengaturcara & Arkitek Pengalaman",
+      "specialAssessor": "Penilai Khas & Mentor Pedagogi",
+      "experienceDesigner": "Pereka Pengalaman & Antara Muka",
+      "learningArchitect": "Arkitek Perjalanan Pembelajaran",
+      "contentStrategist": "Strategis Kandungan & Inklusiviti",
+      "fullStackExplorer": "Peneroka Pengalaman Full-Stack",
+      "communityLiaison": "Penghubung Komuniti & Jangkauan",
+      "storyResearcher": "Pencerita & Penyelidik",
+      "playmaker": "Juara Pembelajaran Menyeronokkan"
+    },
+    "badges": {
+      "programmer": "Pengaturcara",
+      "assessor": "Penilai Khas"
+    },
+    "bio": {
+      "qais": "Qais menggabungkan kod yang teliti dengan penceritaan penuh jiwa, menerajui visi produk dan menterjemah keperluan keluarga kepada pengalaman digital yang menyeronokkan.",
+      "nazean": "Dr. Nazean memastikan setiap wawasan sejajar dengan piawaian UM, memperjuangkan pedagogi inklusif dan penilaian bermakna untuk ibu bapa dan anak."
+    },
+    "gratitude": "Setinggi-tinggi penghargaan kepada semua kolaborator yang menyumbang rasa ingin tahu, kreativiti dan kepedulian untuk memperkasa keluarga menghadapi perjalanan akil baligh."
   },
   "games": {
     "title": "Permainan & Aktiviti Interaktif",
     "subtitle": "Permainan pendidikan yang menyeronokkan untuk anak anda belajar tentang akil baligh 🎮",
+    "tagline": "Main • Refleksi • Membesar bersama",
+    "metrics": {
+      "playtime": "Sesi 5-10 minit",
+      "levels": "3 tahap cabaran lembut",
+      "languages": "Panduan dalam Bahasa Inggeris, Bahasa Melayu dan Arab",
+      "kickerPlaytime": "Ringkas",
+      "kickerLevels": "Langkah yakin",
+      "kickerLanguages": "Pelbagai bahasa"
+    },
+    "labels": {
+      "bestFor": "Terbaik untuk",
+      "skills": "Kemahiran diteroka",
+      "tapToPreview": "Ketuk untuk melihat perjalanan"
+    },
+    "badges": {
+      "empathy": "Lonjakan empati",
+      "confidence": "Bina keyakinan",
+      "awareness": "Kesedaran tubuh",
+      "connection": "Hubungan emosi"
+    },
+    "durations": {
+      "short": "5 minit",
+      "medium": "8 minit",
+      "long": "10 minit"
+    },
     "easy": "Mudah",
     "medium": "Sederhana",
     "moreActivities": "Lebih Banyak Aktiviti Tersedia",
@@ -127,12 +213,18 @@
     "memory": {
       "title": "Permainan Ingatan Emosi",
       "description": "Padankan pasangan emosi sambil belajar tentang perasaan semasa akil baligh",
-      "instructions": "Cari pasangan emosi yang sepadan. Ingat di mana setiap emosi dan padankan semuanya untuk menang!"
+      "instructions": "Cari pasangan emosi yang sepadan. Ingat di mana setiap emosi dan padankan semuanya untuk menang!",
+      "highlight": "Mengukuhkan kosa kata emosi dan memori dengan cara yang menyeronokkan.",
+      "bestFor": "Anak visual",
+      "skills": "Memori, empati, bahasa emosi"
     },
     "quiz": {
       "title": "Kuiz Pengetahuan Akil Baligh",
       "description": "Uji pemahaman anda tentang perubahan akil baligh dengan soalan kuiz yang menyeronokkan",
       "instructions": "Jawab soalan tentang akil baligh. Pilih jawapan terbaik untuk setiap soalan!",
+      "highlight": "Menukar fakta sukar menjadi soalan yang membina keyakinan.",
+      "bestFor": "Pemikir ingin tahu",
+      "skills": "Pemikiran kritis, pengetahuan tubuh, penjagaan diri",
       "q1": {
         "question": "Yang manakah adalah bahagian normal akil baligh?",
         "a1": "Tidak pernah berasa emosi",
@@ -160,6 +252,9 @@
       "description": "Padankan perubahan akil baligh dengan cara membantu untuk menanganinya",
       "instructions": "Sambungkan setiap perubahan di sebelah kiri dengan cara terbaik untuk menanganinya di sebelah kanan!",
       "instruction": "Klik kad di sebelah kiri, kemudian cari padanannya di sebelah kanan!",
+      "highlight": "Mengubah cabaran harian menjadi rancangan tindakan praktikal.",
+      "bestFor": "Penyelesai masalah",
+      "skills": "Membuat keputusan, rutin penjagaan diri",
       "pair1": {
         "left": "Berasa Moody",
         "right": "Bercakap dengan seseorang & bersenam"
@@ -187,6 +282,9 @@
       "sad": "Sedih",
       "anxious": "Cemas",
       "proud": "Bangga",
+      "highlight": "Menggalakkan perbualan jujur tentang perasaan yang besar.",
+      "bestFor": "Anak sensitif",
+      "skills": "Literasi emosi, empati, ekspresi diri",
       "scenario1": {
         "situation": "Rakan anda meminjam barang kegemaran anda tanpa bertanya."
       },

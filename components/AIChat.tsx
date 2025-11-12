@@ -10,7 +10,21 @@ interface Message {
   role: 'user' | 'assistant'
   content: string
   timestamp: Date
+  followUps?: string[]
 }
+
+type AIResponse = {
+  text: string
+  followUps?: string[]
+}
+
+const parseList = (value: string): string[] =>
+  typeof value === 'string'
+    ? value
+        .split('|')
+        .map((item) => item.trim())
+        .filter(Boolean)
+    : []
 
 export default function AIChat() {
   const { t } = useLanguage()
@@ -54,45 +68,113 @@ export default function AIChat() {
     setInput('')
     setIsLoading(true)
 
-    // Simulate AI response (replace with actual API call)
+    // Simulated AI response (replace with API integration when ready)
     setTimeout(() => {
+      const aiMessage = getAIResponse(input)
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: getAIResponse(input),
+        content: aiMessage.text,
+        followUps: aiMessage.followUps,
         timestamp: new Date()
       }
       setMessages(prev => [...prev, aiResponse])
       setIsLoading(false)
-    }, 1500)
+    }, 1000)
   }
 
-  const getAIResponse = (userInput: string): string => {
-    // Simple keyword-based responses (replace with actual AI integration)
-    const input = userInput.toLowerCase()
-    
-    if (input.includes('puberty') || input.includes('changes')) {
-      return t('aiChat.response.puberty')
-    } else if (input.includes('emotion') || input.includes('mood') || input.includes('feel')) {
-      return t('aiChat.response.emotions')
-    } else if (input.includes('talk') || input.includes('communicate') || input.includes('conversation')) {
-      return t('aiChat.response.communication')
-    } else if (input.includes('friend') || input.includes('social')) {
-      return t('aiChat.response.social')
-    } else if (input.includes('privacy') || input.includes('safe')) {
-      return t('aiChat.response.privacy')
-    } else if (input.includes('game') || input.includes('activity')) {
-      return t('aiChat.response.activities')
-    } else {
-      return t('aiChat.response.default')
+  const knowledgeBase = [
+    {
+      id: 'puberty',
+      keywords: ['puberty', 'changes', 'body', 'hair', 'period', 'growth'],
+      response: t('aiChat.response.puberty'),
+      tips: parseList(t('aiChat.tips.puberty')),
+      followUps: parseList(t('aiChat.followUps.puberty'))
+    },
+    {
+      id: 'emotions',
+      keywords: ['emotion', 'mood', 'feel', 'anxious', 'sad', 'angry'],
+      response: t('aiChat.response.emotions'),
+      tips: parseList(t('aiChat.tips.emotions')),
+      followUps: parseList(t('aiChat.followUps.emotions'))
+    },
+    {
+      id: 'communication',
+      keywords: ['talk', 'communicate', 'conversation', 'discussion', 'speak'],
+      response: t('aiChat.response.communication'),
+      tips: parseList(t('aiChat.tips.communication')),
+      followUps: parseList(t('aiChat.followUps.communication'))
+    },
+    {
+      id: 'social',
+      keywords: ['friend', 'social', 'relationship', 'peer', 'bully'],
+      response: t('aiChat.response.social'),
+      tips: parseList(t('aiChat.tips.social')),
+      followUps: parseList(t('aiChat.followUps.social'))
+    },
+    {
+      id: 'privacy',
+      keywords: ['privacy', 'safe', 'security', 'data'],
+      response: t('aiChat.response.privacy'),
+      tips: parseList(t('aiChat.tips.privacy')),
+      followUps: parseList(t('aiChat.followUps.privacy'))
+    },
+    {
+      id: 'activities',
+      keywords: ['game', 'activity', 'play', 'fun'],
+      response: t('aiChat.response.activities'),
+      tips: parseList(t('aiChat.tips.activities')),
+      followUps: parseList(t('aiChat.followUps.activities'))
     }
+  ]
+
+  const formatResponse = (response: string, tips: string[], followUps: string[]): AIResponse => {
+    const tipTitle = t('aiChat.tipTitle')
+    const followUpTitle = t('aiChat.followUpTitle')
+
+    const lines = [response]
+
+    if (tips.length > 0) {
+      lines.push(`\n${tipTitle}`)
+      tips.forEach(tip => lines.push(`• ${tip}`))
+    }
+
+    const followUpList = followUps.slice(0, 3)
+
+    if (followUpList.length > 0) {
+      lines.push(`\n${followUpTitle}`)
+      followUpList.forEach(item => lines.push(`→ ${item}`))
+    }
+
+    return {
+      text: lines.join('\n'),
+      followUps: followUpList.length ? followUpList : undefined
+    }
+  }
+
+  const getAIResponse = (userInput: string): AIResponse => {
+    const input = userInput.toLowerCase()
+
+    const matched = knowledgeBase.find(entry =>
+      entry.keywords.some(keyword => input.includes(keyword))
+    )
+
+    if (matched) {
+      return formatResponse(matched.response, matched.tips, matched.followUps)
+    }
+
+    const defaultTips = parseList(t('aiChat.tips.general'))
+    const defaultFollowUps = parseList(t('aiChat.followUps.general'))
+    return formatResponse(t('aiChat.response.default'), defaultTips, defaultFollowUps)
   }
 
   const suggestedQuestions = [
     t('aiChat.suggestions.q1'),
     t('aiChat.suggestions.q2'),
     t('aiChat.suggestions.q3'),
-    t('aiChat.suggestions.q4')
+    t('aiChat.suggestions.q4'),
+    t('aiChat.suggestions.q5'),
+    t('aiChat.suggestions.q6')
   ]
 
   return (
@@ -177,6 +259,19 @@ export default function AIChat() {
                     } shadow-md`}
                   >
                     <p className="text-sm leading-relaxed">{message.content}</p>
+                    {message.role === 'assistant' && message.followUps && message.followUps.length > 0 && (
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {message.followUps.map((item, idx) => (
+                          <button
+                            key={`${message.id}-follow-${idx}`}
+                            onClick={() => setInput(item)}
+                            className="rounded-full border border-primary-100/70 bg-primary-50/60 px-3 py-1 text-xs font-semibold text-primary-600 transition-colors hover:bg-primary-100"
+                          >
+                            {item}
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}

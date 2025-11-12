@@ -3,9 +3,10 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { 
-  Gamepad2, Star, Trophy, Target, Puzzle, Brain, 
-  Heart, Smile, Zap, Gift, Award, CheckCircle2
+import {
+  Gamepad2, Star, Trophy, Target, Puzzle, Brain,
+  Heart, Smile, Zap, Gift, Award, CheckCircle2,
+  Timer, Layers, Globe2, Sparkles, BadgeCheck, ArrowRight
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -15,6 +16,24 @@ export default function GamesPage() {
   const { t } = useLanguage()
   const [selectedGame, setSelectedGame] = useState<GameType | null>(null)
 
+  const heroMetrics = [
+    {
+      label: t('games.metrics.playtime'),
+      kicker: t('games.metrics.kickerPlaytime'),
+      icon: <Timer className="w-5 h-5" />
+    },
+    {
+      label: t('games.metrics.levels'),
+      kicker: t('games.metrics.kickerLevels'),
+      icon: <Layers className="w-5 h-5" />
+    },
+    {
+      label: t('games.metrics.languages'),
+      kicker: t('games.metrics.kickerLanguages'),
+      icon: <Globe2 className="w-5 h-5" />
+    }
+  ]
+
   const games = [
     {
       id: 'memory' as GameType,
@@ -22,7 +41,12 @@ export default function GamesPage() {
       title: t('games.memory.title'),
       description: t('games.memory.description'),
       color: 'from-purple-400 to-indigo-500',
-      difficulty: 'easy'
+      difficulty: 'easy',
+      badge: t('games.badges.empathy'),
+      duration: t('games.durations.short'),
+      highlight: t('games.memory.highlight'),
+      bestFor: t('games.memory.bestFor'),
+      skills: t('games.memory.skills')
     },
     {
       id: 'quiz' as GameType,
@@ -30,7 +54,12 @@ export default function GamesPage() {
       title: t('games.quiz.title'),
       description: t('games.quiz.description'),
       color: 'from-blue-400 to-cyan-500',
-      difficulty: 'medium'
+      difficulty: 'medium',
+      badge: t('games.badges.confidence'),
+      duration: t('games.durations.medium'),
+      highlight: t('games.quiz.highlight'),
+      bestFor: t('games.quiz.bestFor'),
+      skills: t('games.quiz.skills')
     },
     {
       id: 'matching' as GameType,
@@ -38,7 +67,12 @@ export default function GamesPage() {
       title: t('games.matching.title'),
       description: t('games.matching.description'),
       color: 'from-pink-400 to-rose-500',
-      difficulty: 'easy'
+      difficulty: 'easy',
+      badge: t('games.badges.awareness'),
+      duration: t('games.durations.medium'),
+      highlight: t('games.matching.highlight'),
+      bestFor: t('games.matching.bestFor'),
+      skills: t('games.matching.skills')
     },
     {
       id: 'emotions' as GameType,
@@ -46,16 +80,28 @@ export default function GamesPage() {
       title: t('games.emotions.title'),
       description: t('games.emotions.description'),
       color: 'from-amber-400 to-orange-500',
-      difficulty: 'medium'
+      difficulty: 'medium',
+      badge: t('games.badges.connection'),
+      duration: t('games.durations.long'),
+      highlight: t('games.emotions.highlight'),
+      bestFor: t('games.emotions.bestFor'),
+      skills: t('games.emotions.skills')
     }
   ]
 
   return (
-    <div className="container mx-auto px-4 py-8 md:py-12">
+    <div className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 -left-10 h-60 w-60 rounded-full bg-primary-200/40 blur-3xl" />
+        <div className="absolute top-1/3 right-0 h-64 w-64 rounded-full bg-secondary-200/50 blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-amber-200/40 blur-3xl" />
+      </div>
+
+      <div className="relative container mx-auto px-4 py-12 md:py-16">
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
         className="text-center mb-12"
       >
         <motion.div
@@ -71,8 +117,29 @@ export default function GamesPage() {
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
           {t('games.subtitle')}
         </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          {heroMetrics.map((metric, index) => (
+            <motion.div
+              key={metric.label}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 * index }}
+              className="flex items-center gap-3 rounded-full border border-white/70 bg-white/80 px-5 py-3 shadow-lg"
+            >
+              <div className="rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 p-2 text-white">
+                {metric.icon}
+              </div>
+              <div className="text-left">
+                <p className="text-xs uppercase tracking-widest text-gray-500">{metric.kicker}</p>
+                <p className="text-sm font-semibold text-gray-800">{metric.label}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm font-semibold uppercase tracking-[0.35em] text-primary-500">
+          {t('games.tagline')}
+        </p>
       </motion.div>
-
       {/* Games Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-5xl mx-auto">
         {games.map((game, index) => (
@@ -81,24 +148,46 @@ export default function GamesPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1 }}
-            whileHover={{ y: -5 }}
+            whileHover={{ y: -6 }}
             onClick={() => setSelectedGame(game.id)}
-            className="glass-effect rounded-3xl p-8 cursor-pointer card-hover"
+            className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/90 p-8 shadow-xl cursor-pointer"
           >
-            <div className={`bg-gradient-to-r ${game.color} w-20 h-20 rounded-2xl flex items-center justify-center text-white mb-6`}>
-              {game.icon}
+            <div className="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100">
+              <div className={`absolute inset-0 bg-gradient-to-br ${game.color} opacity-10`} />
             </div>
-            <h3 className="text-2xl font-bold mb-3 text-gray-800">{game.title}</h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">{game.description}</p>
             <div className="flex items-center justify-between">
-              <span className={`text-sm font-semibold px-3 py-1 rounded-full ${
-                game.difficulty === 'easy' 
-                  ? 'bg-green-100 text-green-700' 
-                  : 'bg-yellow-100 text-yellow-700'
-              }`}>
-                {game.difficulty === 'easy' ? t('games.easy') : t('games.medium')}
+              <div className={`bg-gradient-to-r ${game.color} w-20 h-20 rounded-2xl flex items-center justify-center text-white shadow-lg`}>
+                {game.icon}
+              </div>
+              <div className="flex flex-col items-end gap-2 text-xs font-semibold uppercase tracking-widest text-gray-500">
+                <span className="flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-primary-600">
+                  <BadgeCheck className="w-4 h-4" /> {game.badge}
+                </span>
+                <span className="flex items-center gap-2 rounded-full bg-gray-900/10 px-3 py-1 text-gray-700">
+                  <Timer className="w-4 h-4" /> {game.duration}
+                </span>
+              </div>
+            </div>
+            <h3 className="mt-6 text-2xl font-bold text-gray-900">{game.title}</h3>
+            <p className="mt-3 text-gray-600 leading-relaxed">{game.description}</p>
+            <p className="mt-4 rounded-2xl bg-gradient-to-r from-white to-primary-50 p-4 text-sm font-medium text-primary-700 shadow-inner">
+              {game.highlight}
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-gray-600">
+              <span className="flex items-center gap-2">
+                <Star className="w-5 h-5 text-yellow-500" />
+                <span>{t('games.labels.bestFor')}: <strong>{game.bestFor}</strong></span>
               </span>
-              <Star className="w-6 h-6 text-yellow-500" />
+              <span className="flex items-center gap-2">
+                <Layers className="w-5 h-5 text-primary-500" />
+                <span>{t('games.labels.skills')}: <strong>{game.skills}</strong></span>
+              </span>
+            </div>
+            <div className="mt-6 flex items-center justify-between text-sm font-semibold text-primary-600">
+              <span className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4" /> {t('games.labels.tapToPreview')}
+              </span>
+              <ArrowIcon />
             </div>
           </motion.div>
         ))}
@@ -173,6 +262,7 @@ export default function GamesPage() {
           </motion.div>
         )}
       </AnimatePresence>
+      </div>
     </div>
   )
 }
@@ -182,16 +272,96 @@ function GameContent({ gameType, onClose }: { gameType: GameType; onClose: () =>
   const [gameState, setGameState] = useState<'intro' | 'playing' | 'finished'>('intro')
   const [score, setScore] = useState(0)
 
-  if (gameType === 'memory') {
-    return <MemoryGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
-  } else if (gameType === 'quiz') {
-    return <QuizGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
-  } else if (gameType === 'matching') {
-    return <MatchingGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
-  } else if (gameType === 'emotions') {
-    return <EmotionsGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
+  const meta = {
+    memory: {
+      accent: 'from-purple-500 to-indigo-500',
+      icon: <Brain className="w-10 h-10" />,
+      badge: t('games.badges.empathy'),
+      highlight: t('games.memory.highlight'),
+      bestFor: t('games.memory.bestFor'),
+      skills: t('games.memory.skills')
+    },
+    quiz: {
+      accent: 'from-blue-500 to-cyan-500',
+      icon: <Target className="w-10 h-10" />,
+      badge: t('games.badges.confidence'),
+      highlight: t('games.quiz.highlight'),
+      bestFor: t('games.quiz.bestFor'),
+      skills: t('games.quiz.skills')
+    },
+    matching: {
+      accent: 'from-pink-500 to-rose-500',
+      icon: <Puzzle className="w-10 h-10" />,
+      badge: t('games.badges.awareness'),
+      highlight: t('games.matching.highlight'),
+      bestFor: t('games.matching.bestFor'),
+      skills: t('games.matching.skills')
+    },
+    emotions: {
+      accent: 'from-amber-500 to-orange-500',
+      icon: <Heart className="w-10 h-10" />,
+      badge: t('games.badges.connection'),
+      highlight: t('games.emotions.highlight'),
+      bestFor: t('games.emotions.bestFor'),
+      skills: t('games.emotions.skills')
+    }
+  } as const
+
+  const renderedGame = (
+    gameType === 'memory'
+      ? <MemoryGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
+      : gameType === 'quiz'
+        ? <QuizGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
+        : gameType === 'matching'
+          ? <MatchingGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
+          : gameType === 'emotions'
+            ? <EmotionsGame gameState={gameState} setGameState={setGameState} score={score} setScore={setScore} onClose={onClose} />
+            : null
+  )
+
+  const current = meta[gameType]
+
+  if (!renderedGame || !current) {
+    return null
   }
-  return null
+
+  return (
+    <div className="space-y-6">
+      <div className={`relative overflow-hidden rounded-3xl bg-gradient-to-r ${current.accent} p-6 text-white shadow-lg`}> 
+        <div className="absolute right-4 top-4 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+          {current.badge}
+        </div>
+        <div className="flex items-center gap-4">
+          <div className="rounded-2xl bg-white/20 p-3 text-white">
+            {current.icon}
+          </div>
+          <div className="text-left">
+            <p className="text-sm uppercase tracking-[0.3em] text-white/80">{t('games.labels.bestFor')} {current.bestFor}</p>
+            <p className="mt-2 text-lg font-semibold leading-snug text-white/90">{current.highlight}</p>
+            <p className="mt-3 text-xs font-medium uppercase tracking-widest text-white/70">
+              {t('games.labels.skills')}: {current.skills}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="rounded-3xl bg-white/90 p-6 shadow-xl">
+        {renderedGame}
+      </div>
+    </div>
+  )
+}
+
+function ArrowIcon() {
+  return (
+    <motion.div
+      initial={{ x: 0 }}
+      animate={{ x: [0, 4, 0] }}
+      transition={{ duration: 1.8, repeat: Infinity }}
+      className="flex items-center justify-center rounded-full bg-primary-500/10 p-2 text-primary-600"
+    >
+      <ArrowRight className="w-5 h-5" />
+    </motion.div>
+  )
 }
 
 function MemoryGame({ gameState, setGameState, score, setScore, onClose }: any) {
