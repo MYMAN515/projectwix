@@ -3,9 +3,9 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { 
-  Gamepad2, Star, Trophy, Target, Puzzle, Brain, 
-  Heart, Smile, Zap, Gift, Award, CheckCircle2
+import {
+  Gamepad2, Star, Trophy, Target, Puzzle, Brain,
+  Heart, Zap, Gift
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -50,108 +50,191 @@ export default function GamesPage() {
     }
   ]
 
-  return (
-    <div className="container mx-auto px-4 py-8 md:py-12">
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center mb-12"
-      >
-        <motion.div
-          animate={{ rotate: [0, 10, -10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="inline-block mb-4"
-        >
-          <Gamepad2 className="w-16 h-16 text-primary-500" />
-        </motion.div>
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-600 via-purple-600 to-secondary-600 bg-clip-text text-transparent">
-          {t('games.title')}
-        </h1>
-        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-          {t('games.subtitle')}
-        </p>
-      </motion.div>
+  const highlights = [
+    {
+      title: t('games.memory.title'),
+      icon: <Brain className="w-5 h-5" />,
+      tone: 'from-purple-500 to-pink-500'
+    },
+    {
+      title: t('games.quiz.title'),
+      icon: <Target className="w-5 h-5" />,
+      tone: 'from-blue-500 to-cyan-500'
+    },
+    {
+      title: t('games.emotions.title'),
+      icon: <Heart className="w-5 h-5" />,
+      tone: 'from-amber-500 to-orange-500'
+    }
+  ]
 
-      {/* Games Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-5xl mx-auto">
-        {games.map((game, index) => (
+  const heroHeadline = t('games.heroHeadline')
+  const heroDescription = t('games.heroDescription')
+
+  return (
+    <div className="relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-pink-50" />
+      <div className="absolute -top-20 -right-32 w-80 h-80 bg-primary-200/40 blur-3xl rounded-full" />
+      <div className="absolute bottom-0 -left-20 w-96 h-96 bg-secondary-200/40 blur-3xl rounded-full" />
+
+      <div className="relative container mx-auto px-4 py-10 md:py-16">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12 md:mb-16"
+        >
           <motion.div
-            key={game.id}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.1 }}
-            whileHover={{ y: -5 }}
-            onClick={() => setSelectedGame(game.id)}
-            className="glass-effect rounded-3xl p-8 cursor-pointer card-hover"
+            animate={{ rotate: [0, 8, -8, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity }}
+            className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-primary-500 to-secondary-500 text-white shadow-xl mb-6"
           >
-            <div className={`bg-gradient-to-r ${game.color} w-20 h-20 rounded-2xl flex items-center justify-center text-white mb-6`}>
-              {game.icon}
-            </div>
-            <h3 className="text-2xl font-bold mb-3 text-gray-800">{game.title}</h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">{game.description}</p>
-            <div className="flex items-center justify-between">
-              <span className={`text-sm font-semibold px-3 py-1 rounded-full ${
-                game.difficulty === 'easy' 
-                  ? 'bg-green-100 text-green-700' 
-                  : 'bg-yellow-100 text-yellow-700'
-              }`}>
-                {game.difficulty === 'easy' ? t('games.easy') : t('games.medium')}
-              </span>
-              <Star className="w-6 h-6 text-yellow-500" />
-            </div>
+            <Gamepad2 className="w-10 h-10" />
           </motion.div>
-        ))}
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-600 via-purple-600 to-secondary-600 bg-clip-text text-transparent">
+            {t('games.title')}
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            {t('games.subtitle')}
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="mb-14"
+        >
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-white/80 backdrop-blur border border-white shadow-2xl p-6 md:p-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="text-left">
+                <p className="text-sm uppercase tracking-[0.4em] text-primary-500 font-semibold mb-4">{t('games.subtitle')}</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                  {heroHeadline === 'games.heroHeadline'
+                    ? 'Turn learning about puberty into joyful playtime.'
+                    : heroHeadline}
+                </h2>
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+                  {heroDescription === 'games.heroDescription'
+                    ? 'Each mission blends storytelling, interactive choices, and positive reinforcement so children learn with confidence and curiosity.'
+                    : heroDescription}
+                </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {highlights.map((highlight) => (
+                  <div
+                    key={highlight.title}
+                    className={`flex flex-col items-center gap-3 rounded-3xl border border-gray-100 p-4 bg-gradient-to-br ${highlight.tone} text-white shadow-xl`}
+                  >
+                    <div className="w-10 h-10 rounded-2xl bg-white/20 flex items-center justify-center">
+                      {highlight.icon}
+                    </div>
+                    <p className="text-sm font-semibold text-center leading-snug">{highlight.title}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Games Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-6xl mx-auto">
+          {games.map((game, index) => (
+            <motion.div
+              key={game.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              whileHover={{ y: -8 }}
+              onClick={() => setSelectedGame(game.id)}
+              className="relative overflow-hidden rounded-[2.5rem] bg-white/80 backdrop-blur border border-white shadow-2xl p-8 cursor-pointer card-hover"
+            >
+              <div className={`absolute inset-0 bg-gradient-to-br ${game.color} opacity-10`} />
+              <div className="relative">
+                <div className={`bg-gradient-to-br ${game.color} w-20 h-20 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg`}>
+                  {game.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-3 text-gray-800">{game.title}</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">{game.description}</p>
+                <div className="flex items-center justify-between">
+                  <span className={`text-sm font-semibold px-3 py-1 rounded-full ${
+                    game.difficulty === 'easy'
+                      ? 'bg-green-100 text-green-700'
+                      : 'bg-yellow-100 text-yellow-700'
+                  }`}>
+                    {game.difficulty === 'easy' ? t('games.easy') : t('games.medium')}
+                  </span>
+                  <div className="flex items-center gap-2 text-sm text-gray-500">
+                    <Star className="w-5 h-5 text-yellow-500" />
+                    <span>{t('games.startGame')}</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Also Available Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="max-w-5xl mx-auto"
+        >
+          <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
+            {t('games.moreActivities')}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+            <Link href="/timeline">
+              <motion.div
+                whileHover={{ scale: 1.04 }}
+                className="relative overflow-hidden rounded-[2rem] bg-white/80 backdrop-blur border border-white shadow-xl p-6 text-center card-hover"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 opacity-10" />
+                <div className="relative">
+                  <div className="bg-gradient-to-r from-blue-400 to-cyan-500 w-12 h-12 rounded-xl flex items-center justify-center text-white mx-auto mb-3">
+                    <Zap className="w-6 h-6" />
+                  </div>
+                  <h4 className="font-bold text-gray-800">{t('nav.timeline')}</h4>
+                </div>
+              </motion.div>
+            </Link>
+            <Link href="/diary">
+              <motion.div
+                whileHover={{ scale: 1.04 }}
+                className="relative overflow-hidden rounded-[2rem] bg-white/80 backdrop-blur border border-white shadow-xl p-6 text-center card-hover"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 opacity-10" />
+                <div className="relative">
+                  <div className="bg-gradient-to-r from-purple-400 to-pink-500 w-12 h-12 rounded-xl flex items-center justify-center text-white mx-auto mb-3">
+                    <Heart className="w-6 h-6" />
+                  </div>
+                  <h4 className="font-bold text-gray-800">{t('nav.diary')}</h4>
+                </div>
+              </motion.div>
+            </Link>
+            <Link href="/body-guide">
+              <motion.div
+                whileHover={{ scale: 1.04 }}
+                className="relative overflow-hidden rounded-[2rem] bg-white/80 backdrop-blur border border-white shadow-xl p-6 text-center card-hover"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-orange-500 opacity-10" />
+                <div className="relative">
+                  <div className="bg-gradient-to-r from-amber-400 to-orange-500 w-12 h-12 rounded-xl flex items-center justify-center text-white mx-auto mb-3">
+                    <Gift className="w-6 h-6" />
+                  </div>
+                  <h4 className="font-bold text-gray-800">{t('nav.bodyGuide')}</h4>
+                </div>
+              </motion.div>
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* Game Modal */}
       </div>
 
-      {/* Also Available Section */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        className="max-w-5xl mx-auto"
-      >
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
-          {t('games.moreActivities')}
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <Link href="/timeline">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="glass-effect rounded-2xl p-6 text-center card-hover"
-            >
-              <div className="bg-gradient-to-r from-blue-400 to-cyan-500 w-12 h-12 rounded-xl flex items-center justify-center text-white mx-auto mb-3">
-                <Zap className="w-6 h-6" />
-              </div>
-              <h4 className="font-bold text-gray-800">{t('nav.timeline')}</h4>
-            </motion.div>
-          </Link>
-          <Link href="/diary">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="glass-effect rounded-2xl p-6 text-center card-hover"
-            >
-              <div className="bg-gradient-to-r from-purple-400 to-pink-500 w-12 h-12 rounded-xl flex items-center justify-center text-white mx-auto mb-3">
-                <Heart className="w-6 h-6" />
-              </div>
-              <h4 className="font-bold text-gray-800">{t('nav.diary')}</h4>
-            </motion.div>
-          </Link>
-          <Link href="/body-guide">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="glass-effect rounded-2xl p-6 text-center card-hover"
-            >
-              <div className="bg-gradient-to-r from-amber-400 to-orange-500 w-12 h-12 rounded-xl flex items-center justify-center text-white mx-auto mb-3">
-                <Gift className="w-6 h-6" />
-              </div>
-              <h4 className="font-bold text-gray-800">{t('nav.bodyGuide')}</h4>
-            </motion.div>
-          </Link>
-        </div>
-      </motion.div>
-
-      {/* Game Modal */}
       <AnimatePresence>
         {selectedGame && (
           <motion.div
@@ -166,7 +249,7 @@ export default function GamesPage() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="glass-effect rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              className="glass-effect rounded-[2.5rem] p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
             >
               <GameContent gameType={selectedGame} onClose={() => setSelectedGame(null)} />
             </motion.div>
