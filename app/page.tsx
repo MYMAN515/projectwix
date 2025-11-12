@@ -2,7 +2,17 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Heart, Activity, BookOpen, Sparkles, Lightbulb } from 'lucide-react'
+import {
+  Heart,
+  Activity,
+  BookOpen,
+  Sparkles,
+  Lightbulb,
+  MessageCircle,
+  ShieldCheck,
+  CalendarCheck,
+  Users,
+} from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import RegisterServiceWorker from './register-sw'
 
@@ -45,6 +55,29 @@ export default function Home() {
       href: "/body-guide",
       color: "from-green-400 to-emerald-500"
     }
+  ]
+
+  const supportPillars = [
+    {
+      icon: <MessageCircle className="w-8 h-8" />,
+      title: t('home.support.pillars.conversation.title'),
+      description: t('home.support.pillars.conversation.description'),
+    },
+    {
+      icon: <ShieldCheck className="w-8 h-8" />,
+      title: t('home.support.pillars.trust.title'),
+      description: t('home.support.pillars.trust.description'),
+    },
+    {
+      icon: <CalendarCheck className="w-8 h-8" />,
+      title: t('home.support.pillars.routines.title'),
+      description: t('home.support.pillars.routines.description'),
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: t('home.support.pillars.community.title'),
+      description: t('home.support.pillars.community.description'),
+    },
   ]
 
   return (
@@ -119,6 +152,46 @@ export default function Home() {
           </motion.div>
         ))}
       </div>
+
+        {/* Support Pillars */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="glass-effect rounded-3xl p-8 md:p-12 mb-16"
+        >
+          <div className="text-center mb-8 space-y-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+              {t('home.support.title')}
+            </h2>
+            <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
+              {t('home.support.description')}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {supportPillars.map((pillar, index) => (
+              <motion.div
+                key={pillar.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ delay: index * 0.1 }}
+                className="flex items-start gap-4 bg-white/70 backdrop-blur rounded-2xl p-5 border border-white/60 shadow-sm"
+              >
+                <div className="bg-gradient-to-br from-primary-500/10 to-secondary-500/10 text-primary-600 w-14 h-14 rounded-2xl flex items-center justify-center">
+                  {pillar.icon}
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-1">{pillar.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{pillar.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <p className="text-xs md:text-sm text-gray-500 mt-6 text-center">
+            {t('home.support.note')}
+          </p>
+        </motion.div>
 
         {/* Info Section */}
         <motion.div

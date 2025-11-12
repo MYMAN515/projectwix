@@ -3,6 +3,7 @@ import './globals.css'
 import Navigation from '@/components/Navigation'
 import AIChat from '@/components/AIChat'
 import WelcomeCheck from '@/components/WelcomeCheck'
+import Footer from '@/components/Footer'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 
 export const metadata: Metadata = {
@@ -44,13 +45,7 @@ export default function RootLayout({
               {children}
             </main>
             <AIChat />
-            <footer className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-8 mt-20">
-              <div className="container mx-auto px-4 text-center">
-                <p className="text-lg font-semibold mb-2">Parenting Hub</p>
-                <p className="text-sm opacity-90">Supporting families through puberty with love 💙</p>
-                <p className="text-xs mt-4 opacity-75">© 2025 - Created with love for families</p>
-              </div>
-            </footer>
+            <Footer />
           </WelcomeCheck>
         </LanguageProvider>
       </body>

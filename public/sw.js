@@ -1,5 +1,5 @@
 // Service Worker for Puberty Awareness App
-const CACHE_NAME = 'puberty-awareness-v1';
+const CACHE_NAME = 'puberty-awareness-v2';
 const urlsToCache = [
   '/',
   '/changes',
@@ -7,6 +7,13 @@ const urlsToCache = [
   '/diary',
   '/body-guide',
   '/guidance',
+  '/parent-guide',
+  '/games',
+  '/team',
+  '/welcome',
+  '/manifest.json',
+  '/icon-192.png',
+  '/icon-512.png',
 ];
 
 // Install event - cache resources
@@ -35,31 +42,45 @@ self.addEventListener('activate', (event) => {
 
 // Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Cache hit - return response
-        if (response) {
+  if (event.request.method !== 'GET') {
+    return;
+  }
+
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const responseClone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
           return response;
-        }
-        return fetch(event.request).then(
-          (response) => {
-            // Check if valid response
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
+        })
+        .catch(() =>
+          caches.match(event.request).then((cachedResponse) => cachedResponse || caches.match('/'))
+        )
+    );
+    return;
+  }
 
-            // Clone the response
-            const responseToCache = response.clone();
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      if (response) {
+        return response;
+      }
 
-            caches.open(CACHE_NAME)
-              .then((cache) => {
-                cache.put(event.request, responseToCache);
-              });
-
-            return response;
+      return fetch(event.request)
+        .then((networkResponse) => {
+          if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+            return networkResponse;
           }
-        );
-      })
+
+          const responseToCache = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
+
+          return networkResponse;
+        })
+        .catch(() => caches.match('/'));
+    })
   );
 });
