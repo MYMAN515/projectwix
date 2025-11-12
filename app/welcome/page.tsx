@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { Heart, Shield, Users, Sparkles, BookOpen, Lock, Eye, Target, ArrowRight, Check } from 'lucide-react'
@@ -82,6 +83,31 @@ export default function WelcomePage() {
         animate={{ opacity: 1, scale: 1 }}
         className="max-w-4xl w-full glass-effect rounded-3xl p-8 md:p-12 shadow-2xl"
       >
+        <motion.div
+          initial={{ opacity: 0, y: -16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center gap-3 mb-10"
+        >
+          <div className="relative">
+            <div className="absolute inset-0 blur-xl bg-primary-500/30 rounded-full" />
+            <Image
+              src="/um-logo.svg"
+              alt="University of Malaya crest"
+              width={96}
+              height={110}
+              priority
+              className="relative drop-shadow-lg"
+            />
+          </div>
+          <div className="text-center space-y-1">
+            <p className="text-xs uppercase tracking-[0.3em] text-primary-500">University of Malaya</p>
+            <p className="text-sm text-gray-600 max-w-md">
+              {t('welcome.endorsedBy')}
+            </p>
+          </div>
+        </motion.div>
+
         {/* Progress Indicator */}
         <div className="flex justify-center gap-2 mb-8">
           {slides.map((_, index) => (
