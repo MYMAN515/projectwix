@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Heart, Activity, BookOpen, Sparkles, Lightbulb } from 'lucide-react'
+import { Heart, Activity, BookOpen, Sparkles, Lightbulb, Users } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import RegisterServiceWorker from './register-sw'
 
@@ -44,6 +44,13 @@ export default function Home() {
       description: t('home.features.bodyGuide.description'),
       href: "/body-guide",
       color: "from-green-400 to-emerald-500"
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: t('home.features.team.title'),
+      description: t('home.features.team.description'),
+      href: "/team",
+      color: "from-indigo-400 to-purple-500"
     }
   ]
 

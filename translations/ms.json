@@ -7,7 +7,8 @@
     "bodyGuide": "Panduan Badan",
     "guidance": "Panduan Ibu Bapa",
     "games": "Permainan & Aktiviti",
-    "parentGuide": "Petua Keibubapaan"
+    "parentGuide": "Petua Keibubapaan",
+    "team": "Pasukan Hebat"
   },
   "home": {
     "title": "Menyokong Anak Anda Melalui Akil Baligh",
@@ -41,6 +42,10 @@
         "title": "Panduan Perubahan Badan",
         "description": "Maklumat sesuai umur tentang perkembangan fizikal"
       },
+      "team": {
+        "title": "Kenali Pasukan Impian",
+        "description": "Raikan minda kreatif di sebalik Parenting Hub"
+      },
       "aiChat": {
         "title": "Pembantu AI untuk Ibu Bapa",
         "description": "Dapatkan jawapan segera untuk soalan keibubapaan anda tentang akil baligh"
@@ -52,6 +57,7 @@
     }
   },
   "welcome": {
+    "universityMessage": "Dikuasakan oleh komuniti Universiti Malaya—menggabungkan penyelidikan, kreativiti dan empati untuk keluarga.",
     "slide1": {
       "title": "Selamat Datang, Ibu Bapa yang Dihormati! 💝",
       "subtitle": "Kami Sangat Gembira Anda Di Sini",
@@ -87,24 +93,69 @@
   },
   "aiChat": {
     "title": "Pembantu Ibu Bapa",
-    "subtitle": "Tanya saya apa sahaja tentang akil baligh",
-    "greeting": "Hello! Saya di sini untuk membantu anda menavigasi keibubapaan melalui akil baligh. Tanya saya apa sahaja - dari mengendalikan perbualan sukar hingga memahami perubahan fizikal. Bagaimana saya boleh menyokong anda hari ini?",
+    "subtitle": "Tanya saya apa sahaja tentang akil baligh (Inggeris, Bahasa Melayu, العربية)",
+    "greeting": "Hai! Saya pembimbing Parenting Hub anda. Kongsi apa jua kebimbangan keibubapaan dan saya akan cadangkan langkah, aktiviti dan dorongan hati.",
+    "greetingTips": "Tanya cara memulakan perbualan akil baligh.|Dapatkan idea menyokong emosi besar.|Temui aktiviti menyeronokkan untuk anak anda.",
     "placeholder": "Taip soalan anda di sini...",
     "suggestedTitle": "Soalan yang dicadangkan:",
     "suggestions": {
       "q1": "Bagaimana saya memulakan perbualan akil baligh?",
       "q2": "Bagaimana saya boleh menyokong emosi anak saya?",
       "q3": "Aktiviti apa yang boleh membantu anak saya?",
-      "q4": "Bagaimana saya menangani perubahan mood?"
+      "q4": "Bagaimana saya menangani perubahan mood?",
+      "q5": "Bagaimana mahu bercakap tentang rutin kebersihan baharu?",
+      "q6": "Anak saya cemas—apa yang patut saya lakukan?"
+    },
+    "tipHeader": "Langkah susulan berguna",
+    "footerMessage": "Jawapan Parenting Hub disusun rapi dalam Bahasa Inggeris, العربية, dan Bahasa Melayu.",
+    "links": {
+      "parentGuide": "Buka Panduan Ibu Bapa",
+      "games": "Main & Belajar",
+      "diary": "Lawat Diari Mood",
+      "bodyGuide": "Terokai Panduan Badan",
+      "team": "Kenali Pasukan",
+      "welcome": "Lawatan Selamat Datang",
+      "guidance": "Panduan Pakar"
+    },
+    "tips": {
+      "normalize": "Normalisasikan akil baligh sebagai pengalaman semua orang.|Berbual ringkas setiap hari berbanding satu sesi panjang.",
+      "useMoments": "Gunakan adegan TV, buku atau rutin bersama sebagai pembuka perbualan semula jadi.|Beritahu anak anda mereka boleh menyambung bila-bila masa.",
+      "activeListening": "Ketepikan gangguan dan pandang mata.|Ulang semula apa yang anda dengar supaya anak rasa difahami.",
+      "doorOpen": "Ingatkan anak anda bahawa anda tersedia untuk soalan ringkas bila-bila masa.|Galakkan mereka menghantar mesej atau nota jika sukar bercakap berdepan.",
+      "emotionToolkit": "Tawarkan alat menenangkan seperti pernafasan, regangan atau berjalan sekejap.|Bantu mereka menamakan emosi—menyebut perasaan mengurangkan intensitinya.",
+      "validate": "Yakinkan mereka bahawa perubahan mood ketika akil baligh adalah normal.|Ucap terima kasih kerana mempercayai anda dengan perasaan mereka.",
+      "friendship": "Bincang bagaimana rupa persahabatan yang menyokong.|Galakkan mereka perhatikan rasa mereka selepas bersama rakan.",
+      "rolePlay": "Latih dialog menetapkan sempadan bersama.|Rancang jawapan untuk situasi rakan sebaya yang mencabar.",
+      "privacyExplain": "Terangkan bahawa aplikasi menyimpan catatan diari di peranti sahaja.|Yakinkan mereka anda menghormati keperluan privasi mereka yang semakin meningkat.",
+      "space": "Seimbangkan bimbingan dan ruang peribadi—ketuk pintu sebelum masuk.|Setuju dengan masa semakan yang selesa untuk semua.",
+      "coLearning": "Main salah satu permainan kami bersama dan bincang jawapan.|Kongsi pandangan anda supaya pembelajaran terasa seperti usaha pasukan.",
+      "celebrate": "Raikan rasa ingin tahu—tepukan kecil pun menggembirakan.|Tanya perkara yang paling mereka suka selepas setiap aktiviti.",
+      "routine": "Bina senarai semak kebersihan mudah untuk pagi dan malam.|Sediakan keperluan seperti deodoran dan penjagaan kulit bersama-sama.",
+      "products": "Biarkan anak memilih produk yang sesuai dengan gaya mereka.|Ajarkan cara membasuh pakaian dan menjaga badan dengan yakin.",
+      "balancedPlate": "Sediakan pinggan penuh sayur, protein dan bijirin penuh.|Simpan snek sihat untuk tubuh yang sedang membesar.",
+      "familyMeals": "Rancang hidangan keluarga yang melibatkan semua orang dalam penyediaan.|Cerita bagaimana makanan memacu tenaga, emosi dan fokus.",
+      "sleepHygiene": "Kekalkan rutin tidur yang konsisten dan menenangkan.|Redupkan lampu dan elakkan makanan berat sebelum tidur.",
+      "screenTime": "Matikan skrin 30 minit sebelum tidur.|Caj peranti di luar bilik tidur jika boleh.",
+      "calming": "Ajarkan pernafasan, regangan atau jurnal bagi saat cemas.|Kenal pasti pencetus bersama dan cipta pelan menenangkan.",
+      "seekSupport": "Jika kebimbangan terasa berat, hubungi kaunselor sekolah atau profesional.|Ingatkan anak anda mereka tidak perlu memikul perasaan besar sendirian.",
+      "listenFirst": "Dengar sepenuhnya sebelum memberi respon supaya mereka rasa selamat.|Ucap terima kasih kerana berkongsi pengalaman mereka.",
+      "schoolSupport": "Catat kejadian dan libatkan guru atau kaunselor awal.|Latih respons yakin dan cara keluar yang selamat.",
+      "teamSpirit": "Terokai bahagian Parenting Hub bersama-sama.|Kongsi apa yang berkesan supaya kami boleh terus menambah baik untuk keluarga anda.",
+      "stayCurious": "Tiada soalan yang terlalu kecil—terus bertanya dan kami akan terus menyokong.|Tukar bahasa bila-bila masa untuk mendapatkan ungkapan yang paling sesuai."
     },
     "response": {
-      "puberty": "Soalan bagus! Memulakan perbualan tentang akil baligh awal dan mengekalkannya berterusan adalah kunci. Gunakan peluang semula jadi seperti melihat kandungan berkaitan di TV atau buku. Pastikan nada santai dan normalkan topik. Biarkan anak anda tahu mereka sentiasa boleh datang kepada anda dengan soalan, dan yakinkan mereka bahawa semua perubahan yang mereka alami adalah benar-benar normal.",
-      "emotions": "Sokongan emosi semasa akil baligh adalah penting. Sahkan perasaan anak anda - perubahan mood adalah normal kerana perubahan hormon. Dengar tanpa penghakiman, beri mereka ruang apabila diperlukan, tetapi juga beritahu mereka anda sentiasa ada. Bantu mereka mengenal pasti dan menamakan emosi mereka, dan ajar strategi menangani yang sihat.",
-      "communication": "Komunikasi berkesan membina kepercayaan. Amalkan mendengar aktif - singkirkan gangguan dan beri perhatian penuh. Tanya soalan terbuka daripada soalan ya/tidak. Kongsi pengalaman anda sendiri (sesuai umur) untuk menunjukkan pemahaman. Yang paling penting, cipta zon bebas penghakiman di mana mereka berasa selamat berkongsi apa sahaja.",
-      "social": "Dinamik sosial berubah semasa akil baligh. Bantu anak anda menavigasi persahabatan dengan membincangkan seperti apa hubungan yang sihat. Bincangkan tekanan rakan sebaya dan beri mereka bahasa untuk menetapkan sempadan. Galakkan persahabatan yang pelbagai dan sahkan perasaan mereka apabila persahabatan berubah atau berakhir.",
-      "privacy": "Aplikasi ini mengutamakan privasi sepenuhnya. Semua catatan diari dan data kekal pada peranti anda. Diari adalah ruang peribadi untuk anak anda. Kami tidak menjejak pengguna atau mengumpul maklumat peribadi. Privasi keluarga anda dan keselamatan anak anda adalah keutamaan utama kami.",
-      "activities": "Bahagian Permainan menawarkan aktiviti interaktif yang direka untuk mengajar tentang akil baligh dengan cara yang menyeronokkan dan menarik. Ini termasuk permainan ingatan, latihan pengiktirafan emosi, dan aktiviti padanan. Permainan ini membantu menormalkan perbualan tentang akil baligh dan menjadikan pembelajaran menyeronokkan daripada janggal.",
-      "default": "Saya di sini untuk membantu anda dengan sebarang soalan keibubapaan tentang akil baligh! Anda boleh tanya saya tentang: strategi komunikasi, memahami perubahan fizikal/emosi, mengendalikan situasi sukar, menyokong kesihatan mental anak anda, menavigasi cabaran sosial, dan banyak lagi. Apa yang anda ingin tahu?"
+      "puberty": "Anda hebat kerana membuka perbualan ini. Bualan akil baligh paling berkesan apabila pendek, hangat dan berulang. Ingatkan anak anda setiap tubuh berkembang pada tempohnya sendiri dan anda sentiasa di sisi.",
+      "communication": "Kepercayaan dibina dalam detik yang tenang. Dengar sepenuh hati, jemput pandangan mereka dan ucap terima kasih walaupun perbualan tidak sempurna. Ketenangan anda menjadi sauh mereka.",
+      "emotions": "Perasaan besar sebahagian daripada proses membesar. Bantu anak melihat corak, menamakan emosi dan cuba saluran sihat seperti pergerakan, seni atau menulis diari. Raikan setiap kali mereka terbuka.",
+      "social": "Persahabatan boleh berubah pantas ketika akil baligh. Bincang tentang rasa hormat, kegembiraan dan keselamatan dalam hubungan. Lakonkan situasi sukar supaya mereka bersedia mempertahankan diri dan rakan.",
+      "privacy": "Soalan yang bagus! Parenting Hub menyimpan maklumat dengan selamat pada peranti anda sahaja. Galakkan anak menikmati diari peribadi sambil tahu anda dekat jika mereka perlukan sokongan.",
+      "activities": "Pembelajaran yang menyeronokkan lebih mudah diingati! Kunjungi bahagian Permainan untuk kuiz, padanan dan pengembaraan emosi yang boleh dimainkan bersama. Ikuti dengan perbualan ringkas tentang apa yang mengejutkan mereka.",
+      "hygiene": "Perubahan badan boleh rasa janggal—kekalkan perbualan ringkas dan ringan. Bina rutin baharu bersama, sediakan produk pilihan mereka dan raikan setiap langkah kecil supaya keyakinan meningkat.",
+      "nutrition": "Tubuh yang sedang membesar memerlukan bahan api seimbang. Sediakan hidangan berwarna-warni, libatkan anak dalam penyediaan dan hubungkan makanan dengan tenaga, mood dan tumpuan. Perubahan kecil lebih bermakna daripada kesempurnaan.",
+      "sleep": "Rehat ialah kuasa senyap. Cipta isyarat waktu tidur yang menenangkan, kurangkan skrin sebelum tidur dan lindungi masa tidur seperti janji temu penting.",
+      "anxiety": "Kebimbangan muncul apabila hidup terasa tidak pasti. Duduk bersama anak anda, bernafas serentak dan bina pelan penenang. Jika terasa berat, hubungi pihak sekolah atau profesional untuk sokongan tambahan.",
+      "bullying": "Tiada anak patut menghadapi buli sendirian. Dengar tanpa tergesa-gesa, catat apa yang berlaku dan bekerjasama dengan pihak sekolah. Latih respons yakin dan ingatkan mereka bahawa mereka ada pasukan penyokong.",
+      "default": "Saya sentiasa ada apabila anda perlukan dorongan yakin. Tanyalah tentang perubahan badan, kesihatan mental, tradisi budaya atau cara menggunakan alat kami—saya akan kongsikan langkah praktikal."
     }
   },
   "games": {
@@ -507,5 +558,28 @@
     "title": "Menyokong Keluarga Melalui Akil Baligh",
     "subtitle": "Sumber selamat dan penuh kasih untuk ibu bapa dan kanak-kanak 🌱",
     "copyright": "© 2025 - Dicipta dengan kasih sayang untuk keluarga"
+  },
+  "team": {
+    "title": "Kenali Pasukan Impian Parenting Hub",
+    "subtitle": "Kumpulan kreatif, penyelidik dan pemimpi yang membina alat memberi kuasa kepada keluarga di seluruh dunia.",
+    "values": "Kami memadukan penyelidikan berasaskan bukti, reka bentuk inklusif dan penceritaan penuh empati supaya panduan akil baligh terasa mesra dan mudah dicapai.",
+    "commitment": "Setiap skrin, permainan dan sumber disiapkan dengan menghormati kepelbagaian latar keluarga.",
+    "badges": {
+      "dev": "Dev",
+      "special": "Istimewa"
+    },
+    "members": {
+      "qais": "Qais memimpin pengalaman digital dengan semangat pembuat—menulis kod, melaras dan memastikan setiap interaksi terasa magis untuk keluarga.",
+      "drNazean": "Mentor utama kami. Dr. Nazean Jomhari membawa ketelitian akademik, empati dan hikmah komuniti ke setiap idea.",
+      "tanKangZheng": "Kang Zheng mempermudah cerita kompleks dan membentuk aliran permainan yang membantu keluarga belajar bersama.",
+      "chengyangSun": "Chengyang membina harmoni visual, menukar penemuan penyelidikan menjadi antara muka yang selamat dan ceria.",
+      "rajaNur": "Raja Nur memperjuang kepekaan budaya agar setiap sumber menghormati suara keluarga Malaysia.",
+      "hanifRuben": "Hanif menganyam interaktiviti dan naratif supaya aktiviti kami kekal menyeronokkan, inklusif dan bermakna.",
+      "rafiaRaida": "Rafia menulis bahasa lembut dan mikro-kopi yang menggalakkan ibu bapa dan anak terus berbual.",
+      "wongYanWen": "Yan Wen memastikan kebolehaksesan sentiasa diberi keutamaan agar setiap keluarga berasa dialu-alukan.",
+      "zhouJunan": "Junan berani bereksperimen, membina prototaip baharu untuk AI yang menyokong keibubapaan penuh belas kasihan."
+    },
+    "appreciationTitle": "Terima kasih kerana menjadi sebahagian daripada kisah kami",
+    "appreciationMessage": "Parenting Hub ialah projek hidup yang berkembang bersama keluarga seperti anda. Maklum balas, keberanian dan rasa ingin tahu anda menginspirasi setiap kemas kini. Kami sentiasa menyokong anda."
   }
 }
