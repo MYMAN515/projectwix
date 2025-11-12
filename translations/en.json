@@ -7,7 +7,8 @@
     "bodyGuide": "Body Guide",
     "guidance": "Parent Guide",
     "games": "Games & Activities",
-    "parentGuide": "Parenting Tips"
+    "parentGuide": "Parenting Tips",
+    "team": "Our Team"
   },
   "home": {
     "title": "Supporting Your Child Through Puberty",
@@ -80,6 +81,7 @@
       "point4": "This is a safe, judgment-free space designed with child safety and family privacy as top priorities",
       "acceptPrivacy": "I understand and accept the privacy policy"
     },
+    "endorsedBy": "Created with guidance from the University of Malaya to uplift every caring family.",
     "next": "Next",
     "previous": "Previous",
     "skip": "Skip to Privacy",
@@ -95,7 +97,9 @@
       "q1": "How do I start the puberty conversation?",
       "q2": "How can I support my child's emotions?",
       "q3": "What activities can help my child?",
-      "q4": "How do I handle mood swings?"
+      "q4": "How do I handle mood swings?",
+      "q5": "How do I guide hygiene and self-care routines?",
+      "q6": "What should I say if my child feels left out?"
     },
     "response": {
       "puberty": "Great question! Starting conversations about puberty early and keeping them ongoing is key. Use natural opportunities like seeing related content on TV or books. Keep the tone casual and normalize the topic. Let your child know they can always come to you with questions, and reassure them that all the changes they're experiencing are completely normal.",
@@ -104,12 +108,16 @@
       "social": "Social dynamics change during puberty. Help your child navigate friendships by discussing what healthy relationships look like. Talk about peer pressure and give them language to set boundaries. Encourage diverse friendships and validate their feelings when friendships shift or end - it's a normal part of growing up.",
       "privacy": "This app prioritizes privacy completely. All diary entries and data stay on your device - nothing is sent to servers. The diary is a private space for your child. We don't track users or collect personal information. Your family's privacy and your child's safety are our top priorities.",
       "activities": "The Games section offers interactive activities designed to teach about puberty in a fun, engaging way. These include memory games, emotion recognition exercises, and matching activities. These games help normalize conversations about puberty and make learning enjoyable rather than awkward.",
+      "selfCare": "Puberty is the perfect moment to build strong self-care routines. Work together to create a simple checklist: daily shower, clean clothes, deodorant, healthy meals, enough sleep, and gentle skin care. Model the behaviour yourself and celebrate when your child takes responsibility — positive reinforcement builds lifelong habits.",
+      "gratitude": "You're most welcome! I'm glad to be here with you. Let me know if you want more resources, conversation starters, or activities to try next. 💙",
       "default": "I'm here to help you with any parenting questions about puberty! You can ask me about: communication strategies, understanding physical/emotional changes, handling difficult situations, supporting your child's mental health, navigating social challenges, and much more. What would you like to know?"
     }
   },
   "games": {
     "title": "Interactive Games & Activities",
     "subtitle": "Fun, educational games for your child to learn about puberty 🎮",
+    "heroHeadline": "Turn learning about puberty into joyful playtime.",
+    "heroDescription": "Each mission blends storytelling, interactive choices, and positive reinforcement so children learn with confidence and curiosity.",
     "easy": "Easy",
     "medium": "Medium",
     "moreActivities": "More Activities Available",
@@ -501,6 +509,71 @@
       "emotional": "Emotional Wellbeing",
       "social": "Social Life",
       "hygiene": "Personal Hygiene"
+    }
+  },
+  "team": {
+    "tagline": "Heart-led collaboration",
+    "title": "The people crafting this caring experience",
+    "subtitle": "A multidisciplinary team from the University of Malaya designing digital support that feels human, trustworthy, and empowering for every family.",
+    "stats": {
+      "mission": "Grounded in evidence-based puberty education and family wellbeing research.",
+      "care": "Designed with empathy by educators, designers, and engineers who care deeply about young people.",
+      "quality": "Guided by academic excellence and continuous feedback from Malaysian families."
+    },
+    "badges": {
+      "programmer": "Programmer",
+      "assessor": "Special Assessor"
+    },
+    "members": {
+      "qais": {
+        "name": "Qais Al Hrahsheh",
+        "role": "Lead Experience Engineer",
+        "bio": "Qais shapes the overall product vision, crafting seamless experiences and writing the code that keeps everything fast, accessible, and joyful for families."
+      },
+      "nazean": {
+        "name": "Dr. Nazean Jomhari",
+        "role": "Special Assessor",
+        "bio": "Dr. Nazean ensures every feature aligns with the University of Malaya's standards, blending academic rigour with compassionate support for parents and children."
+      },
+      "tan": {
+        "name": "Tan Kang Zheng",
+        "role": "Product Designer",
+        "bio": "Transforms insights into intuitive interfaces and delightful micro-interactions that make learning approachable."
+      },
+      "chengyang": {
+        "name": "Chengyang Sun",
+        "role": "Curriculum Researcher",
+        "bio": "Curates evidence-based puberty education content and ensures cultural relevance for Malaysian families."
+      },
+      "raja": {
+        "name": "Raja Nur Aqylah Natasha binti Raja Zazman Shah",
+        "role": "Content Strategist",
+        "bio": "Crafts empathetic narratives and supportive guidance so every parent feels seen and heard."
+      },
+      "hanif": {
+        "name": "Hanif Ruben Davni Setiadji",
+        "role": "Game Experience Designer",
+        "bio": "Builds playful learning missions that encourage curiosity and celebrate every small win."
+      },
+      "rafia": {
+        "name": "Rafia Raida Binta Jashim",
+        "role": "UX Researcher",
+        "bio": "Listens to families and turns their feedback into thoughtful improvements across the app."
+      },
+      "wong": {
+        "name": "Wong Yan Wen",
+        "role": "Illustration & Motion",
+        "bio": "Adds warmth through calming visuals and animations that guide children gently through each activity."
+      },
+      "zhou": {
+        "name": "Zhou Junan",
+        "role": "Quality & Accessibility",
+        "bio": "Tests every flow to ensure the experience is inclusive, stable, and supportive across languages and devices."
+      }
+    },
+    "closing": {
+      "title": "Made with love at the University of Malaya",
+      "message": "Together we are building a safer, kinder digital space where children can explore puberty with confidence and parents feel supported every step of the way."
     }
   },
   "footer": {

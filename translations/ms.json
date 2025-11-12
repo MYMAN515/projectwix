@@ -7,7 +7,8 @@
     "bodyGuide": "Panduan Badan",
     "guidance": "Panduan Ibu Bapa",
     "games": "Permainan & Aktiviti",
-    "parentGuide": "Petua Keibubapaan"
+    "parentGuide": "Petua Keibubapaan",
+    "team": "Pasukan Kami"
   },
   "home": {
     "title": "Menyokong Anak Anda Melalui Akil Baligh",
@@ -80,6 +81,7 @@
       "point4": "Ini adalah ruang selamat, bebas penghakiman yang direka dengan keselamatan kanak-kanak dan privasi keluarga sebagai keutamaan utama",
       "acceptPrivacy": "Saya faham dan terima dasar privasi"
     },
+    "endorsedBy": "Dibangunkan dengan panduan Universiti Malaya untuk mengangkat setiap keluarga penyayang.",
     "next": "Seterusnya",
     "previous": "Sebelumnya",
     "skip": "Langkau ke Privasi",
@@ -95,7 +97,9 @@
       "q1": "Bagaimana saya memulakan perbualan akil baligh?",
       "q2": "Bagaimana saya boleh menyokong emosi anak saya?",
       "q3": "Aktiviti apa yang boleh membantu anak saya?",
-      "q4": "Bagaimana saya menangani perubahan mood?"
+      "q4": "Bagaimana saya menangani perubahan mood?",
+      "q5": "Bagaimana saya membimbing rutin kebersihan dan penjagaan diri?",
+      "q6": "Apa yang perlu saya katakan jika anak saya berasa tersisih?"
     },
     "response": {
       "puberty": "Soalan bagus! Memulakan perbualan tentang akil baligh awal dan mengekalkannya berterusan adalah kunci. Gunakan peluang semula jadi seperti melihat kandungan berkaitan di TV atau buku. Pastikan nada santai dan normalkan topik. Biarkan anak anda tahu mereka sentiasa boleh datang kepada anda dengan soalan, dan yakinkan mereka bahawa semua perubahan yang mereka alami adalah benar-benar normal.",
@@ -104,12 +108,16 @@
       "social": "Dinamik sosial berubah semasa akil baligh. Bantu anak anda menavigasi persahabatan dengan membincangkan seperti apa hubungan yang sihat. Bincangkan tekanan rakan sebaya dan beri mereka bahasa untuk menetapkan sempadan. Galakkan persahabatan yang pelbagai dan sahkan perasaan mereka apabila persahabatan berubah atau berakhir.",
       "privacy": "Aplikasi ini mengutamakan privasi sepenuhnya. Semua catatan diari dan data kekal pada peranti anda. Diari adalah ruang peribadi untuk anak anda. Kami tidak menjejak pengguna atau mengumpul maklumat peribadi. Privasi keluarga anda dan keselamatan anak anda adalah keutamaan utama kami.",
       "activities": "Bahagian Permainan menawarkan aktiviti interaktif yang direka untuk mengajar tentang akil baligh dengan cara yang menyeronokkan dan menarik. Ini termasuk permainan ingatan, latihan pengiktirafan emosi, dan aktiviti padanan. Permainan ini membantu menormalkan perbualan tentang akil baligh dan menjadikan pembelajaran menyeronokkan daripada janggal.",
+      "selfCare": "Akil baligh ialah masa terbaik untuk membina rutin penjagaan diri yang kukuh. Bina senarai semak bersama: mandi setiap hari, pakaian bersih, deodorant, pemakanan seimbang, tidur mencukupi dan penjagaan kulit yang lembut. Tunjukkan contoh dan raikan apabila anak anda ambil tanggungjawab — pujian positif mengukuhkan tabiat sepanjang hayat.",
+      "gratitude": "Sama-sama! Saya gembira dapat bersama anda. Beritahu saya jika anda mahukan lagi sumber, idea perbualan, atau aktiviti untuk dicuba seterusnya. 💙",
       "default": "Saya di sini untuk membantu anda dengan sebarang soalan keibubapaan tentang akil baligh! Anda boleh tanya saya tentang: strategi komunikasi, memahami perubahan fizikal/emosi, mengendalikan situasi sukar, menyokong kesihatan mental anak anda, menavigasi cabaran sosial, dan banyak lagi. Apa yang anda ingin tahu?"
     }
   },
   "games": {
     "title": "Permainan & Aktiviti Interaktif",
     "subtitle": "Permainan pendidikan yang menyeronokkan untuk anak anda belajar tentang akil baligh 🎮",
+    "heroHeadline": "Jadikan pembelajaran tentang akil baligh sebagai masa bermain yang menyeronokkan.",
+    "heroDescription": "Setiap misi menggabungkan penceritaan, pilihan interaktif dan galakan positif supaya anak belajar dengan yakin dan ingin tahu.",
     "easy": "Mudah",
     "medium": "Sederhana",
     "moreActivities": "Lebih Banyak Aktiviti Tersedia",
@@ -501,6 +509,71 @@
       "emotional": "Kesejahteraan Emosi",
       "social": "Kehidupan Sosial",
       "hygiene": "Kebersihan Diri"
+    }
+  },
+  "team": {
+    "tagline": "Kerjasama penuh hati",
+    "title": "Individu di sebalik pengalaman penuh kasih sayang ini",
+    "subtitle": "Pasukan pelbagai disiplin dari Universiti Malaya yang mereka bentuk sokongan digital yang mesra, dipercayai dan memberdayakan setiap keluarga.",
+    "stats": {
+      "mission": "Berpaksikan penyelidikan pendidikan akil baligh dan kesejahteraan keluarga yang sahih.",
+      "care": "Direka dengan empati oleh pendidik, pereka dan jurutera yang benar-benar mengambil berat tentang remaja.",
+      "quality": "Dibimbing oleh kecemerlangan akademik serta maklum balas berterusan daripada keluarga di Malaysia."
+    },
+    "badges": {
+      "programmer": "Pengatur Cara",
+      "assessor": "Penilai Khas"
+    },
+    "members": {
+      "qais": {
+        "name": "Qais Al Hrahsheh",
+        "role": "Jurutera Pengalaman Utama",
+        "bio": "Qais membentuk visi produk keseluruhan, mencipta pengalaman lancar dan menulis kod yang memastikan semuanya pantas, mudah diakses dan menyeronokkan untuk keluarga."
+      },
+      "nazean": {
+        "name": "Dr. Nazean Jomhari",
+        "role": "Penilai Khas",
+        "bio": "Dr. Nazean memastikan setiap ciri selari dengan piawaian Universiti Malaya, menggabungkan ketelitian akademik dengan sokongan penuh belas kasihan untuk ibu bapa dan anak."
+      },
+      "tan": {
+        "name": "Tan Kang Zheng",
+        "role": "Pereka Produk",
+        "bio": "Menterjemah pandangan kepada antara muka intuitif dan interaksi mikro yang menggembirakan supaya pembelajaran terasa mudah didekati."
+      },
+      "chengyang": {
+        "name": "Chengyang Sun",
+        "role": "Penyelidik Kurikulum",
+        "bio": "Mengurus kandungan pendidikan akil baligh berasaskan bukti dan memastikan kesesuaian budaya untuk keluarga Malaysia."
+      },
+      "raja": {
+        "name": "Raja Nur Aqylah Natasha binti Raja Zazman Shah",
+        "role": "Perancang Kandungan",
+        "bio": "Menghasilkan naratif penuh empati dan panduan sokongan supaya setiap ibu bapa berasa difahami."
+      },
+      "hanif": {
+        "name": "Hanif Ruben Davni Setiadji",
+        "role": "Pereka Pengalaman Permainan",
+        "bio": "Membangunkan misi pembelajaran yang menyeronokkan, mendorong rasa ingin tahu dan meraikan setiap kejayaan kecil."
+      },
+      "rafia": {
+        "name": "Rafia Raida Binta Jashim",
+        "role": "Penyelidik UX",
+        "bio": "Mendengar suara keluarga dan menukarkannya kepada penambahbaikan yang penuh pertimbangan di seluruh aplikasi."
+      },
+      "wong": {
+        "name": "Wong Yan Wen",
+        "role": "Ilustrasi & Animasi",
+        "bio": "Menambah kehangatan melalui visual yang menenangkan dan animasi yang membimbing anak secara lembut dalam setiap aktiviti."
+      },
+      "zhou": {
+        "name": "Zhou Junan",
+        "role": "Kualiti & Kebolehcapaian",
+        "bio": "Menguji setiap aliran bagi memastikan pengalaman inklusif, stabil dan menyokong dalam pelbagai bahasa dan peranti."
+      }
+    },
+    "closing": {
+      "title": "Dihasilkan dengan kasih di Universiti Malaya",
+      "message": "Bersama-sama kami membina ruang digital yang lebih selamat dan lembut agar anak dapat meneroka akil baligh dengan yakin dan ibu bapa berasa disokong pada setiap langkah."
     }
   },
   "footer": {

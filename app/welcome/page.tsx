@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { Heart, Shield, Users, Sparkles, BookOpen, Lock, Eye, Target, ArrowRight, Check } from 'lucide-react'
@@ -74,14 +75,54 @@ export default function WelcomePage() {
   }
 
   const slide = slides[currentSlide]
+  const endorsedText = t('welcome.endorsedBy')
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 flex items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="max-w-4xl w-full glass-effect rounded-3xl p-8 md:p-12 shadow-2xl"
+        className="relative max-w-4xl w-full glass-effect rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden"
       >
+        <motion.div
+          className="absolute -top-20 -right-20 w-64 h-64 bg-primary-200/40 rounded-full blur-3xl"
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 6, repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute -bottom-24 -left-16 w-72 h-72 bg-secondary-200/40 rounded-full blur-3xl"
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ duration: 7, repeat: Infinity }}
+        />
+
+        <div className="relative flex flex-col items-center gap-4 mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="flex flex-col items-center"
+          >
+            <div className="bg-white/70 rounded-3xl px-6 py-4 shadow-lg border border-primary-100 flex flex-col items-center gap-3">
+              <Image
+                src="/images/um-logo.svg"
+                width={96}
+                height={108}
+                alt="University of Malaya crest"
+                className="drop-shadow-md"
+                priority
+              />
+              <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-600 text-center">
+                University of Malaya
+              </span>
+            </div>
+            <p className="mt-3 text-sm text-gray-500 text-center max-w-xs">
+              {endorsedText === 'welcome.endorsedBy'
+                ? 'In collaboration with the University of Malaya to support caring families.'
+                : endorsedText}
+            </p>
+          </motion.div>
+        </div>
+
         {/* Progress Indicator */}
         <div className="flex justify-center gap-2 mb-8">
           {slides.map((_, index) => (

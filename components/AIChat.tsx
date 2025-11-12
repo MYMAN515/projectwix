@@ -40,6 +40,14 @@ export default function AIChat() {
     }
   }, [isOpen, t, messages.length])
 
+  const renderMessageContent = (content: string) => {
+    return content.split('\n').map((line, index) => (
+      <p key={index} className="text-sm leading-relaxed">
+        {line.trim()}
+      </p>
+    ))
+  }
+
   const handleSend = async () => {
     if (!input.trim()) return
 
@@ -68,31 +76,61 @@ export default function AIChat() {
   }
 
   const getAIResponse = (userInput: string): string => {
-    // Simple keyword-based responses (replace with actual AI integration)
     const input = userInput.toLowerCase()
-    
-    if (input.includes('puberty') || input.includes('changes')) {
-      return t('aiChat.response.puberty')
-    } else if (input.includes('emotion') || input.includes('mood') || input.includes('feel')) {
-      return t('aiChat.response.emotions')
-    } else if (input.includes('talk') || input.includes('communicate') || input.includes('conversation')) {
-      return t('aiChat.response.communication')
-    } else if (input.includes('friend') || input.includes('social')) {
-      return t('aiChat.response.social')
-    } else if (input.includes('privacy') || input.includes('safe')) {
-      return t('aiChat.response.privacy')
-    } else if (input.includes('game') || input.includes('activity')) {
-      return t('aiChat.response.activities')
-    } else {
-      return t('aiChat.response.default')
+
+    const categories = [
+      {
+        key: 'puberty',
+        keywords: ['puberty', 'akil', 'baligh', 'balik', 'baligh', 'changes', 'perubahan', 'بلوغ']
+      },
+      {
+        key: 'emotions',
+        keywords: ['emotion', 'emosi', 'feel', 'mood', 'perasaan', 'شعور', 'مزاج', 'feelings']
+      },
+      {
+        key: 'communication',
+        keywords: ['talk', 'communicate', 'conversation', 'bercakap', 'communication', 'berbual', 'نقاش', 'تواصل']
+      },
+      {
+        key: 'social',
+        keywords: ['friend', 'kawan', 'social', 'rakan', 'sahabat', 'صديق', 'sosial', 'peer']
+      },
+      {
+        key: 'privacy',
+        keywords: ['privacy', 'selamat', 'safe', 'privasi', 'أمان', 'safety', 'keselamatan']
+      },
+      {
+        key: 'activities',
+        keywords: ['game', 'activity', 'aktiviti', 'permainan', 'اللعبة', 'games', 'fun']
+      },
+      {
+        key: 'selfCare',
+        keywords: ['hygiene', 'self-care', 'penjagaan', 'deodorant', 'bersih', 'النظافة']
+      }
+    ] as const
+
+    const match = categories.find((category) =>
+      category.keywords.some((keyword) => input.includes(keyword))
+    )
+
+    if (match) {
+      return t(`aiChat.response.${match.key}`)
     }
+
+    if (input.includes('thank')) {
+      return t('aiChat.response.gratitude')
+    }
+
+    return t('aiChat.response.default')
   }
 
   const suggestedQuestions = [
     t('aiChat.suggestions.q1'),
     t('aiChat.suggestions.q2'),
     t('aiChat.suggestions.q3'),
-    t('aiChat.suggestions.q4')
+    t('aiChat.suggestions.q4'),
+    t('aiChat.suggestions.q5'),
+    t('aiChat.suggestions.q6')
   ]
 
   return (
@@ -176,7 +214,7 @@ export default function AIChat() {
                         : 'bg-white text-gray-800'
                     } shadow-md`}
                   >
-                    <p className="text-sm leading-relaxed">{message.content}</p>
+                    <div className="space-y-2">{renderMessageContent(message.content)}</div>
                   </div>
                 </motion.div>
               ))}
