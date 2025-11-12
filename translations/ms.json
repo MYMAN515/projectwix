@@ -7,7 +7,8 @@
     "bodyGuide": "Panduan Badan",
     "guidance": "Panduan Ibu Bapa",
     "games": "Permainan & Aktiviti",
-    "parentGuide": "Petua Keibubapaan"
+    "parentGuide": "Petua Keibubapaan",
+    "team": "Pasukan Kami"
   },
   "home": {
     "title": "Menyokong Anak Anda Melalui Akil Baligh",
@@ -52,6 +53,7 @@
     }
   },
   "welcome": {
+    "branding": "Diperkasakan oleh semangat Universiti Malaya yang menginspirasikan",
     "slide1": {
       "title": "Selamat Datang, Ibu Bapa yang Dihormati! 💝",
       "subtitle": "Kami Sangat Gembira Anda Di Sini",
@@ -87,24 +89,82 @@
   },
   "aiChat": {
     "title": "Pembantu Ibu Bapa",
-    "subtitle": "Tanya saya apa sahaja tentang akil baligh",
-    "greeting": "Hello! Saya di sini untuk membantu anda menavigasi keibubapaan melalui akil baligh. Tanya saya apa sahaja - dari mengendalikan perbualan sukar hingga memahami perubahan fizikal. Bagaimana saya boleh menyokong anda hari ini?",
+    "subtitle": "Tanya saya apa sahaja tentang akil baligh dalam Bahasa Inggeris, العربية atau Bahasa Melayu",
+    "greeting": "Hello! Saya pembimbing sokongan akil baligh berbilang bahasa anda. Saya boleh berbual dalam Bahasa Inggeris, Arab atau Bahasa Melayu—mengikut yang membuat anda paling selesa. Tanya saya tentang perbualan sukar, emosi naik turun, atau rutin harian. Apa yang ingin anda terokai hari ini?",
     "placeholder": "Taip soalan anda di sini...",
-    "suggestedTitle": "Soalan yang dicadangkan:",
+    "suggestedTitle": "Cuba tanya tentang:",
     "suggestions": {
-      "q1": "Bagaimana saya memulakan perbualan akil baligh?",
-      "q2": "Bagaimana saya boleh menyokong emosi anak saya?",
-      "q3": "Aktiviti apa yang boleh membantu anak saya?",
-      "q4": "Bagaimana saya menangani perubahan mood?"
+      "q1": "Bagaimana saya menerangkan peringkat akil baligh dengan lembut?",
+      "q2": "Apa yang membantu apabila anak saya berasa terbeban?",
+      "q3": "Bagaimana kami membina rutin penjagaan diri harian?",
+      "q4": "Bagaimana saya menggalakkan tabiat tidur yang sihat?",
+      "q5": "Apa yang patut saya katakan tentang haid dan perubahan badan?",
+      "q6": "Bagaimana saya menetapkan peraturan peranti yang saling menghormati?"
     },
     "response": {
-      "puberty": "Soalan bagus! Memulakan perbualan tentang akil baligh awal dan mengekalkannya berterusan adalah kunci. Gunakan peluang semula jadi seperti melihat kandungan berkaitan di TV atau buku. Pastikan nada santai dan normalkan topik. Biarkan anak anda tahu mereka sentiasa boleh datang kepada anda dengan soalan, dan yakinkan mereka bahawa semua perubahan yang mereka alami adalah benar-benar normal.",
-      "emotions": "Sokongan emosi semasa akil baligh adalah penting. Sahkan perasaan anak anda - perubahan mood adalah normal kerana perubahan hormon. Dengar tanpa penghakiman, beri mereka ruang apabila diperlukan, tetapi juga beritahu mereka anda sentiasa ada. Bantu mereka mengenal pasti dan menamakan emosi mereka, dan ajar strategi menangani yang sihat.",
-      "communication": "Komunikasi berkesan membina kepercayaan. Amalkan mendengar aktif - singkirkan gangguan dan beri perhatian penuh. Tanya soalan terbuka daripada soalan ya/tidak. Kongsi pengalaman anda sendiri (sesuai umur) untuk menunjukkan pemahaman. Yang paling penting, cipta zon bebas penghakiman di mana mereka berasa selamat berkongsi apa sahaja.",
-      "social": "Dinamik sosial berubah semasa akil baligh. Bantu anak anda menavigasi persahabatan dengan membincangkan seperti apa hubungan yang sihat. Bincangkan tekanan rakan sebaya dan beri mereka bahasa untuk menetapkan sempadan. Galakkan persahabatan yang pelbagai dan sahkan perasaan mereka apabila persahabatan berubah atau berakhir.",
-      "privacy": "Aplikasi ini mengutamakan privasi sepenuhnya. Semua catatan diari dan data kekal pada peranti anda. Diari adalah ruang peribadi untuk anak anda. Kami tidak menjejak pengguna atau mengumpul maklumat peribadi. Privasi keluarga anda dan keselamatan anak anda adalah keutamaan utama kami.",
-      "activities": "Bahagian Permainan menawarkan aktiviti interaktif yang direka untuk mengajar tentang akil baligh dengan cara yang menyeronokkan dan menarik. Ini termasuk permainan ingatan, latihan pengiktirafan emosi, dan aktiviti padanan. Permainan ini membantu menormalkan perbualan tentang akil baligh dan menjadikan pembelajaran menyeronokkan daripada janggal.",
-      "default": "Saya di sini untuk membantu anda dengan sebarang soalan keibubapaan tentang akil baligh! Anda boleh tanya saya tentang: strategi komunikasi, memahami perubahan fizikal/emosi, mengendalikan situasi sukar, menyokong kesihatan mental anak anda, menavigasi cabaran sosial, dan banyak lagi. Apa yang anda ingin tahu?"
+      "puberty": "Soalan hebat! Normalisasikan topik ini. 1) Pilih detik santai harian—perjalanan kereta, berjalan, tugasan bersama—untuk menyebut perubahan yang anda perasan. 2) Kongsi fakta kecil secara kerap dan elakkan hanya satu \"perbualan besar\". 3) Jemput soalan dengan berkata, \"Anda boleh tanya saya apa sahaja walaupun rasa janggal.\" 4) Sediakan buku atau artikel dipercayai supaya anak boleh membaca secara peribadi dan kembali kepada anda. Yakinkan mereka bahawa setiap badan berkembang mengikut masa sendiri dan anda sentiasa di sisi mereka.",
+      "emotions": "Gelombang emosi memang sebahagian akil baligh. Sahkan perasaan dahulu (\"Ibu nampak perkara ini memang mencabar\") sebelum memberi penyelesaian. Cipta kotak alat menenangkan bersama—latihan pernafasan, regangan, melukis atau muzik. Galakkan mereka menamakan emosi dan menilai tahapnya. Akhiri hari dengan \"semakan perasaan\" ringkas supaya mereka tahu emosi besar dialu-alukan di rumah.",
+      "communication": "Komunikasi kukuh dibina melalui rutin. Tetapkan sesi perbualan mingguan ringkas dan biarkan anak memilih aktiviti—coklat panas, berjalan sekejap, permainan ringkas. Gunakan pembuka seperti, \"Apa kejayaan dan cabaran hari ini?\" Pantulkan semula apa yang anda dengar dan ucap terima kasih kerana berkongsi. Jika perbualan menjadi tegang, berhenti seketika dan sambung semula kemudian untuk menunjukkan hormat lebih penting daripada menang.",
+      "social": "Persahabatan boleh terasa bergelora sekarang. Bincang bagaimana rupa persahabatan sihat—bahasa yang sopan, mendengar, hormat sempadan. Latih skrip menghadapi tekanan rakan sebaya supaya mereka bersedia. Galakkan aktiviti kelab atau pasukan yang sepadan minat untuk meluaskan rangkaian. Ingatkan mereka bahawa persahabatan berubah adalah normal dan tidak menentukan nilai diri.",
+      "privacy": "Aplikasi ini dibina dengan keutamaan privasi keluarga. Catatan diari kekal pada peranti, tiada data peribadi dikumpul, dan tiada penjejak tersembunyi. Galakkan anak menggunakan diari sebagai ruang selamat memproses perasaan. Anda juga boleh menetapkan persetujuan bersama bila mahu menyemak bersama supaya kepercayaan kekal kukuh.",
+      "activities": "Pembelajaran lebih melekat apabila menyeronokkan. Terokai bahagian Permainan bersama—padanan ingatan membantu mengenal perubahan badan, kuiz meningkatkan keyakinan, dan aktiviti emosi membuka perbualan jujur. Tanya aktiviti mana paling membantu dan mengapa, kemudian jadikan ia jambatan untuk meneruskan perbualan di luar talian.",
+      "hygiene": "Bantu anak membina ritma kebersihan mudah: mandi setiap hari (atau selepas bersukan), guna deodoran, tukar pakaian bersih, dan jaga kulit atau rambut mengikut keperluan. Jadikan ia kerjasama dengan mencipta senarai semak dan tampal di bilik air. Puji usaha, bukan kesempurnaan, supaya mereka bangga dengan kemerdekaan baharu.",
+      "nutrition": "Tubuh memerlukan tenaga stabil sekarang. Sasarkan hidangan seimbang—buah dan sayur berwarna-warni, protein untuk pembinaan otot, bijirin penuh untuk tenaga, dan air secukupnya. Ajak anak merancang atau memasak satu hidangan seminggu supaya mereka tahu apa yang menyihatkan mereka. Sediakan snek sihat yang cepat untuk saat lapar tiba-tiba.",
+      "sleep": "Perubahan hormon boleh melambatkan rasa mengantuk. Tetapkan rutin menenangkan: malapkan lampu sejam sebelum tidur, hadkan skrin, dan tawarkan masa tenang bersama (regangan, berbual lembut, membaca). Kekalkan waktu bangun yang konsisten, termasuk hujung minggu. Jika kebimbangan mengganggu tidur, galakkan mereka mencatat dalam buku untuk dibincang keesokan hari.",
+      "boundaries": "Bercakap secara terbuka tentang sempadan diri—privasi badan, ruang emosi, dan hormat kepada had orang lain. Tunjukkan contoh meminta keizinan (\"Boleh ibu peluk?\"). Bantu mereka berlatih skrip untuk berkata tidak dengan sopan. Raikan apabila mereka mempertahankan diri supaya mereka belajar bahawa sempadan jelas membina hubungan lebih sihat.",
+      "digital": "Bina pelan media keluarga bersama. Sepakati zon bebas skrin (semasa makan, di bilik tidur pada waktu malam) dan bincang cara mengurus permintaan rakan, DM atau kandungan mengejut. Ajar mereka berhenti sebelum memuat naik dan bercakap dengan anda jika sesuatu dalam talian rasa tidak selamat. Ingatkan mereka anda tidak akan marah apabila mereka memberitahu pengalaman digital yang merisaukan.",
+      "menstruation": "Dekati topik haid dengan tenang. Terangkan asasnya—kitaran berbeza panjang, senggugut adalah biasa, dan terdapat pelbagai pilihan keperluan. Tunjukkan cara menjejak kitaran di kertas atau aplikasi dipercayai. Sediakan kit haid kecil untuk ke sekolah dengan tuala, pantiliner dan pakaian dalam tambahan. Ingatkan mereka haid adalah tanda badan sihat, bukan sesuatu yang perlu disembunyikan.",
+      "default": "Saya sedia membantu apa sahaja berkaitan akil baligh, kesejahteraan dan komunikasi keluarga. Anda boleh bertanya tentang rutin kebersihan, sokongan haid, kesihatan emosi, persahabatan, tekanan sekolah, pertimbangan budaya atau agama, serta cara meneruskan perbualan dalam pelbagai bahasa. Jom hadapi bersama—apa yang bermain di fikiran anda?"
+    }
+  },
+  "team": {
+    "title": "Kenali Wira di Sebalik Parenting Hub",
+    "subtitle": "Kami menggabungkan kreativiti, penyelidikan dan teknologi untuk mengangkat setiap keluarga dengan penuh belas kasihan.",
+    "umTagline": "Dipacu oleh semangat komuniti Universiti Malaya.",
+    "celebration": "Bersama-sama kami membina sokongan yang berasaskan penyelidikan dan berjiwa agar ibu bapa dan anak berasa selamat dan diraikan.",
+    "badges": {
+      "dev": "Pembangun",
+      "special": "Inspirasi Istimewa"
+    },
+    "special": {
+      "title": "Dengan penuh penghargaan",
+      "name": "Dr. Nazean Jomhari",
+      "description": "Dr. Nazean Jomhari membimbing kami dengan visi Universiti Malaya—mengutamakan empati, keselamatan dan kesejahteraan digital yang bermakna untuk setiap keluarga.",
+      "highlight": "Bimbingan beliau memastikan misi kami berpijak pada keperluan komuniti sebenar dan kecemerlangan akademik."
+    },
+    "members": {
+      "qais": {
+        "name": "Qais Al-Hrahsheh",
+        "description": "Pembangun utama kami yang menukar idea penuh kasih kepada pengalaman digital yang selamat dan menyeronokkan untuk keluarga."
+      },
+      "tan": {
+        "name": "Tan Kang Zheng",
+        "description": "Mereka bentuk perjalanan intuitif supaya ibu bapa dan anak dapat meneroka sumber dengan mudah."
+      },
+      "chengyang": {
+        "name": "Chengyang Sun",
+        "description": "Menterjemah penyelidikan kepada panduan praktikal yang jelas dan boleh dipercayai."
+      },
+      "raja": {
+        "name": "Raja Nur Aqylah Natasha binti Raja Zazman Shah",
+        "description": "Mengangkat cerita Malaysia dan memastikan setiap perkataan berasa mesra, hormat dan inklusif."
+      },
+      "hanif": {
+        "name": "Hanif Ruben Davni Setiadji",
+        "description": "Mencipta saat pembelajaran yang menyeronokkan supaya topik sukar menjadi mesra."
+      },
+      "rafia": {
+        "name": "Rafia Raida Binta Jashim",
+        "description": "Memperjuangkan kandungan inklusif supaya setiap keluarga rasa diwakili dan disokong."
+      },
+      "wong": {
+        "name": "Wong Yan Wen",
+        "description": "Membawa visual ceria dan penceritaan penuh perhatian ke setiap skrin."
+      },
+      "zhou": {
+        "name": "Zhou Junan",
+        "description": "Membina sistem yang boleh dipercayai supaya aplikasi kekal pantas, selamat dan sentiasa bersedia."
+      }
     }
   },
   "games": {

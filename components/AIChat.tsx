@@ -68,31 +68,41 @@ export default function AIChat() {
   }
 
   const getAIResponse = (userInput: string): string => {
-    // Simple keyword-based responses (replace with actual AI integration)
     const input = userInput.toLowerCase()
-    
-    if (input.includes('puberty') || input.includes('changes')) {
-      return t('aiChat.response.puberty')
-    } else if (input.includes('emotion') || input.includes('mood') || input.includes('feel')) {
-      return t('aiChat.response.emotions')
-    } else if (input.includes('talk') || input.includes('communicate') || input.includes('conversation')) {
-      return t('aiChat.response.communication')
-    } else if (input.includes('friend') || input.includes('social')) {
-      return t('aiChat.response.social')
-    } else if (input.includes('privacy') || input.includes('safe')) {
-      return t('aiChat.response.privacy')
-    } else if (input.includes('game') || input.includes('activity')) {
-      return t('aiChat.response.activities')
-    } else {
-      return t('aiChat.response.default')
+
+    const responsePatterns = [
+      { key: 'aiChat.response.puberty', keywords: ['puberty', 'change', 'develop', 'akil'] },
+      { key: 'aiChat.response.emotions', keywords: ['emotion', 'mood', 'feel', 'emosi', 'perasaan'] },
+      { key: 'aiChat.response.communication', keywords: ['talk', 'communicat', 'conversation', 'listen', 'berbual'] },
+      { key: 'aiChat.response.social', keywords: ['friend', 'social', 'peer', 'kawan'] },
+      { key: 'aiChat.response.privacy', keywords: ['privacy', 'private', 'safe', 'selamat', 'trust'] },
+      { key: 'aiChat.response.activities', keywords: ['game', 'activity', 'play', 'aktiviti'] },
+      { key: 'aiChat.response.hygiene', keywords: ['hygiene', 'clean', 'shower', 'deodorant', 'bersih'] },
+      { key: 'aiChat.response.nutrition', keywords: ['food', 'eat', 'diet', 'nutrition', 'snack', 'makan'] },
+      { key: 'aiChat.response.sleep', keywords: ['sleep', 'rest', 'tidur', 'bed'] },
+      { key: 'aiChat.response.boundaries', keywords: ['boundary', 'consent', 'respect', 'had', 'izin'] },
+      { key: 'aiChat.response.digital', keywords: ['screen', 'phone', 'device', 'online', 'internet', 'media', 'digital'] },
+      { key: 'aiChat.response.menstruation', keywords: ['period', 'menstruation', 'menstruasi', 'haid', 'cycle', 'pads'] },
+    ] as const
+
+    const matched = responsePatterns.find((pattern) =>
+      pattern.keywords.some((keyword) => input.includes(keyword))
+    )
+
+    if (matched) {
+      return t(matched.key)
     }
+
+    return t('aiChat.response.default')
   }
 
   const suggestedQuestions = [
     t('aiChat.suggestions.q1'),
     t('aiChat.suggestions.q2'),
     t('aiChat.suggestions.q3'),
-    t('aiChat.suggestions.q4')
+    t('aiChat.suggestions.q4'),
+    t('aiChat.suggestions.q5'),
+    t('aiChat.suggestions.q6'),
   ]
 
   return (
