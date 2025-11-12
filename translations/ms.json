@@ -7,7 +7,8 @@
     "bodyGuide": "Panduan Badan",
     "guidance": "Panduan Ibu Bapa",
     "games": "Permainan & Aktiviti",
-    "parentGuide": "Petua Keibubapaan"
+    "parentGuide": "Petua Keibubapaan",
+    "team": "Pasukan Kami"
   },
   "home": {
     "title": "Menyokong Anak Anda Melalui Akil Baligh",
@@ -51,6 +52,115 @@
       "content": "Menavigasi akil baligh dengan anak anda boleh terasa mencabar, tetapi anda melakukan yang terbaik! Aplikasi ini menyediakan panduan berasaskan bukti, petua praktikal, dan aktiviti interaktif untuk membantu anda menyokong anak anda dengan yakin dan belas kasihan. Ingat: komunikasi terbuka dan kasih sayang tanpa syarat adalah alat terhebat anda."
     }
   },
+  "team": {
+    "title": "Pasukan Inovasi Universiti Malaya",
+    "subtitle": "Kumpulan pelbagai disiplin yang membina sokongan digital penuh empati untuk keluarga menghadapi akil baligh.",
+    "tagline": "Kenali insan di sebalik pengalaman yang berpaksikan kasih, ilmu dan budaya.",
+    "coreTeam": "Pasukan Teras",
+    "supportTeam": "Bintang Sokongan",
+    "specialAssessor": "Penilai Khas",
+    "valuesTitle": "Nilai yang memandu kerja kami",
+    "values": [
+      "Setiap ciri menghormati suara remaja dan penjaga mereka.",
+      "Kandungan berasaskan bukti digabungkan dengan reka bentuk ceria dan sensitif budaya.",
+      "Kerjasama berterusan bersama pendidik, ahli psikologi dan keluarga."
+    ],
+    "badges": {
+      "programmer": "Programmer",
+      "assessor": "Penilai Khas"
+    },
+    "roles": {
+      "leadProgrammer": "Ketua Programmer",
+      "experienceDesigner": "Pereka Pengalaman",
+      "researchLead": "Ketua Penyelidikan",
+      "contentStrategist": "Perancang Kandungan",
+      "learningFacilitator": "Fasilitator Pembelajaran",
+      "wellbeingAdvocate": "Advokat Kesejahteraan",
+      "uiAnimator": "Pereka UI & Animasi",
+      "techSupport": "Sokongan Teknologi",
+      "assessor": "Penilai Khas"
+    },
+    "members": {
+      "qais": {
+        "role": "Ketua Programmer",
+        "bio": "Mereka bentuk pengalaman keseluruhan, memastikan prestasi lancar, kebolehcapaian, dan interaksi mikro yang menyeronokkan.",
+        "focus": [
+          "Menterjemah keperluan keluarga kepada ciri yang selamat dan boleh dipercayai.",
+          "Memimpin corak reka bentuk inklusif merentas peranti.",
+          "Membimbing pasukan menghasilkan kod yang bersih dan siap masa depan."
+        ]
+      },
+      "tan": {
+        "role": "Pereka Pengalaman",
+        "bio": "Membentuk susun atur intuitif dan aliran visual yang menenangkan supaya anak rasa dilindungi ketika meneroka topik sensitif.",
+        "focus": [
+          "Mereka perjalanan pembelajaran yang imersif dengan animasi lembut.",
+          "Menguji kebolehgunaan bersama keluarga untuk menambah baik setiap interaksi.",
+          "Mencipta sistem warna yang diinspirasikan warisan UM."
+        ]
+      },
+      "sun": {
+        "role": "Ketua Penyelidikan",
+        "bio": "Memimpin proses kajian, menggabungkan dapatan akademik dengan maklum balas keluarga sebenar.",
+        "focus": [
+          "Mensintesis kajian tentang pendidikan akil baligh dan kesejahteraan.",
+          "Membangunkan rangka penilaian bersama pendidik.",
+          "Memastikan ketepatan pelbagai bahasa di seluruh platform."
+        ]
+      },
+      "raja": {
+        "role": "Perancang Kandungan",
+        "bio": "Menghasilkan cerita dan salinan aplikasi yang empati untuk keluarga Malaysia yang pelbagai.",
+        "focus": [
+          "Melokalkan panduan dalam Bahasa Inggeris, Melayu dan Arab.",
+          "Menjaga tona yang hangat dan meyakinkan di seluruh aplikasi.",
+          "Bekerjasama dengan pasukan AI untuk respons yang peka budaya."
+        ]
+      },
+      "hanif": {
+        "role": "Fasilitator Pembelajaran",
+        "bio": "Menghubungkan pedagogi dengan permainan supaya setiap aktiviti memupuk keyakinan dan rasa ingin tahu.",
+        "focus": [
+          "Memadankan hasil kurikulum dengan permainan mini interaktif.",
+          "Mereka soalan refleksi yang boleh digunakan ibu bapa di rumah.",
+          "Mengadvokasi pengalaman belajar yang ceria dan berasaskan kekuatan."
+        ]
+      },
+      "rafia": {
+        "role": "Advokat Kesejahteraan",
+        "bio": "Memastikan keselamatan emosi dengan menangani topik sensitif secara penuh belas kasihan.",
+        "focus": [
+          "Mengintegrasi semakan kesihatan mental di seluruh pengalaman.",
+          "Bekerjasama dengan kaunselor untuk mengesahkan bahasa sokongan.",
+          "Mereka ritual menenangkan dan panduan pernafasan untuk pengguna muda."
+        ]
+      },
+      "wong": {
+        "role": "Pereka UI & Animasi",
+        "bio": "Menghidupkan antara muka dengan animasi yang membimbing, menenangkan dan meraikan kemajuan.",
+        "focus": [
+          "Mereka animasi mikro yang menghargai rasa ingin tahu.",
+          "Memastikan transisi mesra pembaca pelbagai bahasa.",
+          "Menganimasikan lencana dan sambutan yang menambah keyakinan diri."
+        ]
+      },
+      "zhou": {
+        "role": "Sokongan Teknologi",
+        "bio": "Menjaga aliran binaan dan kestabilan pengalaman pada pelbagai peranti.",
+        "focus": [
+          "Mengoptimumkan prestasi untuk persekitaran sambungan yang berbeza.",
+          "Mengautomasi semakan kualiti untuk kebolehcapaian dan kepantasan.",
+          "Menyokong pelaksanaan kepada sekolah dan rakan komuniti."
+        ]
+      }
+    },
+    "assessor": {
+      "name": "Dr. Nazean Jomhari",
+      "role": "Penilai Khas",
+      "bio": "Memberi bimbingan strategik dan ketelitian akademik agar projek sejajar dengan standard Universiti Malaya dan keutamaan kesejahteraan keluarga."
+    },
+    "closing": "Dibina dengan ❤️ di Universiti Malaya untuk menyokong setiap keluarga."
+  },
   "welcome": {
     "slide1": {
       "title": "Selamat Datang, Ibu Bapa yang Dihormati! 💝",
@@ -83,36 +193,261 @@
     "next": "Seterusnya",
     "previous": "Sebelumnya",
     "skip": "Langkau ke Privasi",
-    "getStarted": "Mari Mulakan Perjalanan Ini"
+    "getStarted": "Mari Mulakan Perjalanan Ini",
+    "partner": "Dengan kerjasama Universiti Malaya"
   },
   "aiChat": {
     "title": "Pembantu Ibu Bapa",
     "subtitle": "Tanya saya apa sahaja tentang akil baligh",
-    "greeting": "Hello! Saya di sini untuk membantu anda menavigasi keibubapaan melalui akil baligh. Tanya saya apa sahaja - dari mengendalikan perbualan sukar hingga memahami perubahan fizikal. Bagaimana saya boleh menyokong anda hari ini?",
+    "greeting": "Hai! Saya sedia membantu anda dalam Bahasa Inggeris, Bahasa Melayu atau Arab. Kongsikan cabaran anda dan saya akan berikan langkah praktikal yang boleh terus digunakan. Bagaimana saya boleh menyokong anda hari ini?",
     "placeholder": "Taip soalan anda di sini...",
-    "suggestedTitle": "Soalan yang dicadangkan:",
     "suggestions": {
-      "q1": "Bagaimana saya memulakan perbualan akil baligh?",
-      "q2": "Bagaimana saya boleh menyokong emosi anak saya?",
-      "q3": "Aktiviti apa yang boleh membantu anak saya?",
-      "q4": "Bagaimana saya menangani perubahan mood?"
+      "title": "Cuba tanya:",
+      "items": [
+        "Bagaimana saya memulakan perbualan akil baligh?",
+        "Apa cara terbaik menyokong emosi anak saya?",
+        "Aktiviti apa yang boleh membina keyakinan anak?",
+        "Bagaimana saya menangani perubahan mood dengan empati?"
+      ]
+    },
+    "topics": {
+      "title": "Topik pantas",
+      "items": [
+        {
+          "id": "puberty",
+          "label": "Asas akil baligh",
+          "question": "Bagaimana cara terbaik menerangkan perubahan badan kepada anak?"
+        },
+        {
+          "id": "emotions",
+          "label": "Emosi besar",
+          "question": "Bagaimana saya boleh membimbing anak melalui perasaan yang kuat semasa akil baligh?"
+        },
+        {
+          "id": "communication",
+          "label": "Berbual terbuka",
+          "question": "Bagaimana mengekalkan perbualan jujur dengan anak pra-remaja?"
+        },
+        {
+          "id": "social",
+          "label": "Rakan & komuniti",
+          "question": "Bagaimana saya membantu anak menghadapi perubahan persahabatan?"
+        },
+        {
+          "id": "privacy",
+          "label": "Privasi & keselamatan",
+          "question": "Bagaimana mengajar sempadan sihat dan keselamatan dalam talian?"
+        },
+        {
+          "id": "activities",
+          "label": "Aktiviti keluarga",
+          "question": "Aktiviti bonding apa yang sesuai untuk belajar tentang akil baligh?"
+        }
+      ]
+    },
+    "shared": {
+      "tipsTitle": "Langkah praktikal",
+      "startersTitle": "Ayat pembuka perbualan",
+      "remindersTitle": "Ingat dengan lembut",
+      "resourcesTitle": "Teruskan meneroka"
     },
     "response": {
-      "puberty": "Soalan bagus! Memulakan perbualan tentang akil baligh awal dan mengekalkannya berterusan adalah kunci. Gunakan peluang semula jadi seperti melihat kandungan berkaitan di TV atau buku. Pastikan nada santai dan normalkan topik. Biarkan anak anda tahu mereka sentiasa boleh datang kepada anda dengan soalan, dan yakinkan mereka bahawa semua perubahan yang mereka alami adalah benar-benar normal.",
-      "emotions": "Sokongan emosi semasa akil baligh adalah penting. Sahkan perasaan anak anda - perubahan mood adalah normal kerana perubahan hormon. Dengar tanpa penghakiman, beri mereka ruang apabila diperlukan, tetapi juga beritahu mereka anda sentiasa ada. Bantu mereka mengenal pasti dan menamakan emosi mereka, dan ajar strategi menangani yang sihat.",
-      "communication": "Komunikasi berkesan membina kepercayaan. Amalkan mendengar aktif - singkirkan gangguan dan beri perhatian penuh. Tanya soalan terbuka daripada soalan ya/tidak. Kongsi pengalaman anda sendiri (sesuai umur) untuk menunjukkan pemahaman. Yang paling penting, cipta zon bebas penghakiman di mana mereka berasa selamat berkongsi apa sahaja.",
-      "social": "Dinamik sosial berubah semasa akil baligh. Bantu anak anda menavigasi persahabatan dengan membincangkan seperti apa hubungan yang sihat. Bincangkan tekanan rakan sebaya dan beri mereka bahasa untuk menetapkan sempadan. Galakkan persahabatan yang pelbagai dan sahkan perasaan mereka apabila persahabatan berubah atau berakhir.",
-      "privacy": "Aplikasi ini mengutamakan privasi sepenuhnya. Semua catatan diari dan data kekal pada peranti anda. Diari adalah ruang peribadi untuk anak anda. Kami tidak menjejak pengguna atau mengumpul maklumat peribadi. Privasi keluarga anda dan keselamatan anak anda adalah keutamaan utama kami.",
-      "activities": "Bahagian Permainan menawarkan aktiviti interaktif yang direka untuk mengajar tentang akil baligh dengan cara yang menyeronokkan dan menarik. Ini termasuk permainan ingatan, latihan pengiktirafan emosi, dan aktiviti padanan. Permainan ini membantu menormalkan perbualan tentang akil baligh dan menjadikan pembelajaran menyeronokkan daripada janggal.",
-      "default": "Saya di sini untuk membantu anda dengan sebarang soalan keibubapaan tentang akil baligh! Anda boleh tanya saya tentang: strategi komunikasi, memahami perubahan fizikal/emosi, mengendalikan situasi sukar, menyokong kesihatan mental anak anda, menavigasi cabaran sosial, dan banyak lagi. Apa yang anda ingin tahu?"
+      "puberty": {
+        "title": "Terangkan akil baligh dengan tenang",
+        "intro": "Anak akan rasa lebih selamat apabila orang dewasa bercakap secara terbuka tanpa rasa malu tentang proses membesar.",
+        "tips": [
+          "Gunakan bahasa yang positif tentang badan supaya anak tahu setiap perubahan adalah normal.",
+          "Terangkan perubahan mengikut turutan yang mereka mungkin perasan—pertumbuhan, emosi, keperluan kebersihan.",
+          "Peruntukkan masa ringkas tetapi kerap seperti dalam kereta atau sebelum tidur untuk berbual santai."
+        ],
+        "starters": [
+          "\"Ada perubahan baru yang kamu perasan? Ibu/ayah sentiasa sedia berbual tentang semuanya.\"",
+          "\"Masa ibu/ayah sebaya kamu pun banyak persoalan. Mahu dengar bagaimana kami lalui dulu?\""
+        ],
+        "reminders": [
+          "Nada suara yang tenang menunjukkan tidak ada apa yang perlu ditakuti.",
+          "Tawarkan buku atau video dipercayai dalam bahasa yang anak selesa."
+        ],
+        "resources": [
+          "Terokai bahagian Panduan Badan bersama untuk visual dan penerangan ringkas.",
+          "Main satu permainan di halaman Aktiviti untuk mencetuskan soalan secara semula jadi."
+        ],
+        "closing": "Ingatkan anak bahawa mereka boleh bertanya bila-bila masa. Keterbukaan hari ini membina kepercayaan untuk esok."
+      },
+      "emotions": {
+        "title": "Bimbing emosi yang kuat",
+        "intro": "Perubahan hormon boleh membuatkan anak rasa seperti menaiki roller coaster emosi.",
+        "tips": [
+          "Namakan emosi yang anda nampak (\"Nampak macam kamu rasa kecewa\") untuk tunjuk empati.",
+          "Bina kit tenang bersama—latihan pernafasan, muzik menenangkan, atau berjalan sekejap.",
+          "Galakkan mereka menjejak mood dalam Diari supaya mudah melihat corak."
+        ],
+        "starters": [
+          "\"Apa biasanya membantu kamu rasa lega bila hari terasa berat? Jom senaraikan bersama.\"",
+          "\"Sekarang kamu nak dengar nasihat, meluahkan, atau hanya pelukan?\""
+        ],
+        "reminders": [
+          "Elak menolak perasaan mereka—pengesahan datang sebelum menyelesaikan masalah.",
+          "Kongsi bagaimana anda mengurus emosi sendiri sebagai model coping yang sihat."
+        ],
+        "resources": [
+          "Cuba permainan Memori Emosi untuk belajar mengenal pasti perasaan dengan cara menyeronokkan.",
+          "Ajak mereka menulis nota pendek selepas situasi mencabar."
+        ],
+        "closing": "Empati yang konsisten mengajar anak bahawa semua perasaan boleh diterima dan boleh diurus."
+      },
+      "communication": {
+        "title": "Bina perbualan dua hala yang berani",
+        "intro": "Anak pra-remaja lebih mudah terbuka apabila mereka rasa didengar, bukan dihakimi.",
+        "tips": [
+          "Ketepikan gangguan dan kekalkan kontak mata semasa mereka berkongsi.",
+          "Gunakan soalan ingin tahu seperti \"Bagaimana perasaan kamu tentang situasi itu?\" berbanding soalan ya/tidak.",
+          "Kongsi kisah kecil zaman remaja anda untuk eratkan hubungan."
+        ],
+        "starters": [
+          "\"Kalau kawan kamu hadapi perkara ini, nasihat apa yang kamu beri?\"",
+          "\"Bahagian mana tentang membesar yang buat kamu teruja? Mana yang masih membingungkan?\""
+        ],
+        "reminders": [
+          "Sunyi seketika tidak mengapa—beri ruang untuk mereka berfikir sebelum menjawab.",
+          "Beritahu mereka bahawa berhenti seketika dan sambung kemudian juga pilihan yang baik."
+        ],
+        "resources": [
+          "Baca satu bahagian ringkas dari Panduan Ibu Bapa dan bincang satu perkara penting.",
+          "Gunakan aktiviti Garis Masa sebagai cara neutral memulakan topik mendalam."
+        ],
+        "closing": "Apabila komunikasi kerap dan lembut, anak tahu anda sekutu paling selamat mereka."
+      },
+      "social": {
+        "title": "Sokong persahabatan yang berubah",
+        "intro": "Hubungan rakan sebaya boleh berubah cepat semasa akil baligh dan itu boleh rasa mengelirukan.",
+        "tips": [
+          "Bantu anak mendefinisikan bagaimana rupa persahabatan yang saling menghormati.",
+          "Latih lakon peranan untuk menghadapi tekanan rakan sebaya atau usikan supaya mereka bersedia.",
+          "Galakkan penyertaan dalam kumpulan berbeza seperti sukan, kelab atau aktiviti kreatif."
+        ],
+        "starters": [
+          "\"Siapa yang buat kamu senyum hari ini? Ada sesiapa yang buat keadaan sukar?\"",
+          "\"Nak cuba latihan apa yang boleh kamu katakan jika sempadan kamu dilanggar?\""
+        ],
+        "reminders": [
+          "Sahkan rasa sedih apabila persahabatan berubah; ia sebahagian semula jadi proses membesar.",
+          "Raikan tindakan baik yang mereka beri atau terima untuk kukuhkan hubungan sihat."
+        ],
+        "resources": [
+          "Rujuk bahagian Panduan untuk skrip tentang hubungan sihat.",
+          "Rancang aktiviti bersama rakan dipercayai untuk memupuk hubungan positif."
+        ],
+        "closing": "Yakinkan anak bahawa persahabatan sentiasa berkembang dan anda akan bantu mereka di setiap langkah."
+      },
+      "privacy": {
+        "title": "Ajar privasi dan keselamatan dengan hormat",
+        "intro": "Anak memerlukan panduan jelas tentang sempadan tubuh dan keselamatan digital.",
+        "tips": [
+          "Sepakati peraturan privasi di rumah—mengetuk sebelum masuk bilik, ruang khas untuk diari.",
+          "Bincang keselamatan dalam talian: kata laluan kukuh, tidak berkongsi gambar peribadi, dan cari bantuan jika rasa tidak selesa.",
+          "Tunjukkan contoh dengan menghormati privasi mereka supaya mereka belajar menghormati orang lain."
+        ],
+        "starters": [
+          "\"Jom cipta perjanjian privasi yang sesuai untuk kita sekeluarga.\"",
+          "\"Jika ada perkara dalam talian yang buat kamu tidak selesa, apa sokongan yang kamu perlukan daripada ibu/ayah?\""
+        ],
+        "reminders": [
+          "Gunakan nada kerjasama, bukan hukuman, untuk membina kepercayaan.",
+          "Semak semula perjanjian secara berkala apabila anak membesar dan keperluan berubah."
+        ],
+        "resources": [
+          "Tinjau komitmen privasi aplikasi bersama untuk menambah keyakinan.",
+          "Tunjukkan bagaimana ciri Diari kekal selamat untuk catatan peribadi."
+        ],
+        "closing": "Sempadan yang jelas dan hormat memberi anak keyakinan melindungi diri di mana-mana."
+      },
+      "activities": {
+        "title": "Cipta detik pembelajaran yang menyeronokkan",
+        "intro": "Aktiviti ringkas dan bermain menjadikan topik akil baligh kurang menakutkan.",
+        "tips": [
+          "Jadualkan sesi permainan pendek—10 hingga 15 minit sudah cukup untuk belajar dan berhubung.",
+          "Raikan usaha dan keberanian bertanya soalan, bukan sekadar markah.",
+          "Selang-selikan permainan berinformasi dengan aktiviti kreatif ringan."
+        ],
+        "starters": [
+          "\"Permainan mana yang kamu rasa seronok dicuba minggu ini?\"",
+          "\"Lepas bermain nanti, jom kongsi satu fakta menarik yang kita pelajari.\""
+        ],
+        "reminders": [
+          "Ambil rehat jika aktiviti terasa berat; kegembiraan membantu pembelajaran.",
+          "Ajak adik-beradik atau rakan dipercayai untuk bermain bersama apabila sesuai."
+        ],
+        "resources": [
+          "Terokai hab Permainan untuk gabungkan cabaran memori, kuiz dan emosi.",
+          "Rujuk Panduan Badan selepas bermain untuk mendalami ilmu baru."
+        ],
+        "closing": "Permainan positif secara konsisten membina ilmu, ketahanan dan hubungan keluarga yang lebih rapat."
+      },
+      "default": {
+        "title": "Saya sedia membantu",
+        "intro": "Saya belum jumpa padanan tepat, tetapi kita boleh teruskan dengan beberapa langkah ini.",
+        "tips": [
+          "Kongsikan sedikit lagi konteks seperti umur anak atau perasaan mereka.",
+          "Beritahu jika anda mahu jawapan dalam Bahasa Inggeris, Melayu atau Arab.",
+          "Pilih kad topik di bawah untuk mulakan perbualan yang lebih fokus."
+        ],
+        "starters": [
+          "\"Hasil macam mana yang anda harapkan untuk diri dan anak?\"",
+          "\"Ada situasi baru-baru ini yang mahu kita bincang bersama?\""
+        ],
+        "reminders": [
+          "Anda sudah melakukan yang terbaik—mencari bantuan adalah tanda kasih sayang.",
+          "Setiap keluarga unik; kita akan sesuaikan panduan dengan nilai anda."
+        ],
+        "resources": [
+          "Terokai Panduan Ibu Bapa untuk bacaan lebih mendalam tentang komunikasi dan kesejahteraan.",
+          "Cuba permainan ringkas untuk membuka perbualan, kemudian kembali dengan soalan baharu."
+        ],
+        "closing": "Tanya saya bila-bila masa. Kita akan cari pendekatan yang sesuai untuk keluarga anda."
+      }
     }
   },
   "games": {
     "title": "Permainan & Aktiviti Interaktif",
     "subtitle": "Permainan pendidikan yang menyeronokkan untuk anak anda belajar tentang akil baligh 🎮",
+    "heroBadge": "Pembelajaran mesra keluarga",
+    "heroDescription": "Permainan ringkas yang berpandukan langkah untuk mencetuskan perbualan bermakna dan keyakinan.",
     "easy": "Mudah",
     "medium": "Sederhana",
     "moreActivities": "Lebih Banyak Aktiviti Tersedia",
+    "spotlightTitle": "Pilih gaya permainan",
+    "spotlightDescription": "Ketuk kad untuk meneroka mod permainan yang sesuai dengan mood hari ini.",
+    "benefitsTitle": "Mengapa keluarga menyukai permainan ini",
+    "benefits": [
+      {
+        "title": "Membina keyakinan",
+        "description": "Permainan menjadikan topik sensitif lebih santai supaya anak belajar tanpa rasa malu."
+      },
+      {
+        "title": "Menguatkan hubungan",
+        "description": "Detik bermain bersama membantu anda mendengar, ketawa, dan menjawab soalan bersama."
+      },
+      {
+        "title": "Idea perbualan segera",
+        "description": "Setiap cabaran membuka peluang untuk berbincang secara semula jadi."
+      }
+    ],
+    "playTipsTitle": "Panduan bermain untuk ibu bapa",
+    "playTips": [
+      "Duduk bersama untuk pusingan pertama dan tunjuk cara berfikir tentang setiap pilihan.",
+      "Berhenti selepas soalan mencabar dan tanya, 'Apa yang buat kamu pilih jawapan itu?'.",
+      "Raikan usaha, rasa ingin tahu, dan sikap prihatin melebihi markah."
+    ],
+    "wellbeing": {
+      "title": "Teruskan perbualan",
+      "description": "Selepas setiap permainan, cuba satu soalan ini untuk bantu anak terus berfikir:",
+      "prompts": [
+        "Apa yang mengejutkan kamu dalam permainan hari ini?",
+        "Senario mana paling rasa seperti kehidupan sebenar?",
+        "Ada perkara yang kamu mahu kita pelajari lebih lanjut bersama?"
+      ]
+    },
     "startGame": "Mula Permainan",
     "score": "Skor",
     "question": "Soalan",

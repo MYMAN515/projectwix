@@ -12,6 +12,25 @@ interface Message {
   timestamp: Date
 }
 
+interface ResponseTemplate {
+  title?: string
+  intro?: string
+  tips?: string[]
+  starters?: string[]
+  reminders?: string[]
+  resources?: string[]
+  closing?: string
+}
+
+const KEYWORD_GROUPS: Record<string, string[]> = {
+  puberty: ['puberty', 'change', 'changes', 'akil baligh', 'baligh', 'perubahan', 'بلوغ', 'النمو', 'الجسد'],
+  emotions: ['emotion', 'emotions', 'feel', 'feeling', 'mood', 'emosi', 'perasaan', 'hati', 'مزاج', 'شعور', 'مشاعر'],
+  communication: ['talk', 'communicat', 'conversation', 'berbual', 'bercakap', 'bincang', 'komunikasi', 'تحدث', 'حوار', 'كلام'],
+  social: ['friend', 'friends', 'social', 'peer', 'kawan', 'sosial', 'rakan', 'persahabatan', 'صديق', 'أصدقاء', 'اجتماع'],
+  privacy: ['privacy', 'private', 'safe', 'safety', 'secure', 'privasi', 'keselamatan', 'selamat', 'batas', 'حدود', 'أمان', 'سلامة'],
+  activities: ['game', 'games', 'play', 'activity', 'activities', 'permainan', 'aktiviti', 'main', 'نشاط', 'أنشطة', 'لعبة']
+}
+
 export default function AIChat() {
   const { t } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
@@ -19,6 +38,45 @@ export default function AIChat() {
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+
+  const sharedLabels = t<Record<string, string>>('aiChat.shared')
+  const responseTemplates = t<Record<string, ResponseTemplate>>('aiChat.response')
+  const suggestionsData = t<{ title: string; items: string[] }>('aiChat.suggestions')
+  const topicData = t<{ title: string; items: { id: string; label: string; question: string }[] }>('aiChat.topics')
+
+  const suggestionItems = suggestionsData?.items ?? []
+  const topicItems = topicData?.items ?? []
+
+  const formatResponse = (template?: ResponseTemplate): string => {
+    const labels = {
+      tips: sharedLabels?.tipsTitle ?? 'Key steps',
+      starters: sharedLabels?.startersTitle ?? 'Conversation starters',
+      reminders: sharedLabels?.remindersTitle ?? 'Gentle reminders',
+      resources: sharedLabels?.resourcesTitle ?? 'Keep exploring'
+    }
+
+    if (!template) {
+      return responseTemplates?.default?.intro ?? t('aiChat.greeting')
+    }
+
+    const sections: string[] = []
+    if (template.title) sections.push(`🌟 ${template.title}`)
+    if (template.intro) sections.push(template.intro)
+
+    const buildList = (title: string, items?: string[]) => {
+      if (!items || items.length === 0) return
+      sections.push(`${title}:\n• ${items.join('\n• ')}`)
+    }
+
+    buildList(labels.tips, template.tips)
+    buildList(labels.starters, template.starters)
+    buildList(labels.reminders, template.reminders)
+    buildList(labels.resources, template.resources)
+
+    if (template.closing) sections.push(template.closing)
+
+    return sections.join('\n\n')
+  }
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -40,13 +98,14 @@ export default function AIChat() {
     }
   }, [isOpen, t, messages.length])
 
-  const handleSend = async () => {
-    if (!input.trim()) return
+  const handleSend = async (overrideText?: string) => {
+    const text = (overrideText ?? input).trim()
+    if (!text) return
 
     const userMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
-      content: input,
+      content: text,
       timestamp: new Date()
     }
 
@@ -59,7 +118,7 @@ export default function AIChat() {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: getAIResponse(input),
+        content: getAIResponse(text),
         timestamp: new Date()
       }
       setMessages(prev => [...prev, aiResponse])
@@ -68,32 +127,21 @@ export default function AIChat() {
   }
 
   const getAIResponse = (userInput: string): string => {
-    // Simple keyword-based responses (replace with actual AI integration)
-    const input = userInput.toLowerCase()
-    
-    if (input.includes('puberty') || input.includes('changes')) {
-      return t('aiChat.response.puberty')
-    } else if (input.includes('emotion') || input.includes('mood') || input.includes('feel')) {
-      return t('aiChat.response.emotions')
-    } else if (input.includes('talk') || input.includes('communicate') || input.includes('conversation')) {
-      return t('aiChat.response.communication')
-    } else if (input.includes('friend') || input.includes('social')) {
-      return t('aiChat.response.social')
-    } else if (input.includes('privacy') || input.includes('safe')) {
-      return t('aiChat.response.privacy')
-    } else if (input.includes('game') || input.includes('activity')) {
-      return t('aiChat.response.activities')
-    } else {
-      return t('aiChat.response.default')
-    }
-  }
+    const normalized = userInput.toLowerCase()
+    let matchedKey: string | null = null
 
-  const suggestedQuestions = [
-    t('aiChat.suggestions.q1'),
-    t('aiChat.suggestions.q2'),
-    t('aiChat.suggestions.q3'),
-    t('aiChat.suggestions.q4')
-  ]
+    for (const [key, terms] of Object.entries(KEYWORD_GROUPS)) {
+      if (terms.some((term) => normalized.includes(term))) {
+        matchedKey = key
+        break
+      }
+    }
+
+    const templateKey = matchedKey ?? 'default'
+    const template = responseTemplates?.[templateKey] ?? responseTemplates?.default
+
+    return formatResponse(template)
+  }
 
   return (
     <>
@@ -144,6 +192,28 @@ export default function AIChat() {
                 <X className="w-5 h-5" />
               </button>
             </div>
+
+            {topicItems.length > 0 && messages.length <= 3 && (
+              <div className="px-4 py-3 bg-white/40 border-b border-white/50">
+                <p className="text-xs text-gray-600 font-semibold mb-2">
+                  {topicData?.title}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {topicItems.map((topic) => (
+                    <motion.button
+                      key={topic.id}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                      disabled={isLoading}
+                      onClick={() => handleSend(topic.question)}
+                      className="text-xs md:text-sm bg-white text-gray-700 px-3 py-2 rounded-full border border-primary-200 shadow-sm hover:shadow-md transition-all disabled:opacity-60"
+                    >
+                      {topic.label}
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-white/30">
@@ -216,13 +286,13 @@ export default function AIChat() {
             </div>
 
             {/* Suggested Questions */}
-            {messages.length === 1 && (
+            {messages.length === 1 && suggestionItems.length > 0 && (
               <div className="px-4 py-2 bg-white/50 border-t border-gray-200">
                 <p className="text-xs text-gray-600 mb-2 font-semibold">
-                  {t('aiChat.suggestedTitle')}
+                  {suggestionsData?.title}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {suggestedQuestions.map((question, index) => (
+                  {suggestionItems.map((question, index) => (
                     <button
                       key={index}
                       onClick={() => setInput(question)}
@@ -242,7 +312,12 @@ export default function AIChat() {
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault()
+                      handleSend()
+                    }
+                  }}
                   placeholder={t('aiChat.placeholder')}
                   className="flex-1 bg-white rounded-full px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-300"
                 />
