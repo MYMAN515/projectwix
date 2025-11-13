@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
+import { safeLocalStorage } from '@/utils/storage'
 
 export default function WelcomeCheck({ children }: { children: React.ReactNode }) {
   const router = useRouter()
@@ -9,7 +10,7 @@ export default function WelcomeCheck({ children }: { children: React.ReactNode }
 
   useEffect(() => {
     // Check if welcome has been completed
-    const welcomeCompleted = localStorage.getItem('welcomeCompleted')
+    const welcomeCompleted = safeLocalStorage.getItem('welcomeCompleted')
     
     // If not completed and not on welcome page, redirect
     if (!welcomeCompleted && pathname !== '/welcome') {

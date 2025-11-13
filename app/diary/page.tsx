@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Trash2, Calendar, Smile, Meh, Frown, Heart } from 'lucide-react'
 import { format } from 'date-fns'
+import { safeLocalStorage } from '@/utils/storage'
 
 type Mood = 'happy' | 'neutral' | 'sad' | 'excited' | 'anxious'
 type Entry = {
@@ -21,16 +22,22 @@ export default function DiaryPage() {
 
   // Load entries from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem('puberty-diary')
+    const saved = safeLocalStorage.getItem('puberty-diary')
     if (saved) {
-      setEntries(JSON.parse(saved))
+      try {
+        setEntries(JSON.parse(saved))
+      } catch (error) {
+        console.warn('Unable to parse saved diary entries', error)
+      }
     }
   }, [])
 
   // Save entries to localStorage
   useEffect(() => {
     if (entries.length > 0) {
-      localStorage.setItem('puberty-diary', JSON.stringify(entries))
+      safeLocalStorage.setItem('puberty-diary', JSON.stringify(entries))
+    } else {
+      safeLocalStorage.removeItem('puberty-diary')
     }
   }, [entries])
 
