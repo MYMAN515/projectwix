@@ -18,6 +18,8 @@
     "startLearning": "Terokai Panduan Ibu Bapa",
     "myDiary": "Lihat Aktiviti",
     "features": {
+      "title": "Terokai setiap sudut Parenting Hub",
+      "subtitle": "Pautan pantas mesra telefon—ketik kad untuk terus masuk.",
       "parentGuide": {
         "title": "Panduan Ibu Bapa Komprehensif",
         "description": "Perbualan langkah demi langkah, petua sensitif budaya, dan penenang hati untuk setiap soalan besar."
@@ -168,6 +170,7 @@
       }
     },
     "clearHistory": "Mulakan chat baharu",
+    "closeLabel": "Tutup tetingkap chat",
     "sendLabel": "Hantar mesej",
     "response": {
       "puberty": "Soalan hebat! Cuba langkah ini:\n• Pilih detik santai harian—perjalanan kereta, berjalan, tugasan bersama—untuk menyebut perubahan yang anda perasan.\n• Kongsi fakta kecil secara kerap supaya maklumat rasa biasa, bukan satu \"ceramah besar\".\n• Jemput soalan dengan berkata, \"Anda boleh tanya saya apa sahaja walaupun rasa janggal.\"\n• Sediakan buku atau artikel dipercayai untuk dibaca sendiri sebelum berbincang semula.\n• Yakinkan mereka setiap badan berkembang mengikut masa sendiri dan anda sentiasa di sisi mereka.",
