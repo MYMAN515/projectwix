@@ -208,22 +208,51 @@ export default function TimelinePage() {
               <motion.button
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={!isMatched ? { scale: 1.05 } : {}}
+                animate={{ 
+                  opacity: 1, 
+                  y: 0,
+                  scale: isSelected ? 1.1 : isMatched ? 0.95 : 1,
+                  rotate: isSelected ? [0, -5, 5, -5, 0] : 0,
+                  boxShadow: isSelected 
+                    ? '0 0 0 4px rgba(59, 130, 246, 0.5), 0 10px 25px rgba(59, 130, 246, 0.3)' 
+                    : isMatched 
+                    ? '0 0 0 2px rgba(34, 197, 94, 0.5)' 
+                    : '0 2px 8px rgba(0, 0, 0, 0.1)'
+                }}
+                transition={{ 
+                  delay: index * 0.05,
+                  rotate: { duration: 0.5 },
+                  scale: { type: "spring", stiffness: 300, damping: 20 }
+                }}
+                whileHover={!isMatched && !isSelected ? { scale: 1.05, y: -5 } : {}}
                 whileTap={!isMatched ? { scale: 0.95 } : {}}
                 onClick={() => handleItemClick(item)}
                 disabled={isMatched}
-                className={`p-6 rounded-2xl font-medium text-lg transition-all ${
+                className={`p-6 rounded-2xl font-medium text-lg transition-all relative overflow-hidden ${
                   isMatched
-                    ? 'bg-green-100 text-green-800 border-2 border-green-400'
+                    ? 'bg-gradient-to-br from-green-100 to-green-200 text-green-800 border-2 border-green-400'
                     : isSelected
-                    ? 'glass-effect border-4 border-primary-500 text-gray-800'
-                    : 'glass-effect text-gray-700 hover:border-2 hover:border-primary-300'
+                    ? 'bg-gradient-to-br from-blue-400 to-blue-500 text-white border-4 border-blue-300'
+                    : 'glass-effect text-gray-700 hover:border-2 hover:border-blue-300'
                 }`}
               >
-                {isMatched && <Check className="w-6 h-6 inline mr-2" />}
-                {item.text}
+                {isSelected && (
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="absolute inset-0 bg-blue-400/20 rounded-2xl"
+                  />
+                )}
+                {isMatched && (
+                  <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    className="inline-block mr-2"
+                  >
+                    <Check className="w-6 h-6" />
+                  </motion.div>
+                )}
+                <span className="relative z-10">{item.text}</span>
               </motion.button>
             )
           })}

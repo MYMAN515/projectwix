@@ -12,6 +12,8 @@ import {
   ShieldCheck,
   CalendarCheck,
   Users,
+  Droplets,
+  Target,
 } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import RegisterServiceWorker from './register-sw'
@@ -29,16 +31,16 @@ export default function Home() {
     },
     {
       icon: <Activity className="w-8 h-8" />,
-      title: t('home.features.games.title'),
-      description: t('home.features.games.description'),
-      href: "/games",
+      title: 'Activities & Games',
+      description: 'All fun activities and games in one easy place for kids and parents',
+      href: "/activities",
       color: "from-purple-400 to-pink-500"
     },
     {
       icon: <Heart className="w-8 h-8" />,
-      title: t('home.features.changes.title'),
-      description: t('home.features.changes.description'),
-      href: "/changes",
+      title: 'Understanding Changes & Body Guide',
+      description: 'Learn about physical and emotional changes during puberty',
+      href: "/body-guide",
       color: "from-pink-400 to-rose-500"
     },
     {
@@ -49,11 +51,25 @@ export default function Home() {
       color: "from-amber-400 to-orange-500"
     },
     {
-      icon: <Lightbulb className="w-8 h-8" />,
-      title: t('home.features.bodyGuide.title'),
-      description: t('home.features.bodyGuide.description'),
-      href: "/body-guide",
-      color: "from-green-400 to-emerald-500"
+      icon: <BookOpen className="w-8 h-8" />,
+      title: 'Resource Library',
+      description: 'Downloadable guides, checklists, and printable activity sheets',
+      href: "/resources",
+      color: "from-indigo-400 to-purple-500"
+    },
+    {
+      icon: <Droplets className="w-8 h-8" />,
+      title: "Hygiene & Self-Care",
+      description: "Build daily routines and learn about hygiene with interactive games",
+      href: "/hygiene",
+      color: "from-cyan-400 to-blue-500"
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Confidence & Lifestyle",
+      description: "Track habits, build confidence, and learn about healthy lifestyle choices",
+      href: "/confidence",
+      color: "from-purple-400 to-indigo-500"
     }
   ]
 

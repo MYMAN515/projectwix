@@ -459,17 +459,50 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
   ])
   const [selectedLeft, setSelectedLeft] = useState<number | null>(null)
   const [matched, setMatched] = useState<number[]>([])
+  const [cardPositions, setCardPositions] = useState<{ [key: number]: { x: number; y: number } }>({})
+
+  const handleLeftClick = (id: number) => {
+    if (matched.includes(id)) return
+    setSelectedLeft(id)
+    // Animate card movement
+    setCardPositions({
+      ...cardPositions,
+      [id]: { x: 0, y: -20 }
+    })
+  }
 
   const handleRightClick = (id: number) => {
     if (selectedLeft === id) {
       setMatched([...matched, id])
       setScore(score + 10)
+      // Animate matched cards moving together
+      setCardPositions({
+        ...cardPositions,
+        [id]: { x: 0, y: 0 }
+      })
       setSelectedLeft(null)
       
       if (matched.length + 1 === pairs.length) {
         setTimeout(() => setGameState('finished'), 500)
       }
     } else {
+      // Wrong match - shake animation
+      setCardPositions({
+        ...cardPositions,
+        [id]: { x: -10, y: 0 }
+      })
+      setTimeout(() => {
+        setCardPositions({
+          ...cardPositions,
+          [id]: { x: 10, y: 0 }
+        })
+        setTimeout(() => {
+          setCardPositions({
+            ...cardPositions,
+            [id]: { x: 0, y: 0 }
+          })
+        }, 100)
+      }, 100)
       setSelectedLeft(null)
     }
   }
@@ -504,16 +537,22 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
               {pairs.map((pair) => (
                 <motion.button
                   key={`left-${pair.id}`}
-                  whileHover={{ scale: matched.includes(pair.id) ? 1 : 1.02 }}
-                  whileTap={{ scale: matched.includes(pair.id) ? 1 : 0.98 }}
-                  onClick={() => !matched.includes(pair.id) && setSelectedLeft(pair.id)}
+                  animate={{
+                    x: cardPositions[pair.id]?.x || 0,
+                    y: cardPositions[pair.id]?.y || 0,
+                    scale: matched.includes(pair.id) ? 0.95 : selectedLeft === pair.id ? 1.05 : 1
+                  }}
+                  whileHover={{ scale: matched.includes(pair.id) ? 0.95 : 1.02 }}
+                  whileTap={{ scale: matched.includes(pair.id) ? 0.95 : 0.98 }}
+                  onClick={() => !matched.includes(pair.id) && handleLeftClick(pair.id)}
                   disabled={matched.includes(pair.id)}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   className={`w-full p-4 rounded-xl font-medium transition-all ${
                     matched.includes(pair.id)
-                      ? 'bg-green-500 text-white'
+                      ? 'bg-green-500 text-white shadow-lg'
                       : selectedLeft === pair.id
-                      ? 'bg-pink-500 text-white'
-                      : 'bg-white hover:bg-gray-50 text-gray-800'
+                      ? 'bg-blue-500 text-white shadow-xl ring-4 ring-blue-300'
+                      : 'bg-white hover:bg-blue-50 text-gray-800 border-2 border-transparent hover:border-blue-200'
                   }`}
                 >
                   {pair.left}
@@ -524,14 +563,20 @@ function MatchingGame({ gameState, setGameState, score, setScore, onClose }: any
               {pairs.sort(() => Math.random() - 0.5).map((pair) => (
                 <motion.button
                   key={`right-${pair.id}`}
-                  whileHover={{ scale: matched.includes(pair.id) ? 1 : 1.02 }}
-                  whileTap={{ scale: matched.includes(pair.id) ? 1 : 0.98 }}
+                  animate={{
+                    x: cardPositions[pair.id]?.x || 0,
+                    y: cardPositions[pair.id]?.y || 0,
+                    scale: matched.includes(pair.id) ? 0.95 : 1
+                  }}
+                  whileHover={{ scale: matched.includes(pair.id) ? 0.95 : 1.02 }}
+                  whileTap={{ scale: matched.includes(pair.id) ? 0.95 : 0.98 }}
                   onClick={() => !matched.includes(pair.id) && selectedLeft && handleRightClick(pair.id)}
                   disabled={matched.includes(pair.id)}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   className={`w-full p-4 rounded-xl font-medium transition-all ${
                     matched.includes(pair.id)
-                      ? 'bg-green-500 text-white'
-                      : 'bg-white hover:bg-gray-50 text-gray-800'
+                      ? 'bg-green-500 text-white shadow-lg'
+                      : 'bg-white hover:bg-blue-50 text-gray-800 border-2 border-transparent hover:border-blue-200'
                   }`}
                 >
                   {pair.right}

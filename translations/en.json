@@ -654,8 +654,22 @@
     }
   },
   "footer": {
+    "tagline": "Supporting Families",
     "title": "Supporting Families Through Puberty",
-    "subtitle": "A safe, loving resource for parents and children 🌱",
-    "copyright": "© 2025 - Created with love for families"
+    "description": "A safe, loving resource for parents and children navigating puberty together 🌱",
+    "links": {
+      "title": "Quick Links",
+      "parentGuide": "Parent Guide",
+      "guidance": "Guidance",
+      "games": "Games & Activities",
+      "diary": "Mood Diary"
+    },
+    "pwa": {
+      "title": "Install App",
+      "headline": "Install as App",
+      "instructions": "Add to your home screen for easy access anytime, anywhere."
+    },
+    "rights": "© 2025 Parenting Hub. All rights reserved.",
+    "communityNote": "Made with 💙 to support families through puberty education"
   }
 }
