@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import { safeLocalStorage } from '@/utils/storage'
 
 export type Language = 'en' | 'ar' | 'ms'
 
@@ -18,7 +19,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Load saved language from localStorage
-    const saved = localStorage.getItem('app-language')
+    const saved = safeLocalStorage.getItem('app-language')
     if (saved && ['en', 'ar', 'ms'].includes(saved)) {
       setLanguageState(saved as Language)
     }
@@ -33,10 +34,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang)
-    localStorage.setItem('app-language', lang)
+    safeLocalStorage.setItem('app-language', lang)
     // Update HTML dir attribute for RTL support
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'
-    document.documentElement.lang = lang
+    if (typeof document !== 'undefined') {
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'
+      document.documentElement.lang = lang
+    }
   }
 
   const t = (key: string): string => {

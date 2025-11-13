@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { Heart, Shield, Users, Sparkles, BookOpen, Lock, Eye, Target, ArrowRight, Check } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { safeLocalStorage } from '@/utils/storage'
 
 export default function WelcomePage() {
   const { t } = useLanguage()
@@ -69,7 +70,7 @@ export default function WelcomePage() {
 
   const handleGetStarted = () => {
     if (hasAcceptedPrivacy) {
-      localStorage.setItem('welcomeCompleted', 'true')
+      safeLocalStorage.setItem('welcomeCompleted', 'true')
       router.push('/')
     }
   }

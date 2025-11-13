@@ -17,6 +17,7 @@ import {
   ArrowUpRight,
 } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { safeLocalStorage } from '@/utils/storage'
 
 interface Message {
   id: string
@@ -45,7 +46,7 @@ export default function AIChat() {
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    const stored = localStorage.getItem(storageKey)
+    const stored = safeLocalStorage.getItem(storageKey)
     if (stored) {
       try {
         const parsed = JSON.parse(stored) as (Omit<Message, 'timestamp'> & { timestamp: string })[]
@@ -80,7 +81,7 @@ export default function AIChat() {
     if (typeof window === 'undefined') return
 
     if (messages.length === 0) {
-      localStorage.removeItem(storageKey)
+      safeLocalStorage.removeItem(storageKey)
       return
     }
 
@@ -89,7 +90,7 @@ export default function AIChat() {
       timestamp: message.timestamp.toISOString(),
     }))
 
-    localStorage.setItem(storageKey, JSON.stringify(serializable))
+    safeLocalStorage.setItem(storageKey, JSON.stringify(serializable))
   }, [messages, storageKey])
 
   const handleSend = async (messageText?: string) => {
