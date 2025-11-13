@@ -32,6 +32,7 @@ export default function AIChat() {
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const storageKey = useMemo(() => `ai-chat-history-${language}`, [language])
 
@@ -42,6 +43,15 @@ export default function AIChat() {
   useEffect(() => {
     scrollToBottom()
   }, [messages])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const media = window.matchMedia('(max-width: 640px)')
+    const handleChange = () => setIsMobile(media.matches)
+    handleChange()
+    media.addEventListener('change', handleChange)
+    return () => media.removeEventListener('change', handleChange)
+  }, [])
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -194,7 +204,7 @@ export default function AIChat() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 z-40 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all ${
+        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all ${
           isOpen ? 'hidden' : 'flex'
         } items-center justify-center`}
       >
@@ -213,18 +223,30 @@ export default function AIChat() {
             initial={{ opacity: 0, y: 100, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.9 }}
-            className="fixed bottom-6 right-6 z-50 w-full max-w-md h-[600px] glass-effect rounded-3xl shadow-2xl flex flex-col overflow-hidden"
-            style={{ maxHeight: 'calc(100vh - 48px)' }}
+            className={`fixed z-50 glass-effect shadow-2xl flex flex-col overflow-hidden rounded-3xl ${
+              isMobile
+                ? 'left-4 right-4 bottom-4 h-[75vh] max-h-[80vh]'
+                : 'bottom-6 right-6 w-full max-w-md h-[600px]'
+            }`}
           >
+            {isMobile && (
+              <button
+                onClick={() => setIsOpen(false)}
+                aria-label={t('aiChat.closeLabel')}
+                className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-white text-primary-600 shadow-lg border border-primary-100 flex items-center justify-center"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            )}
             {/* Header */}
-            <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white p-4 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-3 sm:py-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="bg-white/20 rounded-full p-2">
                   <Bot className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">{t('aiChat.title')}</h3>
-                  <p className="text-xs opacity-90">{t('aiChat.subtitle')}</p>
+                  <h3 className="font-bold text-base sm:text-lg">{t('aiChat.title')}</h3>
+                  <p className="text-[11px] sm:text-xs opacity-90">{t('aiChat.subtitle')}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
@@ -236,17 +258,20 @@ export default function AIChat() {
                 >
                   <RefreshCw className="w-5 h-5" />
                 </button>
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="hover:bg-white/20 rounded-full p-2 transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
+                {!isMobile && (
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    aria-label={t('aiChat.closeLabel')}
+                    className="hover:bg-white/20 rounded-full p-2 transition-colors"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                )}
               </div>
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-white/30">
+            <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 bg-white/40">
               {messages.map((message) => (
                 <motion.div
                   key={message.id}
@@ -270,7 +295,7 @@ export default function AIChat() {
                     )}
                   </div>
                   <div
-                    className={`flex-1 rounded-2xl p-4 ${
+                    className={`flex-1 rounded-2xl p-3 sm:p-4 ${
                       message.role === 'user'
                         ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white'
                         : 'bg-white text-gray-800'
@@ -317,7 +342,7 @@ export default function AIChat() {
 
             {/* Suggested Questions */}
             {messages.length === 1 && (
-              <div className="px-4 py-2 bg-white/50 border-t border-gray-200">
+              <div className="px-3 sm:px-4 py-2 bg-white/50 border-t border-gray-200">
                 <p className="text-xs text-gray-600 mb-2 font-semibold">
                   {t('aiChat.suggestedTitle')}
                 </p>
@@ -335,7 +360,7 @@ export default function AIChat() {
               </div>
             )}
 
-            <div className="px-4 py-3 bg-white/60 border-t border-gray-200 space-y-2">
+            <div className="px-3 sm:px-4 py-3 bg-white/60 border-t border-gray-200 space-y-2">
               <p className="text-xs text-gray-600 font-semibold">
                 {t('aiChat.quickTopics.title')}
               </p>
@@ -353,7 +378,7 @@ export default function AIChat() {
               <p className="text-[11px] text-gray-500">{t('aiChat.historyNotice')}</p>
             </div>
 
-            <div className="px-4 pb-3 bg-white/60 border-t border-gray-200">
+            <div className="px-3 sm:px-4 pb-3 bg-white/60 border-t border-gray-200">
               <p className="text-xs text-gray-600 font-semibold mb-2 flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-primary-500" />
                 {t('aiChat.resources.title')}
@@ -381,7 +406,7 @@ export default function AIChat() {
             </div>
 
             {/* Input */}
-            <div className="p-4 bg-white/50 border-t border-gray-200">
+            <div className="p-3 sm:p-4 bg-white/50 border-t border-gray-200">
               <div className="flex gap-2">
                 <input
                   type="text"

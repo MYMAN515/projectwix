@@ -18,6 +18,8 @@
     "startLearning": "Explore Parent Guide",
     "myDiary": "View Activities",
     "features": {
+      "title": "Explore every corner of Parenting Hub",
+      "subtitle": "Quick links crafted for small screens—tap a card to jump right in.",
       "parentGuide": {
         "title": "Comprehensive Parent Guide",
         "description": "Step-by-step conversations, cultural sensitivity tips, and reassurance for every big question."
@@ -168,6 +170,7 @@
       }
     },
     "clearHistory": "Start a fresh chat",
+    "closeLabel": "Close chat window",
     "sendLabel": "Send message",
     "response": {
       "puberty": "Great question! Try these steps:\n• Choose relaxed everyday moments—car rides, walks, shared chores—to mention changes you've noticed.\n• Share small facts often instead of one big \"talk\" so information feels normal.\n• Invite questions by saying, \"You can ask me anything, even if it feels awkward.\"\n• Keep trusted books or articles handy so your child can explore privately and return when they're ready.\n• Reassure them every body grows at its own pace and you are beside them all the way.",
